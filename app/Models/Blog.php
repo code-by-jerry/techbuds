@@ -93,6 +93,62 @@ class Blog extends Model
         // Clean up empty paragraphs
         $content = preg_replace('/<p>\s*<\/p>/', '', $content);
         
+        // Auto-link key phrases to relevant service pages (safe, limited)
+        $serviceKeywordMap = [
+            // SEO & Digital Marketing
+            'technical seo' => 'seo-digital-marketing',
+            'seo strategy' => 'seo-digital-marketing',
+            'digital marketing' => 'seo-digital-marketing',
+            'content marketing' => 'seo-digital-marketing',
+            'local seo' => 'seo-digital-marketing',
+
+            // Web & performance
+            'web app' => 'web-development',
+            'web application' => 'web-development',
+            'website performance' => 'web-development',
+
+            // Mobile
+            'mobile app' => 'mobile-app-development',
+            'app marketing' => 'mobile-app-development',
+
+            // UI/UX & design
+            'ui ux design' => 'ui-ux-design',
+            'ui/ux design' => 'ui-ux-design',
+            'product design' => 'ui-ux-design',
+
+            // DevOps & cloud
+            'devops' => 'devops-cloud',
+            'ci/cd' => 'devops-cloud',
+            'cloud deployment' => 'devops-cloud',
+
+            // Data & warehousing
+            'data warehouse' => 'database-data-warehousing',
+            'data warehousing' => 'database-data-warehousing',
+
+            // AI & automation
+            'ai automation' => 'ai-automation',
+            'ai solutions' => 'ai-automation',
+
+            // Custom IT / landing pages
+            'landing page' => 'custom-it-solutions',
+            'custom it solution' => 'custom-it-solutions',
+            'custom it solutions' => 'custom-it-solutions',
+        ];
+
+        foreach ($serviceKeywordMap as $keyword => $slug) {
+            $url = url("/services/{$slug}");
+
+            // Case-insensitive, first occurrence only, word boundary-ish match
+            $pattern = '~(?i)\b(' . preg_quote($keyword, '~') . ')\b~';
+            $replacement = '<a href="' . $url . '" class="blog-service-link">$1</a>';
+
+            $newContent = preg_replace($pattern, $replacement, $content, 1);
+
+            if ($newContent !== null) {
+                $content = $newContent;
+            }
+        }
+
         return $content;
     }
 }

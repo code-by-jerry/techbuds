@@ -1,0 +1,171 @@
+<?php
+
+return [
+'india' => [
+    'name' => 'India',
+    'type' => 'country',
+    'timezone' => 'IST',
+    'seo_index' => true,
+    'priority' => 'high',
+],
+'usa' => [
+    'name' => 'United States',
+    'type' => 'country',
+    'timezone' => 'EST / PST',
+    'seo_index' => true,
+    'priority' => 'high',
+],
+'uk' => [
+    'name' => 'United Kingdom',
+    'type' => 'country',
+    'timezone' => 'GMT / BST',
+    'seo_index' => true,
+    'priority' => 'high',
+],
+'canada' => [
+    'name' => 'Canada',
+    'type' => 'country',
+    'timezone' => 'PST / EST',
+    'seo_index' => true,
+    'priority' => 'high',
+],
+'australia' => [
+    'name' => 'Australia',
+    'type' => 'country',
+    'timezone' => 'AEST',
+    'seo_index' => true,
+    'priority' => 'high',
+],
+'uae' => [
+    'name' => 'United Arab Emirates',
+    'type' => 'country',
+    'timezone' => 'GST',
+    'seo_index' => true,
+    'priority' => 'high',
+],
+'singapore' => [
+    'name' => 'Singapore',
+    'type' => 'country',
+    'timezone' => 'SGT',
+    'seo_index' => true,
+    'priority' => 'high',
+],
+
+// Tier 2 – medium priority (index, fewer links initially)
+'germany' => [
+    'name' => 'Germany',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => true,
+    'priority' => 'medium',
+],
+'france' => [
+    'name' => 'France',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => true,
+    'priority' => 'medium',
+],
+'netherlands' => [
+    'name' => 'Netherlands',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => true,
+    'priority' => 'medium',
+],
+'spain' => [
+    'name' => 'Spain',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => true,
+    'priority' => 'medium',
+],
+'italy' => [
+    'name' => 'Italy',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => true,
+    'priority' => 'medium',
+],
+'japan' => [
+    'name' => 'Japan',
+    'type' => 'country',
+    'timezone' => 'JST',
+    'seo_index' => true,
+    'priority' => 'medium',
+],
+'south-korea' => [
+    'name' => 'South Korea',
+    'type' => 'country',
+    'timezone' => 'KST',
+    'seo_index' => true,
+    'priority' => 'medium',
+],
+
+// Tier 3 – low priority (can be noindex or minimal linking)
+'sweden' => [
+    'name' => 'Sweden',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'norway' => [
+    'name' => 'Norway',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'switzerland' => [
+    'name' => 'Switzerland',
+    'type' => 'country',
+    'timezone' => 'CET',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'south-africa' => [
+    'name' => 'South Africa',
+    'type' => 'country',
+    'timezone' => 'SAST',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'nigeria' => [
+    'name' => 'Nigeria',
+    'type' => 'country',
+    'timezone' => 'WAT',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'brazil' => [
+    'name' => 'Brazil',
+    'type' => 'country',
+    'timezone' => 'BRT',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'mexico' => [
+    'name' => 'Mexico',
+    'type' => 'country',
+    'timezone' => 'CST / MST',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'qatar' => [
+    'name' => 'Qatar',
+    'type' => 'country',
+    'timezone' => 'AST',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+'saudi-arabia' => [
+    'name' => 'Saudi Arabia',
+    'type' => 'country',
+    'timezone' => 'AST',
+    'seo_index' => false,
+    'priority' => 'low',
+],
+];
+
+

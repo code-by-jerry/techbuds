@@ -19,6 +19,21 @@ Route::get('/services', function () {
     return view('services');
 })->name('services');
 
+Route::get('/locations', function () {
+    $locations = collect(config('locations', []))
+        ->filter(fn ($loc) => ($loc['priority'] ?? null) === 'high' && ($loc['seo_index'] ?? false))
+        ->all();
+
+    $services = config('service_pages', []);
+
+    return view('locations', compact('locations', 'services'));
+})->name('locations');
+
+use App\Http\Controllers\ServiceController;
+
+Route::get('/services/{service}/{location}', [ServiceController::class, 'location'])->name('services.location');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+
 use App\Http\Controllers\BlogController;
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
@@ -41,6 +56,22 @@ Route::get('/sitemap.xml', function () {
     
     // Services page
     $sitemap->add(url('/services'));
+    
+    // Individual service pages (global)
+    $serviceSlugs = array_keys(config('service_pages', []));
+    foreach ($serviceSlugs as $slug) {
+        $sitemap->add(url('/services/' . $slug));
+    }
+
+    // High-priority location pages per service
+    $locations = collect(config('locations', []))
+        ->filter(fn ($loc) => ($loc['priority'] ?? null) === 'high' && ($loc['seo_index'] ?? false));
+
+    foreach ($serviceSlugs as $serviceSlug) {
+        foreach ($locations as $locationSlug => $loc) {
+            $sitemap->add(url("/services/{$serviceSlug}/{$locationSlug}"));
+        }
+    }
     
     // Portfolio page
     $sitemap->add(url('/portfolio'));

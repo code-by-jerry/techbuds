@@ -52,6 +52,72 @@
             {!! $blog->formatted_content !!}
         </div>
 
+        @php
+            $serviceMap = [
+                'Technical SEO' => [
+                    ['slug' => 'seo-digital-marketing', 'label' => 'SEO & Digital Marketing Services'],
+                    ['slug' => 'web-development', 'label' => 'Web Development Services'],
+                ],
+                'Mobile' => [
+                    ['slug' => 'mobile-app-development', 'label' => 'Mobile App Development Services'],
+                    ['slug' => 'seo-digital-marketing', 'label' => 'SEO & Digital Marketing Services'],
+                ],
+                'Performance' => [
+                    ['slug' => 'web-development', 'label' => 'Web Development Services'],
+                    ['slug' => 'devops-cloud', 'label' => 'DevOps & Cloud Deployment Services'],
+                ],
+                'Analytics' => [
+                    ['slug' => 'database-data-warehousing', 'label' => 'Database & Data Warehousing Services'],
+                    ['slug' => 'ui-ux-design', 'label' => 'UI/UX Design & Branding Services'],
+                ],
+                'DevOps' => [
+                    ['slug' => 'devops-cloud', 'label' => 'DevOps & Cloud Deployment Services'],
+                    ['slug' => 'web-development', 'label' => 'Web Development Services'],
+                ],
+                'Content' => [
+                    ['slug' => 'seo-digital-marketing', 'label' => 'SEO & Digital Marketing Services'],
+                    ['slug' => 'custom-it-solutions', 'label' => 'Custom IT Solutions'],
+                ],
+            ];
+
+            $relatedServices = $serviceMap[$blog->category] ?? null;
+        @endphp
+
+        @if($relatedServices)
+        <!-- Related Services CTA -->
+        <section class="mt-16 pt-12 border-t border-[#11224E]/10">
+            <div class="mb-6">
+                <span class="blog-pill">Related services</span>
+                <h2 class="mt-4 text-2xl md:text-3xl font-bold text-[#11224E]">
+                    Need help implementing what you just read?
+                </h2>
+                <p class="mt-3 text-base md:text-lg text-[#11224E]/80 max-w-2xl">
+                    Turn this strategy into real results with our implementation services.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                @foreach($relatedServices as $service)
+                <a href="{{ route('services.show', ['slug' => $service['slug']]) }}" class="group block rounded-2xl border border-[#11224E]/12 bg-white/80 px-5 py-4 hover:border-[#088395]/40 hover:shadow-lg transition-all duration-300">
+                    <div class="flex flex-col gap-1.5">
+                        <span class="text-xs font-semibold tracking-[0.24em] uppercase text-[#11224E]/70">
+                            Techbuds Service
+                        </span>
+                        <p class="text-base md:text-lg font-semibold text-[#11224E] group-hover:text-[#088395]">
+                            {{ $service['label'] }}
+                        </p>
+                        <span class="inline-flex items-center gap-1.5 mt-1 text-xs font-semibold text-[#088395]">
+                            View service details
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M13 5l7 7-7 7M5 12h15"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </section>
+        @endif
+
         <!-- Related Articles -->
         @if($related->count() > 0)
         <div class="mt-16 pt-12 border-t border-[#11224E]/10">

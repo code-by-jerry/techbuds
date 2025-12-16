@@ -27,3 +27,23 @@
         </div>
     </div>
 </footer>
+
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'Organization',
+    'name' => 'Techbuds',
+    'url' => url('/'),
+    'logo' => asset('images/techbuds!.png'),
+    'email' => 'contact@techbuds.online',
+], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}
+</script>
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'WebSite',
+    '@id' => url('/#website'),
+    'name' => 'Techbuds',
+    'url' => url('/'),
+], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}
+</script>

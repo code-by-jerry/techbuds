@@ -22,20 +22,24 @@ class BlogSeeder extends Seeder
         $articles = $this->parseArticles($content);
 
         foreach ($articles as $index => $article) {
-            Blog::create([
-                'title' => $article['title'],
-                'slug' => Str::slug($article['title']),
-                'meta_description' => $article['meta_description'],
-                'category' => $article['category'],
-                'excerpt' => $article['excerpt'],
-                'content' => $article['content'],
-                'featured_image' => $article['featured_image'],
-                'published_date' => Carbon::now()->subDays($index),
-                'reading_time' => $this->calculateReadingTime($article['content']),
-                'signals' => $article['signals'],
-                'is_featured' => $index === 0, // First article is featured
-                'is_published' => true,
-            ]);
+            $slug = Str::slug($article['title']);
+
+            Blog::updateOrCreate(
+                ['slug' => $slug],
+                [
+                    'title' => $article['title'],
+                    'meta_description' => $article['meta_description'],
+                    'category' => $article['category'],
+                    'excerpt' => $article['excerpt'],
+                    'content' => $article['content'],
+                    'featured_image' => $article['featured_image'],
+                    'published_date' => Carbon::now()->subDays($index),
+                    'reading_time' => $this->calculateReadingTime($article['content']),
+                    'signals' => $article['signals'],
+                    'is_featured' => $index === 0, // First article is featured
+                    'is_published' => true,
+                ]
+            );
         }
 
         $this->command->info('Seeded ' . count($articles) . ' blog articles.');

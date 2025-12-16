@@ -71,6 +71,8 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+                text-decoration: none;
+                color: inherit;
             }
 
             .service-card:hover {
@@ -247,60 +249,60 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Web Development -->
-                <div class="service-card" data-animate="fade-up">
+                <a href="{{ route('services.show', 'web-development') }}" class="service-card cursor-pointer" data-animate="fade-up">
                     <div class="service-card-icon">🌐</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">Web Development</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Modern, fast, and scalable websites built for performance, SEO, and user experience.</p>
-                </div>
+                </a>
 
                 <!-- Mobile App Development -->
-                <div class="service-card" data-animate="fade-up" data-delay="0.1">
+                <a href="{{ route('services.show', 'mobile-app-development') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.1">
                     <div class="service-card-icon">📱</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">Mobile App Development</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Intuitive Android & iOS applications designed to engage users and boost retention.</p>
-                </div>
+                </a>
 
                 <!-- SEO & Digital Marketing -->
-                <div class="service-card" data-animate="fade-up" data-delay="0.2">
+                <a href="{{ route('services.show', 'seo-digital-marketing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.2">
                     <div class="service-card-icon">🔍</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">SEO & Digital Marketing</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Rank higher, grow faster, and generate quality leads with advanced SEO & data-driven marketing.</p>
-                </div>
+                </a>
 
                 <!-- UI/UX Design & Branding -->
-                <div class="service-card" data-animate="fade-up" data-delay="0.3">
+                <a href="{{ route('services.show', 'ui-ux-design') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.3">
                     <div class="service-card-icon">🖥️</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">UI/UX Design & Branding</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Beautiful, user-centered designs that make your brand unforgettable.</p>
-                </div>
+                </a>
 
                 <!-- DevOps & Cloud Deployment -->
-                <div class="service-card" data-animate="fade-up" data-delay="0.4">
+                <a href="{{ route('services.show', 'devops-cloud') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.4">
                     <div class="service-card-icon">⚙️</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">DevOps & Cloud Deployment</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Lightning-fast infrastructure, CI/CD pipelines, monitoring, and high-availability systems.</p>
-                </div>
+                </a>
 
                 <!-- Database & Data Warehousing -->
-                <div class="service-card" data-animate="fade-up" data-delay="0.5">
+                <a href="{{ route('services.show', 'database-data-warehousing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.5">
                     <div class="service-card-icon">📊</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">Database & Data Warehousing</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Organized, scalable, and secure data architecture for analytics and business intelligence.</p>
-                </div>
+                </a>
 
                 <!-- AI & Automation Solutions -->
-                <div class="service-card" data-animate="fade-up" data-delay="0.6">
+                <a href="{{ route('services.show', 'ai-automation') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.6">
                     <div class="service-card-icon">🤖</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">AI & Automation Solutions</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Smart automation, AI integrations, chatbots, workflows & business efficiency upgrades.</p>
-                </div>
+                </a>
 
                 <!-- Custom IT Solutions -->
-                <div class="service-card" data-animate="fade-up" data-delay="0.7">
+                <a href="{{ route('services.show', 'custom-it-solutions') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.7">
                     <div class="service-card-icon">🛠️</div>
                     <h3 class="text-xl font-semibold text-[#11224E]">Custom IT Solutions</h3>
                     <p class="text-sm text-[#11224E]/70 leading-relaxed">Tailored software systems designed around your business needs, not the other way around.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
