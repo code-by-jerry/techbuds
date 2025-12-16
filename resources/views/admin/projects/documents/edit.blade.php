@@ -1,0 +1,113 @@
+@extends('admin.layouts.tailadmin')
+
+@section('title', 'Edit Document')
+
+@section('content')
+<div class="space-y-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between">
+        <div>
+            <div class="flex items-center gap-3">
+                <a href="{{ route('admin.projects.show', $project) }}" class="text-[#088395] hover:text-[#37B7C3] transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </a>
+                <h2 class="text-2xl font-bold text-[#11224E]">Edit Document</h2>
+            </div>
+            <p class="text-sm text-[#088395]/70 mt-1">Update document for {{ $project->title }}</p>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <form action="{{ route('admin.documents.update', $document) }}" method="POST" class="space-y-6">
+        @csrf
+        @method('PUT')
+
+        <div class="rounded-2xl border border-[#088395]/10 bg-white p-6 shadow-sm">
+            <h3 class="mb-4 text-lg font-semibold text-[#11224E]">Document Information</h3>
+            <div class="space-y-4">
+                <!-- Name -->
+                <div>
+                    <label for="name" class="mb-1 block text-sm font-medium text-[#11224E]">Document Name <span class="text-red-500">*</span></label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value="{{ old('name', $document->name) }}"
+                        required
+                        class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                    />
+                    @error('name')
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Category -->
+                <div>
+                    <label for="category" class="mb-1 block text-sm font-medium text-[#11224E]">Category <span class="text-red-500">*</span></label>
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                        class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                    >
+                        <option value="other" {{ old('category', $document->category) === 'other' ? 'selected' : '' }}>Other</option>
+                        <option value="nda" {{ old('category', $document->category) === 'nda' ? 'selected' : '' }}>NDA</option>
+                        <option value="proposal" {{ old('category', $document->category) === 'proposal' ? 'selected' : '' }}>Proposal</option>
+                        <option value="quote" {{ old('category', $document->category) === 'quote' ? 'selected' : '' }}>Quote</option>
+                        <option value="invoice" {{ old('category', $document->category) === 'invoice' ? 'selected' : '' }}>Invoice</option>
+                        <option value="contract" {{ old('category', $document->category) === 'contract' ? 'selected' : '' }}>Contract</option>
+                        <option value="final_delivery" {{ old('category', $document->category) === 'final_delivery' ? 'selected' : '' }}>Final Delivery</option>
+                        <option value="offboarding" {{ old('category', $document->category) === 'offboarding' ? 'selected' : '' }}>Offboarding</option>
+                    </select>
+                    @error('category')
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label for="description" class="mb-1 block text-sm font-medium text-[#11224E]">Description</label>
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="3"
+                        class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                    >{{ old('description', $document->description) }}</textarea>
+                    @error('description')
+                    <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Current File Info -->
+                <div class="rounded-lg border border-[#088395]/10 bg-[#088395]/5 p-4">
+                    <p class="text-sm font-medium text-[#11224E] mb-2">Current File</p>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#088395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+                        </svg>
+                        <span class="text-sm text-[#11224E]">{{ $document->file_name }}</span>
+                        <span class="text-xs text-[#088395]/70">({{ $document->file_size }})</span>
+                        <a href="{{ route('admin.documents.download', $document) }}" class="ml-auto text-xs text-[#088395] hover:text-[#37B7C3]">
+                            Download
+                        </a>
+                    </div>
+                    <p class="mt-2 text-xs text-[#088395]/70">Note: You cannot change the file. Delete and re-upload to replace the file.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="flex items-center justify-end gap-3">
+            <a href="{{ route('admin.projects.show', $project) }}" class="rounded-lg border border-[#088395]/20 px-4 py-2 text-sm font-medium text-[#088395] transition-colors hover:bg-[#088395]/5">
+                Cancel
+            </a>
+            <button type="submit" class="rounded-lg bg-[#088395] px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]">
+                Update Document
+            </button>
+        </div>
+    </form>
+</div>
+@endsection
+
