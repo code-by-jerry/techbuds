@@ -1,20 +1,20 @@
 <aside
-    :class="sidebarToggle ? 'lg:w-[90px]' : 'lg:w-[290px]'"
-    class="sidebar hidden lg:flex fixed left-0 top-0 z-[9999] h-screen w-[290px] flex-col overflow-y-auto border-r border-[#088395]/10 bg-white px-5 transition-all duration-500 ease-in-out lg:static no-scrollbar"
+    :class="sidebarToggle ? 'lg:w-[90px]' : 'lg:w-[280px]'"
+    class="sidebar hidden lg:flex fixed left-0 top-0 z-[9999] h-screen w-[280px] flex-col overflow-y-auto border-r border-border-default bg-surface-1 px-5 transition-all duration-300 ease-in-out lg:static no-scrollbar"
 >
     <!-- Sidebar Header -->
     <div
-        :class="sidebarToggle ? 'justify-center' : 'justify-between'"
-        class="flex items-center gap-2 pt-8 pb-7"
+        :class="sidebarToggle ? 'lg:justify-center' : 'lg:justify-between'"
+        class="flex items-center justify-between gap-2 pt-8 pb-7"
     >
-        <a href="{{ route('admin.dashboard') }}">
-            <span class="logo" :class="sidebarToggle ? 'hidden' : ''">
-                <img class="h-10" src="{{ asset('images/techbuds!.png') }}" alt="Techbuds Logo" />
+        <a href="{{ route('admin.dashboard') }}" class="flex items-center justify-center">
+            <span class="logo transition-opacity duration-300" :class="sidebarToggle ? 'lg:hidden' : 'block'">
+                <img class="h-10 w-auto" src="{{ asset('images/techbuds-light.png') }}" alt="Techbuds Logo" />
             </span>
             <img
-                :class="sidebarToggle ? 'lg:block h-7' : 'hidden'"
-                src="{{ asset('images/techbuds!-mini.png') }}"
-                alt="Logo"
+                :class="sidebarToggle ? 'lg:block h-8 w-8 transition-opacity duration-300' : 'hidden'"
+                src="{{ asset('images/techbuds-light-mini.png') }}"
+                alt="Techbuds Logo"
             />
         </a>
     </div>
@@ -25,13 +25,13 @@
             <div>
                 <!-- MENU Section -->
                 <h3
-                    class="mb-4 text-xs uppercase leading-[20px] text-[#088395]/60 transition-opacity duration-300"
+                    class="mb-4 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider transition-opacity duration-300"
                     :class="sidebarToggle ? 'lg:hidden' : ''"
                 >
                     MENU
                 </h3>
 
-                <ul class="flex flex-col gap-2" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
+                <ul class="flex flex-col gap-1" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
                     <!-- Dashboard -->
                     <li class="relative">
                         <a
@@ -56,7 +56,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'dashboard' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'dashboard' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
                                 Dashboard
                             </span>
@@ -103,7 +103,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'contacts' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'contacts' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
                                 Contacts
                             </span>
@@ -129,13 +129,13 @@
 
                 <!-- CRM Section -->
                 <h3
-                    class="mb-4 text-xs uppercase leading-[20px] text-[#088395]/60 transition-opacity duration-300"
+                    class="mb-4 mt-6 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider transition-opacity duration-300"
                     :class="sidebarToggle ? 'lg:hidden' : ''"
                 >
                     CRM
                 </h3>
 
-                <ul class="flex flex-col gap-2" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
+                <ul class="flex flex-col gap-1" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
                     <!-- Clients -->
                     <li class="relative">
                         <a
@@ -160,7 +160,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'clients' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'clients' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -176,7 +176,7 @@
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
                                 Clients
                             </span>
@@ -207,7 +207,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'projects' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'projects' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -223,7 +223,7 @@
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
                                 Projects
                             </span>
@@ -231,15 +231,15 @@
                     </li>
                 </ul>
 
-                <!-- Content and Seo Section -->
+                <!-- Content and SEO Section -->
                 <h3
-                    class="mb-4 text-xs uppercase leading-[20px] text-[#088395]/60 transition-opacity duration-300"
+                    class="mb-4 mt-6 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider transition-opacity duration-300"
                     :class="sidebarToggle ? 'lg:hidden' : ''"
                 >
-                    Content and Seo
+                    Content & SEO
                 </h3>
 
-                <ul class="flex flex-col gap-2" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
+                <ul class="flex flex-col gap-1" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
                     <!-- Blogs -->
                     <li class="relative">
                         <a
@@ -264,7 +264,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'blogs' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'blogs' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -280,7 +280,7 @@
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
                                 Blogs
                             </span>
@@ -311,7 +311,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'tools' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'tools' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -328,7 +328,7 @@
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
                                 DevTools
                             </span>
@@ -359,7 +359,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'templates' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'templates' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -375,7 +375,7 @@
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
                                 Templates
                             </span>
@@ -386,13 +386,13 @@
                 <!-- Roles and Access Section (Only for Super Admin) -->
                 @if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->email === 'admin@techbuds.online')
                 <h3
-                    class="mb-4 text-xs uppercase leading-[20px] text-[#088395]/60 transition-opacity duration-300"
+                    class="mb-4 mt-6 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider transition-opacity duration-300"
                     :class="sidebarToggle ? 'lg:hidden' : ''"
                 >
-                    Roles and Access
+                    Access Control
                 </h3>
 
-                <ul class="flex flex-col gap-2" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
+                <ul class="flex flex-col gap-1" :class="sidebarToggle ? 'lg:mb-0' : 'lg:mb-6'">
                     <!-- User Roles and Actions -->
                     <li class="relative">
                         <a
@@ -417,7 +417,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'roles' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'roles' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -427,15 +427,15 @@
                                 class="transition-all duration-300"
                                 :class="sidebarToggle ? 'lg:hidden' : ''"
                             >
-                                User Roles and Actions
+                                Roles
                             </span>
                             <span
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
-                                User Roles and Actions
+                                Roles
                             </span>
                         </a>
                     </li>
@@ -464,7 +464,7 @@
                             class="menu-item group flex items-center rounded-lg text-sm font-medium transition-all relative"
                             :class="[
                                 sidebarToggle ? 'lg:justify-center lg:px-2.5 lg:py-2.5 lg:min-h-[40px]' : 'lg:gap-3 lg:px-3 lg:py-2.5',
-                                page === 'admins' ? 'bg-[#088395]/10 text-[#088395]' : 'text-[#11224E] hover:bg-[#088395]/5'
+                                page === 'admins' ? 'bg-brand-primary text-white' : 'text-text-secondary hover:bg-surface-2 hover:text-heading'
                             ]"
                         >
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -474,15 +474,15 @@
                                 class="transition-all duration-300"
                                 :class="sidebarToggle ? 'lg:hidden' : ''"
                             >
-                                Admins/Users
+                                Admins
                             </span>
                             <span
                                 x-show="tooltipVisible"
                                 x-transition
                                 x-cloak
-                                class="tooltip fixed px-2 py-1 text-xs font-medium text-white bg-[#11224E] rounded whitespace-nowrap pointer-events-none z-[10000] shadow-lg"
+                                class="tooltip fixed px-3 py-1.5 text-xs font-medium text-heading bg-surface-3 rounded-lg whitespace-nowrap pointer-events-none z-[10000] shadow-lg border border-border-default"
                             >
-                                Admins/Users
+                                Admins
                             </span>
                         </a>
                     </li>

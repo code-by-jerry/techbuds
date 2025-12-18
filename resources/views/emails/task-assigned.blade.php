@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body { font-family: Arial, sans-serif; background: #f5f7fb; padding: 24px; color: #11224E; }
+        body { font-family: Arial, sans-serif; background: #f5f7fb; padding: 24px; color: var(--heading); }
         .card { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e5e7ef; }
         .muted { color: #6b7280; font-size: 13px; margin-top: 24px; }
-        .badge { display: inline-block; padding: 6px 14px; border-radius: 9999px; background: #088395; color: #ffffff; text-transform: capitalize; font-size: 12px; }
+        .badge { display: inline-block; padding: 6px 14px; border-radius: 9999px; background: var(--brand-primary); color: #ffffff; text-transform: capitalize; font-size: 12px; }
     </style>
 </head>
 <body>

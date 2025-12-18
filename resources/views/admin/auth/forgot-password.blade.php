@@ -4,7 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Forgot Password · Techbuds Admin</title>
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css'])
     @endif
@@ -16,9 +17,9 @@
             }
 
             body {
-            background: #FFFDF6;
-            font-family: "Instrument Sans", system-ui, sans-serif;
-            color: #11224E;
+            background: var(--bg-main);
+            font-family: "Inter", system-ui, sans-serif;
+            color: var(--text-primary);
                 min-height: 100vh;
                 display: flex;
             align-items: center;
@@ -51,21 +52,21 @@
         .login-header h1 {
                 font-size: 1.75rem;
                 font-weight: 700;
-            color: #11224E;
+            color: var(--text-heading);
                 margin-bottom: 0.5rem;
             }
 
         .login-header p {
             font-size: 0.9rem;
-            color: rgba(8,131,149,0.7);
+            color: var(--text-secondary);
         }
 
         .login-card {
-            background: white;
-            border: 1px solid rgba(8,131,149,0.1);
+            background: var(--bg-surface-2);
+            border: 1px solid rgba(37, 99, 235, 0.1);
             border-radius: 1rem;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(8,131,149,0.08);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
             }
 
             .form-group {
@@ -76,37 +77,37 @@
                 display: block;
             font-size: 0.75rem;
                 font-weight: 600;
-            color: #11224E;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
             }
 
             .form-group input {
                 width: 100%;
             padding: 0.75rem 1rem;
-            border: 1.5px solid rgba(8,131,149,0.15);
+            border: 1.5px solid var(--border-default);
             border-radius: 0.5rem;
             font-size: 0.95rem;
                 font-family: inherit;
-            color: #11224E;
-            background: #FFFDF6;
+            color: var(--text-primary);
+            background: var(--bg-surface-1);
             transition: all 0.2s ease;
             }
 
             .form-group input:focus {
                 outline: none;
-            border-color: #088395;
-                background: white;
-            box-shadow: 0 0 0 3px rgba(8,131,149,0.1);
+            border-color: var(--brand-primary);
+                background: var(--bg-surface-2);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
             }
 
             .form-group input::placeholder {
-            color: rgba(8,131,149,0.4);
+            color: var(--text-muted);
             }
 
             .btn-submit {
                 width: 100%;
             padding: 0.875rem;
-            background: #11224E;
+            background: var(--brand-primary);
                 color: white;
                 border: none;
             border-radius: 0.5rem;
@@ -119,7 +120,7 @@
             }
 
             .btn-submit:hover {
-            background: #088395;
+            background: var(--brand-primary);
             transform: translateY(-1px);
             }
 
@@ -128,9 +129,9 @@
             }
 
         .error-alert {
-            background: #FEE2E2;
-            border: 1px solid #FCA5A5;
-            color: #DC2626;
+            background: var(--color-error-soft);
+            border: 1px solid var(--color-error);
+            color: var(--color-error);
             padding: 0.875rem;
             border-radius: 0.5rem;
             margin-bottom: 1.5rem;
@@ -138,9 +139,9 @@
         }
 
         .success-alert {
-            background: #D1FAE5;
-            border: 1px solid #86EFAC;
-            color: #065F46;
+            background: var(--color-success-soft);
+            border: 1px solid var(--color-success);
+            color: var(--color-success);
             padding: 0.875rem;
             border-radius: 0.5rem;
             margin-bottom: 1.5rem;
@@ -151,14 +152,14 @@
             display: inline-flex;
                 align-items: center;
             gap: 0.5rem;
-            color: rgba(8,131,149,0.7);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.875rem;
             transition: color 0.2s;
         }
 
         .back-link:hover {
-            color: #088395;
+            color: var(--brand-primary);
         }
 
         @media (max-width: 640px) {
@@ -184,7 +185,7 @@
     <div class="login-container">
         <div class="login-header">
             <div class="login-logo text-center w-full flex justify-center items-center">
-                <img src="{{ asset('images/techbuds!.png') }}" alt="Techbuds Logo">
+                <img src="{{ asset('images/techbuds-light.png') }}" alt="Techbuds Logo">
             </div>
             <h1>Forgot Password</h1>
             <p>Enter your email to receive a password reset link</p>

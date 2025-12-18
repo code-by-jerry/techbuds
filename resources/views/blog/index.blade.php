@@ -5,14 +5,14 @@
 @endphp
 
 @section('content')
-<section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12" data-animate="fade-up">
             <span class="service-pill w-fit mx-auto">SEO Blogs</span>
-            <h1 class="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-[#11224E] leading-tight">
+            <h1 class="mt-4 text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-heading leading-tight">
                 Intelligence from our Search & Growth trenches
             </h1>
-            <p class="mt-4 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+            <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
                 Deep dives on technical SEO, growth experiments, and analytics frameworks we deploy for product-led brands shipping at speed.
             </p>
         </div>
@@ -101,14 +101,14 @@
         gap: 0.6rem;
         padding: 0.45rem 1.1rem;
         border-radius: 999px;
-        background: rgba(8,131,149,0.08);
-        color: #11224E;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--text-primary);
         font-size: 0.65rem;
         letter-spacing: 0.28em;
         text-transform: uppercase;
         font-weight: 600;
     }
-    /* Blog styles from welcome.blade.php */
+    /* Blog styles */
     .blog-filters {
         display: flex;
         flex-direction: row;
@@ -127,8 +127,8 @@
         gap: 0.45rem;
         padding: 0.35rem 0.85rem;
         border-radius: 999px;
-        background: rgba(8,131,149,0.08);
-        color: #11224E;
+        background: rgba(37, 99, 235, 0.08);
+        color: var(--text-primary);
         font-size: 0.62rem;
         letter-spacing: 0.26em;
         text-transform: uppercase;
@@ -138,8 +138,8 @@
     }
     .blog-filter:hover,
     .blog-filter--active {
-        background: #11224E;
-        color: #FFFDF6;
+        background: var(--brand-primary);
+        color: white;
     }
     .blog-lanes {
         display: grid;
@@ -163,12 +163,12 @@
         position: relative;
         border-radius: 2.3rem;
         overflow: hidden;
-        background: linear-gradient(120deg, rgba(8,131,149,0.9), rgba(55,183,195,0.55));
-        color: #FFFDF6;
+        background: linear-gradient(120deg, var(--brand-primary), var(--brand-soft));
+        color: white;
         padding: clamp(1.6rem, 5vw, 2.7rem);
         display: grid;
         gap: 1.1rem;
-        box-shadow: 0 26px 70px rgba(8,131,149,0.17);
+        box-shadow: 0 26px 70px rgba(37, 99, 235, 0.2);
     }
     .blog-hero::before {
         content: 'TECHBUDS';
@@ -178,7 +178,7 @@
         font-size: clamp(3.4rem, 16vw, 8.5rem);
         font-weight: 800;
         letter-spacing: -0.05em;
-        color: rgba(255,253,246,0.08);
+        color: rgba(255,255,255,0.08);
     }
     .blog-hero h3 {
         font-size: clamp(1.45rem, 2.3vw, 1.95rem);
@@ -186,7 +186,7 @@
         letter-spacing: -0.01em;
     }
     .blog-hero p {
-        color: rgba(255,253,246,0.78);
+        color: rgba(255,255,255,0.78);
         line-height: 1.6;
         max-width: 36rem;
     }
@@ -201,7 +201,7 @@
         gap: 0.3rem;
         padding: 0.4rem 0.9rem;
         border-radius: 999px;
-        background: rgba(255,253,246,0.12);
+        background: rgba(255,255,255,0.12);
         font-size: 0.64rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
@@ -209,17 +209,18 @@
     .blog-lane-card {
         position: relative;
         border-radius: 2rem;
-        background: rgba(255,255,255,0.9);
-        border: 1px solid rgba(8,131,149,0.1);
-        box-shadow: 0 16px 45px rgba(8,131,149,0.12);
+        background: var(--surface);
+        border: 1px solid var(--border-default);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        transition: transform .45s ease, box-shadow .45s ease;
+        transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
     }
     .blog-lane-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 24px 70px rgba(8,131,149,0.16);
+        box-shadow: 0 24px 70px rgba(37, 99, 235, 0.15);
+        border-color: var(--brand-primary);
     }
     .blog-lane-card__media {
         position: relative;
@@ -247,7 +248,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(135deg, rgba(8,131,149,0.08), rgba(55,183,195,0.02) 55%);
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(56, 189, 248, 0.02) 55%);
         opacity: 0;
         transition: opacity .45s ease;
         pointer-events: none;
@@ -262,8 +263,8 @@
         gap: 0.45rem;
         padding: 0.3rem 0.75rem;
         border-radius: 999px;
-        background: rgba(8,131,149,0.08);
-        color: #11224E;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--text-primary);
         font-size: 0.6rem;
         letter-spacing: 0.28em;
         text-transform: uppercase;
@@ -280,17 +281,17 @@
     .blog-title {
         font-size: 1.05rem;
         font-weight: 600;
-        color: #11224E;
+        color: var(--heading);
         line-height: 1.4;
         transition: color .3s ease;
         margin: 0;
     }
     .blog-lane-card:hover .blog-title,
     .blog-title-link:hover .blog-title {
-        color: #088395;
+        color: var(--brand-primary);
     }
     .blog-excerpt {
-        color: rgba(17,34,78,0.72);
+        color: var(--text-secondary);
         font-size: 0.9rem;
         line-height: 1.6;
     }
@@ -306,8 +307,8 @@
         gap: 0.3rem;
         padding: 0.35rem 0.75rem;
         border-radius: 999px;
-        background: rgba(8,131,149,0.06);
-        color: #11224E;
+        background: rgba(37, 99, 235, 0.06);
+        color: var(--text-primary);
         font-size: 0.6rem;
         letter-spacing: 0.24em;
         text-transform: uppercase;
@@ -319,14 +320,14 @@
         gap: 0.6rem;
         font-size: 0.78rem;
         font-weight: 600;
-        color: #11224E;
+        color: var(--heading);
         text-decoration: none;
         position: relative;
         z-index: 2;
         cursor: pointer;
     }
     .blog-action:hover {
-        color: #088395;
+        color: var(--brand-primary);
     }
     .blog-action svg {
         transition: transform .3s ease;
@@ -341,7 +342,7 @@
         padding: 0.3rem 0.7rem;
         border-radius: 999px;
         background: rgba(255,255,255,0.9);
-        color: #11224E;
+        color: var(--text-primary);
         font-size: 0.6rem;
         letter-spacing: 0.24em;
         text-transform: uppercase;
@@ -355,7 +356,7 @@
     }
     .custom-pagination .pagination-info {
         font-size: 0.875rem;
-        color: rgba(17,34,78,0.7);
+        color: var(--text-muted);
         font-weight: 500;
         text-align: center;
     }
@@ -371,10 +372,10 @@
         list-style: none;
         padding: 0.75rem 1rem;
         margin: 0;
-        background: rgba(255,255,255,0.95);
+        background: var(--surface);
         border-radius: 1rem;
-        box-shadow: 0 4px 16px rgba(8,131,149,0.1);
-        border: 1px solid rgba(8,131,149,0.1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-default);
     }
     .custom-pagination .pagination li {
         margin: 0;
@@ -395,23 +396,23 @@
         transition: all 0.3s ease;
         border: 1px solid transparent;
         background: transparent;
-        color: #11224E;
+        color: var(--text-primary);
     }
     .custom-pagination .pagination a:hover {
-        background: rgba(8,131,149,0.1);
-        color: #088395;
-        border-color: rgba(8,131,149,0.2);
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--brand-primary);
+        border-color: rgba(37, 99, 235, 0.2);
     }
     .custom-pagination .pagination .active span {
-        background: #11224E;
-        color: #FFFDF6;
-        border-color: #11224E;
-        box-shadow: 0 2px 8px rgba(17,34,78,0.25);
+        background: var(--brand-primary);
+        color: white;
+        border-color: var(--brand-primary);
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
     }
     .custom-pagination .pagination .disabled span {
         opacity: 0.35;
         cursor: not-allowed;
-        color: rgba(17,34,78,0.35);
+        color: var(--text-disabled);
     }
     .custom-pagination .pagination .disabled a {
         opacity: 0.35;
@@ -475,4 +476,3 @@
 </script>
 @endpush
 @endsection
-

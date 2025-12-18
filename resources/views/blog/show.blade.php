@@ -6,12 +6,12 @@
 @endphp
 
 @section('content')
-<article class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+<article class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
     <div class="max-w-4xl mx-auto">
         <!-- Header -->
         <header class="mb-8">
             <div class="mb-4">
-                <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#11224E] hover:text-[#088395] transition-colors">
+                <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-heading hover:text-brand-primary transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M15 19l-7-7 7-7"></path>
                     </svg>
@@ -19,15 +19,15 @@
                 </a>
             </div>
             <span class="blog-pill">{{ $blog->category }}</span>
-            <h1 class="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-[#11224E] leading-tight">
+            <h1 class="mt-4 text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-heading leading-tight">
                 {{ $blog->title }}
             </h1>
             @if($blog->excerpt)
-            <p class="mt-4 text-lg text-[#11224E]/80 leading-relaxed">
+            <p class="mt-4 text-lg text-text-secondary leading-relaxed">
                 {{ $blog->excerpt }}
             </p>
             @endif
-            <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-[#11224E]/70">
+            <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-text-muted">
                 <span>{{ $blog->published_date?->format('F d, Y') ?? 'Recent' }}</span>
                 <span>•</span>
                 <span>{{ $blog->reading_time ?? '5 min' }} read</span>
@@ -85,27 +85,27 @@
 
         @if($relatedServices)
         <!-- Related Services CTA -->
-        <section class="mt-16 pt-12 border-t border-[#11224E]/10">
+        <section class="mt-16 pt-12 border-t border-border-default">
             <div class="mb-6">
                 <span class="blog-pill">Related services</span>
-                <h2 class="mt-4 text-2xl md:text-3xl font-bold text-[#11224E]">
+                <h2 class="mt-4 text-2xl md:text-3xl font-heading font-semibold text-heading">
                     Need help implementing what you just read?
                 </h2>
-                <p class="mt-3 text-base md:text-lg text-[#11224E]/80 max-w-2xl">
+                <p class="mt-3 text-base md:text-lg text-text-secondary max-w-2xl">
                     Turn this strategy into real results with our implementation services.
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 @foreach($relatedServices as $service)
-                <a href="{{ route('services.show', ['slug' => $service['slug']]) }}" class="group block rounded-2xl border border-[#11224E]/12 bg-white/80 px-5 py-4 hover:border-[#088395]/40 hover:shadow-lg transition-all duration-300">
+                <a href="{{ route('services.show', ['slug' => $service['slug']]) }}" class="group block rounded-2xl border border-border-default bg-surface-2 px-5 py-4 hover:border-brand-primary hover:shadow-lg hover:shadow-brand-primary/20 transition-all duration-300">
                     <div class="flex flex-col gap-1.5">
-                        <span class="text-xs font-semibold tracking-[0.24em] uppercase text-[#11224E]/70">
+                        <span class="text-xs font-semibold tracking-[0.24em] uppercase text-text-muted">
                             Techbuds Service
                         </span>
-                        <p class="text-base md:text-lg font-semibold text-[#11224E] group-hover:text-[#088395]">
+                        <p class="text-base md:text-lg font-semibold text-heading group-hover:text-brand-primary">
                             {{ $service['label'] }}
                         </p>
-                        <span class="inline-flex items-center gap-1.5 mt-1 text-xs font-semibold text-[#088395]">
+                        <span class="inline-flex items-center gap-1.5 mt-1 text-xs font-semibold text-brand-primary">
                             View service details
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M13 5l7 7-7 7M5 12h15"></path>
@@ -120,8 +120,8 @@
 
         <!-- Related Articles -->
         @if($related->count() > 0)
-        <div class="mt-16 pt-12 border-t border-[#11224E]/10">
-            <h2 class="text-2xl font-bold text-[#11224E] mb-6">Related Articles</h2>
+        <div class="mt-16 pt-12 border-t border-border-default">
+            <h2 class="text-2xl font-heading font-semibold text-heading mb-6">Related Articles</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach($related as $relatedBlog)
                 <article class="blog-lane-card">
@@ -151,13 +151,13 @@
 @push('styles')
 <style>
     .blog-content {
-        color: rgba(17,34,78,0.85);
+        color: var(--text-secondary);
         line-height: 1.8;
     }
     .blog-content h2 {
         font-size: 1.75rem;
         font-weight: 700;
-        color: #11224E;
+        color: var(--heading);
         margin-top: 2.5rem;
         margin-bottom: 1rem;
         line-height: 1.3;
@@ -165,13 +165,13 @@
     .blog-content h3 {
         font-size: 1.4rem;
         font-weight: 600;
-        color: #11224E;
+        color: var(--heading);
         margin-top: 2rem;
         margin-bottom: 0.75rem;
     }
     .blog-content p {
         margin-bottom: 1.25rem;
-        color: rgba(17,34,78,0.78);
+        color: var(--text-secondary);
     }
     .blog-content ul, .blog-content ol {
         margin: 1.5rem 0;
@@ -179,25 +179,25 @@
     }
     .blog-content li {
         margin-bottom: 0.75rem;
-        color: rgba(17,34,78,0.75);
+        color: var(--text-secondary);
     }
     .blog-content strong {
-        color: #11224E;
+        color: var(--heading);
         font-weight: 600;
     }
     .blog-content code {
-        background: rgba(8,131,149,0.1);
+        background: rgba(37, 99, 235, 0.1);
         padding: 0.2rem 0.4rem;
         border-radius: 0.25rem;
         font-size: 0.9em;
-        color: #088395;
+        color: var(--brand-primary);
     }
     .blog-content blockquote {
-        border-left: 4px solid #088395;
+        border-left: 4px solid var(--brand-primary);
         padding-left: 1.5rem;
         margin: 2rem 0;
         font-style: italic;
-        color: rgba(17,34,78,0.7);
+        color: var(--text-muted);
     }
     .blog-pill {
         display: inline-flex;
@@ -205,8 +205,8 @@
         gap: 0.45rem;
         padding: 0.3rem 0.75rem;
         border-radius: 999px;
-        background: rgba(8,131,149,0.08);
-        color: #11224E;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--text-primary);
         font-size: 0.6rem;
         letter-spacing: 0.28em;
         text-transform: uppercase;
@@ -219,8 +219,8 @@
         gap: 0.3rem;
         padding: 0.35rem 0.75rem;
         border-radius: 999px;
-        background: rgba(8,131,149,0.06);
-        color: #11224E;
+        background: rgba(37, 99, 235, 0.06);
+        color: var(--text-primary);
         font-size: 0.6rem;
         letter-spacing: 0.24em;
         text-transform: uppercase;
@@ -228,17 +228,18 @@
     .blog-lane-card {
         position: relative;
         border-radius: 2rem;
-        background: rgba(255,255,255,0.9);
-        border: 1px solid rgba(8,131,149,0.1);
-        box-shadow: 0 16px 45px rgba(8,131,149,0.12);
+        background: var(--surface);
+        border: 1px solid var(--border-default);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        transition: transform .45s ease, box-shadow .45s ease;
+        transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
     }
     .blog-lane-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 24px 70px rgba(8,131,149,0.16);
+        box-shadow: 0 24px 70px rgba(37, 99, 235, 0.15);
+        border-color: var(--brand-primary);
     }
     .blog-lane-card__media {
         position: relative;
@@ -263,15 +264,15 @@
     .blog-title {
         font-size: 1.05rem;
         font-weight: 600;
-        color: #11224E;
+        color: var(--heading);
         line-height: 1.4;
         transition: color .3s ease;
     }
     .blog-lane-card:hover .blog-title {
-        color: #088395;
+        color: var(--brand-primary);
     }
     .blog-excerpt {
-        color: rgba(17,34,78,0.72);
+        color: var(--text-secondary);
         font-size: 0.9rem;
         line-height: 1.6;
     }
@@ -282,7 +283,7 @@
         gap: 0.6rem;
         font-size: 0.78rem;
         font-weight: 600;
-        color: #11224E;
+        color: var(--heading);
         text-decoration: none;
     }
     .blog-action svg {
@@ -298,7 +299,7 @@
         padding: 0.3rem 0.7rem;
         border-radius: 999px;
         background: rgba(255,255,255,0.9);
-        color: #11224E;
+        color: var(--text-primary);
         font-size: 0.6rem;
         letter-spacing: 0.24em;
         text-transform: uppercase;
@@ -306,4 +307,3 @@
 </style>
 @endpush
 @endsection
-

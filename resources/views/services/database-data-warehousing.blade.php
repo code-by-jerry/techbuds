@@ -12,8 +12,10 @@
         <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
 
         <!-- Alpine.js -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -24,7 +26,7 @@
         @endif
         <style>
             .text-clip {
-                background: linear-gradient(135deg, #088395 0%, #37B7C3 50%, #7E30E1 100%);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 50%, #7E30E1 100%);
                 background-size: 200% 200%;
                 background-position: 0% 50%;
                 -webkit-background-clip: text;
@@ -38,8 +40,8 @@
                 gap: 0.6rem;
                 padding: 0.45rem 1.1rem;
                 border-radius: 999px;
-                background: rgba(8,131,149,0.08);
-                color: #11224E;
+                background: rgba(37, 99, 235, 0.1);
+                color: var(--text-primary);
                 font-size: 0.65rem;
                 letter-spacing: 0.28em;
                 text-transform: uppercase;
@@ -51,34 +53,34 @@
                 width: 2.5rem;
                 height: 2.5rem;
                 border-radius: 1rem;
-                background: linear-gradient(135deg, #11224E 0%, #088395 100%);
-                color: #FFFDF6;
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                color: white;
                 align-items: center;
                 justify-content: center;
-                box-shadow: 0 15px 35px rgba(8,131,149,0.25);
+                box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
             }
 
             .service-card {
                 position: relative;
                 border-radius: 1.5rem;
                 overflow: hidden;
-                background: rgba(255,255,255,0.95);
-                border: 1px solid rgba(8,131,149,0.1);
-                box-shadow: 0 16px 45px rgba(8,131,149,0.12);
+                background: var(--surface);
+                border: 1px solid var(--border-default);
+                box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
                 transition: transform .45s ease, box-shadow .45s ease;
                 padding: 2rem;
             }
 
             .service-card:hover {
                 transform: translateY(-6px);
-                box-shadow: 0 24px 70px rgba(8,131,149,0.16);
+                box-shadow: 0 24px 70px rgba(37, 99, 235, 0.15);
             }
 
             .feature-item {
                 position: relative;
                 padding-left: 1.4rem;
                 font-size: 0.9rem;
-                color: rgba(8,131,149,0.78);
+                color: var(--text-secondary);
                 margin-bottom: 0.75rem;
             }
 
@@ -90,8 +92,8 @@
                 width: 0.5rem;
                 height: 0.5rem;
                 border-radius: 0.3rem;
-                background: linear-gradient(135deg, #11224E 0%, #088395 100%);
-                box-shadow: 0 6px 12px rgba(8,131,149,0.25);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
             }
 
             .process-step {
@@ -107,7 +109,7 @@
                 top: 0;
                 bottom: 0;
                 width: 2px;
-                background: linear-gradient(180deg, #088395 0%, rgba(8,131,149,0.2) 100%);
+                background: linear-gradient(180deg, var(--brand-primary) 0%, rgba(37, 99, 235, 0.2) 100%);
             }
 
             .process-step:last-child::before {
@@ -121,21 +123,21 @@
                 width: 1.5rem;
                 height: 1.5rem;
                 border-radius: 50%;
-                background: linear-gradient(135deg, #11224E 0%, #088395 100%);
-                color: #FFFDF6;
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                color: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-weight: 700;
                 font-size: 0.75rem;
-                box-shadow: 0 6px 12px rgba(8,131,149,0.25);
+                box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
             }
 
             .faq-item {
-                background: rgba(255,255,255,0.9);
+                background: var(--surface);
                 border-radius: 1rem;
                 padding: 1.5rem;
-                border: 1px solid rgba(8,131,149,0.1);
+                border: 1px solid var(--border-default);
                 margin-bottom: 1rem;
             }
 
@@ -149,39 +151,39 @@
             }
         </style>
     </head>
-<body class="bg-[#FFFDF6] text-gray-900 antialiased">
+<body class="bg-app-background text-text-primary font-sans antialiased">
     @include('components.navbar')
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div data-animate="fade-up">
                 <span class="service-pill">Database & Data Warehousing</span>
             </div>
-            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-[#11224E] leading-tight" data-animate="fade-up" data-delay="0.1">
+            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-heading leading-tight" data-animate="fade-up" data-delay="0.1">
                 Scalable, Secure & <span class="text-clip">High-Performance Data Systems</span> for Smarter Decisions
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-[#11224E]/80 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.2">
+            <p class="mt-6 text-lg md:text-xl text-heading/80 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.2">
                 Data is only valuable when it is <strong>structured, accessible, and reliable</strong>. At <strong>Techbuds</strong>, we design and implement database and data warehousing solutions that help businesses store, process, and analyze data efficiently — without performance bottlenecks or complexity.
             </p>
-            <p class="mt-4 text-base md:text-lg text-[#11224E]/70 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.3">
+            <p class="mt-4 text-base md:text-lg text-heading/70 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.3">
                 Our solutions are built for <strong>scalability, security, and long-term growth</strong>.
             </p>
         </div>
     </section>
 
     <!-- Why Database Architecture Matters Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Why <span class="text-clip">Database Architecture</span> Matters
                 </h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="service-card" data-animate="fade-up">
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-4">Poor data architecture leads to:</h3>
+                    <h3 class="text-xl font-semibold text-heading mb-4">Poor data architecture leads to:</h3>
                     <div class="space-y-2">
                         <div class="feature-item">Slow queries and performance issues</div>
                         <div class="feature-item">Data inconsistency</div>
@@ -191,14 +193,14 @@
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-4">Our data solutions ensure your data is:</h3>
+                    <h3 class="text-xl font-semibold text-heading mb-4">Our data solutions ensure your data is:</h3>
                     <div class="space-y-2">
                         <div class="feature-item">Organized and well-modeled</div>
                         <div class="feature-item">Optimized for performance</div>
                         <div class="feature-item">Scalable as your data grows</div>
                         <div class="feature-item">Analytics- and BI-ready</div>
                     </div>
-                    <p class="mt-4 text-sm text-[#11224E]/70 leading-relaxed">
+                    <p class="mt-4 text-sm text-heading/70 leading-relaxed">
                         We build data systems that are <strong>organized, optimized, and decision-ready</strong>.
                     </p>
                 </div>
@@ -207,13 +209,13 @@
     </section>
 
     <!-- Our Database & Data Warehousing Services Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Our <span class="text-clip">Database & Data Warehousing</span> Services
                 </h2>
-                <p class="mt-4 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+                <p class="mt-4 text-base md:text-lg text-heading/80 max-w-3xl mx-auto">
                     From schema design to BI dashboards — we build complete data foundations for your business.
                 </p>
             </div>
@@ -222,8 +224,8 @@
                 <!-- Database Design & Architecture -->
                 <div class="service-card" data-animate="fade-up">
                     <div class="service-icon text-2xl mb-4">🗄️</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-3">Database Design & Architecture</h3>
-                    <p class="text-sm text-[#11224E]/70 mb-3">Well-structured databases built for performance and reliability.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Database Design & Architecture</h3>
+                    <p class="text-sm text-heading/70 mb-3">Well-structured databases built for performance and reliability.</p>
                     <div class="space-y-2">
                         <div class="feature-item">Relational database design</div>
                         <div class="feature-item">Schema planning & normalization</div>
@@ -235,8 +237,8 @@
                 <!-- Database Optimization & Performance Tuning -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.1">
                     <div class="service-icon text-2xl mb-4">⚡</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-3">Database Optimization & Performance Tuning</h3>
-                    <p class="text-sm text-[#11224E]/70 mb-3">Improve speed, efficiency, and reliability.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Database Optimization & Performance Tuning</h3>
+                    <p class="text-sm text-heading/70 mb-3">Improve speed, efficiency, and reliability.</p>
                     <div class="space-y-2">
                         <div class="feature-item">Query optimization</div>
                         <div class="feature-item">Indexing strategies</div>
@@ -248,8 +250,8 @@
                 <!-- Data Warehousing Solutions -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.2">
                     <div class="service-icon text-2xl mb-4">🏢</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-3">Data Warehousing Solutions</h3>
-                    <p class="text-sm text-[#11224E]/70 mb-3">Centralized systems for analytics and reporting.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Data Warehousing Solutions</h3>
+                    <p class="text-sm text-heading/70 mb-3">Centralized systems for analytics and reporting.</p>
                     <div class="space-y-2">
                         <div class="feature-item">Data warehouse architecture</div>
                         <div class="feature-item">ETL pipeline setup</div>
@@ -261,8 +263,8 @@
                 <!-- Data Integration & ETL Automation -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.3">
                     <div class="service-icon text-2xl mb-4">🔄</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-3">Data Integration & ETL Automation</h3>
-                    <p class="text-sm text-[#11224E]/70 mb-3">Seamless data flow across systems.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Data Integration & ETL Automation</h3>
+                    <p class="text-sm text-heading/70 mb-3">Seamless data flow across systems.</p>
                     <div class="space-y-2">
                         <div class="feature-item">Data extraction from multiple sources</div>
                         <div class="feature-item">Automated data transformation</div>
@@ -274,8 +276,8 @@
                 <!-- Business Intelligence & Analytics -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.4">
                     <div class="service-icon text-2xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-3">Business Intelligence & Analytics</h3>
-                    <p class="text-sm text-[#11224E]/70 mb-3">Turn raw data into insights.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Business Intelligence & Analytics</h3>
+                    <p class="text-sm text-heading/70 mb-3">Turn raw data into insights.</p>
                     <div class="space-y-2">
                         <div class="feature-item">BI dashboard integration</div>
                         <div class="feature-item">Reporting solutions</div>
@@ -288,44 +290,44 @@
     </section>
 
     <!-- Technologies We Use Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Technologies We <span class="text-clip">Use</span>
                 </h2>
-                <p class="mt-4 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+                <p class="mt-4 text-base md:text-lg text-heading/80 max-w-3xl mx-auto">
                     We choose stable, proven data technologies that match your scale and needs.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="service-card text-center" data-animate="fade-up">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">Databases</h3>
-                    <p class="text-sm text-[#11224E]/70">MySQL, PostgreSQL, relational database engines</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Databases</h3>
+                    <p class="text-sm text-heading/70">MySQL, PostgreSQL, relational database engines</p>
                 </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">ETL & Pipelines</h3>
-                    <p class="text-sm text-[#11224E]/70">Automated data workflows, scheduled jobs, custom ETL logic</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">ETL & Pipelines</h3>
+                    <p class="text-sm text-heading/70">Automated data workflows, scheduled jobs, custom ETL logic</p>
                 </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.2">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">Data Warehousing</h3>
-                    <p class="text-sm text-[#11224E]/70">Scalable warehouse architectures tailored to your analytics needs</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Data Warehousing</h3>
+                    <p class="text-sm text-heading/70">Scalable warehouse architectures tailored to your analytics needs</p>
                 </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.3">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">BI & Analytics</h3>
-                    <p class="text-sm text-[#11224E]/70">Power BI, Looker, Tableau (integration and data modeling support)</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">BI & Analytics</h3>
+                    <p class="text-sm text-heading/70">Power BI, Looker, Tableau (integration and data modeling support)</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Data Engineering Process Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Our Process</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Our <span class="text-clip">Data Engineering</span> Process
                 </h2>
             </div>
@@ -333,37 +335,37 @@
             <div class="space-y-6">
                 <div class="process-step" data-animate="fade-up">
                     <div class="process-number">1</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-2">Data Assessment</h3>
-                    <p class="text-base text-[#11224E]/70 leading-relaxed">Understand data sources, usage patterns, and business goals.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Data Assessment</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Understand data sources, usage patterns, and business goals.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.1">
                     <div class="process-number">2</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-2">Architecture & Planning</h3>
-                    <p class="text-base text-[#11224E]/70 leading-relaxed">Design efficient schemas, warehouses, and data flows.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Architecture & Planning</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Design efficient schemas, warehouses, and data flows.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.2">
                     <div class="process-number">3</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-2">Implementation & Automation</h3>
-                    <p class="text-base text-[#11224E]/70 leading-relaxed">Build databases, ETL pipelines, and data warehouses.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Implementation & Automation</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Build databases, ETL pipelines, and data warehouses.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.3">
                     <div class="process-number">4</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-2">Monitoring & Optimization</h3>
-                    <p class="text-base text-[#11224E]/70 leading-relaxed">Continuous performance tuning, scaling, and quality checks.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Monitoring & Optimization</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Continuous performance tuning, scaling, and quality checks.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Techbuds Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Why Choose Us</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Why Choose <span class="text-clip">Techbuds for Data Solutions</span>?
                 </h2>
             </div>
@@ -371,72 +373,72 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="service-card" data-animate="fade-up">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">Scalable and secure data architecture</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">We design systems that can handle today’s needs and tomorrow’s growth.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Scalable and secure data architecture</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We design systems that can handle today’s needs and tomorrow’s growth.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="0.1">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">Optimized performance & reliability</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">We focus on query speed, uptime, and consistent data quality.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Optimized performance & reliability</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We focus on query speed, uptime, and consistent data quality.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="0.2">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">Clean, maintainable data systems</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">Structured schemas and pipelines that teams can work with confidently.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Clean, maintainable data systems</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">Structured schemas and pipelines that teams can work with confidently.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="0.3">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">Analytics-ready infrastructure</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">We prepare your data for BI, reporting, and advanced analytics.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Analytics-ready infrastructure</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We prepare your data for BI, reporting, and advanced analytics.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="0.4">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">Long-term support and optimization</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">We stay involved to help refine, scale, and improve your data stack.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Long-term support and optimization</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We stay involved to help refine, scale, and improve your data stack.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="0.5">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">Data you can trust and act on</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">We help businesses <strong>trust their data and act on it</strong>.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Data you can trust and act on</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We help businesses <strong>trust their data and act on it</strong>.</p>
                         </div>
                     </div>
                 </div>
@@ -445,10 +447,10 @@
     </section>
 
     <!-- Who This Service Is For Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Who This <span class="text-clip">Service Is For</span>
                 </h2>
             </div>
@@ -456,64 +458,64 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div class="text-center" data-animate="fade-up">
                     <div class="service-icon text-2xl mx-auto mb-3">📊</div>
-                    <h3 class="text-lg font-semibold text-[#11224E]">Data-driven businesses</h3>
+                    <h3 class="text-lg font-semibold text-heading">Data-driven businesses</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.1">
                     <div class="service-icon text-2xl mx-auto mb-3">🚀</div>
-                    <h3 class="text-lg font-semibold text-[#11224E]">SaaS & tech platforms</h3>
+                    <h3 class="text-lg font-semibold text-heading">SaaS & tech platforms</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.2">
                     <div class="service-icon text-2xl mx-auto mb-3">🛒</div>
-                    <h3 class="text-lg font-semibold text-[#11224E]">E-commerce companies</h3>
+                    <h3 class="text-lg font-semibold text-heading">E-commerce companies</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.3">
                     <div class="service-icon text-2xl mx-auto mb-3">🏢</div>
-                    <h3 class="text-lg font-semibold text-[#11224E]">Enterprises with growing data</h3>
+                    <h3 class="text-lg font-semibold text-heading">Enterprises with growing data</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.4">
                     <div class="service-icon text-2xl mx-auto mb-3">📈</div>
-                    <h3 class="text-lg font-semibold text-[#11224E]">Analytics & reporting teams</h3>
+                    <h3 class="text-lg font-semibold text-heading">Analytics & reporting teams</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQs Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">FAQs</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Frequently Asked <span class="text-clip">Questions</span>
                 </h2>
             </div>
 
             <div class="space-y-4">
                 <div class="faq-item" data-animate="fade-up">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">What is the difference between a database and a data warehouse?</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Databases handle daily operations and transactions, while data warehouses are optimized for analytics, reporting, and historical data analysis.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">What is the difference between a database and a data warehouse?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Databases handle daily operations and transactions, while data warehouses are optimized for analytics, reporting, and historical data analysis.</p>
                 </div>
 
                 <div class="faq-item" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">Can you optimize existing databases?</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Yes. We improve performance, scalability, and reliability through schema review, indexing, and query optimization.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Can you optimize existing databases?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Yes. We improve performance, scalability, and reliability through schema review, indexing, and query optimization.</p>
                 </div>
 
                 <div class="faq-item" data-animate="fade-up" data-delay="0.2">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">Do you provide BI dashboard integration?</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Yes. We support BI tools like Power BI, Looker, and Tableau, and ensure your data is modeled correctly for reporting.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Do you provide BI dashboard integration?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Yes. We support BI tools like Power BI, Looker, and Tableau, and ensure your data is modeled correctly for reporting.</p>
                 </div>
 
                 <div class="faq-item" data-animate="fade-up" data-delay="0.3">
-                    <h3 class="text-lg font-semibold text-[#11224E] mb-2">Is data security included?</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Absolutely. Security, access control, and data protection are core priorities in every data project.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Is data security included?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Absolutely. Security, access control, and data protection are core priorities in every data project.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#088395] to-[#37B7C3] text-white">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-brand-primary to-brand-hover text-white">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" data-animate="fade-up">
                 Ready to Build a <span class="text-white">Reliable Data Foundation</span>?
@@ -522,10 +524,10 @@
                 Let’s design a data system that supports growth, insights, and confident decision-making.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up" data-delay="0.2">
-                <a href="/#contact" class="bg-white text-[#11224E] px-8 py-3 rounded-lg font-semibold hover:bg-[#FFFDF6] transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
+                <a href="/#contact" class="bg-surface-1 text-heading px-8 py-3 rounded-lg font-semibold hover:bg-app-background transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
                     Get a Free Data Architecture Consultation
                 </a>
-                <a href="/#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all transform hover:scale-105">
+                <a href="/#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-surface-1/10 transition-all transform hover:scale-105">
                     Discuss Your Data Needs
                 </a>
             </div>

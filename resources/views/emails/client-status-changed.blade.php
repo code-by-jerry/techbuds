@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body { font-family: Arial, sans-serif; background: #f5f7fb; padding: 24px; color: #11224E; }
+        body { font-family: Arial, sans-serif; background: #f5f7fb; padding: 24px; color: var(--heading); }
         .card { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e5e7ef; }
-        .btn { display: inline-block; padding: 10px 18px; border-radius: 9999px; background: #088395; color: #ffffff; text-decoration: none; font-weight: 600; margin-top: 16px; }
+        .btn { display: inline-block; padding: 10px 18px; border-radius: 9999px; background: var(--brand-primary); color: #ffffff; text-decoration: none; font-weight: 600; margin-top: 16px; }
         .muted { color: #6b7280; font-size: 13px; margin-top: 24px; }
     </style>
 </head>
@@ -14,7 +14,7 @@
         <h2 style="margin-bottom: 8px;">Hi {{ $client->name }},</h2>
         <p>Your CRM status has been updated.</p>
 
-        <div style="margin: 24px 0; padding: 16px; border-left: 4px solid #37B7C3; background: #f0fbfd;">
+        <div style="margin: 24px 0; padding: 16px; border-left: 4px solid var(--brand-soft); background: #f0fbfd;">
             <p style="margin: 0;"><strong>Previous Status:</strong> {{ ucfirst(str_replace('_', ' ', $oldStatus)) }}</p>
             <p style="margin: 6px 0 0;"><strong>New Status:</strong> {{ ucfirst(str_replace('_', ' ', $newStatus)) }}</p>
         </div>

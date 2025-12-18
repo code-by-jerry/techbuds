@@ -1,8 +1,8 @@
 <div class="space-y-4">
     <!-- Header with Add Button -->
     <div class="flex items-center justify-between">
-        <h4 class="text-lg font-semibold text-[#11224E]">Communication Log</h4>
-        <a href="{{ route('admin.projects.project-updates.create', $project) }}" class="inline-flex items-center gap-2 rounded-lg bg-[#088395] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]">
+        <h4 class="text-lg font-semibold text-heading">Communication Log</h4>
+        <a href="{{ route('admin.projects.project-updates.create', $project) }}" class="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -14,19 +14,19 @@
     @if($project->projectUpdates->count() > 0)
     <div class="space-y-4">
         @foreach($project->projectUpdates as $update)
-        <div class="rounded-lg border border-[#088395]/10 bg-white p-4 {{ $update->is_important ? 'border-orange-300 bg-orange-50/30' : '' }}">
+        <div class="rounded-lg border border-border-default bg-surface-1 p-4 {{ $update->is_important ? 'border-orange-300 bg-warning/10/30' : '' }}">
             <div class="flex items-start justify-between">
                 <div class="flex-1">
                     <div class="flex items-center gap-3 mb-2">
                         @php
                             $typeColors = [
-                                'client_message' => 'bg-blue-50 text-blue-600',
-                                'internal_note' => 'bg-gray-50 text-gray-600',
-                                'change_request' => 'bg-orange-50 text-orange-600',
-                                'meeting_note' => 'bg-purple-50 text-purple-600',
-                                'decision' => 'bg-green-50 text-green-600',
+                                'client_message' => 'bg-brand-primary text-white',
+                                'internal_note' => 'bg-surface-2 text-text-secondary',
+                                'change_request' => 'bg-warning/10 text-warning',
+                                'meeting_note' => 'bg-brand-soft/10 text-brand-soft',
+                                'decision' => 'bg-green-500/10 text-success',
                             ];
-                            $typeColor = $typeColors[$update->type] ?? 'bg-gray-50 text-gray-600';
+                            $typeColor = $typeColors[$update->type] ?? 'bg-surface-2 text-text-secondary';
                         @endphp
                         <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {{ $typeColor }}">
                             {{ ucfirst(str_replace('_', ' ', $update->type)) }}
@@ -39,15 +39,15 @@
                             Important
                         </span>
                         @endif
-                        <span class="text-xs text-[#088395]/70">
+                        <span class="text-xs text-text-secondary">
                             {{ $update->createdBy->name }} • {{ $update->created_at->format('M d, Y h:i A') }}
                         </span>
                     </div>
-                    <p class="text-sm text-[#11224E] whitespace-pre-wrap">{{ $update->message }}</p>
+                    <p class="text-sm text-heading whitespace-pre-wrap">{{ $update->message }}</p>
                     @if($update->attachments && count($update->attachments) > 0)
                     <div class="mt-3 flex flex-wrap gap-2">
                         @foreach($update->attachments as $index => $attachment)
-                            <a href="{{ route('admin.project-updates.download-attachment', [$update, $index]) }}" class="inline-flex items-center gap-1 rounded-lg border border-[#088395]/20 bg-white px-3 py-1.5 text-xs text-[#088395] hover:bg-[#088395]/5 transition-colors">
+                            <a href="{{ route('admin.project-updates.download-attachment', [$update, $index]) }}" class="inline-flex items-center gap-1 rounded-lg border border-border-default bg-surface-1 px-3 py-1.5 text-xs text-brand-primary hover:bg-brand-primary/5 transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
                             </svg>
@@ -58,7 +58,7 @@
                     @endif
                 </div>
                 <div class="flex items-center gap-2 ml-4">
-                    <a href="{{ route('admin.project-updates.edit', $update) }}" class="text-[#088395] hover:text-[#37B7C3]" title="Edit">
+                    <a href="{{ route('admin.project-updates.edit', $update) }}" class="text-brand-primary hover:text-brand-soft" title="Edit">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                         </svg>
@@ -66,7 +66,7 @@
                     <form action="{{ route('admin.project-updates.destroy', $update) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this update?');">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-red-600 hover:text-red-700" title="Delete">
+                        <button type="submit" class="text-error hover:text-error/80" title="Delete">
                             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                             </svg>
@@ -78,14 +78,14 @@
         @endforeach
     </div>
     @else
-    <div class="rounded-lg border border-[#088395]/10 bg-white p-8 text-center">
-        <svg class="mx-auto h-12 w-12 text-[#088395]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="rounded-lg border border-border-default bg-surface-1 p-8 text-center">
+        <svg class="mx-auto h-12 w-12 text-brand-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
-        <h3 class="mt-4 text-sm font-medium text-[#11224E]">No communication updates yet</h3>
-        <p class="mt-2 text-sm text-[#088395]/70">Start tracking project communication by adding the first update.</p>
+        <h3 class="mt-4 text-sm font-medium text-heading">No communication updates yet</h3>
+        <p class="mt-2 text-sm text-text-secondary">Start tracking project communication by adding the first update.</p>
         <div class="mt-6">
-            <a href="{{ route('admin.projects.project-updates.create', $project) }}" class="inline-flex items-center gap-2 rounded-lg bg-[#088395] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]">
+            <a href="{{ route('admin.projects.project-updates.create', $project) }}" class="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>

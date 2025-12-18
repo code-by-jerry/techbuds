@@ -7,10 +7,10 @@
     <!-- Page Header -->
     <div class="flex items-center justify-between">
         <div>
-            <h1 class="text-2xl font-bold text-[#11224E]">Client Pipeline</h1>
-            <p class="text-sm text-[#088395]/70 mt-1">Drag and drop clients to update their status</p>
+            <h1 class="text-2xl font-bold text-heading">Client Pipeline</h1>
+            <p class="text-sm text-text-secondary mt-1">Drag and drop clients to update their status</p>
         </div>
-        <a href="{{ route('admin.dashboard') }}" class="inline-flex items-center gap-2 rounded-lg border border-[#088395]/20 px-4 py-2 text-sm font-medium text-[#088395] transition-colors hover:bg-[#088395]/5">
+        <a href="{{ route('admin.dashboard') }}" class="inline-flex items-center gap-2 rounded-lg border border-border-default px-4 py-2 text-sm font-medium text-brand-primary transition-colors hover:bg-brand-primary/5">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
@@ -41,10 +41,10 @@
                 $clients = $clientsByStatus->get($status, collect());
             @endphp
             <div class="flex-shrink-0 w-80">
-                <div class="rounded-lg border border-[#088395]/10 bg-[#088395]/5 p-4">
+                <div class="rounded-lg border border-border-default bg-surface-2 p-4">
                     <div class="mb-4 flex items-center justify-between">
-                        <h3 class="font-semibold text-[#11224E]">{{ $statusLabel }}</h3>
-                        <span class="rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-[#088395]">{{ $clients->count() }}</span>
+                        <h3 class="font-semibold text-heading">{{ $statusLabel }}</h3>
+                        <span class="rounded-full bg-brand-primary/20 px-2.5 py-0.5 text-xs font-medium text-brand-soft">{{ $clients->count() }}</span>
                     </div>
                     <div 
                         class="space-y-3 min-h-[200px]"
@@ -59,27 +59,27 @@
                             draggable="true"
                             @dragstart="handleDragStart($event, {{ $client->id }}, '{{ $client->status }}')"
                             @dragend="handleDragEnd($event)"
-                            class="cursor-move rounded-lg border border-[#088395]/10 bg-white p-4 shadow-sm hover:shadow-md transition-all hover:border-[#088395]/30"
+                            class="cursor-move rounded-lg border border-border-default bg-surface-1 p-4 shadow-sm hover:shadow-md transition-all hover:border-[var(--brand-primary)]/30"
                         >
                             <div class="flex items-start justify-between">
                                 <div class="flex-1">
-                                    <h4 class="font-medium text-[#11224E]">{{ $client->name }}</h4>
+                                    <h4 class="font-medium text-heading">{{ $client->name }}</h4>
                                     @if($client->company)
-                                    <p class="mt-1 text-xs text-[#088395]/70">{{ $client->company }}</p>
+                                    <p class="mt-1 text-xs text-text-secondary">{{ $client->company }}</p>
                                     @endif
                                     @if($client->email)
-                                    <p class="mt-1 text-xs text-[#088395]/70">{{ $client->email }}</p>
+                                    <p class="mt-1 text-xs text-text-secondary">{{ $client->email }}</p>
                                     @endif
                                     @if($client->projects->count() > 0)
                                     <div class="mt-2 flex items-center gap-2">
-                                        <svg class="w-4 h-4 text-[#088395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                                         </svg>
-                                        <span class="text-xs text-[#088395]/70">{{ $client->projects->count() }} project(s)</span>
+                                        <span class="text-xs text-text-secondary">{{ $client->projects->count() }} project(s)</span>
                                     </div>
                                     @endif
                                 </div>
-                                <a href="{{ route('admin.clients.show', $client) }}" class="ml-2 text-[#088395] hover:text-[#37B7C3]">
+                                <a href="{{ route('admin.clients.show', $client) }}" class="ml-2 text-brand-primary hover:text-brand-soft">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -89,7 +89,7 @@
                         </div>
                         @endforeach
                         @if($clients->count() === 0)
-                        <div class="flex items-center justify-center min-h-[100px] text-sm text-[#088395]/50">
+                        <div class="flex items-center justify-center min-h-[100px] text-sm text-text-muted">
                             No clients
                         </div>
                         @endif
@@ -118,7 +118,7 @@ function pipelineKanban() {
         handleDragEnd(event) {
             event.currentTarget.style.opacity = '1';
             if (this.dragOverColumn) {
-                this.dragOverColumn.classList.remove('border-[#088395]', 'bg-[#088395]/10');
+                this.dragOverColumn.classList.remove('border-[var(--brand-primary)]', 'bg-brand-primary/10');
             }
         },
 
@@ -132,10 +132,10 @@ function pipelineKanban() {
             const column = event.currentTarget.closest('[x-data*="status"]');
             if (column && column !== this.dragOverColumn) {
                 if (this.dragOverColumn) {
-                    this.dragOverColumn.classList.remove('border-[#088395]', 'bg-[#088395]/10');
+                    this.dragOverColumn.classList.remove('border-[var(--brand-primary)]', 'bg-brand-primary/10');
                 }
                 this.dragOverColumn = column;
-                column.classList.add('border-[#088395]', 'bg-[#088395]/10');
+                column.classList.add('border-[var(--brand-primary)]', 'bg-brand-primary/10');
             }
         },
 
@@ -143,7 +143,7 @@ function pipelineKanban() {
             // Only remove highlight if leaving the column entirely
             const column = event.currentTarget.closest('[x-data*="status"]');
             if (column && !column.contains(event.relatedTarget)) {
-                column.classList.remove('border-[#088395]', 'bg-[#088395]/10');
+                column.classList.remove('border-[var(--brand-primary)]', 'bg-brand-primary/10');
                 if (this.dragOverColumn === column) {
                     this.dragOverColumn = null;
                 }
@@ -154,7 +154,7 @@ function pipelineKanban() {
             event.preventDefault();
             
             if (this.dragOverColumn) {
-                this.dragOverColumn.classList.remove('border-[#088395]', 'bg-[#088395]/10');
+                this.dragOverColumn.classList.remove('border-[var(--brand-primary)]', 'bg-brand-primary/10');
             }
 
             if (!this.draggedClientId || this.draggedFromStatus === newStatus) {

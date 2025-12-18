@@ -9,16 +9,16 @@
         <!-- Metric Cards -->
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
             <!-- Total Blogs -->
-            <div class="rounded-2xl border border-[#088395]/10 bg-white p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#088395] to-[#37B7C3]">
+            <div class="rounded-2xl border border-border-default bg-surface-1 p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-primary to-brand-hover">
                     <svg class="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" fill="white"/>
                 </svg>
                 </div>
                 <div class="mt-5 flex items-end justify-between">
             <div>
-                        <span class="text-sm text-[#088395]/70">Total Blogs</span>
-                        <h4 class="mt-2 text-2xl font-bold text-[#11224E]">
+                        <span class="text-sm text-brand-primary/70">Total Blogs</span>
+                        <h4 class="mt-2 text-2xl font-bold text-heading">
                             {{ \App\Models\Blog::count() }}
                         </h4>
                 </div>
@@ -32,20 +32,20 @@
             </div>
 
             <!-- Total Contacts -->
-            <div class="rounded-2xl border border-[#088395]/10 bg-white p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#37B7C3] to-[#088395]">
+            <div class="rounded-2xl border border-border-default bg-surface-1 p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--brand-soft)] to-[var(--brand-primary)]">
                     <svg class="text-white" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" fill="white"/>
                     </svg>
                 </div>
                 <div class="mt-5 flex items-end justify-between">
             <div>
-                        <span class="text-sm text-[#088395]/70">Total Contacts</span>
-                        <h4 class="mt-2 text-2xl font-bold text-[#11224E]">
+                        <span class="text-sm text-brand-primary/70">Total Contacts</span>
+                        <h4 class="mt-2 text-2xl font-bold text-heading">
                             {{ \App\Models\Contact::count() }}
                         </h4>
                 </div>
-                    <span class="flex items-center gap-1 rounded-full bg-blue-50 py-0.5 pl-2 pr-2.5 text-sm font-medium text-[#088395]">
+                    <span class="flex items-center gap-1 rounded-full bg-blue-50 py-0.5 pl-2 pr-2.5 text-sm font-medium text-brand-primary">
                         {{ \App\Models\Contact::where('status', 'new')->count() }} New
                     </span>
         </div>
@@ -53,9 +53,9 @@
 </div>
 
         <!-- Recent Activity Card -->
-        <div class="overflow-hidden rounded-2xl border border-[#088395]/10 bg-white px-5 pt-5 sm:px-6 sm:pt-6 shadow-sm">
+        <div class="overflow-hidden rounded-2xl border border-border-default bg-surface-1 px-5 pt-5 sm:px-6 sm:pt-6 shadow-sm">
             <div class="flex items-center justify-between mb-6">
-                <h3 class="text-lg font-semibold text-[#11224E]">Recent Activity</h3>
+                <h3 class="text-lg font-semibold text-heading">Recent Activity</h3>
             </div>
             <div class="pb-6">
                 <div class="space-y-4">
@@ -65,22 +65,22 @@
                     @endphp
                     
                     @forelse($recentBlogs as $blog)
-                    <div class="flex items-center gap-4 pb-4 border-b border-[#088395]/10 last:border-0">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#088395] to-[#37B7C3]">
+                    <div class="flex items-center gap-4 pb-4 border-b border-border-default last:border-0">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-primary to-brand-hover">
                             <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
             </div>
             <div class="flex-1">
-                            <p class="text-sm font-medium text-[#11224E]">{{ Str::limit($blog->title, 50) }}</p>
-                            <p class="text-xs text-[#088395]/70">{{ $blog->created_at->diffForHumans() }}</p>
+                            <p class="text-sm font-medium text-heading">{{ Str::limit($blog->title, 50) }}</p>
+                            <p class="text-xs text-brand-primary/70">{{ $blog->created_at->diffForHumans() }}</p>
             </div>
-                        <span class="text-xs px-2 py-1 rounded-full {{ $blog->is_published ? 'bg-green-50 text-green-600' : 'bg-gray-100 text-gray-600' }}">
+                        <span class="text-xs px-2 py-1 rounded-full {{ $blog->is_published ? 'bg-green-50 text-green-600' : 'bg-surface-2 text-text-secondary' }}">
                             {{ $blog->is_published ? 'Published' : 'Draft' }}
                         </span>
         </div>
                     @empty
-                    <p class="text-sm text-[#088395]/70 text-center py-8">No recent activity</p>
+                    <p class="text-sm text-brand-primary/70 text-center py-8">No recent activity</p>
                     @endforelse
             </div>
             </div>
@@ -90,45 +90,45 @@
     <!-- Sidebar Stats -->
     <div class="col-span-12 xl:col-span-5">
         <!-- Quick Stats -->
-        <div class="rounded-2xl border border-[#088395]/10 bg-white p-5 md:p-6 mb-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-[#11224E] mb-4">Quick Stats</h3>
+        <div class="rounded-2xl border border-border-default bg-surface-1 p-5 md:p-6 mb-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-heading mb-4">Quick Stats</h3>
             <div class="space-y-4">
         <div class="flex items-center justify-between">
-                    <span class="text-sm text-[#088395]/70">Published Blogs</span>
-                    <span class="text-lg font-semibold text-[#11224E]">{{ \App\Models\Blog::where('is_published', true)->count() }}</span>
+                    <span class="text-sm text-brand-primary/70">Published Blogs</span>
+                    <span class="text-lg font-semibold text-heading">{{ \App\Models\Blog::where('is_published', true)->count() }}</span>
                 </div>
                 <div class="flex items-center justify-between">
-                    <span class="text-sm text-[#088395]/70">Draft Blogs</span>
-                    <span class="text-lg font-semibold text-[#11224E]">{{ \App\Models\Blog::where('is_published', false)->count() }}</span>
+                    <span class="text-sm text-brand-primary/70">Draft Blogs</span>
+                    <span class="text-lg font-semibold text-heading">{{ \App\Models\Blog::where('is_published', false)->count() }}</span>
                 </div>
                 <div class="flex items-center justify-between">
-                    <span class="text-sm text-[#088395]/70">New Contacts</span>
-                    <span class="text-lg font-semibold text-[#11224E]">{{ \App\Models\Contact::where('status', 'new')->count() }}</span>
+                    <span class="text-sm text-brand-primary/70">New Contacts</span>
+                    <span class="text-lg font-semibold text-heading">{{ \App\Models\Contact::where('status', 'new')->count() }}</span>
                 </div>
                 <div class="flex items-center justify-between">
-                    <span class="text-sm text-[#088395]/70">Total Contacts</span>
-                    <span class="text-lg font-semibold text-[#11224E]">{{ \App\Models\Contact::count() }}</span>
+                    <span class="text-sm text-brand-primary/70">Total Contacts</span>
+                    <span class="text-lg font-semibold text-heading">{{ \App\Models\Contact::count() }}</span>
         </div>
     </div>
 </div>
 
         <!-- Recent Contacts -->
-        <div class="rounded-2xl border border-[#088395]/10 bg-white p-5 md:p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-[#11224E] mb-4">Recent Contacts</h3>
+        <div class="rounded-2xl border border-border-default bg-surface-1 p-5 md:p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-heading mb-4">Recent Contacts</h3>
             <div class="space-y-3">
                 @forelse($recentContacts as $contact)
-                <div class="flex items-center gap-3 pb-3 border-b border-[#088395]/10 last:border-0">
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#37B7C3] to-[#088395]">
+                <div class="flex items-center gap-3 pb-3 border-b border-border-default last:border-0">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[var(--brand-soft)] to-[var(--brand-primary)]">
                         <span class="text-white font-semibold text-sm">{{ strtoupper(substr($contact->name, 0, 1)) }}</span>
             </div>
             <div class="flex-1">
-                        <p class="text-sm font-medium text-[#11224E]">{{ $contact->name }}</p>
-                        <p class="text-xs text-[#088395]/70">{{ $contact->email }}</p>
+                        <p class="text-sm font-medium text-heading">{{ $contact->name }}</p>
+                        <p class="text-xs text-brand-primary/70">{{ $contact->email }}</p>
             </div>
-                    <span class="text-xs text-[#088395]/70">{{ $contact->created_at->diffForHumans() }}</span>
+                    <span class="text-xs text-brand-primary/70">{{ $contact->created_at->diffForHumans() }}</span>
         </div>
                 @empty
-                <p class="text-sm text-[#088395]/70 text-center py-4">No recent contacts</p>
+                <p class="text-sm text-brand-primary/70 text-center py-4">No recent contacts</p>
                 @endforelse
             </div>
         </div>

@@ -8,14 +8,14 @@
     <div class="flex items-center justify-between">
         <div>
             <div class="flex items-center gap-3">
-                <a href="{{ route('admin.projects.show', $project) }}" class="text-[#088395] hover:text-[#37B7C3] transition-colors">
+                <a href="{{ route('admin.projects.show', $project) }}" class="text-brand-primary hover:text-[var(--brand-soft)] transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                 </a>
-                <h2 class="text-2xl font-bold text-[#11224E]">Upload Document</h2>
+                <h2 class="text-2xl font-bold text-heading">Upload Document</h2>
             </div>
-            <p class="text-sm text-[#088395]/70 mt-1">Upload a document for {{ $project->title }}</p>
+            <p class="text-sm text-brand-primary/70 mt-1">Upload a document for {{ $project->title }}</p>
         </div>
     </div>
 
@@ -23,19 +23,19 @@
     <form action="{{ route('admin.projects.documents.store', $project) }}" method="POST" class="space-y-6" enctype="multipart/form-data">
         @csrf
 
-        <div class="rounded-2xl border border-[#088395]/10 bg-white p-6 shadow-sm">
-            <h3 class="mb-4 text-lg font-semibold text-[#11224E]">Document Information</h3>
+        <div class="rounded-2xl border border-border-default bg-surface-1 p-6 shadow-sm">
+            <h3 class="mb-4 text-lg font-semibold text-heading">Document Information</h3>
             <div class="space-y-4">
                 <!-- Name -->
                 <div>
-                    <label for="name" class="mb-1 block text-sm font-medium text-[#11224E]">Document Name <span class="text-red-500">*</span></label>
+                    <label for="name" class="mb-1 block text-sm font-medium text-heading">Document Name <span class="text-red-500">*</span></label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         value="{{ old('name') }}"
                         required
-                        class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                        class="w-full rounded-lg border border-[var(--brand-primary)]/15 px-3 py-2 text-sm text-heading focus:border-[var(--brand-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20"
                         placeholder="e.g., Project Proposal"
                     />
                     @error('name')
@@ -45,12 +45,12 @@
 
                 <!-- Category -->
                 <div>
-                    <label for="category" class="mb-1 block text-sm font-medium text-[#11224E]">Category <span class="text-red-500">*</span></label>
+                    <label for="category" class="mb-1 block text-sm font-medium text-heading">Category <span class="text-red-500">*</span></label>
                     <select
                         id="category"
                         name="category"
                         required
-                        class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                        class="w-full rounded-lg border border-[var(--brand-primary)]/15 px-3 py-2 text-sm text-heading focus:border-[var(--brand-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20"
                     >
                         <option value="other" {{ old('category', 'other') === 'other' ? 'selected' : '' }}>Other</option>
                         <option value="nda" {{ old('category') === 'nda' ? 'selected' : '' }}>NDA</option>
@@ -68,12 +68,12 @@
 
                 <!-- Description -->
                 <div>
-                    <label for="description" class="mb-1 block text-sm font-medium text-[#11224E]">Description</label>
+                    <label for="description" class="mb-1 block text-sm font-medium text-heading">Description</label>
                     <textarea
                         id="description"
                         name="description"
                         rows="3"
-                        class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                        class="w-full rounded-lg border border-[var(--brand-primary)]/15 px-3 py-2 text-sm text-heading focus:border-[var(--brand-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20"
                         placeholder="Optional description of the document..."
                     >{{ old('description') }}</textarea>
                     @error('description')
@@ -83,16 +83,16 @@
 
                 <!-- File Upload -->
                 <div>
-                    <label for="file" class="mb-1 block text-sm font-medium text-[#11224E]">File <span class="text-red-500">*</span></label>
+                    <label for="file" class="mb-1 block text-sm font-medium text-heading">File <span class="text-red-500">*</span></label>
                     <input
                         type="file"
                         id="file"
                         name="file"
                         required
                         accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.gif"
-                        class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                        class="w-full rounded-lg border border-[var(--brand-primary)]/15 px-3 py-2 text-sm text-heading focus:border-[var(--brand-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20"
                     />
-                    <p class="mt-1 text-xs text-[#088395]/70">Maximum file size: 10MB. Supported formats: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG, GIF</p>
+                    <p class="mt-1 text-xs text-brand-primary/70">Maximum file size: 10MB. Supported formats: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG, GIF</p>
                     @error('file')
                     <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
@@ -102,10 +102,10 @@
 
         <!-- Form Actions -->
         <div class="flex items-center justify-end gap-3">
-            <a href="{{ route('admin.projects.show', $project) }}" class="rounded-lg border border-[#088395]/20 px-4 py-2 text-sm font-medium text-[#088395] transition-colors hover:bg-[#088395]/5">
+            <a href="{{ route('admin.projects.show', $project) }}" class="rounded-lg border border-border-default px-4 py-2 text-sm font-medium text-brand-primary transition-colors hover:bg-brand-primary/5">
                 Cancel
             </a>
-            <button type="submit" class="rounded-lg bg-[#088395] px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]">
+            <button type="submit" class="rounded-lg bg-brand-primary px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-soft)]">
                 Upload Document
             </button>
         </div>

@@ -10,15 +10,23 @@
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
         <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
         <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+        
+        <!-- Fonts: Inter (Body) + Clash Display (Headings) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+        
+        <!-- Alpine.js -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        
+        <!-- Vite Assets -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
         @stack('styles')
     </head>
-    <body class="bg-[#FFFFFF] text-gray-900 antialiased">
+    <body class="bg-app-background text-text-primary antialiased font-sans">
         @include('components.navbar')
         <main class="pt-20">
             @yield('content')

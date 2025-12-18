@@ -63,10 +63,10 @@
         <!-- ===== Preloader Start ===== -->
         <div
             x-show="!loaded"
-            class="fixed inset-0 z-9999 flex items-center justify-center bg-white dark:bg-gray-900"
+            class="fixed inset-0 z-9999 flex items-center justify-center bg-surface-1 dark:bg-gray-900"
         >
             <div
-                class="h-16 w-16 animate-spin rounded-full border-4 border-gray-200 border-t-primary dark:border-gray-800 dark:border-t-secondary"
+                class="h-16 w-16 animate-spin rounded-full border-4 border-border-default border-t-primary dark:border-gray-800 dark:border-t-secondary"
             ></div>
         </div>
         <!-- ===== Preloader End ===== -->
@@ -77,7 +77,7 @@
             <aside
                 x-cloak
                 :class="sidebarToggle ? 'translate-x-0 lg:w-[90px]' : '-translate-x-full'"
-                class="sidebar fixed left-0 top-0 z-9999 flex h-screen w-[290px] flex-col overflow-y-hidden border-r border-gray-200 bg-white px-5 dark:border-gray-800 dark:bg-black lg:static lg:translate-x-0 transition-safe"
+                class="sidebar fixed left-0 top-0 z-9999 flex h-screen w-[290px] flex-col overflow-y-hidden border-r border-border-default bg-surface-1 px-5 dark:border-gray-800 dark:bg-black lg:static lg:translate-x-0 transition-safe"
             >
                 <!-- SIDEBAR HEADER -->
                 <div
@@ -112,7 +112,7 @@
                         <!-- Menu Group -->
                         <div>
                             <h3
-                                class="mb-4 text-xs uppercase leading-[20px] text-gray-400"
+                                class="mb-4 text-xs uppercase leading-[20px] text-text-muted"
                             >
                                 <span
                                     class="menu-group-title"
@@ -247,14 +247,14 @@
                 <!-- Sidebar Footer -->
                 <div
                     :class="sidebarToggle ? 'lg:hidden' : ''"
-                    class="mb-6 rounded-lg bg-gray-50 p-4 text-center dark:bg-white/[0.03]"
+                    class="mb-6 rounded-lg bg-surface-2 p-4 text-center dark:bg-surface-1/[0.03]"
                 >
                     <h4
-                        class="mb-2 text-sm font-semibold text-gray-900 dark:text-white"
+                        class="mb-2 text-sm font-semibold text-heading dark:text-white"
                     >
                         Techbuds Admin
                     </h4>
-                    <p class="mb-3 text-xs text-gray-600 dark:text-gray-400">
+                    <p class="mb-3 text-xs text-text-secondary dark:text-text-muted">
                         Secure admin dashboard for Techbuds
                     </p>
                 </div>
@@ -278,19 +278,19 @@
                 <header
                     x-data="{ menuToggle: false, notifying: true, dropdownOpen: false }"
                     @click.outside="dropdownOpen = false"
-                    class="sticky top-0 z-99999 flex w-full border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900 transition-safe"
+                    class="sticky top-0 z-99999 flex w-full border-b border-border-default bg-surface-1 dark:border-gray-800 dark:bg-gray-900 transition-safe"
                 >
                     <div
                         class="flex grow flex-col items-center justify-between lg:flex-row lg:px-6"
                     >
                         <div
-                            class="flex w-full items-center justify-between gap-2 border-b border-gray-200 px-4 py-3 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4 dark:border-gray-800"
+                            class="flex w-full items-center justify-between gap-2 border-b border-border-default px-4 py-3 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4 dark:border-gray-800"
                         >
                             <!-- Hamburger Toggle BTN -->
                             <button
                                 @click.stop="sidebarToggle = !sidebarToggle"
-                                class="z-99999 flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 text-gray-500 lg:h-11 lg:w-11 dark:border-gray-800 dark:text-gray-400 transition-safe"
-                                :class="sidebarToggle ? 'lg:bg-transparent dark:lg:bg-transparent bg-gray-100 dark:bg-gray-800' : ''"
+                                class="z-99999 flex h-10 w-10 items-center justify-center rounded-lg border border-border-default text-text-muted lg:h-11 lg:w-11 dark:border-gray-800 dark:text-text-muted transition-safe"
+                                :class="sidebarToggle ? 'lg:bg-transparent dark:lg:bg-transparent bg-surface-2 dark:bg-gray-800' : ''"
                             >
                                 <svg
                                     class="hidden fill-current lg:block"
@@ -343,7 +343,7 @@
                                         <input
                                             type="text"
                                             placeholder="Search..."
-                                            class="h-11 w-full rounded-lg border border-gray-200 bg-white py-2.5 pr-4 pl-12 text-sm text-gray-800 placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-3 focus:ring-secondary/10 dark:border-gray-800 dark:bg-gray-900 dark:text-white dark:placeholder:text-gray-500"
+                                            class="h-11 w-full rounded-lg border border-border-default bg-surface-1 py-2.5 pr-4 pl-12 text-sm text-heading placeholder:text-text-muted focus:border-secondary focus:outline-none focus:ring-3 focus:ring-secondary/10 dark:border-gray-800 dark:bg-gray-900 dark:text-white dark:placeholder:text-text-muted"
                                         />
                                     </div>
                                 </form>
@@ -357,7 +357,7 @@
                             <!-- Dark Mode Toggler -->
                             <button
                                 @click.prevent="darkMode = !darkMode"
-                                class="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-safe hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800"
+                                class="flex h-11 w-11 items-center justify-center rounded-full border border-border-default bg-surface-1 text-text-muted transition-safe hover:bg-surface-2 dark:border-gray-800 dark:bg-gray-900 dark:text-text-muted dark:hover:bg-gray-800"
                             >
                                 <svg
                                     class="hidden dark:block"
@@ -393,7 +393,7 @@
                             <div class="relative">
                                 <button
                                     @click.prevent="dropdownOpen = !dropdownOpen"
-                                    class="flex items-center gap-2 text-gray-700 dark:text-gray-400 transition-safe"
+                                    class="flex items-center gap-2 text-text-primary dark:text-text-muted transition-safe"
                                 >
                                     <span
                                         class="h-9 w-9 overflow-hidden rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-sm font-bold"
@@ -427,17 +427,17 @@
                                 <div
                                     x-show="dropdownOpen"
                                     x-cloak
-                                    class="shadow-theme-lg absolute right-0 mt-3 w-60 rounded-lg border border-gray-200 bg-white p-3 dark:border-gray-800 dark:bg-gray-900"
+                                    class="shadow-theme-lg absolute right-0 mt-3 w-60 rounded-lg border border-border-default bg-surface-1 p-3 dark:border-gray-800 dark:bg-gray-900"
                                 >
                                     <div
-                                        class="mb-3 border-b border-gray-200 pb-3 dark:border-gray-800"
+                                        class="mb-3 border-b border-border-default pb-3 dark:border-gray-800"
                                     >
                                         <span
-                                            class="block text-sm font-medium text-gray-900 dark:text-white"
+                                            class="block text-sm font-medium text-heading dark:text-white"
                                             >{{ Auth::guard('admin')->user()?->name }}</span
                                         >
                                         <span
-                                            class="block text-xs text-gray-500 dark:text-gray-400 mt-0.5"
+                                            class="block text-xs text-text-muted dark:text-text-muted mt-0.5"
                                             >{{ Auth::guard('admin')->user()?->email }}</span
                                         >
                                     </div>
@@ -450,7 +450,7 @@
                                         @csrf
                                         <button
                                             type="submit"
-                                            class="w-full px-3 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/[0.03] transition-safe text-left"
+                                            class="w-full px-3 py-2 text-sm font-medium text-text-primary rounded-lg hover:bg-surface-2 dark:text-text-muted dark:hover:bg-surface-1/[0.03] transition-safe text-left"
                                         >
                                             Sign out
                                         </button>

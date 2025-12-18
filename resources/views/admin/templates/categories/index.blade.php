@@ -6,10 +6,10 @@
 <div class="space-y-6">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-            <h2 class="text-2xl font-bold text-[#11224E]">Template Categories</h2>
-            <p class="text-sm text-[#088395]/70 mt-1">Organise reusable assets by category.</p>
+            <h2 class="text-2xl font-bold text-heading">Template Categories</h2>
+            <p class="text-sm text-brand-primary/70 mt-1">Organise reusable assets by category.</p>
         </div>
-        <a href="{{ route('admin.template-categories.create') }}" class="inline-flex items-center gap-2 rounded-lg bg-[#088395] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#37B7C3] transition-colors">
+        <a href="{{ route('admin.template-categories.create') }}" class="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-[var(--brand-soft)] transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -33,30 +33,30 @@
         </div>
     @endif
 
-    <div class="rounded-xl border border-[#088395]/20 bg-white shadow-sm overflow-hidden">
+    <div class="rounded-xl border border-border-default bg-surface-1 shadow-sm overflow-hidden">
         <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-[#088395]/15">
-                <thead class="bg-[#088395]/5">
+            <table class="min-w-full divide-y divide-[var(--brand-primary)]/15">
+                <thead class="bg-brand-primary/5">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-[#088395]">Name</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-[#088395]">Description</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-[#088395]">Status</th>
-                        <th class="px-6 py-3 text-right text-xs font-semibold uppercase tracking-wider text-[#088395]">Actions</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-brand-primary">Name</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-brand-primary">Description</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-brand-primary">Status</th>
+                        <th class="px-6 py-3 text-right text-xs font-semibold uppercase tracking-wider text-brand-primary">Actions</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-[#088395]/10">
+                <tbody class="divide-y divide-[var(--brand-primary)]/10">
                     @forelse($categories as $category)
                         <tr>
-                            <td class="px-6 py-4 text-sm font-medium text-[#11224E]">{{ $category->name }}</td>
-                            <td class="px-6 py-4 text-sm text-[#088395]/70">{{ Str::limit($category->description, 80) }}</td>
+                            <td class="px-6 py-4 text-sm font-medium text-heading">{{ $category->name }}</td>
+                            <td class="px-6 py-4 text-sm text-brand-primary/70">{{ Str::limit($category->description, 80) }}</td>
                             <td class="px-6 py-4">
-                                <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full {{ $category->is_active ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-600' }}">
+                                <span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full {{ $category->is_active ? 'bg-green-50 text-green-700' : 'bg-surface-2 text-text-secondary' }}">
                                     {{ $category->is_active ? 'Active' : 'Inactive' }}
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="inline-flex items-center gap-2">
-                                    <a href="{{ route('admin.template-categories.edit', $category) }}" class="p-2 rounded-lg text-[#088395] hover:bg-[#088395]/10" title="Edit">
+                                    <a href="{{ route('admin.template-categories.edit', $category) }}" class="p-2 rounded-lg text-brand-primary hover:bg-brand-primary/10" title="Edit">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
@@ -75,7 +75,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="px-6 py-8 text-center text-sm text-[#088395]/70">
+                            <td colspan="4" class="px-6 py-8 text-center text-sm text-brand-primary/70">
                                 No categories found. Create your first category.
                             </td>
                         </tr>
@@ -83,7 +83,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="px-6 py-4 border-t border-[#088395]/20">
+        <div class="px-6 py-4 border-t border-border-default">
             {{ $categories->links() }}
         </div>
     </div>

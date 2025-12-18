@@ -11,9 +11,11 @@
         <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
         <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+        <!-- Fonts: Inter (Body) + Clash Display (Headings) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
 
         <!-- Alpine.js -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -23,9 +25,8 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
         <style>
-            /* Reuse styles from welcome.blade.php */
             .text-clip {
-                background: linear-gradient(135deg, #088395 0%, #37B7C3 50%, #7E30E1 100%);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 50%, #7E30E1 100%);
                 background-size: 200% 200%;
                 background-position: 0% 50%;
                 -webkit-background-clip: text;
@@ -39,8 +40,8 @@
                 gap: 0.6rem;
                 padding: 0.45rem 1.1rem;
                 border-radius: 999px;
-                background: rgba(8,131,149,0.08);
-                color: #11224E;
+                background: rgba(37, 99, 235, 0.1);
+                color: var(--text-primary);
                 font-size: 0.65rem;
                 letter-spacing: 0.28em;
                 text-transform: uppercase;
@@ -52,21 +53,21 @@
                 width: 2.5rem;
                 height: 2.5rem;
                 border-radius: 1rem;
-                background: linear-gradient(135deg, #11224E 0%, #088395 100%);
-                color: #FFFDF6;
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                color: white;
                 align-items: center;
                 justify-content: center;
-                box-shadow: 0 15px 35px rgba(8,131,149,0.25);
+                box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
             }
 
             .service-card {
                 position: relative;
                 border-radius: 1.5rem;
                 overflow: hidden;
-                background: rgba(255,255,255,0.95);
-                border: 1px solid rgba(8,131,149,0.1);
-                box-shadow: 0 16px 45px rgba(8,131,149,0.12);
-                transition: transform .45s ease, box-shadow .45s ease;
+                background: var(--surface);
+                border: 1px solid var(--border-default);
+                box-shadow: 0 16px 45px rgba(0, 0, 0, 0.1);
+                transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
                 padding: 2rem;
                 display: flex;
                 flex-direction: column;
@@ -77,36 +78,37 @@
 
             .service-card:hover {
                 transform: translateY(-6px);
-                box-shadow: 0 24px 70px rgba(8,131,149,0.16);
+                box-shadow: 0 24px 70px rgba(37, 99, 235, 0.15);
+                border-color: var(--brand-primary);
             }
 
             .service-card-icon {
                 width: 3.5rem;
                 height: 3.5rem;
                 border-radius: 1.2rem;
-                background: linear-gradient(135deg, #088395 0%, #37B7C3 100%);
-                color: #FFFDF6;
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                color: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 1.75rem;
-                box-shadow: 0 15px 35px rgba(8,131,149,0.25);
+                box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
             }
 
             .service-panel {
                 position: relative;
                 border-radius: 2rem;
                 overflow: hidden;
-                background: linear-gradient(135deg, rgba(255,253,246,0.9) 0%, rgba(255,253,246,0.62) 100%);
-                border: 1px solid rgba(8,131,149,0.1);
-                box-shadow: 0 22px 60px rgba(8,131,149,0.07);
+                background: var(--subtle-surface);
+                border: 1px solid var(--border-default);
+                box-shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
             }
 
             .service-panel::before {
                 content: '';
                 position: absolute;
                 inset: 0;
-                background: radial-gradient(circle at top left, rgba(8,131,149,0.07), transparent 55%);
+                background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.05), transparent 55%);
                 mix-blend-mode: multiply;
                 pointer-events: none;
             }
@@ -121,7 +123,7 @@
                 content: '';
                 position: absolute;
                 inset: 0;
-                background: linear-gradient(180deg, rgba(8,131,149,0.55) 0%, rgba(55,183,195,0.1) 75%);
+                background: linear-gradient(180deg, rgba(37, 99, 235, 0.45) 0%, rgba(56, 189, 248, 0.1) 75%);
                 opacity: 0.55;
             }
 
@@ -141,7 +143,7 @@
                 position: relative;
                 padding-left: 1.4rem;
                 font-size: 0.9rem;
-                color: rgba(8,131,149,0.78);
+                color: var(--text-secondary);
             }
 
             .service-highlight::before {
@@ -152,22 +154,23 @@
                 width: 0.5rem;
                 height: 0.5rem;
                 border-radius: 0.3rem;
-                background: linear-gradient(135deg, #11224E 0%, #088395 100%);
-                box-shadow: 0 6px 12px rgba(8,131,149,0.25);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
             }
 
             .why-choose-card {
-                background: rgba(255,255,255,0.9);
+                background: var(--surface);
                 border-radius: 1.5rem;
                 padding: 2rem;
-                border: 1px solid rgba(8,131,149,0.1);
-                box-shadow: 0 16px 45px rgba(8,131,149,0.12);
-                transition: transform .3s ease, box-shadow .3s ease;
+                border: 1px solid var(--border-default);
+                box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+                transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
             }
 
             .why-choose-card:hover {
                 transform: translateY(-4px);
-                box-shadow: 0 20px 55px rgba(8,131,149,0.16);
+                box-shadow: 0 20px 55px rgba(37, 99, 235, 0.12);
+                border-color: var(--brand-primary);
             }
 
             .process-step {
@@ -183,7 +186,7 @@
                 top: 0;
                 bottom: 0;
                 width: 2px;
-                background: linear-gradient(180deg, #088395 0%, rgba(8,131,149,0.2) 100%);
+                background: linear-gradient(180deg, var(--brand-primary) 0%, rgba(37, 99, 235, 0.2) 100%);
             }
 
             .process-step:last-child::before {
@@ -197,14 +200,14 @@
                 width: 1.5rem;
                 height: 1.5rem;
                 border-radius: 50%;
-                background: linear-gradient(135deg, #11224E 0%, #088395 100%);
-                color: #FFFDF6;
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                color: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-weight: 700;
                 font-size: 0.75rem;
-                box-shadow: 0 6px 12px rgba(8,131,149,0.25);
+                box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
             }
 
             @media (max-width: 768px) {
@@ -217,32 +220,32 @@
             }
         </style>
     </head>
-<body class="bg-[#FFFDF6] text-gray-900 antialiased">
+<body class="bg-app-background text-text-primary font-sans antialiased">
     @include('components.navbar')
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto text-center">
             <div data-animate="fade-up">
                 <span class="service-pill">Our Services</span>
             </div>
-            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-[#11224E] leading-tight" data-animate="fade-up" data-delay="0.1">
+            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-heading leading-tight" data-animate="fade-up" data-delay="0.1">
                 Empowering businesses with <span class="text-clip">end-to-end digital solutions</span>
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-[#11224E]/80 max-w-3xl mx-auto leading-relaxed" data-animate="fade-up" data-delay="0.2">
-                At Techbuds, we design, build, optimize, and scale digital products that help brands grow faster, operate smarter, and stay future-ready. Whether you need a website, mobile app, SEO, DevOps, branding, or custom IT solutions — we deliver <strong>clean, reliable, and high-impact results</strong>.
+            <p class="mt-6 text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed" data-animate="fade-up" data-delay="0.2">
+                At Techbuds, we design, build, optimize, and scale digital products that help brands grow faster, operate smarter, and stay future-ready. Whether you need a website, mobile app, SEO, DevOps, branding, or custom IT solutions — we deliver <strong class="text-text-primary">clean, reliable, and high-impact results</strong>.
             </p>
         </div>
     </section>
 
     <!-- Service Cards Grid -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     What We <span class="text-clip">Offer</span>
                 </h2>
-                <p class="mt-4 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+                <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
                     Comprehensive digital solutions tailored to your business needs
                 </p>
             </div>
@@ -251,68 +254,68 @@
                 <!-- Web Development -->
                 <a href="{{ route('services.show', 'web-development') }}" class="service-card cursor-pointer" data-animate="fade-up">
                     <div class="service-card-icon">🌐</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">Web Development</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Modern, fast, and scalable websites built for performance, SEO, and user experience.</p>
+                    <h3 class="text-xl font-semibold text-heading">Web Development</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Modern, fast, and scalable websites built for performance, SEO, and user experience.</p>
                 </a>
 
                 <!-- Mobile App Development -->
                 <a href="{{ route('services.show', 'mobile-app-development') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.1">
                     <div class="service-card-icon">📱</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">Mobile App Development</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Intuitive Android & iOS applications designed to engage users and boost retention.</p>
+                    <h3 class="text-xl font-semibold text-heading">Mobile App Development</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Intuitive Android & iOS applications designed to engage users and boost retention.</p>
                 </a>
 
                 <!-- SEO & Digital Marketing -->
                 <a href="{{ route('services.show', 'seo-digital-marketing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.2">
                     <div class="service-card-icon">🔍</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">SEO & Digital Marketing</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Rank higher, grow faster, and generate quality leads with advanced SEO & data-driven marketing.</p>
+                    <h3 class="text-xl font-semibold text-heading">SEO & Digital Marketing</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Rank higher, grow faster, and generate quality leads with advanced SEO & data-driven marketing.</p>
                 </a>
 
                 <!-- UI/UX Design & Branding -->
                 <a href="{{ route('services.show', 'ui-ux-design') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.3">
                     <div class="service-card-icon">🖥️</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">UI/UX Design & Branding</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Beautiful, user-centered designs that make your brand unforgettable.</p>
+                    <h3 class="text-xl font-semibold text-heading">UI/UX Design & Branding</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Beautiful, user-centered designs that make your brand unforgettable.</p>
                 </a>
 
                 <!-- DevOps & Cloud Deployment -->
                 <a href="{{ route('services.show', 'devops-cloud') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.4">
                     <div class="service-card-icon">⚙️</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">DevOps & Cloud Deployment</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Lightning-fast infrastructure, CI/CD pipelines, monitoring, and high-availability systems.</p>
+                    <h3 class="text-xl font-semibold text-heading">DevOps & Cloud Deployment</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Lightning-fast infrastructure, CI/CD pipelines, monitoring, and high-availability systems.</p>
                 </a>
 
                 <!-- Database & Data Warehousing -->
                 <a href="{{ route('services.show', 'database-data-warehousing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.5">
                     <div class="service-card-icon">📊</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">Database & Data Warehousing</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Organized, scalable, and secure data architecture for analytics and business intelligence.</p>
+                    <h3 class="text-xl font-semibold text-heading">Database & Data Warehousing</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Organized, scalable, and secure data architecture for analytics and business intelligence.</p>
                 </a>
 
                 <!-- AI & Automation Solutions -->
                 <a href="{{ route('services.show', 'ai-automation') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.6">
                     <div class="service-card-icon">🤖</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">AI & Automation Solutions</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Smart automation, AI integrations, chatbots, workflows & business efficiency upgrades.</p>
+                    <h3 class="text-xl font-semibold text-heading">AI & Automation Solutions</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Smart automation, AI integrations, chatbots, workflows & business efficiency upgrades.</p>
                 </a>
 
                 <!-- Custom IT Solutions -->
                 <a href="{{ route('services.show', 'custom-it-solutions') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.7">
                     <div class="service-card-icon">🛠️</div>
-                    <h3 class="text-xl font-semibold text-[#11224E]">Custom IT Solutions</h3>
-                    <p class="text-sm text-[#11224E]/70 leading-relaxed">Tailored software systems designed around your business needs, not the other way around.</p>
+                    <h3 class="text-xl font-semibold text-heading">Custom IT Solutions</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Tailored software systems designed around your business needs, not the other way around.</p>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Detailed Service Descriptions -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Service Details</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     What You Get with <span class="text-clip">Each Service</span>
                 </h2>
             </div>
@@ -449,10 +452,10 @@
                                 </span>
                                 <div>
                                     <p class="service-pill">{{ $service['title'] }}</p>
-                                    <h3 class="mt-2 text-2xl md:text-3xl font-semibold text-[#11224E]">{{ $service['title'] }}</h3>
+                                    <h3 class="mt-2 text-2xl md:text-3xl font-semibold text-heading">{{ $service['title'] }}</h3>
                                 </div>
                             </div>
-                            <p class="text-sm md:text-base text-[#11224E]/78 leading-relaxed">
+                            <p class="text-sm md:text-base text-text-secondary leading-relaxed">
                                 {{ $service['description'] }}
                             </p>
                             <div class="service-highlights">
@@ -476,14 +479,14 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Why Choose Us</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Why Businesses <span class="text-clip">Choose Techbuds</span>
                 </h2>
-                <p class="mt-3 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+                <p class="mt-3 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
                     We build long-term partnerships anchored in clarity, velocity, and measurable results.
                 </p>
             </div>
@@ -503,12 +506,12 @@
                 @foreach($reasons as $index => $reason)
                 <div class="why-choose-card" data-animate="fade-up" data-delay="{{ ($index % 3) * 0.1 }}">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">{{ $reason['title'] }}</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">{{ $reason['desc'] }}</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">{{ $reason['title'] }}</h3>
+                            <p class="text-sm text-text-secondary leading-relaxed">{{ $reason['desc'] }}</p>
                         </div>
                     </div>
                 </div>
@@ -518,14 +521,14 @@
     </section>
 
     <!-- How We Work Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Our Process</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     How We <span class="text-clip">Work</span>
                 </h2>
-                <p class="mt-3 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+                <p class="mt-3 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
                     A clean 4-step workflow communicates professionalism + reliability.
                 </p>
             </div>
@@ -543,8 +546,8 @@
                 @foreach($steps as $index => $step)
                 <div class="process-step" data-animate="fade-up" data-delay="{{ $index * 0.1 }}">
                     <div class="process-number">{{ $step['num'] }}</div>
-                    <h3 class="text-xl font-semibold text-[#11224E] mb-2">{{ $step['title'] }}</h3>
-                    <p class="text-base text-[#11224E]/70 leading-relaxed">{{ $step['desc'] }}</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">{{ $step['title'] }}</h3>
+                    <p class="text-base text-text-secondary leading-relaxed">{{ $step['desc'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -552,16 +555,16 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#088395] to-[#37B7C3] text-white">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-brand-primary to-brand-hover text-white">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" data-animate="fade-up">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold leading-tight mb-6" data-animate="fade-up">
                 Let's Build Something <span class="text-white">Amazing Together</span> 🚀
             </h2>
             <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto" data-animate="fade-up" data-delay="0.1">
                 Ready to transform your digital presence? Get in touch and let's discuss how we can help your business grow.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up" data-delay="0.2">
-                <a href="/#contact" class="bg-white text-[#11224E] px-8 py-3 rounded-lg font-semibold hover:bg-[#FFFDF6] transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
+                <a href="/#contact" class="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
                     Book a Free Consultation
                 </a>
                 <a href="/#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all transform hover:scale-105">
@@ -629,4 +632,3 @@
     </script>
 </body>
 </html>
-

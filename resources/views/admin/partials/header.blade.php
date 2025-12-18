@@ -1,18 +1,18 @@
 <header
     x-data="{menuToggle: false}"
-    class="sticky top-0 z-[99999] flex w-full border-b border-[#088395]/10 bg-white"
+    class="sticky top-0 z-[99999] flex w-full border-b border-border-default bg-surface-1"
 >
     <div class="flex grow flex-col items-center justify-between lg:flex-row lg:px-6">
         <!-- Mobile Header -->
-        <div class="flex w-full items-center justify-between gap-2 border-b border-[#088395]/10 px-3 py-3 sm:gap-4 lg:hidden">
+        <div class="flex w-full items-center justify-between gap-2 border-b border-border-default px-3 py-3 sm:gap-4 lg:hidden">
             <!-- Logo -->
             <a href="{{ route('admin.dashboard') }}" class="flex items-center">
-                <img class="h-10" src="{{ asset('images/techbuds!.png') }}" alt="Techbuds Logo" />
+                <img class="h-10" src="{{ asset('images/techbuds-light.png') }}" alt="Techbuds Logo" />
             </a>
 
             <!-- Mobile Menu Button -->
             <button
-                class="flex h-10 w-10 items-center justify-center rounded-lg text-[#11224E] hover:bg-[#088395]/5 transition-colors"
+                class="flex h-10 w-10 items-center justify-center rounded-lg text-text-secondary hover:bg-surface-2 transition-colors"
                 @click.stop="mobileMenuOpen = !mobileMenuOpen"
             >
                 <svg :class="mobileMenuOpen ? 'hidden' : 'block'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,8 +28,8 @@
         <div class="hidden w-full items-center justify-between gap-2 px-3 py-3 sm:gap-4 lg:flex lg:justify-normal lg:px-0 lg:py-4">
             <!-- Hamburger Toggle -->
             <button
-                :class="sidebarToggle ? 'bg-[#088395]/5' : ''"
-                class="z-[99999] flex h-10 w-10 items-center justify-center rounded-lg border border-[#088395]/20 text-[#11224E] hover:bg-[#088395]/5 transition-colors lg:h-11 lg:w-11"
+                :class="sidebarToggle ? 'bg-surface-2' : ''"
+                class="z-[99999] flex h-10 w-10 items-center justify-center rounded-lg border border-border-default text-text-secondary hover:bg-surface-2 transition-colors lg:h-11 lg:w-11"
                 @click.stop="sidebarToggle = !sidebarToggle"
             >
                 <svg class="fill-current" width="16" height="12" viewBox="0 0 16 12" fill="none">
@@ -42,14 +42,14 @@
                 <form>
                     <div class="relative">
                         <span class="absolute top-1/2 left-4 -translate-y-1/2">
-                            <svg class="fill-[#088395]/60" width="20" height="20" viewBox="0 0 20 20">
+                            <svg class="fill-text-disabled" width="20" height="20" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.04175 9.37363C3.04175 5.87693 5.87711 3.04199 9.37508 3.04199C12.8731 3.04199 15.7084 5.87693 15.7084 9.37363C15.7084 12.8703 12.8731 15.7053 9.37508 15.7053C5.87711 15.7053 3.04175 12.8703 3.04175 9.37363ZM9.37508 1.54199C5.04902 1.54199 1.54175 5.04817 1.54175 9.37363C1.54175 13.6991 5.04902 17.2053 9.37508 17.2053C11.2674 17.2053 13.003 16.5344 14.357 15.4176L17.177 18.238C17.4699 18.5309 17.9448 18.5309 18.2377 18.238C18.5306 17.9451 18.5306 17.4703 18.2377 17.1774L15.418 14.3573C16.5365 13.0033 17.2084 11.2669 17.2084 9.37363C17.2084 5.04817 13.7011 1.54199 9.37508 1.54199Z" fill=""/>
                             </svg>
                         </span>
                         <input
                             type="text"
                             placeholder="Search..."
-                            class="h-11 w-full rounded-lg border border-[#088395]/20 bg-white py-2.5 pr-4 pl-12 text-sm text-[#11224E] placeholder:text-[#088395]/40 focus:ring-2 focus:ring-[#088395]/20 focus:border-[#088395] focus:outline-none xl:w-[430px] transition-all"
+                            class="h-11 w-full rounded-lg border border-border-default bg-app-background py-2.5 pr-4 pl-12 text-sm text-text-primary placeholder:text-text-disabled focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary focus:outline-none xl:w-[430px] transition-all"
                         />
                     </div>
                 </form>
@@ -62,7 +62,7 @@
             <div class="relative" x-data="notificationDropdown()" @click.outside="open = false">
                 <button
                     @click="open = !open; loadNotifications()"
-                    class="relative flex h-11 w-11 items-center justify-center rounded-lg border border-[#088395]/20 text-[#11224E] hover:bg-[#088395]/5 transition-colors"
+                    class="relative flex h-11 w-11 items-center justify-center rounded-lg border border-border-default text-text-secondary hover:bg-surface-2 transition-colors"
                 >
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
@@ -70,7 +70,7 @@
                     <span
                         x-show="unreadCount > 0"
                         x-cloak
-                        class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-semibold text-white"
+                        class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-error text-xs font-semibold text-white"
                         x-text="unreadCount"
                     ></span>
                 </button>
@@ -85,43 +85,43 @@
                     x-transition:leave="transition ease-in duration-150"
                     x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 scale-95"
-                    class="absolute right-0 mt-3 w-80 rounded-xl border border-[#088395]/20 bg-white shadow-lg z-50"
+                    class="absolute right-0 mt-3 w-80 rounded-xl border border-border-default bg-surface-2 shadow-xl z-50"
                 >
-                    <div class="flex items-center justify-between border-b border-[#088395]/10 px-4 py-3">
-                        <h3 class="text-sm font-semibold text-[#11224E]">Notifications</h3>
+                    <div class="flex items-center justify-between border-b border-border-default px-4 py-3">
+                        <h3 class="text-sm font-semibold text-heading">Notifications</h3>
                         <button
                             @click="markAllAsRead()"
                             x-show="unreadCount > 0"
                             x-cloak
-                            class="text-xs text-[#088395] hover:text-[#37B7C3] transition-colors"
+                            class="text-xs text-brand-primary hover:text-brand-soft transition-colors"
                         >
                             Mark all as read
                         </button>
                     </div>
-                    <div class="max-h-48 overflow-y-auto">
+                    <div class="max-h-48 overflow-y-auto custom-scrollbar">
                         <template x-if="notifications.length === 0">
                             <div class="px-4 py-8 text-center">
-                                <p class="text-sm text-[#088395]/70">No notifications</p>
+                                <p class="text-sm text-text-disabled">No notifications</p>
                             </div>
                         </template>
                         <template x-for="notification in notifications" :key="notification.id">
                             <a
                                 :href="notification.link || '#'"
                                 @click="markAsRead(notification.id)"
-                                class="block px-4 py-3 border-b border-[#088395]/5 hover:bg-[#088395]/5 transition-colors"
-                                :class="notification.is_read ? 'bg-white' : 'bg-[#088395]/2'"
+                                class="block px-4 py-3 border-b border-surface-3 hover:bg-surface-3 transition-colors"
+                                :class="notification.is_read ? 'bg-transparent' : 'bg-brand-primary/5'"
                             >
                                 <div class="flex items-start gap-3">
                                     <div class="flex-shrink-0 mt-1">
                                         <div
                                             class="h-2 w-2 rounded-full"
-                                            :class="notification.is_read ? 'bg-transparent' : 'bg-[#088395]'"
+                                            :class="notification.is_read ? 'bg-transparent' : 'bg-brand-primary'"
                                         ></div>
                                     </div>
                                     <div class="flex-1 min-w-0">
-                                        <p class="text-sm font-medium text-[#11224E]" x-text="notification.title"></p>
-                                        <p class="text-xs text-[#088395]/70 mt-1 line-clamp-2" x-text="notification.message"></p>
-                                        <p class="text-xs text-[#088395]/50 mt-1" x-text="formatDate(notification.created_at)"></p>
+                                        <p class="text-sm font-medium text-heading" x-text="notification.title"></p>
+                                        <p class="text-xs text-text-muted mt-1 line-clamp-2" x-text="notification.message"></p>
+                                        <p class="text-xs text-text-disabled mt-1" x-text="formatDate(notification.created_at)"></p>
                                     </div>
                                 </div>
                             </a>
@@ -132,15 +132,15 @@
 
             <div class="relative" x-data="{ dropdownOpen: false }" @click.outside="dropdownOpen = false">
                 <a
-                    class="flex items-center text-[#11224E] hover:opacity-80 transition-opacity"
+                    class="flex items-center text-text-secondary hover:opacity-90 transition-opacity"
                     href="#"
                     @click.prevent="dropdownOpen = ! dropdownOpen"
                 >
-                    <span class="mr-3 h-11 w-11 overflow-hidden rounded-full bg-gradient-to-br from-[#088395] to-[#37B7C3] flex items-center justify-center">
+                    <span class="mr-3 h-11 w-11 overflow-hidden rounded-full bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
                         <span class="text-white font-semibold text-sm">{{ strtoupper(substr(Auth::guard('admin')->user()->name ?? 'A', 0, 1)) }}</span>
                     </span>
-                    <span class="text-sm mr-1 block font-medium">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</span>
-                    <svg :class="dropdownOpen && 'rotate-180'" class="stroke-[#088395] transition-transform" width="18" height="20" viewBox="0 0 18 20">
+                    <span class="text-sm mr-1 block font-medium text-text-primary">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</span>
+                    <svg :class="dropdownOpen && 'rotate-180'" class="stroke-text-disabled transition-transform" width="18" height="20" viewBox="0 0 18 20">
                         <path d="M4.3125 8.65625L9 13.3437L13.6875 8.65625" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
@@ -149,16 +149,16 @@
                 <div
                     x-show="dropdownOpen"
                     x-cloak
-                    class="absolute right-0 mt-3 flex w-[260px] flex-col rounded-xl border border-[#088395]/20 bg-white p-3 shadow-lg"
+                    class="absolute right-0 mt-3 flex w-[260px] flex-col rounded-xl border border-border-default bg-surface-2 p-3 shadow-xl"
                 >
-                    <div class="pb-3 border-b border-[#088395]/10">
-                        <span class="text-sm block font-semibold text-[#11224E]">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</span>
-                        <span class="text-xs mt-0.5 block text-[#088395]/70">{{ Auth::guard('admin')->user()->email ?? 'admin@techbuds.online' }}</span>
+                    <div class="pb-3 border-b border-border-default">
+                        <span class="text-sm block font-semibold text-heading">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</span>
+                        <span class="text-xs mt-0.5 block text-text-disabled">{{ Auth::guard('admin')->user()->email ?? 'admin@techbuds.online' }}</span>
                     </div>
 
                     <ul class="flex flex-col gap-1 pt-3 pb-2">
                         <li>
-                            <a href="{{ route('admin.profile.show') }}" class="group text-sm flex items-center gap-3 rounded-lg px-3 py-2 font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors">
+                            <a href="{{ route('admin.profile.show') }}" class="group text-sm flex items-center gap-3 rounded-lg px-3 py-2 font-medium text-text-secondary hover:bg-surface-3 transition-colors">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                 </svg>
@@ -168,7 +168,7 @@
                     </ul>
                     <form method="POST" action="{{ route('admin.logout') }}">
                         @csrf
-                        <button type="submit" class="group text-sm mt-2 flex items-center gap-3 rounded-lg px-3 py-2 font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors w-full text-left border-t border-[#088395]/10 pt-2">
+                        <button type="submit" class="group text-sm mt-2 flex items-center gap-3 rounded-lg px-3 py-2 font-medium text-text-secondary hover:bg-surface-3 transition-colors w-full text-left border-t border-border-default pt-3">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>
@@ -190,33 +190,33 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="lg:hidden fixed inset-y-0 right-0 z-[99999] w-80 bg-white shadow-xl border-l border-[#088395]/10"
+        class="lg:hidden fixed inset-y-0 right-0 z-[99999] w-80 bg-surface-1 shadow-2xl border-l border-border-default"
     >
         <div class="flex flex-col h-full">
             <!-- Mobile Menu Header -->
-            <div class="flex items-center justify-between p-4 border-b border-[#088395]/10">
-                <h2 class="text-lg font-semibold text-[#11224E]">Menu</h2>
-                <button @click="mobileMenuOpen = false" class="p-2 rounded-lg hover:bg-[#088395]/5">
-                    <svg class="w-5 h-5 text-[#11224E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-center justify-between p-4 border-b border-border-default">
+                <h2 class="text-lg font-semibold text-heading">Menu</h2>
+                <button @click="mobileMenuOpen = false" class="p-2 rounded-lg hover:bg-surface-2 text-text-secondary">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
 
             <!-- Mobile Menu Content -->
-            <div class="flex-1 overflow-y-auto p-4">
+            <div class="flex-1 overflow-y-auto p-4 custom-scrollbar">
                 <nav class="space-y-6">
                     <!-- MENU Section -->
                     <div>
-                        <h3 class="mb-3 text-xs uppercase leading-[20px] text-[#088395]/60">MENU</h3>
-                        <div class="space-y-2">
-                            <a href="{{ route('admin.dashboard') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors">
+                        <h3 class="mb-3 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider">MENU</h3>
+                        <div class="space-y-1">
+                            <a href="{{ route('admin.dashboard') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                                 </svg>
                                 Dashboard
                             </a>
-                            <a href="{{ route('admin.contacts.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors">
+                            <a href="{{ route('admin.contacts.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
@@ -225,11 +225,30 @@
                         </div>
                     </div>
 
-                    <!-- Content and Seo Section -->
+                    <!-- CRM Section -->
                     <div>
-                        <h3 class="mb-3 text-xs uppercase leading-[20px] text-[#088395]/60">Content and Seo</h3>
-                        <div class="space-y-2">
-                            <a href="{{ route('admin.blogs.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors">
+                        <h3 class="mb-3 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider">CRM</h3>
+                        <div class="space-y-1">
+                            <a href="{{ route('admin.clients.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Clients
+                            </a>
+                            <a href="{{ route('admin.projects.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                </svg>
+                                Projects
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div>
+                        <h3 class="mb-3 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider">Content & SEO</h3>
+                        <div class="space-y-1">
+                            <a href="{{ route('admin.blogs.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                 </svg>
@@ -241,19 +260,19 @@
                     <!-- Roles and Access Section (Only for Super Admin) -->
                     @if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->email === 'admin@techbuds.online')
                     <div>
-                        <h3 class="mb-3 text-xs uppercase leading-[20px] text-[#088395]/60">Roles and Access</h3>
-                        <div class="space-y-2">
-                            <a href="{{ route('admin.roles.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors">
+                        <h3 class="mb-3 text-xs uppercase leading-[20px] text-text-disabled font-medium tracking-wider">Access Control</h3>
+                        <div class="space-y-1">
+                            <a href="{{ route('admin.roles.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
-                                User Roles and Actions
+                                Roles
                             </a>
-                            <a href="{{ route('admin.admins.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors">
+                            <a href="{{ route('admin.admins.index') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
-                                Admins/Users
+                                Admins
                             </a>
                         </div>
                     </div>
@@ -261,23 +280,23 @@
                 </nav>
 
                 <!-- Mobile User Section -->
-                <div class="mt-8 pt-8 border-t border-[#088395]/10">
+                <div class="mt-8 pt-8 border-t border-border-default">
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="h-12 w-12 overflow-hidden rounded-full bg-gradient-to-br from-[#088395] to-[#37B7C3] flex items-center justify-center">
+                        <span class="h-12 w-12 overflow-hidden rounded-full bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
                             <span class="text-white font-semibold">{{ strtoupper(substr(Auth::guard('admin')->user()->name ?? 'A', 0, 1)) }}</span>
                         </span>
                         <div>
-                            <p class="text-sm font-semibold text-[#11224E]">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</p>
-                            <p class="text-xs text-[#088395]/70">{{ Auth::guard('admin')->user()->email ?? 'admin@techbuds.online' }}</p>
+                            <p class="text-sm font-semibold text-heading">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</p>
+                            <p class="text-xs text-text-disabled">{{ Auth::guard('admin')->user()->email ?? 'admin@techbuds.online' }}</p>
                         </div>
                     </div>
                     <nav class="space-y-1">
-                        <a href="{{ route('admin.profile.show') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors">
+                        <a href="{{ route('admin.profile.show') }}" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors">
                             Profile Update
                         </a>
                         <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf
-                            <button type="submit" class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-[#11224E] hover:bg-[#088395]/5 transition-colors mt-2 border-t border-[#088395]/10 pt-2">
+                            <button type="submit" class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-secondary hover:bg-surface-2 transition-colors mt-2 border-t border-border-default pt-3">
                                 Sign out
                             </button>
                         </form>

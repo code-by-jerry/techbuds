@@ -7,10 +7,10 @@
     <!-- Header -->
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-            <h2 class="text-2xl font-bold text-[#11224E]">Admin Management</h2>
-            <p class="text-sm text-[#088395]/70 mt-1">Manage admin users and their permissions</p>
+            <h2 class="text-2xl font-bold text-heading">Admin Management</h2>
+            <p class="text-sm text-text-secondary mt-1">Manage admin users and their permissions</p>
         </div>
-        <a href="{{ route('admin.admins.create') }}" class="inline-flex items-center gap-2 rounded-lg bg-[#088395] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]">
+        <a href="{{ route('admin.admins.create') }}" class="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-hover">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -20,13 +20,13 @@
 
     <!-- Success/Error Messages -->
     @if(session('success'))
-    <div class="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+    <div class="rounded-lg border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-success">
         {{ session('success') }}
     </div>
     @endif
 
     @if($errors->any())
-    <div class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+    <div class="rounded-lg border border-error/20 bg-error/10 px-4 py-3 text-sm text-error">
         <ul class="list-disc list-inside">
             @foreach($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -36,26 +36,26 @@
     @endif
 
     <!-- Filters and Search -->
-    <div class="rounded-2xl border border-[#088395]/10 bg-white p-4 shadow-sm">
+    <div class="rounded-2xl border border-border-default bg-surface-1 p-4 shadow-sm">
         <form method="GET" action="{{ route('admin.admins.index') }}" class="flex flex-col gap-4 sm:flex-row sm:items-end">
             <!-- Search -->
             <div class="flex-1">
-                <label class="mb-1 block text-xs font-medium text-[#11224E]">Search</label>
+                <label class="mb-1 block text-xs font-medium text-heading">Search</label>
                 <input
                     type="text"
                     name="search"
                     value="{{ request('search') }}"
                     placeholder="Search by name or email..."
-                    class="w-full rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                    class="w-full rounded-lg border border-border-default bg-surface-2 px-3 py-2 text-sm text-heading focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
                 />
             </div>
 
             <!-- Status Filter -->
             <div>
-                <label class="mb-1 block text-xs font-medium text-[#11224E]">Status</label>
+                <label class="mb-1 block text-xs font-medium text-heading">Status</label>
                 <select
                     name="status"
-                    class="rounded-lg border border-[#088395]/15 px-3 py-2 text-sm text-[#11224E] focus:border-[#088395] focus:outline-none focus:ring-2 focus:ring-[#088395]/20"
+                    class="rounded-lg border border-border-default bg-surface-2 px-3 py-2 text-sm text-heading focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
                 >
                     <option value="">All Status</option>
                     <option value="active" {{ request('status') === 'active' ? 'selected' : '' }}>Active</option>
@@ -66,7 +66,7 @@
             <!-- Filter Button -->
             <button
                 type="submit"
-                class="inline-flex items-center gap-2 rounded-lg bg-[#088395] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]"
+                class="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
@@ -77,48 +77,48 @@
     </div>
 
     <!-- Admins Table -->
-    <div class="rounded-2xl border border-[#088395]/10 bg-white shadow-sm overflow-hidden">
+    <div class="rounded-2xl border border-border-default bg-surface-1 shadow-sm overflow-hidden">
         <div class="overflow-x-auto">
             <table class="w-full">
-                <thead class="bg-[#088395]/5">
+                <thead class="bg-brand-primary/5">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-[#11224E]">Name</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-[#11224E]">Email</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-[#11224E]">Role</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-[#11224E]">Status</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-[#11224E]">Created</th>
-                        <th class="px-6 py-3 text-right text-xs font-semibold uppercase text-[#11224E]">Actions</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-heading">Name</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-heading">Email</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-heading">Role</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-heading">Status</th>
+                        <th class="px-6 py-3 text-left text-xs font-semibold uppercase text-heading">Created</th>
+                        <th class="px-6 py-3 text-right text-xs font-semibold uppercase text-heading">Actions</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-[#088395]/10">
+                <tbody class="divide-y divide-[var(--brand-primary)]/10">
                     @forelse($admins as $admin)
-                    <tr class="hover:bg-[#088395]/2 transition-colors">
-                        <td class="px-6 py-4 text-sm text-[#11224E]">
+                    <tr class="hover:bg-brand-primary/2 transition-colors">
+                        <td class="px-6 py-4 text-sm text-heading">
                             <div class="flex items-center gap-3">
-                                <span class="h-10 w-10 rounded-full bg-gradient-to-br from-[#088395] to-[#37B7C3] flex items-center justify-center text-white font-semibold text-sm">
+                                <span class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-primary to-brand-hover flex items-center justify-center text-white font-semibold text-sm">
                                     {{ strtoupper(substr($admin->name, 0, 1)) }}
                                 </span>
                                 <span class="font-medium">{{ $admin->name }}</span>
                             </div>
                         </td>
-                        <td class="px-6 py-4 text-sm text-[#11224E]">{{ $admin->email }}</td>
-                        <td class="px-6 py-4 text-sm text-[#11224E]">
+                        <td class="px-6 py-4 text-sm text-heading">{{ $admin->email }}</td>
+                        <td class="px-6 py-4 text-sm text-heading">
                             @if($admin->roles->count() > 0)
-                                <span class="inline-flex items-center rounded-full bg-[#088395]/10 px-2.5 py-0.5 text-xs font-medium text-[#088395]">
+                                <span class="inline-flex items-center rounded-full bg-brand-primary/20 px-2.5 py-0.5 text-xs font-medium text-brand-soft">
                                     {{ $admin->roles->first()->name }}
                                 </span>
                             @else
-                                <span class="text-[#088395]/50">No role</span>
+                                <span class="text-text-muted">No role</span>
                             @endif
                         </td>
                         <td class="px-6 py-4 text-sm">
                             @if($admin->status)
-                                <span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Active</span>
+                                <span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-success">Active</span>
                             @else
-                                <span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Inactive</span>
+                                <span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-error">Inactive</span>
                             @endif
                         </td>
-                        <td class="px-6 py-4 text-sm text-[#088395]/70">{{ $admin->created_at->format('M d, Y') }}</td>
+                        <td class="px-6 py-4 text-sm text-text-secondary">{{ $admin->created_at->format('M d, Y') }}</td>
                         <td class="px-6 py-4 text-sm text-right">
                             <div class="flex items-center justify-end gap-2">
                                 @if($admin->email !== 'admin@techbuds.online')
@@ -126,7 +126,7 @@
                                         @csrf
                                         <button
                                             type="submit"
-                                            class="p-2 rounded-lg text-[#088395] hover:bg-[#088395]/10 transition-colors"
+                                            class="p-2 rounded-lg text-brand-primary hover:bg-brand-primary/10 transition-colors"
                                             title="{{ $admin->status ? 'Deactivate' : 'Activate' }}"
                                         >
                                             @if($admin->status)
@@ -142,7 +142,7 @@
                                     </form>
                                     <a
                                         href="{{ route('admin.admins.edit', $admin) }}"
-                                        class="p-2 rounded-lg text-[#088395] hover:bg-[#088395]/10 transition-colors"
+                                        class="p-2 rounded-lg text-brand-primary hover:bg-brand-primary/10 transition-colors"
                                         title="Edit"
                                     >
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +154,7 @@
                                         @method('DELETE')
                                         <button
                                             type="submit"
-                                            class="p-2 rounded-lg text-red-600 hover:bg-red-50 transition-colors"
+                                            class="p-2 rounded-lg text-error hover:bg-error/10 transition-colors"
                                             title="Delete"
                                         >
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,14 +163,14 @@
                                         </button>
                                     </form>
                                 @else
-                                    <span class="text-xs text-[#088395]/50">Super Admin</span>
+                                    <span class="text-xs text-text-muted">Super Admin</span>
                                 @endif
                             </div>
                         </td>
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="6" class="px-6 py-8 text-center text-sm text-[#088395]/70">
+                        <td colspan="6" class="px-6 py-8 text-center text-sm text-text-secondary">
                             No admins found.
                         </td>
                     </tr>
@@ -181,7 +181,7 @@
 
         <!-- Pagination -->
         @if($admins->hasPages())
-        <div class="border-t border-[#088395]/10 px-6 py-4">
+        <div class="border-t border-border-default px-6 py-4">
             {{ $admins->links() }}
         </div>
         @endif

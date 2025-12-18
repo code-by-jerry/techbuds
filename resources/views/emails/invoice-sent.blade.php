@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body { font-family: Arial, sans-serif; background: #f5f7fb; padding: 24px; color: #11224E; }
+        body { font-family: Arial, sans-serif; background: #f5f7fb; padding: 24px; color: var(--heading); }
         .card { max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e5e7ef; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { text-align: left; padding: 8px 0; }
         .muted { color: #6b7280; font-size: 13px; margin-top: 24px; }
-        .btn { display:inline-block; padding:10px 18px; border-radius:9999px; background:#088395; color:#fff; text-decoration:none; margin-top:20px; }
+        .btn { display:inline-block; padding:10px 18px; border-radius:9999px; background:var(--brand-primary); color:#fff; text-decoration:none; margin-top:20px; }
     </style>
 </head>
 <body>

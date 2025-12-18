@@ -7,10 +7,10 @@
     <!-- Header -->
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-            <h2 class="text-2xl font-bold text-[#11224E]">User Roles and Actions</h2>
-            <p class="text-sm text-[#088395]/70 mt-1">Manage roles and their permissions for admin users</p>
+            <h2 class="text-2xl font-bold text-heading">User Roles and Actions</h2>
+            <p class="text-sm text-text-secondary mt-1">Manage roles and their permissions for admin users</p>
         </div>
-        <a href="{{ route('admin.roles.create') }}" class="inline-flex items-center gap-2 rounded-lg bg-[#088395] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]">
+        <a href="{{ route('admin.roles.create') }}" class="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-hover">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -20,13 +20,13 @@
 
     <!-- Success/Error Messages -->
     @if(session('success'))
-    <div class="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+    <div class="rounded-lg border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-success">
         {{ session('success') }}
     </div>
     @endif
 
     @if($errors->any())
-    <div class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+    <div class="rounded-lg border border-error/20 bg-error/10 px-4 py-3 text-sm text-error">
         <ul class="list-disc list-inside">
             @foreach($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -38,11 +38,11 @@
     <!-- Roles Grid -->
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         @forelse($roles as $role)
-        <div class="rounded-xl border border-[#088395]/20 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="rounded-xl border border-border-default bg-surface-1 p-6 shadow-sm hover:shadow-md transition-shadow">
             <div class="flex items-start justify-between mb-4">
                 <div>
-                    <h3 class="text-lg font-semibold text-[#11224E]">{{ $role->name }}</h3>
-                    <p class="text-xs text-[#088395]/70 mt-1">
+                    <h3 class="text-lg font-semibold text-heading">{{ $role->name }}</h3>
+                    <p class="text-xs text-text-secondary mt-1">
                         @php
                             $userCount = \App\Models\Admin::role($role->name)->count();
                         @endphp
@@ -53,7 +53,7 @@
                 <div class="flex items-center gap-2">
                     <a
                         href="{{ route('admin.roles.edit', $role) }}"
-                        class="p-1.5 rounded-lg text-[#088395] hover:bg-[#088395]/10 transition-colors"
+                        class="p-1.5 rounded-lg text-brand-primary hover:bg-brand-primary/10 transition-colors"
                         title="Edit"
                     >
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@
                         @method('DELETE')
                         <button
                             type="submit"
-                            class="p-1.5 rounded-lg text-red-600 hover:bg-red-50 transition-colors"
+                            class="p-1.5 rounded-lg text-error hover:bg-error/10 transition-colors"
                             title="Delete"
                         >
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,15 +80,15 @@
             <!-- Permissions List -->
             <div class="space-y-3">
                 @foreach($modules as $module => $actions)
-                <div class="border-t border-[#088395]/10 pt-3 first:border-t-0 first:pt-0">
-                    <h4 class="text-xs font-semibold text-[#11224E] uppercase mb-2">{{ ucfirst(str_replace('-', ' ', $module)) }}</h4>
+                <div class="border-t border-border-default pt-3 first:border-t-0 first:pt-0">
+                    <h4 class="text-xs font-semibold text-heading uppercase mb-2">{{ ucfirst(str_replace('-', ' ', $module)) }}</h4>
                     <div class="flex flex-wrap gap-2">
                         @foreach($actions as $action)
                             @php
                                 $permissionName = "{$module}.{$action}";
                                 $hasPermission = $role->permissions->contains('name', $permissionName);
                             @endphp
-                            <span class="inline-flex items-center gap-1 px-2 py-1 rounded text-xs {{ $hasPermission ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-500' }}">
+                            <span class="inline-flex items-center gap-1 px-2 py-1 rounded text-xs {{ $hasPermission ? 'bg-green-100 text-success' : 'bg-surface-2 text-text-muted' }}">
                                 @if($hasPermission)
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -107,8 +107,8 @@
             </div>
         </div>
         @empty
-        <div class="col-span-full rounded-xl border border-[#088395]/20 bg-white p-8 text-center">
-            <p class="text-sm text-[#088395]/70">No roles found. Create your first role to get started.</p>
+        <div class="col-span-full rounded-xl border border-border-default bg-surface-1 p-8 text-center">
+            <p class="text-sm text-text-secondary">No roles found. Create your first role to get started.</p>
         </div>
         @endforelse
     </div>

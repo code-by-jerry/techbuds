@@ -11,9 +11,11 @@
         <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
         <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+        <!-- Fonts: Inter (Body) + Clash Display (Headings) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
 
         <!-- Alpine.js -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -23,9 +25,8 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
         <style>
-            /* Reuse styles from welcome.blade.php */
             .text-clip {
-                background: linear-gradient(135deg, #088395 0%, #37B7C3 50%, #7E30E1 100%);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 50%, #7E30E1 100%);
                 background-size: 200% 200%;
                 background-position: 0% 50%;
                 -webkit-background-clip: text;
@@ -39,8 +40,8 @@
                 gap: 0.6rem;
                 padding: 0.45rem 1.1rem;
                 border-radius: 999px;
-                background: rgba(8,131,149,0.08);
-                color: #11224E;
+                background: rgba(37, 99, 235, 0.1);
+                color: var(--text-primary);
                 font-size: 0.65rem;
                 letter-spacing: 0.28em;
                 text-transform: uppercase;
@@ -51,10 +52,10 @@
                 position: relative;
                 border-radius: 1.5rem;
                 overflow: hidden;
-                background: rgba(255,255,255,0.95);
-                border: 1px solid rgba(8,131,149,0.1);
-                box-shadow: 0 16px 45px rgba(8,131,149,0.12);
-                transition: transform .45s ease, box-shadow .45s ease;
+                background: var(--surface);
+                border: 1px solid var(--border-default);
+                box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+                transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
                 padding: 2rem;
                 display: flex;
                 flex-direction: column;
@@ -63,16 +64,17 @@
 
             .portfolio-card:hover {
                 transform: translateY(-6px);
-                box-shadow: 0 24px 70px rgba(8,131,149,0.16);
+                box-shadow: 0 24px 70px rgba(37, 99, 235, 0.15);
+                border-color: var(--brand-primary);
             }
 
             .category-card {
                 position: relative;
                 border-radius: 2rem;
                 overflow: hidden;
-                background: rgba(255,255,255,0.95);
-                border: 1px solid rgba(8,131,149,0.1);
-                box-shadow: 0 16px 45px rgba(8,131,149,0.12);
+                background: var(--surface);
+                border: 1px solid var(--border-default);
+                box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
                 transition: all .45s ease;
                 padding: 0;
                 display: flex;
@@ -81,25 +83,26 @@
 
             .category-card:hover {
                 transform: translateY(-8px);
-                box-shadow: 0 28px 80px rgba(8,131,149,0.18);
+                box-shadow: 0 28px 80px rgba(37, 99, 235, 0.15);
+                border-color: var(--brand-primary);
             }
 
             .category-header {
                 padding: 2rem 2rem 1.5rem;
-                background: linear-gradient(135deg, rgba(8,131,149,0.08) 0%, rgba(55,183,195,0.04) 100%);
-                border-bottom: 1px solid rgba(8,131,149,0.1);
+                background: linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(56, 189, 248, 0.03) 100%);
+                border-bottom: 1px solid var(--border-default);
             }
 
             .category-icon {
                 width: 4rem;
                 height: 4rem;
                 border-radius: 1.2rem;
-                background: linear-gradient(135deg, #088395 0%, #37B7C3 100%);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 2rem;
-                box-shadow: 0 15px 35px rgba(8,131,149,0.25);
+                box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
                 margin-bottom: 1rem;
             }
 
@@ -114,13 +117,13 @@
                 gap: 0.75rem;
                 padding: 0.75rem;
                 border-radius: 0.75rem;
-                background: rgba(8,131,149,0.03);
+                background: rgba(37, 99, 235, 0.03);
                 margin-bottom: 0.75rem;
                 transition: all .3s ease;
             }
 
             .project-item:hover {
-                background: rgba(8,131,149,0.08);
+                background: rgba(37, 99, 235, 0.08);
                 transform: translateX(4px);
             }
 
@@ -133,7 +136,7 @@
                 align-items: center;
                 padding: 0.35rem 0.75rem;
                 border-radius: 999px;
-                background: linear-gradient(135deg, #088395 0%, #37B7C3 100%);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
                 color: white;
                 font-size: 0.7rem;
                 font-weight: 600;
@@ -145,24 +148,25 @@
                 align-items: center;
                 padding: 0.4rem 0.9rem;
                 border-radius: 999px;
-                background: rgba(8,131,149,0.08);
-                color: #11224E;
+                background: rgba(37, 99, 235, 0.08);
+                color: var(--text-primary);
                 font-size: 0.75rem;
                 font-weight: 600;
             }
 
             .capability-card {
-                background: rgba(255,255,255,0.9);
+                background: var(--surface);
                 border-radius: 1.5rem;
                 padding: 1.5rem;
-                border: 1px solid rgba(8,131,149,0.1);
-                box-shadow: 0 16px 45px rgba(8,131,149,0.12);
-                transition: transform .3s ease, box-shadow .3s ease;
+                border: 1px solid var(--border-default);
+                box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+                transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
             }
 
             .capability-card:hover {
                 transform: translateY(-4px);
-                box-shadow: 0 20px 55px rgba(8,131,149,0.16);
+                box-shadow: 0 20px 55px rgba(37, 99, 235, 0.12);
+                border-color: var(--brand-primary);
             }
 
             .feature-list {
@@ -174,7 +178,7 @@
                 position: relative;
                 padding-left: 1.4rem;
                 font-size: 0.9rem;
-                color: rgba(8,131,149,0.78);
+                color: var(--text-secondary);
             }
 
             .feature-item::before {
@@ -185,38 +189,38 @@
                 width: 0.5rem;
                 height: 0.5rem;
                 border-radius: 0.3rem;
-                background: linear-gradient(135deg, #11224E 0%, #088395 100%);
-                box-shadow: 0 6px 12px rgba(8,131,149,0.25);
+                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
+                box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
             }
         </style>
     </head>
-<body class="bg-[#FFFDF6] text-gray-900 antialiased">
+<body class="bg-app-background text-text-primary font-sans antialiased">
     @include('components.navbar')
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto text-center">
             <div data-animate="fade-up">
                 <span class="service-pill">Our Portfolio</span>
             </div>
-            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-[#11224E] leading-tight" data-animate="fade-up" data-delay="0.1">
+            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-heading leading-tight" data-animate="fade-up" data-delay="0.1">
                 Powerful, Scalable <span class="text-clip">Digital Products</span>
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-[#11224E]/80 max-w-3xl mx-auto leading-relaxed" data-animate="fade-up" data-delay="0.2">
-                We build powerful, scalable digital products for businesses across multiple industries. From e-commerce to healthcare, SaaS to delivery apps, our work reflects <strong>real-world engineering, modern design, and clean execution</strong>.
+            <p class="mt-6 text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed" data-animate="fade-up" data-delay="0.2">
+                We build powerful, scalable digital products for businesses across multiple industries. From e-commerce to healthcare, SaaS to delivery apps, our work reflects <strong class="text-text-primary">real-world engineering, modern design, and clean execution</strong>.
             </p>
         </div>
     </section>
 
     <!-- Portfolio by Categories -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
     <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Portfolio Categories</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     Our Versatility Across <span class="text-clip">Industries</span>
                 </h2>
-                <p class="mt-4 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+                <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
                     Explore our expertise across different domains and technologies
                 </p>
             </div>
@@ -282,25 +286,25 @@
                 <div class="category-card" data-animate="fade-up" data-delay="{{ ($index % 3) * 0.1 }}">
                     <div class="category-header">
                         <div class="category-icon">{{ $category['icon'] }}</div>
-                        <h3 class="text-xl font-bold text-[#11224E]">{{ $category['title'] }}</h3>
+                        <h3 class="text-xl font-bold text-heading">{{ $category['title'] }}</h3>
                     </div>
                     <div class="category-body">
                         <div class="mb-4">
                             @foreach($category['projects'] as $project)
                             <div class="project-item">
-                                <svg class="w-5 h-5 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <div class="flex-1">
-                                    <p class="font-semibold text-[#11224E] text-sm">{{ $project['name'] }}</p>
-                                    <p class="text-xs text-[#11224E]/60 mt-0.5">{{ $project['tech'] }}</p>
+                                    <p class="font-semibold text-heading text-sm">{{ $project['name'] }}</p>
+                                    <p class="text-xs text-text-muted mt-0.5">{{ $project['tech'] }}</p>
                                 </div>
                             </div>
                             @endforeach
                         </div>
-                        <div class="pt-4 border-t border-[#088395]/10">
+                        <div class="pt-4 border-t border-border-default">
                             <span class="project-badge">What this shows</span>
-                            <p class="text-sm text-[#11224E]/70 mt-3 leading-relaxed">{{ $category['shows'] }}</p>
+                            <p class="text-sm text-text-secondary mt-3 leading-relaxed">{{ $category['shows'] }}</p>
                         </div>
                     </div>
                 </div>
@@ -310,14 +314,14 @@
     </section>
 
     <!-- What Our Work Says About Us -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Our Expertise</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-bold text-[#11224E] leading-tight">
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
                     What Our Work <span class="text-clip">Says About Us</span>
                 </h2>
-                <p class="mt-3 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+                <p class="mt-3 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
                     This section translates your portfolio → capabilities
                 </p>
         </div>
@@ -355,20 +359,20 @@
                 @foreach($expertise as $index => $item)
                 <div class="capability-card" data-animate="fade-up" data-delay="{{ ($index % 3) * 0.1 }}">
                     <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-[#088395] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-[#11224E] mb-2">{{ $item['title'] }}</h3>
-                            <p class="text-sm text-[#11224E]/70 leading-relaxed">{{ $item['desc'] }}</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">{{ $item['title'] }}</h3>
+                            <p class="text-sm text-text-secondary leading-relaxed">{{ $item['desc'] }}</p>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
 
-            <div class="mt-12 p-6 rounded-2xl bg-gradient-to-br from-[#088395]/10 to-[#37B7C3]/5 border border-[#088395]/20" data-animate="fade-up">
-                <h3 class="text-xl font-semibold text-[#11224E] mb-4">Real-World Functionality Highlights</h3>
+            <div class="mt-12 p-6 rounded-2xl bg-gradient-to-br from-brand-primary/10 to-brand-soft/5 border border-brand-primary/20" data-animate="fade-up">
+                <h3 class="text-xl font-semibold text-heading mb-4">Real-World Functionality Highlights</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     @php
                         $features = [
@@ -391,17 +395,17 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#088395] to-[#37B7C3] text-white relative overflow-hidden">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-brand-primary to-brand-hover text-white relative overflow-hidden">
         <div class="absolute inset-0" style="background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 45%); pointer-events: none;"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" data-animate="fade-up">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold leading-tight mb-6" data-animate="fade-up">
                 Ready to Build Your <span class="text-white">Project?</span>
             </h2>
             <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto" data-animate="fade-up" data-delay="0.1">
                 Let's turn your idea into a high-quality digital product.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up" data-delay="0.2">
-                <a href="/#contact" class="bg-white text-[#11224E] px-8 py-3 rounded-lg font-semibold hover:bg-[#FFFDF6] transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
+                <a href="/#contact" class="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
                     Book a Free Consultation
                 </a>
                 <a href="/#contact" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all transform hover:scale-105">

@@ -6,14 +6,14 @@
 @endphp
 
 @section('content')
-<section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFFDF6]">
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12" data-animate="fade-up">
             <span class="service-pill w-fit mx-auto">DevTools</span>
-            <h1 class="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-[#11224E] leading-tight">
+            <h1 class="mt-4 text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-heading leading-tight">
                 50+ Best Websites for Developers & Designers
             </h1>
-            <p class="mt-4 text-base md:text-lg text-[#11224E]/80 max-w-3xl mx-auto">
+            <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
                 Curated collection of essential tools, resources, and websites to supercharge your development and design workflow.
             </p>
         </div>
@@ -22,11 +22,11 @@
             @foreach($categories as $category)
                 <div class="mb-16" data-animate="fade-up" data-delay="{{ $loop->index * 0.1 }}">
                     <div class="mb-8">
-                        <h2 class="text-2xl md:text-3xl font-bold text-[#11224E] mb-2">
+                        <h2 class="text-2xl md:text-3xl font-heading font-semibold text-heading mb-2">
                             {{ $category->name }}
                         </h2>
                         @if($category->description)
-                            <p class="text-[#11224E]/70 text-base">
+                            <p class="text-text-secondary text-base">
                                 {{ $category->description }}
                             </p>
                         @endif
@@ -38,7 +38,7 @@
                                 <a href="{{ $link->url }}" target="_blank" rel="noopener noreferrer" class="devtool-card" data-animate="fade-up" data-delay="{{ ($loop->index % 4) * 0.05 }}">
                                     <div class="devtool-card__header">
                                         <h3 class="devtool-title">{{ $link->title }}</h3>
-                                        <svg class="w-5 h-5 text-[#088395] opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-brand-primary opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                         </svg>
                                     </div>
@@ -50,13 +50,13 @@
                             @endforeach
                         </div>
                     @else
-                        <p class="text-[#11224E]/50 text-sm italic">No tools available in this category yet.</p>
+                        <p class="text-text-muted text-sm italic">No tools available in this category yet.</p>
                     @endif
                 </div>
             @endforeach
         @else
             <div class="text-center py-16">
-                <p class="text-[#11224E]/70 text-lg">No dev tools available at the moment. Check back soon!</p>
+                <p class="text-text-secondary text-lg">No dev tools available at the moment. Check back soon!</p>
             </div>
         @endif
     </div>
@@ -71,8 +71,8 @@
         gap: 0.6rem;
         padding: 0.45rem 1.1rem;
         border-radius: 999px;
-        background: rgba(8,131,149,0.08);
-        color: #11224E;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--text-primary);
         font-size: 0.65rem;
         letter-spacing: 0.28em;
         text-transform: uppercase;
@@ -104,9 +104,9 @@
     .devtool-card {
         position: relative;
         border-radius: 1.5rem;
-        background: rgba(255,255,255,0.9);
-        border: 1px solid rgba(8,131,149,0.1);
-        box-shadow: 0 12px 40px rgba(8,131,149,0.1);
+        background: var(--surface);
+        border: 1px solid var(--border-default);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
@@ -118,15 +118,15 @@
 
     .devtool-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 20px 60px rgba(8,131,149,0.15);
-        border-color: rgba(8,131,149,0.2);
+        box-shadow: 0 20px 60px rgba(37, 99, 235, 0.12);
+        border-color: var(--brand-primary);
     }
 
     .devtool-card::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(135deg, rgba(8,131,149,0.06), rgba(55,183,195,0.02) 55%);
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(56, 189, 248, 0.02) 55%);
         opacity: 0;
         transition: opacity .4s ease;
         pointer-events: none;
@@ -150,7 +150,7 @@
     .devtool-title {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #11224E;
+        color: var(--heading);
         line-height: 1.4;
         margin: 0;
         transition: color .3s ease;
@@ -158,7 +158,7 @@
     }
 
     .devtool-card:hover .devtool-title {
-        color: #088395;
+        color: var(--brand-primary);
     }
 
     .devtool-card__header svg {
@@ -172,7 +172,7 @@
     }
 
     .devtool-description {
-        color: rgba(17,34,78,0.65);
+        color: var(--text-secondary);
         font-size: 0.875rem;
         line-height: 1.6;
         margin: 0;
@@ -181,7 +181,8 @@
     }
 
     .devtool-url {
-        color: rgba(8,131,149,0.7);
+        color: var(--brand-primary);
+        opacity: 0.7;
         font-size: 0.75rem;
         font-weight: 500;
         margin-top: auto;
@@ -197,7 +198,7 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: #088395;
+        background: var(--brand-primary);
         opacity: 0.5;
     }
 </style>
@@ -234,4 +235,3 @@
 </script>
 @endpush
 @endsection
-

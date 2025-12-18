@@ -26,19 +26,19 @@
             justify-content: space-between;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 3px solid #088395;
+            border-bottom: 3px solid var(--brand-primary);
         }
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #088395;
+            color: var(--brand-primary);
         }
         .invoice-title {
             text-align: right;
         }
         .invoice-title h1 {
             font-size: 32px;
-            color: #11224E;
+            color: var(--heading);
             margin-bottom: 5px;
         }
         .invoice-title p {
@@ -54,7 +54,7 @@
             width: 48%;
         }
         .info-box h3 {
-            color: #088395;
+            color: var(--brand-primary);
             font-size: 14px;
             margin-bottom: 10px;
             padding-bottom: 5px;
@@ -70,7 +70,7 @@
             margin-bottom: 30px;
         }
         .items-table thead {
-            background-color: #088395;
+            background-color: var(--brand-primary);
             color: white;
         }
         .items-table th {
@@ -109,10 +109,10 @@
         .totals td:last-child {
             text-align: right;
             font-weight: bold;
-            color: #11224E;
+            color: var(--heading);
         }
         .totals .total-row {
-            background-color: #088395;
+            background-color: var(--brand-primary);
             color: white;
             font-size: 16px;
         }
@@ -138,10 +138,10 @@
             margin-top: 30px;
             padding: 15px;
             background-color: #f9f9f9;
-            border-left: 4px solid #088395;
+            border-left: 4px solid var(--brand-primary);
         }
         .notes h4 {
-            color: #088395;
+            color: var(--brand-primary);
             margin-bottom: 10px;
         }
         .footer {
@@ -156,7 +156,7 @@
             margin-top: 30px;
         }
         .payments-section h4 {
-            color: #088395;
+            color: var(--brand-primary);
             margin-bottom: 15px;
         }
         .payments-table {
@@ -168,7 +168,7 @@
             padding: 10px;
             text-align: left;
             font-weight: bold;
-            color: #11224E;
+            color: var(--heading);
         }
         .payments-table td {
             padding: 10px;

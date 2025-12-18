@@ -77,14 +77,14 @@
         :class="darkMode ? 'dark' : ''"
         class="transition-colors"
     >
-        <div class="flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-900">
+        <div class="flex h-screen overflow-hidden bg-surface-2 bg-surface-2">
             <!-- Sidebar -->
             <aside
                 :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
-                class="fixed lg:static w-64 h-screen bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-40 transform transition-transform duration-300 overflow-y-auto"
+                class="fixed lg:static w-64 h-screen bg-surface-1 bg-surface-1 border-r border-border-default border-border-default z-40 transform transition-transform duration-300 overflow-y-auto"
             >
                 <!-- Sidebar Header -->
-                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div class="p-6 border-b border-border-default border-border-default">
                     <a
                         href="{{ route('admin.dashboard') }}"
                         class="flex items-center gap-3 hover:opacity-80"
@@ -92,11 +92,11 @@
                         <div class="logo-badge">T</div>
                         <div>
                             <h2
-                                class="text-lg font-bold text-gray-900 dark:text-white"
+                                class="text-lg font-bold text-heading text-text-primary"
                             >
                                 Techbuds
                             </h2>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">
+                            <p class="text-xs text-text-muted dark:text-text-muted">
                                 Admin Panel
                             </p>
                         </div>
@@ -107,7 +107,7 @@
                 <nav class="p-4 space-y-2">
                     <div>
                         <p
-                            class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
+                            class="px-4 py-2 text-xs font-semibold text-text-muted dark:text-text-muted uppercase"
                         >
                             Main
                         </p>
@@ -115,7 +115,7 @@
                             <li>
                                 <a
                                     href="{{ route('admin.dashboard') }}"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-primary dark:text-gray-300 hover:bg-brand-primary/10 dark:hover:bg-blue-900/20 hover:text-brand-primary"
                                 >
                                     <svg
                                         class="w-5 h-5"
@@ -137,15 +137,15 @@
                     </div>
 
                     <!-- Blogs Section -->
-                    <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <p class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">
+                    <div class="pt-4 border-t border-border-default border-border-default">
+                        <p class="px-4 py-2 text-xs font-semibold text-text-muted dark:text-text-muted uppercase">
                             Content
                         </p>
                         <ul class="space-y-1">
                             <li>
                                 <a
                                     href="{{ route('admin.blogs.index') }}"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 {{ request()->routeIs('admin.blogs.*') ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600' : '' }}"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-primary dark:text-gray-300 hover:bg-brand-primary/10 dark:hover:bg-blue-900/20 hover:text-brand-primary {{ request()->routeIs('admin.blogs.*') ? 'bg-brand-primary/10 dark:bg-blue-900/20 text-brand-primary' : '' }}"
                                 >
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -159,11 +159,11 @@
                     <!-- DevTools Section -->
                     <div
                         x-data="{ openTools: {{ request()->routeIs('admin.tool-*') ? 'true' : 'false' }} }"
-                        class="pt-4 border-t border-gray-200 dark:border-gray-700"
+                        class="pt-4 border-t border-border-default border-border-default"
                     >
                         <button
                             @click="openTools = !openTools"
-                            class="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase hover:text-gray-700"
+                            class="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-text-muted dark:text-text-muted uppercase hover:text-text-primary"
                         >
                             <span>DevTools</span>
                             <svg
@@ -190,18 +190,18 @@
                             <li>
                                 <a
                                     href="{{ route('admin.tool-categories.index') }}"
-                                    class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-[#088395]/10 hover:text-[#088395] {{ request()->routeIs('admin.tool-categories.*') ? 'bg-[#088395]/10 text-[#088395]' : '' }}"
+                                    class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-text-secondary dark:text-gray-300 hover:bg-brand-primary/20 hover:text-brand-soft {{ request()->routeIs('admin.tool-categories.*') ? 'bg-brand-primary text-white' : '' }}"
                                 >
-                                    <span class="w-1 h-1 bg-[#088395] rounded-full"></span>
+                                    <span class="w-1 h-1 bg-brand-primary rounded-full"></span>
                                     Categories
                                 </a>
                             </li>
                             <li>
                                 <a
                                     href="{{ route('admin.tool-links.index') }}"
-                                    class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-[#088395]/10 hover:text-[#088395] {{ request()->routeIs('admin.tool-links.*') ? 'bg-[#088395]/10 text-[#088395]' : '' }}"
+                                    class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-text-secondary dark:text-gray-300 hover:bg-brand-primary/20 hover:text-brand-soft {{ request()->routeIs('admin.tool-links.*') ? 'bg-brand-primary text-white' : '' }}"
                                 >
-                                    <span class="w-1 h-1 bg-[#088395] rounded-full"></span>
+                                    <span class="w-1 h-1 bg-brand-primary rounded-full"></span>
                                     Links
                                 </a>
                             </li>
@@ -214,13 +214,13 @@
             <div class="flex-1 flex flex-col overflow-hidden">
                 <!-- Top Navigation -->
                 <header
-                    class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-30"
+                    class="bg-surface-1 bg-surface-1 border-b border-border-default border-border-default sticky top-0 z-30"
                 >
                     <div class="px-6 py-4 flex items-center justify-between">
                         <div class="flex items-center gap-4">
                             <button
                                 @click="sidebarOpen = !sidebarOpen"
-                                class="lg:hidden p-2 hover:bg-gray-100 rounded-lg"
+                                class="lg:hidden p-2 hover:bg-surface-2 rounded-lg"
                             >
                                 <svg
                                     class="w-6 h-6"
@@ -237,7 +237,7 @@
                                 </svg>
                             </button>
                             <h1
-                                class="text-2xl font-bold text-gray-900 dark:text-white"
+                                class="text-2xl font-bold text-heading text-text-primary"
                             >
                                 @yield('title', 'Dashboard')
                             </h1>
@@ -246,7 +246,7 @@
                         <div class="flex items-center gap-4">
                             <button
                                 @click="darkMode = !darkMode; localStorage.setItem('darkMode', JSON.stringify(darkMode))"
-                                class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
+                                class="p-2 hover:bg-surface-2 hover:bg-surface-2 rounded-lg"
                             >
                                 <svg
                                     x-show="!darkMode"
@@ -279,7 +279,7 @@
                             >
                                 <button
                                     @click="userMenuOpen = !userMenuOpen"
-                                    class="flex items-center gap-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
+                                    class="flex items-center gap-2 p-2 hover:bg-surface-2 hover:bg-surface-2 rounded-lg"
                                 >
                                     <div
                                         class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-sm"
@@ -287,7 +287,7 @@
                                         {{ substr(Auth::guard('admin')->user()->name ?? 'A', 0, 1) }}
                                     </div>
                                     <span
-                                        class="hidden sm:block text-sm font-medium text-gray-700 dark:text-gray-300"
+                                        class="hidden sm:block text-sm font-medium text-text-primary dark:text-gray-300"
                                     >
                                         {{ Auth::guard('admin')->user()->name ?? 'Admin' }}
                                     </span>
@@ -297,19 +297,19 @@
                                     x-show="userMenuOpen"
                                     @click.outside="userMenuOpen = false"
                                     x-transition
-                                    class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
+                                    class="absolute right-0 mt-2 w-48 bg-surface-1 bg-surface-2 rounded-lg shadow-lg border border-border-default overflow-hidden z-50"
                                 >
                                     <a
                                         href="#"
-                                        class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100"
+                                        class="block px-4 py-3 text-sm text-text-primary dark:text-gray-300 hover:bg-surface-2"
                                         >Profile</a
                                     >
                                     <a
                                         href="#"
-                                        class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100"
+                                        class="block px-4 py-3 text-sm text-text-primary dark:text-gray-300 hover:bg-surface-2"
                                         >Settings</a
                                     >
-                                    <hr class="border-gray-200" />
+                                    <hr class="border-border-default" />
                                     <form
                                         method="POST"
                                         action="{{ route('admin.logout') }}"
@@ -317,7 +317,7 @@
                                         @csrf
                                         <button
                                             type="submit"
-                                            class="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-red-50"
+                                            class="w-full text-left px-4 py-3 text-sm text-error hover:bg-error/10"
                                         >
                                             Logout
                                         </button>
@@ -329,7 +329,7 @@
                 </header>
 
                 <!-- Page Content -->
-                <main class="flex-1 overflow-auto bg-gray-50 dark:bg-gray-900">
+                <main class="flex-1 overflow-auto bg-surface-2 bg-surface-2">
                     <div class="p-6">@yield('content')</div>
                 </main>
             </div>

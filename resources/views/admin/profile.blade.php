@@ -6,8 +6,8 @@
 <div class="space-y-6">
     <!-- Header -->
     <div>
-        <h2 class="text-2xl font-bold text-[#11224E]">Profile Settings</h2>
-        <p class="text-sm text-[#088395]/70 mt-1">Manage your account information and settings</p>
+        <h2 class="text-2xl font-bold text-heading">Profile Settings</h2>
+        <p class="text-sm text-brand-primary/70 mt-1">Manage your account information and settings</p>
     </div>
 
     <!-- Success/Error Messages -->
@@ -28,22 +28,22 @@
     @endif
 
     <!-- Update Profile Section -->
-    <div class="rounded-xl border border-[#088395]/20 bg-white p-6 shadow-sm">
-        <h3 class="text-lg font-semibold text-[#11224E] mb-4">Update Profile</h3>
+    <div class="rounded-xl border border-border-default bg-surface-1 p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-heading mb-4">Update Profile</h3>
         
         <form method="POST" action="{{ route('admin.profile.update') }}" class="space-y-4">
             @csrf
             
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-[#11224E] mb-2">Name</label>
+                    <label for="name" class="block text-sm font-medium text-heading mb-2">Name</label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         value="{{ old('name', $admin->name) }}"
                         required
-                        class="w-full rounded-lg border border-[#088395]/20 bg-white px-4 py-2.5 text-sm text-[#11224E] focus:ring-2 focus:ring-[#088395]/20 focus:border-[#088395] focus:outline-none transition-all"
+                        class="w-full rounded-lg border border-border-default bg-surface-1 px-4 py-2.5 text-sm text-heading focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)] focus:outline-none transition-all"
                     />
                     @error('name')
                         <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
@@ -51,14 +51,14 @@
                 </div>
 
                 <div>
-                    <label for="email" class="block text-sm font-medium text-[#11224E] mb-2">Email</label>
+                    <label for="email" class="block text-sm font-medium text-heading mb-2">Email</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         value="{{ old('email', $admin->email) }}"
                         required
-                        class="w-full rounded-lg border border-[#088395]/20 bg-white px-4 py-2.5 text-sm text-[#11224E] focus:ring-2 focus:ring-[#088395]/20 focus:border-[#088395] focus:outline-none transition-all"
+                        class="w-full rounded-lg border border-border-default bg-surface-1 px-4 py-2.5 text-sm text-heading focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)] focus:outline-none transition-all"
                     />
                     @error('email')
                         <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
@@ -66,17 +66,17 @@
                 </div>
             </div>
 
-            <div class="pt-4 border-t border-[#088395]/10">
-                <h4 class="text-sm font-semibold text-[#11224E] mb-4">Change Password (Optional)</h4>
+            <div class="pt-4 border-t border-border-default">
+                <h4 class="text-sm font-semibold text-heading mb-4">Change Password (Optional)</h4>
                 
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div>
-                        <label for="current_password" class="block text-sm font-medium text-[#11224E] mb-2">Current Password</label>
+                        <label for="current_password" class="block text-sm font-medium text-heading mb-2">Current Password</label>
                         <input
                             type="password"
                             id="current_password"
                             name="current_password"
-                            class="w-full rounded-lg border border-[#088395]/20 bg-white px-4 py-2.5 text-sm text-[#11224E] focus:ring-2 focus:ring-[#088395]/20 focus:border-[#088395] focus:outline-none transition-all"
+                            class="w-full rounded-lg border border-border-default bg-surface-1 px-4 py-2.5 text-sm text-heading focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)] focus:outline-none transition-all"
                         />
                         @error('current_password')
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
@@ -84,12 +84,12 @@
                     </div>
 
                     <div>
-                        <label for="password" class="block text-sm font-medium text-[#11224E] mb-2">New Password</label>
+                        <label for="password" class="block text-sm font-medium text-heading mb-2">New Password</label>
                         <input
                             type="password"
                             id="password"
                             name="password"
-                            class="w-full rounded-lg border border-[#088395]/20 bg-white px-4 py-2.5 text-sm text-[#11224E] focus:ring-2 focus:ring-[#088395]/20 focus:border-[#088395] focus:outline-none transition-all"
+                            class="w-full rounded-lg border border-border-default bg-surface-1 px-4 py-2.5 text-sm text-heading focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)] focus:outline-none transition-all"
                         />
                         @error('password')
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
@@ -97,12 +97,12 @@
                     </div>
 
                     <div>
-                        <label for="password_confirmation" class="block text-sm font-medium text-[#11224E] mb-2">Confirm New Password</label>
+                        <label for="password_confirmation" class="block text-sm font-medium text-heading mb-2">Confirm New Password</label>
                         <input
                             type="password"
                             id="password_confirmation"
                             name="password_confirmation"
-                            class="w-full rounded-lg border border-[#088395]/20 bg-white px-4 py-2.5 text-sm text-[#11224E] focus:ring-2 focus:ring-[#088395]/20 focus:border-[#088395] focus:outline-none transition-all"
+                            class="w-full rounded-lg border border-border-default bg-surface-1 px-4 py-2.5 text-sm text-heading focus:ring-2 focus:ring-[var(--brand-primary)]/20 focus:border-[var(--brand-primary)] focus:outline-none transition-all"
                         />
                     </div>
                 </div>
@@ -111,7 +111,7 @@
             <div class="flex justify-end pt-4">
                 <button
                     type="submit"
-                    class="inline-flex items-center gap-2 rounded-lg bg-[#088395] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#37B7C3]"
+                    class="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-soft)]"
                 >
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -169,7 +169,7 @@
                     name="password"
                     required
                     @if($admin->email === 'admin@techbuds.online') disabled @endif
-                    class="w-full max-w-md rounded-lg border border-red-300 bg-white px-4 py-2.5 text-sm text-[#11224E] focus:ring-2 focus:ring-red-500/20 focus:border-red-500 focus:outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="w-full max-w-md rounded-lg border border-red-300 bg-surface-1 px-4 py-2.5 text-sm text-heading focus:ring-2 focus:ring-red-500/20 focus:border-red-500 focus:outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Enter your password"
                 />
                 @error('password')
