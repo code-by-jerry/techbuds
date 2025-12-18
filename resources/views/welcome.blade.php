@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Techbuds - Design Develop Deliver</title>
-        <meta name="description" content="Techbuds - Your trusted partner for Web Apps, Mobile Apps, UI/UX Design, DevOps, Database Warehousing, and Digital Marketing solutions.">
+    <title>Techbuds - Design Develop Deliver</title>
+    <meta name="description" content="Techbuds - Your trusted partner for Web Apps, Mobile Apps, UI/UX Design, DevOps, Database Warehousing, and Digital Marketing solutions.">
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
@@ -17,10 +17,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
 
-        <!-- Alpine.js -->
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-        <!-- Styles -->
+    <!-- Styles -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
@@ -42,7 +42,7 @@
                 background-clip: text;
                 color: transparent;
             }
-            
+
             /* Glow Effects */
             .glow-brand {
                 box-shadow: 0 0 40px rgba(37, 99, 235, 0.15);
@@ -129,45 +129,45 @@
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20">
                         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                         <span class="text-xs font-medium text-text-secondary uppercase tracking-wider">Digital Transformation Studio</span>
-                    </div>
+        </div>
                     
                     <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-tight">
                         Empowering Your<br>
                         <span class="text-gradient">Digital Future</span>
-                    </h1>
+                </h1>
                     
                     <p class="text-lg text-text-muted max-w-xl mx-auto lg:mx-0 leading-relaxed"
-                       x-data="{
-                            words: ['web applications','mobile apps','UI/UX experiences','DevOps pipelines','data platforms','digital marketing'],
-                            idx: 0,
-                            word: 'web applications',
-                            show: true,
-                            next(){ this.show = false; setTimeout(()=>{ this.idx=(this.idx+1)%this.words.length; this.word=this.words[this.idx]; this.show = true; }, 400); }
-                       }"
-                       x-init="setInterval(()=>next(), 3800)">
+                   x-data="{
+                        words: ['web applications','mobile apps','UI/UX experiences','DevOps pipelines','data platforms','digital marketing'],
+                        idx: 0,
+                        word: 'web applications',
+                        show: true,
+                        next(){ this.show = false; setTimeout(()=>{ this.idx=(this.idx+1)%this.words.length; this.word=this.words[this.idx]; this.show = true; }, 400); }
+                   }"
+                   x-init="setInterval(()=>next(), 3800)">
                         We craft exceptional
                         <span class="text-brand-primary font-semibold" x-cloak x-show="show" x-transition.opacity.duration.400 x-text="' ' + word"></span>
-                        that drive your business forward with measurable outcomes.
-                    </p>
+                    that drive your business forward with measurable outcomes.
+                </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-brand-primary text-white font-semibold hover:bg-brand-hover transition-all duration-200 shadow-lg shadow-brand-primary/25">
-                            Explore Services
+                        Explore Services
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
-                        </a>
+                    </a>
                         <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-border-default text-text-primary font-semibold hover:border-brand-primary hover:text-brand-primary transition-all duration-200">
-                            Start a Project
-                        </a>
-                    </div>
+                        Start a Project
+                    </a>
+                </div>
                     
                     <div class="flex flex-wrap gap-3 justify-center lg:justify-start pt-4">
                         <span class="px-4 py-2 rounded-full bg-surface-2 text-text-muted text-sm font-medium border border-border-default">Full-stack pods</span>
                         <span class="px-4 py-2 rounded-full bg-surface-2 text-text-muted text-sm font-medium border border-border-default">Design systems</span>
                         <span class="px-4 py-2 rounded-full bg-surface-2 text-text-muted text-sm font-medium border border-border-default">Data & analytics</span>
                     </div>
-                </div>
+                    </div>
                 
                 <!-- Right Content - Stats Card -->
                 <div class="relative" data-animate="slide-left">
@@ -177,29 +177,29 @@
                         </div>
                         <h3 class="font-display text-2xl font-bold text-heading mb-4">Launch bold products without the busywork</h3>
                         <p class="text-text-muted mb-8 leading-relaxed">
-                            We plug autonomous squads into your roadmap—handling discovery, build, QA, DevOps, and growth loops so your team can focus on strategy.
-                        </p>
+                        We plug autonomous squads into your roadmap—handling discovery, build, QA, DevOps, and growth loops so your team can focus on strategy.
+                    </p>
                         <div class="grid grid-cols-3 gap-6">
                             <div class="text-center">
                                 <div class="text-3xl font-bold text-heading" data-count="6" data-suffix=" Weeks">0</div>
                                 <div class="text-xs text-text-disabled uppercase tracking-wider mt-1">Discovery to Beta</div>
-                            </div>
+                    </div>
                             <div class="text-center">
                                 <div class="text-3xl font-bold text-heading" data-count="92" data-suffix="%">0</div>
                                 <div class="text-xs text-text-disabled uppercase tracking-wider mt-1">Client Retention</div>
-                            </div>
+                    </div>
                             <div class="text-center">
                                 <div class="text-3xl font-bold text-brand-primary">A+</div>
                                 <div class="text-xs text-text-disabled uppercase tracking-wider mt-1">Quality Score</div>
-                            </div>
                         </div>
+                    </div>
                         
                         <!-- Floating Badge -->
                         <div class="absolute -bottom-6 -left-6 bg-surface-2 border border-border-default rounded-xl p-4 shadow-xl">
                             <div class="text-xs text-text-disabled uppercase tracking-wider mb-1">Core Stack</div>
                             <div class="text-sm font-semibold text-heading">Laravel · React · Flutter</div>
-                        </div>
-                    </div>
+                </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -212,27 +212,27 @@
                 <div class="text-center" data-animate="fade-up">
                     <div class="text-4xl font-bold text-heading">
                         <span data-count="50" data-suffix="+">0</span>
-                    </div>
+            </div>
                     <p class="text-xs uppercase tracking-wider text-text-disabled mt-2">Projects Shipped</p>
-                </div>
+                    </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.1">
                     <div class="text-4xl font-bold text-heading">
                         <span data-count="5" data-suffix="+">0</span>
                     </div>
                     <p class="text-xs uppercase tracking-wider text-text-disabled mt-2">Years in Mission</p>
-                </div>
+                    </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.2">
                     <div class="text-4xl font-bold text-heading">
                         <span data-count="20" data-suffix="+">0</span>
                     </div>
                     <p class="text-xs uppercase tracking-wider text-text-disabled mt-2">Active Partners</p>
-                </div>
+                    </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.3">
                     <div class="text-4xl font-bold text-heading">
                         <span data-count="24" data-suffix="/7">0</span>
                     </div>
                     <p class="text-xs uppercase tracking-wider text-text-disabled mt-2">Support Coverage</p>
-                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -248,14 +248,14 @@
         @endphp
         <div class="space-y-6">
             <div class="flex marquee-track" style="min-width: 200%;">
-                @foreach ($lineOne as $item)
+            @foreach ($lineOne as $item)
                     <span class="px-8 text-5xl md:text-7xl font-bold text-surface-2 whitespace-nowrap">{{ $item }}</span>
-                @endforeach
+            @endforeach
             </div>
             <div class="flex marquee-track-reverse" style="min-width: 200%;">
-                @foreach ($lineTwo as $item)
+            @foreach ($lineTwo as $item)
                     <span class="px-8 text-5xl md:text-7xl font-bold text-transparent whitespace-nowrap" style="-webkit-text-stroke: 1px #334155;">{{ $item }}</span>
-                @endforeach
+            @endforeach
             </div>
         </div>
     </section>
@@ -287,9 +287,9 @@
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
                                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                                </div>
+                    </div>
                                 <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">Product Engineering</span>
-                            </div>
+                    </div>
                             <h3 class="font-display text-2xl font-bold text-heading mb-4">High velocity software squads</h3>
                             <p class="text-text-muted mb-6 leading-relaxed">
                                 Assemble a pod of architects, engineers, PMs, and QA who operate like an internal team. We craft scalable architectures, atomic design systems, and quality pipelines that de-risk every release.
@@ -312,9 +312,9 @@
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Launch 3x Faster</span>
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">99.9% Uptime</span>
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Full DevOps</span>
-                            </div>
-                        </div>
                     </div>
+                    </div>
+                </div>
                 </article>
 
                 <!-- Experience & Brand -->
@@ -324,9 +324,9 @@
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
                                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-                                </div>
+                        </div>
                                 <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">Experience & Brand</span>
-                            </div>
+                    </div>
                             <h3 class="font-display text-2xl font-bold text-heading mb-4">Design that converts and retains</h3>
                             <p class="text-text-muted mb-6 leading-relaxed">
                                 Pair UX researchers, product designers, and brand storytellers to choreograph seamless journeys. We prototype rapidly, validate with users, and launch polished frontends that feel unmistakably you.
@@ -349,15 +349,15 @@
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">UX Labs</span>
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Brand Systems</span>
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">+28% Conversion</span>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         <div class="lg:col-span-5 relative h-64 lg:h-auto order-1 lg:order-2">
                             <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80" alt="Designers crafting interfaces" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-l from-surface-1/80 to-transparent lg:bg-gradient-to-r"></div>
-                        </div>
+                    </div>
                     </div>
                 </article>
-
+                
                 <!-- Growth & Optimization -->
                 <article class="bg-surface-1 rounded-2xl border border-border-default overflow-hidden card-hover" data-animate="fade-up" data-delay="0.2">
                     <div class="grid lg:grid-cols-12 gap-0">
@@ -369,9 +369,9 @@
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
                                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                                </div>
+                    </div>
                                 <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">Growth & Optimization</span>
-                            </div>
+                    </div>
                             <h3 class="font-display text-2xl font-bold text-heading mb-4">Full-funnel acquisition & retention</h3>
                             <p class="text-text-muted mb-6 leading-relaxed">
                                 Blend SEO, content, lifecycle automation, and performance marketing under one playbook. We track every experiment, own campaign setup, and translate analytics into repeatable growth.
@@ -394,12 +394,12 @@
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">SEO Suites</span>
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Marketing Ops</span>
                                 <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Growth Sprints</span>
-                            </div>
+                    </div>
+                    </div>
+                </div>
+                </article>
                         </div>
                     </div>
-                </article>
-            </div>
-        </div>
     </section>
 
     <!-- Our Story Section -->
@@ -412,7 +412,7 @@
                 <h2 class="font-display text-3xl md:text-4xl font-bold text-heading">
                     Building digital solutions with purpose
                 </h2>
-            </div>
+                    </div>
 
             <!-- Timeline -->
             <div class="relative">
@@ -424,22 +424,22 @@
                         <div class="text-xs font-semibold text-brand-primary uppercase tracking-wider mb-2">2019 – 2024</div>
                         <h3 class="text-lg font-semibold text-heading mb-2">Foundation Years</h3>
                         <p class="text-text-muted leading-relaxed">We spent years building real-world expertise in development, problem-solving, and digital product craftsmanship.</p>
-                    </div>
-                    
+            </div>
+
                     <div class="relative pl-16" data-animate="fade-up" data-delay="0.1">
                         <div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-brand-primary border-4 border-surface-1"></div>
                         <div class="text-xs font-semibold text-brand-primary uppercase tracking-wider mb-2">January 2025</div>
                         <h3 class="text-lg font-semibold text-heading mb-2">The Vision</h3>
                         <p class="text-text-muted leading-relaxed">The idea of Techbuds was born — a vision to create simple, impactful, and human-centric digital solutions.</p>
-                    </div>
-                    
+        </div>
+
                     <div class="relative pl-16" data-animate="fade-up" data-delay="0.2">
                         <div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-brand-primary border-4 border-surface-1"></div>
                         <div class="text-xs font-semibold text-brand-primary uppercase tracking-wider mb-2">June 2025</div>
                         <h3 class="text-lg font-semibold text-heading mb-2">Official Launch</h3>
                         <p class="text-text-muted leading-relaxed">Techbuds officially took form with focused, meaningful projects — management systems, modern websites, mobile apps, and AI-based improvements.</p>
-                    </div>
-                    
+            </div>
+            
                     <div class="relative pl-16" data-animate="fade-up" data-delay="0.3">
                         <div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-green-500 border-4 border-surface-1 animate-pulse"></div>
                         <div class="text-xs font-semibold text-green-500 uppercase tracking-wider mb-2">Today</div>
@@ -475,7 +475,7 @@
                         <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-app-background/90 text-text-secondary text-xs font-medium">
                             {{ $blog->reading_time ?? '5 min' }} read
                         </div>
-                    </div>
+                            </div>
                     <div class="p-6">
                         <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">{{ $blog->category }}</span>
                         <a href="{{ route('blog.show', $blog->slug) }}" class="block mt-2">
@@ -483,13 +483,13 @@
                         </a>
                         <p class="text-text-muted text-sm mt-3 line-clamp-2">{{ $blog->excerpt }}</p>
                         <a href="{{ route('blog.show', $blog->slug) }}" class="inline-flex items-center gap-2 text-sm font-medium text-brand-primary hover:text-brand-soft mt-4 transition-colors">
-                            Read article
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                Read article
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
                 @endforeach
             </div>
 
@@ -540,7 +540,7 @@
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                         </svg>
                         @endfor
-                    </div>
+                        </div>
                     <p class="text-text-secondary leading-relaxed mb-6">"{{ $testimonial['quote'] }}"</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
@@ -573,16 +573,16 @@
                         Let's shape your next release.
                     </h2>
                     <p class="text-text-muted leading-relaxed">
-                        Tell us about the product you're dreaming up. We'll assemble a dedicated squad, share a roadmap, and launch a discovery sprint within days.
-                    </p>
+                    Tell us about the product you're dreaming up. We'll assemble a dedicated squad, share a roadmap, and launch a discovery sprint within days.
+                </p>
                     
                     <div class="space-y-4">
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 rounded-lg bg-surface-2 border border-border-default flex items-center justify-center">
                                 <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                </svg>
-                            </div>
+                            </svg>
+                    </div>
                             <div>
                                 <div class="text-xs text-text-disabled uppercase tracking-wider">Call us</div>
                                 <a href="tel:+917092936243" class="text-heading font-semibold hover:text-brand-primary transition-colors">7092936243</a>
@@ -592,8 +592,8 @@
                             <div class="w-10 h-10 rounded-lg bg-surface-2 border border-border-default flex items-center justify-center">
                                 <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
+                            </svg>
+                    </div>
                             <div>
                                 <div class="text-xs text-text-disabled uppercase tracking-wider">Email</div>
                                 <a href="mailto:techbuds57@gmail.com" class="text-heading font-semibold hover:text-brand-primary transition-colors">techbuds57@gmail.com</a>
@@ -604,72 +604,72 @@
                                 <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                            </div>
+                            </svg>
+                    </div>
                             <div>
                                 <div class="text-xs text-text-disabled uppercase tracking-wider">HQ</div>
                                 <span class="text-heading font-semibold">Bangalore, India</span>
-                            </div>
-                        </div>
+                </div>
+            </div>
                     </div>
                 </div>
                 
                 <!-- Contact Form -->
                 <div class="bg-surface-1 rounded-2xl border border-border-default p-8 shadow-xl" data-animate="slide-up" x-data="{ submitting: false }">
                     <h3 class="font-display text-xl font-semibold text-heading mb-6">Project kickoff form</h3>
-                    
-                    @if(session('success'))
+                
+                @if(session('success'))
                     <div class="mb-6 p-4 rounded-lg bg-green-500/10 border border-green-500/20" x-data="{ show: true }" x-show="show" x-transition>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
                                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
                                 <p class="text-sm font-medium text-green-500">{{ session('success') }}</p>
-                            </div>
+                        </div>
                             <button @click="show = false" class="text-green-500 hover:text-success">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                            </button>
-                        </div>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
                     </div>
-                    @endif
+                </div>
+                @endif
 
-                    @if(session('error'))
+                @if(session('error'))
                     <div class="mb-6 p-4 rounded-lg bg-error/10 border border-error/20" x-data="{ show: true }" x-show="show" x-transition>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
                                 <svg class="w-5 h-5 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
                                 <p class="text-sm font-medium text-error">{{ session('error') }}</p>
-                            </div>
-                            <button @click="show = false" class="text-error hover:text-red-400">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                            </button>
                         </div>
+                            <button @click="show = false" class="text-error hover:text-red-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
                     </div>
-                    @endif
+                </div>
+                @endif
 
                     <form action="{{ route('contact.store') }}" method="POST" class="space-y-5" @submit="submitting = true">
-                        @csrf
+                    @csrf
                         <div class="grid md:grid-cols-2 gap-5">
                             <div>
                                 <label class="block text-xs font-medium text-text-disabled uppercase tracking-wider mb-2">Full name</label>
                                 <input type="text" name="name" value="{{ old('name') }}" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-lg bg-app-background border {{ $errors->has('name') ? 'border-error' : 'border-border-default' }} text-text-primary placeholder-text-disabled focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none transition-all text-sm">
-                                @error('name')
+                            @error('name')
                                     <span class="text-xs text-error mt-1">{{ $message }}</span>
-                                @enderror
+                            @enderror
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-text-disabled uppercase tracking-wider mb-2">Work email</label>
                                 <input type="email" name="email" value="{{ old('email') }}" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-lg bg-app-background border {{ $errors->has('email') ? 'border-error' : 'border-border-default' }} text-text-primary placeholder-text-disabled focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none transition-all text-sm">
-                                @error('email')
+                            @error('email')
                                     <span class="text-xs text-error mt-1">{{ $message }}</span>
-                                @enderror
+                            @enderror
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-text-disabled uppercase tracking-wider mb-2">Phone</label>
@@ -678,15 +678,15 @@
                             <div>
                                 <label class="block text-xs font-medium text-text-disabled uppercase tracking-wider mb-2">Project type</label>
                                 <select name="project_type" class="w-full px-4 py-3 rounded-lg bg-app-background border {{ $errors->has('project_type') ? 'border-error' : 'border-border-default' }} text-text-primary focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none transition-all text-sm">
-                                    <option value="">Select project type</option>
-                                    <option value="Custom Web App" {{ old('project_type') == 'Custom Web App' ? 'selected' : '' }}>Custom Web App</option>
-                                    <option value="Mobile App" {{ old('project_type') == 'Mobile App' ? 'selected' : '' }}>Mobile App</option>
-                                    <option value="UI/UX Redesign" {{ old('project_type') == 'UI/UX Redesign' ? 'selected' : '' }}>UI/UX Redesign</option>
-                                    <option value="DevOps & Infrastructure" {{ old('project_type') == 'DevOps & Infrastructure' ? 'selected' : '' }}>DevOps & Infrastructure</option>
-                                    <option value="SEO & Growth" {{ old('project_type') == 'SEO & Growth' ? 'selected' : '' }}>SEO & Growth</option>
-                                    <option value="Other" {{ old('project_type') == 'Other' ? 'selected' : '' }}>Other</option>
-                                </select>
-                            </div>
+                                <option value="">Select project type</option>
+                                <option value="Custom Web App" {{ old('project_type') == 'Custom Web App' ? 'selected' : '' }}>Custom Web App</option>
+                                <option value="Mobile App" {{ old('project_type') == 'Mobile App' ? 'selected' : '' }}>Mobile App</option>
+                                <option value="UI/UX Redesign" {{ old('project_type') == 'UI/UX Redesign' ? 'selected' : '' }}>UI/UX Redesign</option>
+                                <option value="DevOps & Infrastructure" {{ old('project_type') == 'DevOps & Infrastructure' ? 'selected' : '' }}>DevOps & Infrastructure</option>
+                                <option value="SEO & Growth" {{ old('project_type') == 'SEO & Growth' ? 'selected' : '' }}>SEO & Growth</option>
+                                <option value="Other" {{ old('project_type') == 'Other' ? 'selected' : '' }}>Other</option>
+                            </select>
+                    </div>
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-text-disabled uppercase tracking-wider mb-2">Tell us about your goals</label>
@@ -695,23 +695,23 @@
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                             <label class="inline-flex items-center gap-2 text-sm text-text-muted cursor-pointer">
                                 <input type="checkbox" name="nda" value="1" {{ old('nda') ? 'checked' : '' }} class="w-4 h-4 rounded border-border-default bg-app-background text-brand-primary focus:ring-brand-primary/20">
-                                I'd like to sign a mutual NDA
-                            </label>
+                            I'd like to sign a mutual NDA
+                        </label>
                             <button type="submit" :disabled="submitting" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-primary text-white font-semibold hover:bg-brand-hover transition-all duration-200 shadow-lg shadow-brand-primary/25 disabled:opacity-50 disabled:cursor-not-allowed">
-                                <span x-show="!submitting">Start discovery call</span>
-                                <span x-show="submitting" class="flex items-center gap-2">
-                                    <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
-                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                    </svg>
-                                    Sending...
-                                </span>
-                                <svg x-show="!submitting" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            <span x-show="!submitting">Start discovery call</span>
+                            <span x-show="submitting" class="flex items-center gap-2">
+                                <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
-                            </button>
-                        </div>
-                    </form>
+                                Sending...
+                            </span>
+                            <svg x-show="!submitting" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -730,19 +730,19 @@
 
             // Fade up animations
             gsap.utils.toArray('[data-animate="fade-up"]').forEach((el) => {
-                const delay = parseFloat(el.dataset.delay || '0');
-                gsap.from(el, {
+                    const delay = parseFloat(el.dataset.delay || '0');
+                    gsap.from(el, {
                     duration: 0.8,
                     opacity: 0,
                     y: 30,
-                    ease: 'power3.out',
-                    delay,
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 85%',
-                        once: true
-                    }
-                });
+                        ease: 'power3.out',
+                        delay,
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top 85%',
+                            once: true
+                        }
+                    });
             });
 
             // Slide animations
@@ -826,5 +826,7 @@
             });
         @endif
     </script>
-</body>
+    
+    @include('components.whatsapp-float')
+    </body>
 </html>

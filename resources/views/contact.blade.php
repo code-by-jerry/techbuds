@@ -338,6 +338,8 @@
         });
     </script>
     @endif
+    
+    @include('components.whatsapp-float')
 </body>
 </html>
 

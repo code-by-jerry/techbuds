@@ -36,7 +36,7 @@
                         </svg>
                         <div>
                             <div class="text-xs text-text-disabled uppercase tracking-wider mb-1">Phone</div>
-                            <a href="tel:+917092936243" class="text-text-primary font-semibold hover:text-brand-primary transition-colors text-sm" itemprop="telephone">+91 7092936243</a>
+                            <a href="tel:+917092936243" class="text-text-primary font-semibold hover:text-brand-primary transition-colors text-sm" itemprop="telephone">+91 7092936243, +91 9885394334</a>
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
@@ -260,3 +260,6 @@
     ]
 ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
 </script>
+
+<!-- Floating WhatsApp Button -->
+@include('components.whatsapp-float')

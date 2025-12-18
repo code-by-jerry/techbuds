@@ -32,6 +32,7 @@
             @yield('content')
         </main>
         @include('components.footer')
+        @include('components.whatsapp-float')
         @stack('scripts')
     </body>
 </html>
