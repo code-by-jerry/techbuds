@@ -17,7 +17,7 @@
                 <a href="/#story" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Story</a>
                 <a href="/portfolio" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Portfolio</a>
                 <a href="{{ route('blog.index') }}" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Blogs</a>
-                <a href="/#contact" class="ml-2 px-5 py-2.5 rounded-lg bg-brand-primary text-white hover:bg-brand-hover transition-all duration-200 text-sm font-medium shadow-lg shadow-brand-primary/20">
+                <a href="{{ route('contact') }}" class="ml-2 px-5 py-2.5 rounded-lg bg-brand-primary text-white hover:bg-brand-hover transition-all duration-200 text-sm font-medium shadow-lg shadow-brand-primary/20">
                     Contact Us
                 </a>
             </div>
@@ -47,7 +47,7 @@
             <a href="/#story" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Story</a>
             <a href="/portfolio" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Portfolio</a>
             <a href="{{ route('blog.index') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Blogs</a>
-            <a href="/#contact" @click="mobileMenuOpen = false" class="block px-4 py-3 mt-2 rounded-lg bg-brand-primary text-white text-center hover:bg-brand-hover transition-colors text-sm font-medium">Contact Us</a>
+            <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 mt-2 rounded-lg bg-brand-primary text-white text-center hover:bg-brand-hover transition-colors text-sm font-medium">Contact Us</a>
         </div>
     </div>
 </nav>

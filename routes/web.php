@@ -45,6 +45,10 @@ Route::get('/devtools', [DevToolsController::class, 'index'])->name('devtools.in
 
 use App\Http\Controllers\ContactController;
 
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 // Sitemap
@@ -75,6 +79,9 @@ Route::get('/sitemap.xml', function () {
     
     // Portfolio page
     $sitemap->add(url('/portfolio'));
+    
+    // Contact page
+    $sitemap->add(url('/contact'));
     
     // Blog index
     $sitemap->add(url('/blog'));

@@ -37,7 +37,7 @@
                     <li><a href="/#story" class="text-text-muted hover:text-brand-primary transition-colors text-sm">Our Story</a></li>
                     <li><a href="/portfolio" class="text-text-muted hover:text-brand-primary transition-colors text-sm">Portfolio</a></li>
                     <li><a href="{{ route('blog.index') }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm">Blog</a></li>
-                    <li><a href="/#contact" class="text-text-muted hover:text-brand-primary transition-colors text-sm">Contact</a></li>
+                    <li><a href="{{ route('contact') }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm">Contact</a></li>
                 </ul>
             </div>
             
