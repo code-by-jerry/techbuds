@@ -97,21 +97,34 @@
     @include('components.navbar')
 
     <!-- Hero -->
-    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-app-background">
-        <div class="max-w-7xl mx-auto">
+    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-[500px] md:min-h-[600px] flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img 
+                src="{{ asset('images/banner images/location-page-banner.jpg') }}" 
+                alt="{{ $serviceName }} in {{ $locationName }} - Remote Services" 
+                class="w-full h-full object-cover"
+                loading="eager"
+                fetchpriority="high">
+            <!-- Gradient Overlay for better text readability - lighter overlay to show more image -->
+            <div class="absolute inset-0 bg-gradient-to-b from-app-background/75 via-app-background/65 to-app-background/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-app-background/80 via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto w-full z-10">
             <div data-animate="fade-up">
-                <span class="service-pill">
+                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">
                     Remote {{ $serviceName }} • {{ $locationName }}
                 </span>
             </div>
-            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-heading leading-tight" data-animate="fade-up" data-delay="0.1">
-                {{ $serviceName }} for Businesses in <span class="text-clip">{{ $locationName }}</span>
+            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight drop-shadow-lg" data-animate="fade-up" data-delay="0.1">
+                {{ $serviceName }} for Businesses in <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">{{ $locationName }}</span>
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-heading/80 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.2">
-                Techbuds provides <strong>remote, end-to-end {{ strtolower($service['serviceType'] ?? 'IT') }} services</strong> to companies in {{ $locationName }}.
+            <p class="mt-6 text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed drop-shadow-md" data-animate="fade-up" data-delay="0.2">
+                Techbuds provides <strong class="text-white">remote, end-to-end {{ strtolower($service['serviceType'] ?? 'IT') }} services</strong> to companies in {{ $locationName }}.
                 We work fully online, aligning to your timezone ({{ $location['timezone'] ?? '' }}), delivering high-quality code, UX, and SEO without needing a local office.
             </p>
-            <p class="mt-4 text-base md:text-lg text-heading/70 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.3">
+            <p class="mt-4 text-base md:text-lg text-white/85 max-w-3xl leading-relaxed drop-shadow-sm" data-animate="fade-up" data-delay="0.3">
                 From discovery to deployment, our India-based team collaborates with founders, product teams, and marketing leaders across {{ $locationName }}
                 via async communication, structured project management, and transparent reporting.
             </p>

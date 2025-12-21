@@ -45,6 +45,10 @@ Route::get('/devtools', [DevToolsController::class, 'index'])->name('devtools.in
 
 use App\Http\Controllers\ContactController;
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
@@ -79,6 +83,9 @@ Route::get('/sitemap.xml', function () {
     
     // Portfolio page
     $sitemap->add(url('/portfolio'));
+    
+    // About page
+    $sitemap->add(url('/about'));
     
     // Contact page
     $sitemap->add(url('/contact'));

@@ -198,16 +198,30 @@
     @include('components.navbar')
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-app-background">
-        <div class="max-w-7xl mx-auto text-center">
+    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-[500px] md:min-h-[600px] flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img 
+                src="{{ asset('images/banner images/portfolio-page-banner.jpg') }}" 
+                alt="Techbuds Portfolio - Digital Products" 
+                class="w-full h-full object-cover"
+                loading="eager"
+                fetchpriority="high">
+            <!-- Gradient Overlay for better text readability - lighter overlay to show more image -->
+            <div class="absolute inset-0 bg-gradient-to-b from-app-background/75 via-app-background/65 to-app-background/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-app-background/80 via-transparent to-transparent"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative max-w-7xl mx-auto text-center w-full z-10">
             <div data-animate="fade-up">
-                <span class="service-pill">Our Portfolio</span>
+                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">Our Portfolio</span>
             </div>
-            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-heading leading-tight" data-animate="fade-up" data-delay="0.1">
-                Powerful, Scalable <span class="text-clip">Digital Products</span>
+            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight drop-shadow-lg" data-animate="fade-up" data-delay="0.1">
+                Powerful, Scalable <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Digital Products</span>
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed" data-animate="fade-up" data-delay="0.2">
-                We build powerful, scalable digital products for businesses across multiple industries. From e-commerce to healthcare, SaaS to delivery apps, our work reflects <strong class="text-text-primary">real-world engineering, modern design, and clean execution</strong>.
+            <p class="mt-6 text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md" data-animate="fade-up" data-delay="0.2">
+                We build powerful, scalable digital products for businesses across multiple industries. From e-commerce to healthcare, SaaS to delivery apps, our work reflects <strong class="text-white">real-world engineering, modern design, and clean execution</strong>.
             </p>
         </div>
     </section>

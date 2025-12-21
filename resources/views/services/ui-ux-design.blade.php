@@ -155,18 +155,31 @@
     @include('components.navbar')
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-app-background">
-        <div class="max-w-7xl mx-auto">
+    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-[500px] md:min-h-[600px] flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img 
+                src="{{ asset('images/banner images/UI UX.jpg') }}" 
+                alt="UI/UX Design & Branding Services - Techbuds" 
+                class="w-full h-full object-cover"
+                loading="eager"
+                fetchpriority="high">
+            <!-- Gradient Overlay for better text readability - lighter overlay to show more image -->
+            <div class="absolute inset-0 bg-gradient-to-b from-app-background/75 via-app-background/65 to-app-background/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-app-background/80 via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto w-full z-10">
             <div data-animate="fade-up">
-                <span class="service-pill">UI/UX Design & Branding</span>
+                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">UI/UX Design & Branding</span>
             </div>
-            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-heading leading-tight" data-animate="fade-up" data-delay="0.1">
-                Design Experiences That <span class="text-clip">Build Trust, Engagement & Conversions</span>
+            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight drop-shadow-lg" data-animate="fade-up" data-delay="0.1">
+                Design Experiences That <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Build Trust, Engagement & Conversions</span>
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-heading/80 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.2">
-                Design is not just how your product looks — it is how users <strong>experience, understand, and trust</strong> your brand. At <strong>Techbuds</strong>, we deliver user-centered UI/UX design and strategic branding that helps businesses stand out, connect with users, and convert consistently.
+            <p class="mt-6 text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed drop-shadow-md" data-animate="fade-up" data-delay="0.2">
+                Design is not just how your product looks — it is how users <strong class="text-white">experience, understand, and trust</strong> your brand. At <strong class="text-white">Techbuds</strong>, we deliver user-centered UI/UX design and strategic branding that helps businesses stand out, connect with users, and convert consistently.
             </p>
-            <p class="mt-4 text-base md:text-lg text-heading/70 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.3">
+            <p class="mt-4 text-base md:text-lg text-white/85 max-w-3xl leading-relaxed drop-shadow-sm" data-animate="fade-up" data-delay="0.3">
                 We blend research, creativity, and business strategy to design digital experiences that work in the real world.
             </p>
         </div>

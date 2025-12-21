@@ -133,20 +133,33 @@
     @include('components.navbar')
 
     <!-- Hero -->
-    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-app-background">
-        <div class="max-w-7xl mx-auto">
+    <section class="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-[500px] md:min-h-[600px] flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img 
+                src="{{ asset('images/banner images/seo.jpg') }}" 
+                alt="SEO & Digital Marketing Services - Techbuds" 
+                class="w-full h-full object-cover"
+                loading="eager"
+                fetchpriority="high">
+            <!-- Gradient Overlay for better text readability - lighter overlay to show more image -->
+            <div class="absolute inset-0 bg-gradient-to-b from-app-background/75 via-app-background/65 to-app-background/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-app-background/80 via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto w-full z-10">
             <div data-animate="fade-up">
-                <span class="service-pill">SEO & Digital Marketing</span>
+                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">SEO & Digital Marketing</span>
             </div>
-            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-heading leading-tight" data-animate="fade-up" data-delay="0.1">
-                SEO & <span class="text-clip">Digital Marketing</span> That Drives Traffic, Leads & Long-Term Growth
+            <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight drop-shadow-lg" data-animate="fade-up" data-delay="0.1">
+                SEO & <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Digital Marketing</span> That Drives Traffic, Leads & Long-Term Growth
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-heading/80 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.2">
-                Your customers are searching for your services right now. If you’re not ranking, you’re losing revenue. At <strong>Techbuds</strong>,
+            <p class="mt-6 text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed drop-shadow-md" data-animate="fade-up" data-delay="0.2">
+                Your customers are searching for your services right now. If you're not ranking, you're losing revenue. At <strong class="text-white">Techbuds</strong>,
                 we provide data-driven SEO & digital marketing services designed to increase visibility, attract high-intent users, and convert traffic
                 into measurable business results.
             </p>
-            <p class="mt-4 text-base md:text-lg text-heading/70 max-w-3xl leading-relaxed" data-animate="fade-up" data-delay="0.3">
+            <p class="mt-4 text-base md:text-lg text-white/85 max-w-3xl leading-relaxed drop-shadow-sm" data-animate="fade-up" data-delay="0.3">
                 From startups to growing businesses, we build long-term SEO and digital marketing systems – technical SEO, content, local SEO, social,
                 paid campaigns, and conversion optimization – all aligned with your growth goals.
             </p>

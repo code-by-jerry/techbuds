@@ -161,57 +161,67 @@
     @include('components.navbar')
 
     <!-- Contact Section -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-app-background via-surface-1 to-app-background relative overflow-hidden min-h-screen">
-        <!-- Background Glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img 
+                src="{{ asset('images/banner images/contact-page-banner.jpg') }}" 
+                alt="Contact Techbuds - Get Started with Digital Solutions" 
+                class="w-full h-full object-cover"
+                loading="eager"
+                fetchpriority="high">
+            <!-- Gradient Overlay for better text readability - lighter overlay to show more image -->
+            <div class="absolute inset-0 bg-gradient-to-b from-app-background/75 via-app-background/65 to-app-background/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-app-background/80 via-transparent to-transparent"></div>
+        </div>
         
-        <div class="relative max-w-6xl mx-auto">
+        <div class="relative max-w-6xl mx-auto w-full z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-start">
                 <!-- Left Content -->
                 <div class="space-y-8">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20">
-                        <span class="text-xs font-medium text-text-secondary uppercase tracking-wider">Contact</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/20 border border-brand-primary/30 backdrop-blur-sm">
+                        <span class="text-xs font-medium text-white uppercase tracking-wider">Contact</span>
                     </div>
-                    <h1 class="font-display text-3xl md:text-4xl font-bold text-heading">
+                    <h1 class="font-display text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
                         Let's shape your next release.
                     </h1>
-                    <p class="text-text-muted leading-relaxed text-lg">
+                    <p class="text-white/90 leading-relaxed text-lg drop-shadow-md">
                         Tell us about the product you're dreaming up. We'll assemble a dedicated squad, share a roadmap, and launch a discovery sprint within days.
                     </p>
                     
                     <div class="space-y-4">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-surface-2 border border-border-default flex items-center justify-center">
-                                <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                                 </svg>
                             </div>
                             <div>
-                                <div class="text-xs text-text-disabled uppercase tracking-wider">Call us</div>
-                                <a href="tel:+917092936243" class="text-heading font-semibold hover:text-brand-primary transition-colors">+91 7092936243</a>
+                                <div class="text-xs text-white/70 uppercase tracking-wider">Call us</div>
+                                <a href="tel:+917092936243" class="text-white font-semibold hover:text-brand-soft transition-colors drop-shadow-sm">+91 7092936243</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-surface-2 border border-border-default flex items-center justify-center">
-                                <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
                             </div>
                             <div>
-                                <div class="text-xs text-text-disabled uppercase tracking-wider">Email</div>
-                                <a href="mailto:techbuds57@gmail.com" class="text-heading font-semibold hover:text-brand-primary transition-colors">techbuds57@gmail.com</a>
+                                <div class="text-xs text-white/70 uppercase tracking-wider">Email</div>
+                                <a href="mailto:techbuds57@gmail.com" class="text-white font-semibold hover:text-brand-soft transition-colors drop-shadow-sm">techbuds57@gmail.com</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-surface-2 border border-border-default flex items-center justify-center">
-                                <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
                             </div>
                             <div>
-                                <div class="text-xs text-text-disabled uppercase tracking-wider">HQ</div>
-                                <span class="text-heading font-semibold">Bangalore, India</span>
+                                <div class="text-xs text-white/70 uppercase tracking-wider">HQ</div>
+                                <span class="text-white font-semibold drop-shadow-sm">Bangalore, India</span>
                             </div>
                         </div>
                     </div>
