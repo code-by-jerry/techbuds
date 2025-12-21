@@ -87,6 +87,56 @@
                 background: #475569;
             }
             
+            /* Gradient Background Pattern */
+            .gradient-pattern {
+                background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+            }
+            
+            /* Section Divider */
+            .section-divider {
+                height: 1px;
+                background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.3), transparent);
+            }
+            
+            /* Process Step Number */
+            .process-step-number {
+                position: relative;
+            }
+            .process-step-number::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                width: 2px;
+                height: 2rem;
+                background: linear-gradient(to bottom, rgba(37, 99, 235, 0.3), transparent);
+                transform: translateX(-50%);
+            }
+            @media (min-width: 768px) {
+                .process-step-number::after {
+                    left: 100%;
+                    top: 50%;
+                    width: 2rem;
+                    height: 2px;
+                    background: linear-gradient(to right, rgba(37, 99, 235, 0.3), transparent);
+                    transform: translateY(-50%);
+                }
+            }
+            
+            /* Icon Container */
+            .icon-container {
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+                background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(56, 189, 248, 0.2));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(37, 99, 235, 0.2);
+            }
+            
+            
             /* Reduced motion */
             @media (prefers-reduced-motion: reduce) {
                 *, *::before, *::after {
@@ -131,187 +181,360 @@
     </section>
 
     <!-- Main Content -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-app-background">
-        <div class="max-w-4xl mx-auto">
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-app-background gradient-pattern">
+        <div class="max-w-6xl mx-auto">
             <!-- Our Story -->
-            <div class="mb-16" data-animate="fade-up">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-heading mb-6">
-                    Our Story
-                </h2>
-                <div class="prose prose-invert max-w-none">
-                    <p class="text-lg text-text-muted leading-relaxed mb-6">
-                        <strong class="text-text-secondary">Thoughtful digital solutions, built by experienced hands</strong>
-                    </p>
-                    <p class="text-text-muted leading-relaxed mb-4">
-                        Techbuds is a freelance-led digital solutions team formed by professionals with 4–5 years of real-world experience in development, design, and problem-solving.
-                    </p>
-                    <p class="text-text-muted leading-relaxed mb-4">
-                        Before becoming Techbuds, we worked individually across websites, applications, and systems that helped businesses operate better and grow smarter. In 2025, we brought that experience together under one focused identity — Techbuds.
-                    </p>
-                    <p class="text-text-muted leading-relaxed mb-4">
-                        Today, we collaborate as a small, hands-on team delivering modern websites, scalable applications, and performance-driven digital solutions. We value clean engineering, clear communication, and reliable delivery — without unnecessary complexity or inflated promises.
-                    </p>
-                    <p class="text-text-muted leading-relaxed">
-                        We are growing with intention, building long-term client partnerships, and laying the groundwork for a formally registered entity in the future.
-                    </p>
+            <div class="mb-24" data-animate="fade-up">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-6">
+                        <span class="text-xs font-medium text-text-secondary uppercase tracking-wider">Our Story</span>
+                    </div>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-heading mb-4">
+                        Thoughtful digital solutions, <span class="text-gradient">built by experienced hands</span>
+                    </h2>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-primary to-border-default"></div>
+                    
+                    <div class="space-y-12">
+                        <div class="relative pl-16 md:pl-20" data-animate="fade-up">
+                            <div class="absolute left-4 md:left-6 top-1 w-4 h-4 rounded-full bg-brand-primary border-4 border-app-background"></div>
+                            <div class="text-xs font-semibold text-brand-primary uppercase tracking-wider mb-2">2019 – 2024</div>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Experience Before the Brand</h3>
+                            <p class="text-text-muted leading-relaxed">We spent these years working independently across web development, application building, and system design — solving real business problems and sharpening our technical and creative expertise.</p>
+                        </div>
+
+                        <div class="relative pl-16 md:pl-20" data-animate="fade-up" data-delay="0.1">
+                            <div class="absolute left-4 md:left-6 top-1 w-4 h-4 rounded-full bg-brand-primary border-4 border-app-background"></div>
+                            <div class="text-xs font-semibold text-brand-primary uppercase tracking-wider mb-2">Early 2025</div>
+                            <h3 class="text-lg font-semibold text-heading mb-2">The Techbuds Idea</h3>
+                            <p class="text-text-muted leading-relaxed">With shared values around clean engineering, clarity, and reliability, the idea of <strong class="text-text-secondary">Techbuds</strong> took shape — bringing individual experience together under one focused digital identity.</p>
+                        </div>
+
+                        <div class="relative pl-16 md:pl-20" data-animate="fade-up" data-delay="0.2">
+                            <div class="absolute left-4 md:left-6 top-1 w-4 h-4 rounded-full bg-brand-primary border-4 border-app-background"></div>
+                            <div class="text-xs font-semibold text-brand-primary uppercase tracking-wider mb-2">Mid 2025</div>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Working as Techbuds</h3>
+                            <p class="text-text-muted leading-relaxed">We began collaborating as a small, hands-on team delivering modern websites, scalable applications, and performance-driven digital solutions for businesses and founders.</p>
+                        </div>
+                
+                        <div class="relative pl-16 md:pl-20" data-animate="fade-up" data-delay="0.3">
+                            <div class="absolute left-4 md:left-6 top-1 w-4 h-4 rounded-full bg-green-500 border-4 border-app-background animate-pulse"></div>
+                            <div class="text-xs font-semibold text-green-500 uppercase tracking-wider mb-2">Today</div>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Growing With Intention</h3>
+                            <p class="text-text-muted leading-relaxed">Techbuds operates as a freelance-led digital solutions team, focused on long-term partnerships, thoughtful execution, and sustainable growth — while laying the foundation for a formally registered entity in the future.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Quote -->
+                <div class="mt-16 text-center" data-animate="fade-up" data-delay="0.4">
+                    <blockquote class="max-w-2xl mx-auto">
+                        <p class="text-xl md:text-2xl font-display font-semibold text-heading italic leading-relaxed">
+                            We believe good technology should be simple, reliable, and built to last.
+                        </p>
+                    </blockquote>
                 </div>
             </div>
 
-            <!-- What We Do -->
-            <div class="mb-16" data-animate="fade-up" data-delay="0.1">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-heading mb-6">
-                    What We Do
-                </h2>
-                <p class="text-lg text-text-muted leading-relaxed mb-6">
-                    Founded by experienced developers and designers with over <strong class="text-text-secondary">4–5 years of hands-on industry experience</strong>, Techbuds focuses on building fast, scalable, and SEO-optimized digital products. Our work spans:
-                </p>
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-                    <div class="flex items-start gap-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                        <p class="text-text-muted">Modern websites and web applications</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                        <p class="text-text-muted">Mobile applications for iOS and Android</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                        <p class="text-text-muted">Management systems and custom software</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                        <p class="text-text-muted">SEO optimization and digital marketing</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                        <p class="text-text-muted">UI/UX design and branding</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                        <p class="text-text-muted">AI-powered automation solutions</p>
-                    </div>
-                </div>
-                <p class="text-text-muted leading-relaxed">
-                    Operating as a freelance collective, we work directly with clients — ensuring transparency, flexibility, and high-quality execution without agency overheads. Our approach combines technical expertise, thoughtful design, and business-focused strategy to deliver measurable results.
-                </p>
-            </div>
 
             <!-- Who We Work With -->
-            <div class="mb-16" data-animate="fade-up" data-delay="0.2">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-heading mb-6">
-                    Who We Work With
-                </h2>
-                <p class="text-lg text-text-muted leading-relaxed mb-6">
-                    We work best with clients who value clarity, quality, and long-term outcomes.
-                </p>
-                <div class="bg-surface-1 rounded-2xl border border-border-default p-8 mb-6">
-                    <h3 class="font-semibold text-heading mb-4">Our ideal partners include:</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">Startups building MVPs or scaling digital products</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">Small and medium businesses modernizing their online presence</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">Founders and solo entrepreneurs needing reliable tech execution</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">Agencies looking for dependable development partners</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">Businesses seeking SEO-optimized, performance-focused websites</span>
-                        </li>
-                    </ul>
+            <div class="mb-24" data-animate="fade-up" data-delay="0.2">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-6">
+                        <span class="text-xs font-medium text-text-secondary uppercase tracking-wider">Partnership</span>
+                    </div>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-4">
+                        Who We <span class="text-gradient">Work With</span>
+                    </h2>
+                    <p class="text-lg text-text-muted max-w-3xl mx-auto leading-relaxed">
+                        We work best with clients who value clarity, quality, and long-term outcomes.
+                    </p>
                 </div>
-                <div class="bg-surface-1 rounded-2xl border border-border-default p-8">
-                    <h3 class="font-semibold text-heading mb-4">We may not be the right fit if:</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-text-muted mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">You're looking for rushed, lowest-cost-only solutions</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-text-muted mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">You prefer minimal involvement or unclear requirements</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-text-muted mt-2 flex-shrink-0"></span>
-                            <span class="text-text-muted">You want shortcuts instead of sustainable engineering</span>
-                        </li>
-                    </ul>
+                
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-surface-1 rounded-2xl border border-border-default p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full -mr-16 -mt-16"></div>
+                        <div class="relative">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="icon-container">
+                                    <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-semibold text-heading text-xl">Our Ideal Partners</h3>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                                    </div>
+                                    <span class="text-text-muted">Startups building MVPs or scaling digital products</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                                    </div>
+                                    <span class="text-text-muted">Small and medium businesses modernizing their online presence</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                                    </div>
+                                    <span class="text-text-muted">Founders and solo entrepreneurs needing reliable tech execution</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                                    </div>
+                                    <span class="text-text-muted">Agencies looking for dependable development partners</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                                    </div>
+                                    <span class="text-text-muted">Businesses seeking SEO-optimized, performance-focused websites</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-surface-1 rounded-2xl border border-border-default p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-text-muted/5 rounded-full -mr-16 -mt-16"></div>
+                        <div class="relative">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="icon-container">
+                                    <svg class="w-6 h-6 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-semibold text-heading text-xl">Not the Right Fit</h3>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-text-muted/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-text-muted"></span>
+                                    </div>
+                                    <span class="text-text-muted">You're looking for rushed, lowest-cost-only solutions</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-text-muted/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-text-muted"></span>
+                                    </div>
+                                    <span class="text-text-muted">You prefer minimal involvement or unclear requirements</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-text-muted/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-text-muted"></span>
+                                    </div>
+                                    <span class="text-text-muted">You want shortcuts instead of sustainable engineering</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-text-muted leading-relaxed mt-6">
-                    When expectations align, we deliver consistently and build lasting partnerships.
-                </p>
+                
+                <div class="text-center">
+                    <p class="text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
+                        When expectations align, we deliver consistently and build lasting partnerships.
+                    </p>
+                </div>
             </div>
 
-            <!-- Our Approach -->
-            <div class="mb-16" data-animate="fade-up" data-delay="0.3">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-heading mb-6">
-                    Our Approach
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-surface-1 rounded-xl border border-border-default p-6 card-hover">
-                        <h3 class="font-semibold text-heading mb-3">Clean Engineering</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">
-                            We prioritize well-structured, maintainable code that scales with your business. Every project is built with performance, security, and SEO readiness in mind from day one.
-                        </p>
+            <div class="section-divider my-24"></div>
+
+            <!-- Our Approach - Step by Step Process -->
+            <div class="mb-24" data-animate="fade-up" data-delay="0.3">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-6">
+                        <span class="text-xs font-medium text-text-secondary uppercase tracking-wider">Our Process</span>
                     </div>
-                    <div class="bg-surface-1 rounded-xl border border-border-default p-6 card-hover">
-                        <h3 class="font-semibold text-heading mb-3">Clear Communication</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">
-                            Direct collaboration without unnecessary layers. We keep you informed throughout the process, explain technical decisions clearly, and ensure transparency at every step.
-                        </p>
-                    </div>
-                    <div class="bg-surface-1 rounded-xl border border-border-default p-6 card-hover">
-                        <h3 class="font-semibold text-heading mb-3">Reliable Delivery</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">
-                            We set realistic timelines and deliver on our commitments. Quality and reliability are non-negotiable, without inflated promises or shortcuts.
-                        </p>
-                    </div>
-                    <div class="bg-surface-1 rounded-xl border border-border-default p-6 card-hover">
-                        <h3 class="font-semibold text-heading mb-3">Long-Term Partnerships</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">
-                            We build relationships, not just projects. Our goal is to grow with you, providing ongoing support and enhancements as your business evolves.
-                        </p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-4">
+                        How We <span class="text-gradient">Work</span>
+                    </h2>
+                    <p class="text-lg text-text-muted max-w-3xl mx-auto leading-relaxed">
+                        A structured, transparent process designed to deliver exceptional results while keeping you informed at every stage.
+                    </p>
+                </div>
+                
+                <div class="max-w-5xl mx-auto">
+                    <!-- Process Steps -->
+                    <div class="space-y-8">
+                        <!-- Step 1 -->
+                        <div class="relative" data-animate="fade-up" data-delay="0.1">
+                            <div class="flex flex-col md:flex-row gap-8 items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center shadow-lg shadow-brand-primary/25">
+                                        <span class="text-2xl font-bold text-white">01</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 bg-surface-1 rounded-2xl border border-border-default p-8 card-hover">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                        </svg>
+                                        <h3 class="font-semibold text-heading text-xl">Discover & Understand</h3>
+                                    </div>
+                                    <p class="text-text-muted leading-relaxed mb-4">
+                                        We start by diving deep into your business goals, target audience, and challenges. Through detailed consultations and requirements gathering, we ensure we fully understand what success looks like for your project.
+                                    </p>
+                                    <ul class="space-y-2 text-sm text-text-secondary">
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Requirements analysis and goal setting</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Market research and competitor analysis</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Technical feasibility assessment</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative" data-animate="fade-up" data-delay="0.2">
+                            <div class="flex flex-col md:flex-row gap-8 items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center shadow-lg shadow-brand-primary/25">
+                                        <span class="text-2xl font-bold text-white">02</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 bg-surface-1 rounded-2xl border border-border-default p-8 card-hover">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                        </svg>
+                                        <h3 class="font-semibold text-heading text-xl">Plan & Strategize</h3>
+                                    </div>
+                                    <p class="text-text-muted leading-relaxed mb-4">
+                                        We create a comprehensive roadmap tailored to your needs. This includes project architecture, design direction, development milestones, timeline, and success metrics — all aligned with your business objectives.
+                                    </p>
+                                    <ul class="space-y-2 text-sm text-text-secondary">
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Detailed project roadmap and architecture</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Design mockups and wireframes</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Clear timeline and milestone planning</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative" data-animate="fade-up" data-delay="0.3">
+                            <div class="flex flex-col md:flex-row gap-8 items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center shadow-lg shadow-brand-primary/25">
+                                        <span class="text-2xl font-bold text-white">03</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 bg-surface-1 rounded-2xl border border-border-default p-8 card-hover">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                        </svg>
+                                        <h3 class="font-semibold text-heading text-xl">Build & Optimize</h3>
+                                    </div>
+                                    <p class="text-text-muted leading-relaxed mb-4">
+                                        With a solid plan in place, we bring your vision to life. We develop clean, scalable code, implement designs, integrate systems, and continuously test and optimize for performance, security, and user experience.
+                                    </p>
+                                    <ul class="space-y-2 text-sm text-text-secondary">
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Agile development with regular updates</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Rigorous testing and quality assurance</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Performance optimization and SEO implementation</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative" data-animate="fade-up" data-delay="0.4">
+                            <div class="flex flex-col md:flex-row gap-8 items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center shadow-lg shadow-brand-primary/25">
+                                        <span class="text-2xl font-bold text-white">04</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 bg-surface-1 rounded-2xl border border-border-default p-8 card-hover">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                        <h3 class="font-semibold text-heading text-xl">Launch & Support</h3>
+                                    </div>
+                                    <p class="text-text-muted leading-relaxed mb-4">
+                                        We handle deployment, monitor performance, and provide ongoing support. Our relationship doesn't end at launch — we're here to help you grow, iterate, and scale as your business evolves.
+                                    </p>
+                                    <ul class="space-y-2 text-sm text-text-secondary">
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Smooth deployment and go-live support</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Performance monitoring and analytics setup</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary mt-2 flex-shrink-0"></span>
+                                            <span>Ongoing maintenance and feature enhancements</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Legal Notice -->
-            <div class="bg-surface-1 rounded-xl border border-border-default p-6" data-animate="fade-up" data-delay="0.4">
-                <h3 class="font-semibold text-heading mb-3">Legal Status</h3>
-                <p class="text-sm text-text-muted leading-relaxed">
-                    Techbuds operates as an independent freelance collective and is not currently registered as a separate legal entity. Services are provided by individual professionals collaborating under the Techbuds name.
-                </p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-surface-1">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-heading mb-4">
-                Ready to Build Something Together?
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-surface-1 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-pattern opacity-50"></div>
+        <div class="relative max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-6">
+                <span class="text-xs font-medium text-text-secondary uppercase tracking-wider">Let's Connect</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-heading mb-6">
+                Ready to Build Something <span class="text-gradient">Together?</span>
             </h2>
-            <p class="text-lg text-text-muted mb-8 max-w-2xl mx-auto">
+            <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
                 Let's discuss your project and see how we can help bring your digital vision to life.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('contact') }}" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-brand-primary text-white font-semibold hover:bg-brand-hover transition-all duration-200 shadow-lg shadow-brand-primary/25">
+                <a href="{{ route('contact') }}" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-brand-primary text-white font-semibold hover:bg-brand-hover transition-all duration-200 shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/30 hover:scale-105">
                     Get in Touch
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
                 </a>
-                <a href="{{ route('services') }}" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-border-default text-text-primary font-semibold hover:border-brand-primary hover:text-brand-primary transition-all duration-200">
+                <a href="{{ route('services') }}" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-border-default text-text-primary font-semibold hover:border-brand-primary hover:text-brand-primary hover:bg-brand-primary/5 transition-all duration-200">
                     View Our Services
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -344,6 +567,7 @@
                     }
                 });
             });
+
         });
     </script>
 

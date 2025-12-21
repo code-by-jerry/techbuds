@@ -1,6 +1,6 @@
 <!-- Hero Carousel Section -->
 <section 
-    class="hero-carousel-section relative min-h-[400px] md:h-screen overflow-hidden mobile-landscape-hero"
+    class="hero-carousel-section relative h-[500px] md:h-screen overflow-hidden mobile-landscape-hero"
     aria-label="Services Hero Carousel" 
          x-data="{
              currentSlide: 0,
@@ -232,7 +232,7 @@
         <!-- Navigation Arrows -->
         <button 
             @click="prevSlide(); stopAutoplay(); setTimeout(() => startAutoplay(), 700);"
-            class="absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:text-brand-primary hover:bg-white/20 hover:border-white transition-all duration-300 flex items-center justify-center shadow-xl hover:scale-110 z-20"
+            class="hidden md:flex absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:text-brand-primary hover:bg-white/20 hover:border-white transition-all duration-300 items-center justify-center shadow-xl hover:scale-110 z-20"
             aria-label="Previous slide">
             <svg class="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
@@ -241,7 +241,7 @@
         
         <button 
             @click="nextSlide(); stopAutoplay(); setTimeout(() => startAutoplay(), 700);"
-            class="absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:text-brand-primary hover:bg-white/20 hover:border-white transition-all duration-300 flex items-center justify-center shadow-xl hover:scale-110 z-20"
+            class="hidden md:flex absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:text-brand-primary hover:bg-white/20 hover:border-white transition-all duration-300 items-center justify-center shadow-xl hover:scale-110 z-20"
             aria-label="Next slide">
             <svg class="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -287,49 +287,75 @@
         will-change: opacity;
     }
     
+    /* Prevent height changes during slide transitions on mobile */
+    @media (max-width: 767px) {
+        .hero-carousel-section [x-show],
+        .hero-carousel-section [x-transition] {
+            height: 500px !important;
+            min-height: 500px !important;
+            max-height: 500px !important;
+        }
+    }
+    
+    @media (max-width: 768px) and (orientation: landscape) {
+        .hero-carousel-section [x-show],
+        .hero-carousel-section [x-transition] {
+            height: 400px !important;
+            min-height: 400px !important;
+            max-height: 400px !important;
+        }
+    }
+    
     /* Desktop: images cover full area */
     .hero-carousel-section img {
         object-fit: cover;
         object-position: center;
     }
     
-    /* Mobile: show image fully to its height - no h-screen */
+    /* Mobile: fixed height to prevent layout shifts during slide changes */
     @media (max-width: 767px) {
         .hero-carousel-section {
-            height: auto !important;
-            min-height: 400px;
+            height: 500px !important;
+            min-height: 500px !important;
+            max-height: 500px !important;
         }
         
         .mobile-hero-container {
-            height: auto !important;
-            min-height: 400px;
+            height: 500px !important;
+            min-height: 500px !important;
+            max-height: 500px !important;
         }
         
         .mobile-hero-slides {
-            height: auto !important;
-            min-height: 400px;
+            height: 500px !important;
+            min-height: 500px !important;
+            max-height: 500px !important;
             position: relative;
         }
         
         .mobile-hero-slide {
-            position: relative !important;
-            height: auto !important;
-            min-height: 400px;
+            position: absolute !important;
+            height: 500px !important;
+            min-height: 500px !important;
+            max-height: 500px !important;
+            width: 100%;
         }
         
         .mobile-hero-image-container {
-            position: relative !important;
-            height: auto !important;
-            min-height: 400px;
+            position: absolute !important;
+            height: 500px !important;
+            min-height: 500px !important;
+            max-height: 500px !important;
+            width: 100%;
         }
         
         .mobile-hero-image {
             object-fit: contain !important;
             object-position: center;
             width: 100%;
-            height: auto;
-            min-height: 400px;
-            max-height: 600px;
+            height: 500px !important;
+            min-height: 500px !important;
+            max-height: 500px !important;
             display: block;
         }
         
@@ -338,40 +364,56 @@
             inset: 0;
             padding: 1rem;
             z-index: 10;
+            height: 500px;
         }
         
         /* Ensure gradient overlays work on mobile */
         .mobile-hero-image-container > div {
             position: absolute;
             inset: 0;
+            height: 500px;
         }
     }
     
-    /* Mobile landscape optimization - show full image height */
+    /* Mobile landscape optimization - fixed height for landscape */
     @media (max-width: 768px) and (orientation: landscape) {
         .hero-carousel-section.mobile-landscape-hero {
-            height: auto;
-            min-height: auto;
+            height: 400px !important;
+            min-height: 400px !important;
+            max-height: 400px !important;
         }
         
-        .hero-carousel-section > div {
-            height: auto;
-            min-height: 300px;
+        .mobile-hero-container {
+            height: 400px !important;
+            min-height: 400px !important;
+            max-height: 400px !important;
         }
         
-        .hero-carousel-section .absolute.inset-0 {
-            position: relative;
-            height: auto;
-            min-height: 300px;
+        .mobile-hero-slides {
+            height: 400px !important;
+            min-height: 400px !important;
+            max-height: 400px !important;
         }
         
-        .hero-carousel-section img {
-            object-fit: contain;
+        .mobile-hero-slide {
+            height: 400px !important;
+            min-height: 400px !important;
+            max-height: 400px !important;
+        }
+        
+        .mobile-hero-image-container {
+            height: 400px !important;
+            min-height: 400px !important;
+            max-height: 400px !important;
+        }
+        
+        .mobile-hero-image {
+            object-fit: contain !important;
             object-position: center;
             width: 100%;
-            height: auto;
-            min-height: 300px;
-            max-height: 500px;
+            height: 400px !important;
+            min-height: 400px !important;
+            max-height: 400px !important;
         }
         
         .hero-content {
@@ -379,6 +421,7 @@
             inset: 0;
             padding: 0.75rem;
             align-items: center;
+            height: 400px;
         }
         
         .hero-content > div {
@@ -395,6 +438,13 @@
         .hero-content p {
             margin-bottom: 0.375rem;
             margin-top: 0.25rem;
+        }
+        
+        /* Ensure gradient overlays work on mobile landscape */
+        .mobile-hero-image-container > div {
+            position: absolute;
+            inset: 0;
+            height: 400px;
         }
     }
     
