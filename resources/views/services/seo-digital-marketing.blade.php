@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SEO & Digital Marketing Services in India | Rank Higher & Get Leads – Techbuds</title>
-        <meta name="description" content="Professional SEO & digital marketing services to increase rankings, traffic, and conversions. Technical SEO, content, local SEO, social, PPC & CRO for growth-focused brands.">
+        @php
+            $metaTitle = 'SEO & Digital Marketing Services in India | Rank Higher & Get Leads – Techbuds';
+            $metaDescription = 'Professional SEO & digital marketing services to increase rankings, traffic, and conversions. Technical SEO, content marketing, local SEO, social media marketing, PPC & CRO for growth-focused brands.';
+            $metaKeywords = 'SEO services, digital marketing services, search engine optimization, technical SEO, content marketing, local SEO, social media marketing, PPC advertising, conversion rate optimization, SEO company India';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

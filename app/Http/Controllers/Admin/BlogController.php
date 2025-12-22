@@ -101,6 +101,9 @@ class BlogController extends Controller
                 $validated['slug'] = $validated['slug'] . '-' . ($count + 1);
             }
         }
+        
+        // Ensure slug is always lowercase for SEO consistency
+        $validated['slug'] = strtolower($validated['slug']);
 
         // Set default published_date if not provided
         if (empty($validated['published_date'])) {
@@ -175,6 +178,9 @@ class BlogController extends Controller
                 $validated['slug'] = $validated['slug'] . '-' . ($count + 1);
             }
         }
+        
+        // Ensure slug is always lowercase for SEO consistency
+        $validated['slug'] = strtolower($validated['slug']);
 
         // Calculate reading time if not provided
         if (empty($validated['reading_time'])) {

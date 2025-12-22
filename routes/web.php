@@ -3,11 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $blogs = \App\Models\Blog::where('is_published', true)
-        ->orderBy('is_featured', 'desc')
-        ->orderBy('published_date', 'desc')
-        ->limit(6)
-        ->get();
+    // Optimize query - only select needed fields and cache for 15 minutes
+    $blogs = cache()->remember('homepage_blogs', 900, function () {
+        return \App\Models\Blog::where('is_published', true)
+            ->select(['id', 'title', 'slug', 'excerpt', 'featured_image', 'category', 'reading_time', 'signals', 'is_featured', 'published_date'])
+            ->orderBy('is_featured', 'desc')
+            ->orderBy('published_date', 'desc')
+            ->limit(6)
+            ->get();
+    });
     return view('welcome', compact('blogs'));
 });
 
@@ -31,13 +35,22 @@ Route::get('/locations', function () {
 
 use App\Http\Controllers\ServiceController;
 
-Route::get('/services/{service}/{location}', [ServiceController::class, 'location'])->name('services.location');
-Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+// Location-based service pages (more specific, must come first)
+Route::get('/services/{service}/{location}', [ServiceController::class, 'location'])
+    ->where(['service' => '[a-z0-9-]+', 'location' => '[a-z0-9-]+'])
+    ->name('services.location');
+
+// Individual service pages
+Route::get('/services/{slug}', [ServiceController::class, 'show'])
+    ->where('slug', '[a-z0-9-]+')
+    ->name('services.show');
 
 use App\Http\Controllers\BlogController;
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])
+    ->where('slug', '[a-z0-9-]+')
+    ->name('blog.show');
 
 use App\Http\Controllers\DevToolsController;
 
@@ -55,52 +68,157 @@ Route::get('/contact', function () {
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
+// Robots.txt (Dynamic - generates with current domain)
+Route::get('/robots.txt', function () {
+    $sitemapUrl = url('/sitemap.xml');
+    
+    $content = "# Robots.txt for Techbuds
+# Updated: 2025
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /tests/
+
+# Allow important public pages
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /services
+Allow: /services/
+Allow: /portfolio
+Allow: /locations
+Allow: /blog
+Allow: /blog/
+Allow: /devtools
+
+# Allow service pages (dynamic routes)
+Allow: /services/*
+
+# Allow location-based service pages
+Allow: /services/*/*
+
+# Allow blog posts (dynamic routes)
+Allow: /blog/*
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+
+# Sitemap location
+Sitemap: {$sitemapUrl}
+";
+    
+    return response($content, 200)
+        ->header('Content-Type', 'text/plain');
+})->name('robots');
+
 // Sitemap
 Route::get('/sitemap.xml', function () {
     $sitemap = \Spatie\Sitemap\Sitemap::create();
+    $now = now();
     
-    // Home page
-    $sitemap->add(url('/'));
+    // Home page (Highest priority)
+    $sitemap->add(
+        \Spatie\Sitemap\Tags\Url::create(url('/'))
+            ->setPriority(1.0)
+            ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY)
+            ->setLastModificationDate($now)
+    );
     
-    // Services page
-    $sitemap->add(url('/services'));
+    // Main pages (High priority)
+    $mainPages = [
+        ['url' => '/services', 'priority' => 0.9, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY],
+        ['url' => '/about', 'priority' => 0.8, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY],
+        ['url' => '/portfolio', 'priority' => 0.8, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY],
+        ['url' => '/contact', 'priority' => 0.7, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY],
+        ['url' => '/locations', 'priority' => 0.7, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY],
+        ['url' => '/blog', 'priority' => 0.9, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_DAILY],
+    ];
     
-    // Individual service pages (global)
+    foreach ($mainPages as $page) {
+        $sitemap->add(
+            \Spatie\Sitemap\Tags\Url::create(url($page['url']))
+                ->setPriority($page['priority'])
+                ->setChangeFrequency($page['freq'])
+                ->setLastModificationDate($now)
+        );
+    }
+    
+    // Individual service pages (High priority - main services)
     $serviceSlugs = array_keys(config('service_pages', []));
     foreach ($serviceSlugs as $slug) {
-        $sitemap->add(url('/services/' . $slug));
+        $sitemap->add(
+            \Spatie\Sitemap\Tags\Url::create(url('/services/' . $slug))
+                ->setPriority(0.8)
+                ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setLastModificationDate($now)
+        );
     }
 
-    // High-priority location pages per service
+    // High-priority location pages per service (Medium priority)
     $locations = collect(config('locations', []))
         ->filter(fn ($loc) => ($loc['priority'] ?? null) === 'high' && ($loc['seo_index'] ?? false));
 
     foreach ($serviceSlugs as $serviceSlug) {
         foreach ($locations as $locationSlug => $loc) {
-            $sitemap->add(url("/services/{$serviceSlug}/{$locationSlug}"));
+            $sitemap->add(
+                \Spatie\Sitemap\Tags\Url::create(url("/services/{$serviceSlug}/{$locationSlug}"))
+                    ->setPriority(0.6)
+                    ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setLastModificationDate($now)
+            );
         }
     }
     
-    // Portfolio page
-    $sitemap->add(url('/portfolio'));
+    // Individual blog posts (Medium-high priority, based on recency)
+    $blogs = \App\Models\Blog::where('is_published', true)
+        ->orderBy('published_date', 'desc')
+        ->get();
     
-    // About page
-    $sitemap->add(url('/about'));
-    
-    // Contact page
-    $sitemap->add(url('/contact'));
-    
-    // Blog index
-    $sitemap->add(url('/blog'));
-    
-    // Individual blog posts
-    $blogs = \App\Models\Blog::where('is_published', true)->get();
     foreach ($blogs as $blog) {
-        $sitemap->add(url('/blog/' . $blog->slug));
+        // Recent posts (last 30 days) get higher priority
+        $isRecent = $blog->published_date && $blog->published_date->isAfter(now()->subDays(30));
+        $priority = $isRecent ? 0.7 : 0.6;
+        $lastmod = $blog->updated_at ?? $blog->published_date ?? $now;
+        
+        $sitemap->add(
+            \Spatie\Sitemap\Tags\Url::create(url('/blog/' . $blog->slug))
+                ->setPriority($priority)
+                ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setLastModificationDate($lastmod)
+        );
     }
     
-    // DevTools page
-    $sitemap->add(url('/devtools'));
+    // DevTools page (Lower priority)
+    $sitemap->add(
+        \Spatie\Sitemap\Tags\Url::create(url('/devtools'))
+            ->setPriority(0.5)
+            ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY)
+            ->setLastModificationDate($now)
+    );
     
     return $sitemap->render();
 })->name('sitemap');

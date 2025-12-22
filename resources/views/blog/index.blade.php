@@ -475,4 +475,13 @@
     });
 </script>
 @endpush
+
+<!-- Schema Markup -->
+@include('components.schema.blog', ['blogs' => $blogs])
+@include('components.schema.breadcrumb', [
+    'items' => [
+        ['name' => 'Home', 'url' => url('/')],
+        ['name' => 'Blog', 'url' => route('blog.index')],
+    ]
+])
 @endsection

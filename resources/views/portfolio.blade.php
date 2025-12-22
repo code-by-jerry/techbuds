@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Our Portfolio - Techbuds</title>
-        <meta name="description" content="Explore Techbuds' portfolio of powerful digital products across e-commerce, healthcare, SaaS, delivery apps, and more. Real-world engineering, modern design, and clean execution.">
+        @php
+            $metaTitle = 'Our Portfolio - Web & Mobile App Development Projects | Techbuds';
+            $metaDescription = 'Explore Techbuds portfolio showcasing powerful digital products across e-commerce, healthcare, SaaS, delivery apps, and more. Real-world engineering, modern design, and clean execution with measurable results.';
+            $metaKeywords = 'techbuds portfolio, web development portfolio, mobile app portfolio, case studies, web development projects, mobile app projects, software development portfolio, UI/UX design portfolio';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
@@ -485,5 +487,24 @@
             });
         });
     </script>
+    <!-- Schema Markup -->
+    @php
+        $portfolioSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'CollectionPage',
+            'name' => 'Techbuds Portfolio',
+            'description' => 'Explore Techbuds portfolio showcasing powerful digital products across e-commerce, healthcare, SaaS, delivery apps, and more.',
+            'url' => url('/portfolio'),
+        ];
+    @endphp
+    <script type="application/ld+json">
+    {!! json_encode($portfolioSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
+    </script>
+    @include('components.schema.breadcrumb', [
+        'items' => [
+            ['name' => 'Home', 'url' => url('/')],
+            ['name' => 'Portfolio', 'url' => url('/portfolio')],
+        ]
+    ])
 </body>
 </html>

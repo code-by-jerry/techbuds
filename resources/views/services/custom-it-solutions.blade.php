@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Custom IT Solutions | Tailor-Made Business Software – Techbuds</title>
-        <meta name="description" content="Custom IT solutions and software development tailored to your workflows: CRMs, ERPs, internal systems, dashboards, and integrations built for growth.">
+        @php
+            $metaTitle = 'Custom IT Solutions | Tailor-Made Business Software – Techbuds';
+            $metaDescription = 'Custom IT solutions and software development tailored to your workflows: CRMs, ERPs, internal management systems, custom dashboards, and integrations built for business growth and efficiency.';
+            $metaKeywords = 'custom software development, IT solutions, custom CRM development, ERP development, business software development, custom applications, enterprise software, management systems, custom dashboard development';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

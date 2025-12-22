@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Techbuds - Design Develop Deliver</title>
-    <meta name="description" content="Techbuds - Your trusted partner for Web Apps, Mobile Apps, UI/UX Design, DevOps, Database Warehousing, and Digital Marketing solutions.">
+        @php
+            $metaTitle = 'Techbuds - Design Develop Deliver | Web & Mobile App Development Services in India';
+            $metaDescription = 'Techbuds delivers professional web development, mobile app development, UI/UX design, DevOps, SEO, and digital marketing solutions. Build fast, scalable, SEO-optimized digital products with 4+ years of experience.';
+            $metaKeywords = 'web development, mobile app development, UI/UX design, DevOps, digital marketing, custom software development, Laravel development, React development, Flutter apps, SEO services, web development Bangalore, mobile app development India, freelance web developers';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
         <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
         <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
 
-        <!-- Fonts: Inter (Body) + Clash Display (Headings) -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+        <!-- Optimized Font Loading -->
+        @include('components.optimized-fonts')
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -113,6 +112,11 @@
 
     <!-- Hero Carousel Section -->
     @include('components.hero-carousel')
+    
+    <!-- Main Page Title (H1) - Hidden visually but present for SEO -->
+    <div class="sr-only">
+        <h1>Techbuds - Design Develop Deliver | Web & Mobile App Development Services in India</h1>
+    </div>
 
     <!-- Metrics Strip -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1 border-y border-surface-2">
@@ -147,24 +151,26 @@
     </section>
 
     <!-- Tech Stack Marquee -->
-    <section class="py-20 overflow-hidden bg-gradient-to-b from-surface-1 to-app-background">
-        @php
-            $stack = ['Web Development','React Apps','Laravel','Ecommerce','Mobile','DevOps','Brand','SEO','Data','AI','Automation','Product Design'];
-            $lineOne = array_merge($stack, $stack);
-            $offset = (int) ceil(count($stack) / 2);
-            $lineTwoSeed = array_merge(array_slice($stack, $offset), array_slice($stack, 0, $offset));
-            $lineTwo = array_merge($lineTwoSeed, $lineTwoSeed);
-        @endphp
-        <div class="space-y-6">
-            <div class="flex marquee-track" style="min-width: 200%;">
-            @foreach ($lineOne as $item)
-                    <span class="px-8 text-5xl md:text-7xl font-bold text-text-muted/70 whitespace-nowrap">{{ $item }}</span>
-            @endforeach
-            </div>
-            <div class="flex marquee-track-reverse" style="min-width: 200%;">
-            @foreach ($lineTwo as $item)
-                    <span class="px-8 text-5xl md:text-7xl font-bold text-transparent whitespace-nowrap" style="-webkit-text-stroke: 1px rgba(148, 163, 184, 0.6);">{{ $item }}</span>
-            @endforeach
+    <section class="py-12 md:py-20 overflow-hidden bg-gradient-to-b from-surface-1 to-app-background">
+        <div class="overflow-hidden">
+            @php
+                $stack = ['Web Development','React Apps','Laravel','Ecommerce','Mobile','DevOps','Brand','SEO','Data','AI','Automation','Product Design'];
+                $lineOne = array_merge($stack, $stack);
+                $offset = (int) ceil(count($stack) / 2);
+                $lineTwoSeed = array_merge(array_slice($stack, $offset), array_slice($stack, 0, $offset));
+                $lineTwo = array_merge($lineTwoSeed, $lineTwoSeed);
+            @endphp
+            <div class="space-y-4 md:space-y-6">
+                <div class="flex marquee-track" style="min-width: 200%;">
+                @foreach ($lineOne as $item)
+                        <span class="px-4 md:px-8 text-3xl md:text-5xl lg:text-7xl font-bold text-text-muted/70 whitespace-nowrap">{{ $item }}</span>
+                @endforeach
+                </div>
+                <div class="flex marquee-track-reverse" style="min-width: 200%;">
+                @foreach ($lineTwo as $item)
+                        <span class="px-4 md:px-8 text-3xl md:text-5xl lg:text-7xl font-bold text-transparent whitespace-nowrap" style="-webkit-text-stroke: 1px rgba(148, 163, 184, 0.6);">{{ $item }}</span>
+                @endforeach
+                </div>
             </div>
         </div>
     </section>
@@ -189,7 +195,7 @@
                 <article class="bg-surface-1 rounded-2xl border border-border-default overflow-hidden card-hover" data-animate="fade-up">
                     <div class="grid lg:grid-cols-12 gap-0">
                         <div class="lg:col-span-5 relative h-64 lg:h-auto">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=60" alt="Web and mobile development" class="w-full h-full object-cover" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=60" alt="Web and Mobile App Development Services - Custom Websites and Applications by Techbuds" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-r from-surface-1/80 to-transparent lg:bg-gradient-to-l"></div>
                         </div>
                         <div class="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-center">
@@ -261,7 +267,7 @@
                     </div>
                 </div>
                         <div class="lg:col-span-5 relative h-64 lg:h-auto order-1 lg:order-2">
-                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80" alt="UI/UX design and branding" class="w-full h-full object-cover" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80" alt="UI/UX Design and Branding Services - User-Centered Design Solutions by Techbuds" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-l from-surface-1/80 to-transparent lg:bg-gradient-to-r"></div>
                     </div>
                     </div>
@@ -271,7 +277,7 @@
                 <article class="bg-surface-1 rounded-2xl border border-border-default overflow-hidden card-hover" data-animate="fade-up" data-delay="0.2">
                     <div class="grid lg:grid-cols-12 gap-0">
                         <div class="lg:col-span-5 relative h-64 lg:h-auto">
-                            <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1600&q=60" alt="SEO and digital marketing" class="w-full h-full object-cover" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1600&q=60" alt="SEO and Digital Marketing Services - Grow Traffic and Generate Leads with Techbuds" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-r from-surface-1/80 to-transparent lg:bg-gradient-to-l"></div>
                         </div>
                         <div class="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-center">
@@ -859,5 +865,10 @@
     </script>
     
     @include('components.whatsapp-float')
+    
+    <!-- Schema Markup -->
+    @include('components.schema.website')
+    @include('components.schema.organization')
+    @include('components.schema.breadcrumb', ['items' => [['name' => 'Home', 'url' => url('/')]]])
     </body>
 </html>

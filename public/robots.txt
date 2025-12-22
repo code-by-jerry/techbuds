@@ -1,3 +1,7 @@
+# Robots.txt for Techbuds
+# Updated: 2025
+
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
@@ -6,13 +10,58 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /storage/
 Disallow: /vendor/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /tests/
 
-# Allow important pages
+# Allow important public pages
 Allow: /
-Allow: /blog
-Allow: /services
-Allow: /portfolio
+Allow: /about
 Allow: /contact
+Allow: /services
+Allow: /services/
+Allow: /portfolio
+Allow: /locations
+Allow: /blog
+Allow: /blog/
+Allow: /devtools
+
+# Allow service pages (dynamic routes)
+Allow: /services/*
+
+# Allow location-based service pages
+Allow: /services/*/*
+
+# Allow blog posts (dynamic routes)
+Allow: /blog/*
+
+# Crawl-delay for aggressive bots (optional)
+# User-agent: *
+# Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+# User-agent: SemrushBot
+# Disallow: /
 
 # Sitemap location
 Sitemap: https://techbuds.online/sitemap.xml

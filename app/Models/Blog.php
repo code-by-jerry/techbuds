@@ -37,6 +37,15 @@ class Blog extends Model
             if (empty($blog->slug)) {
                 $blog->slug = Str::slug($blog->title);
             }
+            // Ensure slug is always lowercase for SEO consistency
+            $blog->slug = strtolower($blog->slug);
+        });
+
+        static::updating(function ($blog) {
+            // Ensure slug is always lowercase when updating
+            if ($blog->isDirty('slug') && !empty($blog->slug)) {
+                $blog->slug = strtolower($blog->slug);
+            }
         });
     }
 

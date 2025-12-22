@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>DevOps & Cloud Deployment Services | Secure & Scalable – Techbuds</title>
-        <meta name="description" content="DevOps and cloud deployment services: CI/CD pipelines, cloud infrastructure, monitoring, security, backups. Build secure, scalable, high-performance systems.">
+        @php
+            $metaTitle = 'DevOps & Cloud Deployment Services | Secure & Scalable – Techbuds';
+            $metaDescription = 'DevOps and cloud deployment services: CI/CD pipelines, AWS/Google Cloud infrastructure, monitoring, security, automated backups. Build secure, scalable, high-performance systems with 24/7 reliability.';
+            $metaKeywords = 'DevOps services, cloud deployment, CI/CD pipelines, AWS deployment, Google Cloud services, infrastructure automation, server monitoring, cloud security, DevOps consulting, cloud migration services';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

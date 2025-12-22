@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AI & Automation Solutions | Workflow & Business Automation – Techbuds</title>
-        <meta name="description" content="AI and automation solutions to streamline workflows, reduce costs, and scale efficiency. Chatbots, process automation, lead automation, and intelligent data workflows.">
+        @php
+            $metaTitle = 'AI & Automation Solutions | Workflow & Business Automation – Techbuds';
+            $metaDescription = 'AI and automation solutions to streamline workflows, reduce costs, and scale efficiency. Chatbots, process automation, lead automation, intelligent data workflows, and AI-powered business solutions.';
+            $metaKeywords = 'AI solutions, business automation, workflow automation, AI chatbots, process automation, lead automation, intelligent automation, AI integration, automation services, AI consulting';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

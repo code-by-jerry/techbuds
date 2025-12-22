@@ -17,13 +17,13 @@
                 <a href="{{ route('about') }}" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">About</a>
                 <a href="/portfolio" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Portfolio</a>
                 <a href="{{ route('blog.index') }}" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Blogs</a>
-                <a href="{{ route('contact') }}" class="ml-2 px-5 py-2.5 rounded-lg bg-brand-primary text-white hover:bg-brand-hover transition-all duration-200 text-sm font-medium shadow-lg shadow-brand-primary/20">
+                <a href="{{ route('contact') }}" class="ml-2 px-5 py-2.5 rounded-lg bg-brand-primary text-white hover:bg-brand-hover transition-all duration-200 text-sm font-medium shadow-lg shadow-brand-primary/20 min-h-[44px] flex items-center">
                     Contact Us
                 </a>
             </div>
             
             <!-- Mobile Menu Button -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-lg text-text-secondary hover:bg-surface-2 transition-colors">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-3 rounded-lg text-text-secondary hover:bg-surface-2 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation" aria-label="Toggle mobile menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     <path x-show="mobileMenuOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -47,7 +47,7 @@
             <a href="{{ route('about') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">About</a>
             <a href="/portfolio" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Portfolio</a>
             <a href="{{ route('blog.index') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Blogs</a>
-            <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 mt-2 rounded-lg bg-brand-primary text-white text-center hover:bg-brand-hover transition-colors text-sm font-medium">Contact Us</a>
+            <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 mt-2 rounded-lg bg-brand-primary text-white text-center hover:bg-brand-hover transition-colors text-sm font-medium min-h-[48px] flex items-center justify-center touch-manipulation">Contact Us</a>
         </div>
     </div>
 </nav>

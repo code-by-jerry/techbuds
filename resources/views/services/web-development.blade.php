@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Web Development Services | Fast, Scalable & SEO-Optimized Websites – Techbuds</title>
-        <meta name="description" content="Professional web development services: custom websites, full-stack applications, Laravel development, SEO-optimized sites. Build fast, scalable web solutions.">
+        @php
+            $metaTitle = 'Web Development Services | Fast, Scalable & SEO-Optimized Websites – Techbuds';
+            $metaDescription = 'Professional web development services: custom websites, full-stack applications, Laravel development, React development, SEO-optimized sites. Build fast, scalable, performance-focused web solutions.';
+            $metaKeywords = 'web development services, custom website development, Laravel development, React development, full-stack development, responsive web design, SEO-optimized websites, web application development, website development company';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
@@ -160,7 +162,7 @@
         <div class="absolute inset-0 w-full h-full">
             <img 
                 src="{{ asset('images/banner images/web developement 2.jpg') }}" 
-                alt="Web Development Services - Techbuds" 
+                alt="Web Development Services - Fast, Scalable & SEO-Optimized Websites by Techbuds" 
                 class="w-full h-full object-cover"
                 loading="eager"
                 fetchpriority="high">
@@ -580,6 +582,11 @@
     @include('components.footer')
 
     @include('components.service-schema', ['serviceKey' => 'web-development'])
+    
+    <!-- Additional Breadcrumb Schema (service-schema already includes breadcrumb, but this ensures it's present) -->
+    @php
+        $serviceConfig = config('service_pages.web-development');
+    @endphp
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>

@@ -4,34 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <!-- Primary Meta Tags -->
-        <title>Contact Us - Get Started with Techbuds | Web & Mobile App Development</title>
-        <meta name="title" content="Contact Us - Get Started with Techbuds | Web & Mobile App Development">
-        <meta name="description" content="Start your digital transformation journey with Techbuds. Contact our team for custom web apps, mobile applications, UI/UX design, DevOps, and digital marketing solutions. Get a free consultation today.">
-        <meta name="keywords" content="contact techbuds, web development company, mobile app development, UI/UX design, DevOps services, digital marketing, custom software development, Bangalore, India">
-        <meta name="author" content="Techbuds">
-        <meta name="robots" content="index, follow">
-        <meta name="language" content="English">
-        <meta name="revisit-after" content="7 days">
-        
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ url('/contact') }}">
-        <meta property="og:title" content="Contact Us - Get Started with Techbuds | Web & Mobile App Development">
-        <meta property="og:description" content="Start your digital transformation journey with Techbuds. Contact our team for custom web apps, mobile applications, UI/UX design, DevOps, and digital marketing solutions.">
-        <meta property="og:image" content="{{ asset('images/techbuds-light.png') }}">
-        <meta property="og:site_name" content="Techbuds">
-        <meta property="og:locale" content="en_US">
-        
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:url" content="{{ url('/contact') }}">
-        <meta name="twitter:title" content="Contact Us - Get Started with Techbuds">
-        <meta name="twitter:description" content="Start your digital transformation journey with Techbuds. Contact our team for custom web apps, mobile applications, UI/UX design, DevOps, and digital marketing solutions.">
-        <meta name="twitter:image" content="{{ asset('images/techbuds-light.png') }}">
-        
-        <!-- Canonical URL -->
-        <link rel="canonical" href="{{ url('/contact') }}">
+        @php
+            $metaTitle = 'Contact Us - Get Started with Techbuds | Web & Mobile App Development';
+            $metaDescription = 'Start your digital transformation journey with Techbuds. Contact our team for custom web apps, mobile applications, UI/UX design, DevOps, and digital marketing solutions. Get a free consultation today.';
+            $metaKeywords = 'contact techbuds, web development company, mobile app development, UI/UX design, DevOps services, digital marketing, custom software development, Bangalore, India, get quote, consultation';
+        @endphp
+        @include('components.meta-tags')
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
@@ -88,47 +66,25 @@
         </style>
         
         <!-- Structured Data (JSON-LD) -->
+        @php
+            $contactPageSchema = [
+                '@context' => 'https://schema.org',
+                '@type' => 'ContactPage',
+                'name' => 'Contact Techbuds',
+                'description' => 'Contact Techbuds for custom web development, mobile app development, UI/UX design, DevOps, and digital marketing services.',
+                'url' => url('/contact'),
+            ];
+        @endphp
         <script type="application/ld+json">
-        {!! json_encode([
-            '@context' => 'https://schema.org',
-            '@type' => 'ContactPage',
-            'name' => 'Contact Techbuds',
-            'description' => 'Contact Techbuds for custom web development, mobile app development, UI/UX design, DevOps, and digital marketing services.',
-            'url' => url('/contact'),
-            'mainEntity' => [
-                '@type' => 'Organization',
-                'name' => 'Techbuds',
-                'url' => url('/'),
-                'logo' => asset('images/techbuds-light.png'),
-                'contactPoint' => [
-                    [
-                        '@type' => 'ContactPoint',
-                        'telephone' => '+91-7092936243',
-                        'contactType' => 'Customer Service',
-                        'areaServed' => 'IN',
-                        'availableLanguage' => ['English', 'Hindi']
-                    ],
-                    [
-                        '@type' => 'ContactPoint',
-                        'email' => 'techbuds57@gmail.com',
-                        'contactType' => 'Customer Service',
-                        'areaServed' => 'Worldwide',
-                        'availableLanguage' => ['English']
-                    ]
-                ],
-                'address' => [
-                    '@type' => 'PostalAddress',
-                    'addressLocality' => 'Bangalore',
-                    'addressCountry' => 'IN'
-                ],
-                'sameAs' => [
-                    'https://twitter.com/techbuds',
-                    'https://linkedin.com/company/techbuds',
-                    'https://github.com/techbuds'
-                ]
-            ]
-        ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
+        {!! json_encode($contactPageSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
         </script>
+        @include('components.schema.local-business')
+        @include('components.schema.breadcrumb', [
+            'items' => [
+                ['name' => 'Home', 'url' => url('/')],
+                ['name' => 'Contact', 'url' => url('/contact')],
+            ]
+        ])
         
         <script type="application/ld+json">
         {!! json_encode([

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Database & Data Warehousing Services | Scalable Data Systems – Techbuds</title>
-        <meta name="description" content="Database and data warehousing services: design, optimization, ETL, BI dashboards. Build scalable, secure, high-performance data systems for better decisions.">
+        @php
+            $metaTitle = 'Database & Data Warehousing Services | Scalable Data Systems – Techbuds';
+            $metaDescription = 'Database and data warehousing services: database design, optimization, ETL processes, BI dashboards, data analytics. Build scalable, secure, high-performance data systems for better business decisions.';
+            $metaKeywords = 'database services, data warehousing, database design, ETL services, business intelligence, BI dashboards, data analytics, database optimization, data migration, data architecture services';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

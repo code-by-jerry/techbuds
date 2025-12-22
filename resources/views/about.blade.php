@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>About Techbuds - Digital Solutions Team | Web Development, Mobile Apps, SEO</title>
-        <meta name="description" content="Techbuds is an independent digital solutions team providing web development, mobile app development, SEO, UI/UX design, and AI-powered solutions. Founded by experienced developers with 4-5 years of industry experience.">
-        <meta name="keywords" content="web development services, custom software development, freelance web developers, digital solutions for businesses, SEO-friendly websites, mobile app development services, UI/UX design, freelance developers Bangalore">
-        
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ url('/about') }}">
-        <meta property="og:title" content="About Techbuds - Digital Solutions Team">
-        <meta property="og:description" content="Techbuds is an independent digital solutions team providing web development, mobile app development, SEO, UI/UX design, and AI-powered solutions.">
-        
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="{{ url('/about') }}">
-        <meta property="twitter:title" content="About Techbuds - Digital Solutions Team">
-        <meta property="twitter:description" content="Techbuds is an independent digital solutions team providing web development, mobile app development, SEO, UI/UX design, and AI-powered solutions.">
+        @php
+            $metaTitle = 'About Techbuds - Digital Solutions Team | Web Development, Mobile Apps, SEO';
+            $metaDescription = 'Techbuds is an independent digital solutions team providing web development, mobile app development, SEO, UI/UX design, and AI-powered solutions. Founded by experienced developers with 4-5 years of industry experience.';
+            $metaKeywords = 'about techbuds, digital solutions team, freelance web developers, custom software development, web development services, mobile app development services, UI/UX design, SEO services, freelance developers Bangalore, tech team India';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
@@ -600,6 +589,27 @@
     </script>
     
     @include('components.whatsapp-float')
-</body>
+    
+    <!-- Schema Markup -->
+    @php
+        $aboutPageSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'AboutPage',
+            'name' => 'About Techbuds',
+            'description' => 'Techbuds is an independent digital solutions team providing web development, mobile app development, SEO, UI/UX design, and AI-powered solutions.',
+            'url' => url('/about'),
+        ];
+    @endphp
+    <script type="application/ld+json">
+    {!! json_encode($aboutPageSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
+    </script>
+    @include('components.schema.organization')
+    @include('components.schema.breadcrumb', [
+        'items' => [
+            ['name' => 'Home', 'url' => url('/')],
+            ['name' => 'About', 'url' => url('/about')],
+        ]
+    ])
+    </body>
 </html>
 

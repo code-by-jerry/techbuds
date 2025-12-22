@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Mobile App Development Services | Android & iOS Apps – Techbuds</title>
-        <meta name="description" content="Professional mobile app development: Android, iOS, cross-platform apps. Native development, API integration, ASO. Build high-performance mobile applications.">
+        @php
+            $metaTitle = 'Mobile App Development Services | Android & iOS Apps – Techbuds';
+            $metaDescription = 'Professional mobile app development: Android, iOS, cross-platform apps using Flutter and React Native. Native development, API integration, App Store Optimization. Build high-performance mobile applications.';
+            $metaKeywords = 'mobile app development, Android app development, iOS app development, Flutter app development, React Native development, cross-platform apps, mobile application development, app development company, mobile app developers';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

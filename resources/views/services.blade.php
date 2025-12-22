@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Our Services - Techbuds</title>
-        <meta name="description" content="Techbuds offers comprehensive digital solutions: Web Development, Mobile Apps, SEO, UI/UX Design, DevOps, Database Warehousing, AI Automation, and Custom IT Solutions.">
+        @php
+            $metaTitle = 'Our Services - Web Development, Mobile Apps, SEO & More | Techbuds';
+            $metaDescription = 'Comprehensive digital solutions by Techbuds: Web Development, Mobile Apps, UI/UX Design, DevOps, SEO, Database Warehousing, AI Automation, and Custom IT Solutions. Professional services for startups and growing businesses.';
+            $metaKeywords = 'web development services, mobile app development, UI/UX design services, DevOps services, SEO services, digital marketing, database warehousing, AI automation, custom software development, IT solutions, web development company';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
@@ -709,5 +711,25 @@
             });
         });
     </script>
+    
+    <!-- Schema Markup -->
+    @php
+        $servicesPageSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'CollectionPage',
+            'name' => 'Techbuds Services',
+            'description' => 'Comprehensive digital solutions by Techbuds: Web Development, Mobile Apps, UI/UX Design, DevOps, SEO, Database Warehousing, AI Automation, and Custom IT Solutions.',
+            'url' => route('services'),
+        ];
+    @endphp
+    <script type="application/ld+json">
+    {!! json_encode($servicesPageSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
+    </script>
+    @include('components.schema.breadcrumb', [
+        'items' => [
+            ['name' => 'Home', 'url' => url('/')],
+            ['name' => 'Services', 'url' => route('services')],
+        ]
+    ])
 </body>
 </html>

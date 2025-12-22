@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UI/UX Design & Branding Services | Product Design – Techbuds</title>
-        <meta name="description" content="UI/UX design and branding services: product design, web & mobile UX, branding, redesigns. Design experiences that build trust, engagement, and conversions.">
+        @php
+            $metaTitle = 'UI/UX Design & Branding Services | Product Design – Techbuds';
+            $metaDescription = 'UI/UX design and branding services: product design, web & mobile UX, wireframes, prototypes, branding, redesigns. Design experiences that build trust, engagement, and conversions.';
+            $metaKeywords = 'UI/UX design services, user experience design, user interface design, product design, branding services, wireframing, prototyping, Figma design, UX design company, UI design services';
+        @endphp
+        @include('components.meta-tags')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

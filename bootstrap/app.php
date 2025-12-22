@@ -20,7 +20,14 @@ return Application::configure(basePath: dirname(__DIR__))
         RunAutomation::class,
     ])
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Force lowercase URLs for SEO consistency
+        $middleware->web(append: [
+            \App\Http\Middleware\ForceLowercaseUrls::class,
+        ]);
+        // HTTP caching headers for performance
+        $middleware->web(append: [
+            \App\Http\Middleware\CacheHeaders::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

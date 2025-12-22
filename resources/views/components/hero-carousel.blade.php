@@ -190,10 +190,10 @@
                             <!-- Subtitle -->
                             <div class="text-[10px] sm:text-xs md:text-sm lg:text-base font-semibold text-brand-primary uppercase tracking-wider" x-text="slide.subtitle"></div>
                             
-                            <!-- Heading -->
-                            <h1 class="font-display text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-[1.1] sm:leading-[1.15] md:leading-[1.1] drop-shadow-lg">
+                            <!-- Heading (H2 for carousel, not H1 to avoid multiple H1s on homepage) -->
+                            <h2 class="font-display text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-[1.1] sm:leading-[1.15] md:leading-[1.1] drop-shadow-lg">
                                 <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent" x-text="slide.heading" :aria-label="slide.heading"></span>
-                            </h1>
+                            </h2>
                             
                             <!-- Description -->
                             <p class="text-[11px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-white/90 max-w-2xl leading-relaxed drop-shadow-md line-clamp-2 sm:line-clamp-2 md:line-clamp-3 lg:line-clamp-none" x-text="slide.description"></p>

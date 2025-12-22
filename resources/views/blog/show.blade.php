@@ -306,4 +306,14 @@
     }
 </style>
 @endpush
+
+<!-- Schema Markup -->
+@include('components.schema.blog-posting', ['blog' => $blog])
+@include('components.schema.breadcrumb', [
+    'items' => [
+        ['name' => 'Home', 'url' => url('/')],
+        ['name' => 'Blog', 'url' => route('blog.index')],
+        ['name' => $blog->title, 'url' => url()->current()],
+    ]
+])
 @endsection
