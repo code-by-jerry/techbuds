@@ -299,7 +299,7 @@
                             <div class="feature-item">Google Analytics & Search Console setup</div>
                             <div class="feature-item">User behavior insights</div>
                         </div>
-                        <div class="space-y-2">
+                    <div class="space-y-2">
                             <div class="feature-item">Content & experience performance review</div>
                             <div class="feature-item">Actionable improvement recommendations</div>
                         </div>

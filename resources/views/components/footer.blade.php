@@ -25,7 +25,7 @@
             <div class="lg:col-span-2">
                 <div class="mb-6">
                     <img src="{{ asset('images/techbuds-light.png') }}" alt="Techbuds - Design Develop Deliver" class="h-10 w-auto mb-4" itemprop="logo">
-                    <p class="text-text-muted text-sm mb-6 max-w-md">Design Develop Deliver - Your trusted partner for web development, mobile apps, UI/UX design, DevOps, and digital marketing solutions.</p>
+                    <p class="text-text-muted text-sm mb-6 max-w-md">Design Develop Deliver - Professional web development, mobile app development, SEO services, API integration, and DevOps cloud solutions. Trusted technology partner for growing businesses.</p>
                 </div>
                 
                 <!-- Contact Information -->
@@ -79,32 +79,23 @@
                 <h4 class="text-heading font-semibold mb-4 text-sm uppercase tracking-wider">Our Services</h4>
                 <ul class="space-y-3">
                     @php
-                        $coreServiceSlugs = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'devops-cloud', 'api-development-system-integration'];
-                        $additionalServiceSlugs = array_diff(array_keys($services), $coreServiceSlugs);
+                        $focusedServices = [
+                            'web-development' => 'Web Development',
+                            'mobile-app-development' => 'Mobile App Development',
+                            'seo-digital-marketing' => 'SEO Services',
+                            'api-development-system-integration' => 'API & System Integration',
+                            'devops-cloud' => 'DevOps & Cloud'
+                        ];
                     @endphp
-                    @foreach($coreServiceSlugs as $slug)
+                    @foreach($focusedServices as $slug => $name)
                         @if(isset($services[$slug]))
                         <li>
-                            <a href="{{ route('services.show', $slug) }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm font-medium" title="{{ $services[$slug]['name'] ?? $serviceNames[$slug] ?? ucfirst(str_replace('-', ' ', $slug)) }}">
-                                {{ $serviceNames[$slug] ?? $services[$slug]['name'] ?? ucfirst(str_replace('-', ' ', $slug)) }}
+                            <a href="{{ route('services.show', $slug) }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm font-medium" title="{{ $name }}">
+                                {{ $name }}
                             </a>
                         </li>
                         @endif
                     @endforeach
-                    @if(count($additionalServiceSlugs) > 0)
-                    <li class="pt-2 border-t border-border-default mt-3">
-                        <span class="text-text-disabled text-xs uppercase tracking-wider">Also Available</span>
-                    </li>
-                    @foreach($additionalServiceSlugs as $slug)
-                        @if(isset($services[$slug]))
-                        <li>
-                            <a href="{{ route('services.show', $slug) }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm" title="{{ $services[$slug]['name'] ?? $serviceNames[$slug] ?? ucfirst(str_replace('-', ' ', $slug)) }}">
-                                {{ $serviceNames[$slug] ?? $services[$slug]['name'] ?? ucfirst(str_replace('-', ' ', $slug)) }}
-                            </a>
-                        </li>
-                        @endif
-                    @endforeach
-                    @endif
                     <li class="pt-2 border-t border-border-default mt-3">
                         <a href="{{ route('services') }}" class="text-brand-primary hover:text-brand-soft font-medium text-sm inline-flex items-center gap-1">
                             View All Services
@@ -161,20 +152,32 @@
         
         <!-- SEO Service Links Section -->
         <div class="pt-8 border-t border-surface-2 mb-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                 @php
-                    $topServices = ['web-development', 'mobile-app-development', 'ui-ux-design', 'seo-digital-marketing'];
-                    $topLocations = ['india', 'usa', 'uk', 'canada'];
+                    $focusedServicesForSEO = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'api-development-system-integration', 'devops-cloud'];
+                    $topLocations = ['india', 'usa', 'uk', 'canada', 'australia', 'uae'];
                 @endphp
                 
-                @foreach($topServices as $serviceSlug)
-                    @foreach($topLocations as $locationSlug)
-                        @if(isset($services[$serviceSlug]) && isset(config('locations')[$locationSlug]))
-                            <a href="{{ route('services.location', ['service' => $serviceSlug, 'location' => $locationSlug]) }}" class="text-text-muted hover:text-brand-primary transition-colors text-xs text-center py-2 px-3 rounded-lg bg-surface-2 hover:bg-surface-3" title="{{ $serviceNames[$serviceSlug] ?? ucfirst(str_replace('-', ' ', $serviceSlug)) }} in {{ config('locations')[$locationSlug]['name'] }}">
-                                {{ $serviceNames[$serviceSlug] ?? ucfirst(str_replace('-', ' ', $serviceSlug)) }} in {{ config('locations')[$locationSlug]['name'] }}
-                            </a>
-                        @endif
-                    @endforeach
+                @foreach($focusedServicesForSEO as $serviceSlug)
+                    @if(isset($services[$serviceSlug]))
+                    <div>
+                        <h5 class="text-heading font-semibold mb-3 text-sm">{{ $serviceNames[$serviceSlug] ?? ucfirst(str_replace('-', ' ', $serviceSlug)) }}</h5>
+                        <ul class="space-y-2">
+                            @foreach($topLocations as $locationSlug)
+                                @if(isset(config('locations')[$locationSlug]))
+                                    <li>
+                                        <a href="{{ route('services.location', ['service' => $serviceSlug, 'location' => $locationSlug]) }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm flex items-center gap-2 group" title="{{ $serviceNames[$serviceSlug] ?? ucfirst(str_replace('-', ' ', $serviceSlug)) }} in {{ config('locations')[$locationSlug]['name'] }}">
+                                            <svg class="w-3 h-3 text-text-disabled group-hover:text-brand-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                            </svg>
+                                            <span>in {{ config('locations')[$locationSlug]['name'] }}</span>
+                                        </a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                 @endforeach
             </div>
         </div>
@@ -210,7 +213,7 @@
     'name' => 'Techbuds',
     'url' => url('/'),
     'logo' => asset('images/techbuds-light.png'),
-    'description' => 'Techbuds - Design Develop Deliver. Professional web development, mobile app development, UI/UX design, DevOps, and digital marketing services.',
+    'description' => 'Techbuds - Design Develop Deliver. Professional web development, mobile app development, SEO services, API integration, and DevOps cloud solutions. Trusted technology partner for growing businesses.',
     'foundingDate' => '2025',
     'founders' => [
         [
@@ -241,8 +244,12 @@
     ],
     'hasOfferCatalog' => [
         '@type' => 'OfferCatalog',
-        'name' => 'Techbuds Services',
-        'itemListElement' => array_map(function($slug, $service) use ($serviceNames) {
+        'name' => 'Techbuds Professional Services',
+        'itemListElement' => array_values(array_filter(array_map(function($slug, $service) use ($serviceNames) {
+            $focusedServices = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'api-development-system-integration', 'devops-cloud'];
+            if (!in_array($slug, $focusedServices)) {
+                return null;
+            }
             return [
                 '@type' => 'Offer',
                 'itemOffered' => [
@@ -256,7 +263,7 @@
                 ],
                 'url' => route('services.show', $slug)
             ];
-        }, array_keys($services), $services)
+        }, array_keys($services), $services)))
     ]
 ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
 </script>

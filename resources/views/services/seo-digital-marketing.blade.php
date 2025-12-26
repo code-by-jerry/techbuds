@@ -377,7 +377,7 @@
                 </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.2">
                     <h3 class="text-lg font-semibold text-heading mb-2">Service-based companies</h3>
-                </div>
+            </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.3">
                     <h3 class="text-lg font-semibold text-heading mb-2">Growing digital platforms</h3>
                 </div>

@@ -124,19 +124,19 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
                 <div class="text-center" data-animate="fade-up">
                     <div class="text-4xl font-bold text-heading">
-                        <span data-count="50" data-suffix="+">0</span>
+                        <span data-count="20" data-suffix="+">0</span>
             </div>
                     <p class="text-xs uppercase tracking-wider text-text-disabled mt-2">Projects Shipped</p>
                     </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.1">
                     <div class="text-4xl font-bold text-heading">
-                        <span data-count="5" data-suffix="+">0</span>
+                        <span data-count="4" data-suffix="+">0</span>
                     </div>
                     <p class="text-xs uppercase tracking-wider text-text-disabled mt-2">Years in Mission</p>
                     </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.2">
                     <div class="text-4xl font-bold text-heading">
-                        <span data-count="20" data-suffix="+">0</span>
+                        <span data-count="10" data-suffix="+">0</span>
                     </div>
                     <p class="text-xs uppercase tracking-wider text-text-disabled mt-2">Active Partners</p>
                     </div>

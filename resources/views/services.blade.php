@@ -277,20 +277,20 @@
         </div>
     </section>
 
-    <!-- Core Services Section -->
+    <!-- Professional Services Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <span class="service-pill bg-brand-primary/20 text-brand-primary border-brand-primary/30">Core Services</span>
+                <span class="service-pill bg-brand-primary/20 text-brand-primary border-brand-primary/30">Complete Solutions</span>
                 <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Our Core <span class="text-clip">Services</span>
+                    Professional <span class="text-clip">Digital Services</span>
                 </h2>
                 <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
-                    Focused expertise in web development, mobile apps, SEO, DevOps, and API integration
+                    Comprehensive technology solutions to accelerate your business growth, improve efficiency, and drive measurable results
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Web Development -->
                 <a href="{{ route('services.show', 'web-development') }}" class="service-card cursor-pointer" data-animate="fade-up">
                     <div class="service-card-icon">
@@ -346,25 +346,9 @@
                     <h3 class="text-xl font-semibold text-heading">API & Integration</h3>
                     <p class="text-sm text-text-secondary leading-relaxed">Secure APIs, seamless integrations, and system-to-system connections.</p>
                 </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Additional Services Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-2xl md:text-3xl font-heading font-semibold text-heading leading-tight">
-                    Additional <span class="text-clip">Solutions</span>
-                </h2>
-                <p class="mt-4 text-base text-text-secondary max-w-3xl mx-auto">
-                    We also provide specialized services to support your digital needs
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Brand Experience & Content Marketing -->
-                <a href="{{ route('services.show', 'brand-experience-content-marketing') }}" class="service-card cursor-pointer" data-animate="fade-up">
+                <a href="{{ route('services.show', 'brand-experience-content-marketing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.5">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -375,25 +359,25 @@
                 </a>
 
                 <!-- Database & Data Warehousing -->
-                <a href="{{ route('services.show', 'database-data-warehousing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.1">
+                <a href="{{ route('services.show', 'database-data-warehousing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.6">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-heading">Database & Data Warehousing</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Organized, scalable, and secure data architecture for analytics and business intelligence.</p>
+                    <p class="text-sm text-text-secondary leading-relaxed">Scalable database architectures, data warehousing, and BI dashboards for data-driven decisions.</p>
                 </a>
 
                 <!-- Custom IT Solutions -->
-                <a href="{{ route('services.show', 'custom-it-solutions') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.2">
+                <a href="{{ route('services.show', 'custom-it-solutions') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.7">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-heading">Custom IT Solutions</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Tailored software systems designed around your business needs.</p>
+                    <p class="text-sm text-text-secondary leading-relaxed">Tailored enterprise software, CRMs, ERPs, and workflow automation for your business needs.</p>
                 </a>
             </div>
         </div>
@@ -411,8 +395,8 @@
 
             <div class="space-y-10">
                 @php
-                    // Core services - shown first and prominently
-                    $coreServices = [
+                    // All professional services
+                    $allServices = [
                         [
                             'slug' => 'web-development',
                             'is_core' => true,
@@ -472,40 +456,6 @@
                                 'Performance monitoring and alerting'
                             ],
                             'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80'
-                        ]
-                    ];
-                    
-                    // Additional services
-                    $additionalServices = [
-                        [
-                            'slug' => 'brand-experience-content-marketing',
-                            'is_core' => false,
-                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
-                            'title' => 'Brand Experience & Content Marketing',
-                            'description' => 'Design-led branding, UI/UX, and content marketing that build trust and drive growth. Brand positioning, visual identity, content strategy, and conversion-focused experiences — no paid ads.',
-                            'features' => [
-                                'UI/UX design & experience optimization',
-                                'Branding & visual identity',
-                                'Content marketing & strategy',
-                                'Conversion-focused content & UX',
-                                'Analytics & experience insights'
-                            ],
-                            'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80'
-                        ],
-                        [
-                            'slug' => 'database-data-warehousing',
-                            'is_core' => false,
-                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>',
-                            'title' => 'Database & Data Warehousing',
-                            'description' => 'Scalable database architectures and data warehousing solutions. We design data systems using PostgreSQL, MySQL, MongoDB, and create BI dashboards for data-driven decisions.',
-                            'features' => [
-                                'Database architecture and design',
-                                'PostgreSQL, MySQL, MongoDB setup',
-                                'Data warehouse and ETL pipelines',
-                                'Business Intelligence dashboards',
-                                'Database optimization and migration'
-                            ],
-                            'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80'
                         ],
                         [
                             'slug' => 'api-development-system-integration',
@@ -523,8 +473,38 @@
                             'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80'
                         ],
                         [
+                            'slug' => 'brand-experience-content-marketing',
+                            'is_core' => true,
+                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+                            'title' => 'Brand Experience & Content Marketing',
+                            'description' => 'Design-led branding, UI/UX, and content marketing that build trust and drive growth. Brand positioning, visual identity, content strategy, and conversion-focused experiences — no paid ads.',
+                            'features' => [
+                                'UI/UX design & experience optimization',
+                                'Branding & visual identity',
+                                'Content marketing & strategy',
+                                'Conversion-focused content & UX',
+                                'Analytics & experience insights'
+                            ],
+                            'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80'
+                        ],
+                        [
+                            'slug' => 'database-data-warehousing',
+                            'is_core' => true,
+                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>',
+                            'title' => 'Database & Data Warehousing',
+                            'description' => 'Scalable database architectures and data warehousing solutions. We design data systems using PostgreSQL, MySQL, MongoDB, and create BI dashboards for data-driven decisions.',
+                            'features' => [
+                                'Database architecture and design',
+                                'PostgreSQL, MySQL, MongoDB setup',
+                                'Data warehouse and ETL pipelines',
+                                'Business Intelligence dashboards',
+                                'Database optimization and migration'
+                            ],
+                            'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80'
+                        ],
+                        [
                             'slug' => 'custom-it-solutions',
-                            'is_core' => false,
+                            'is_core' => true,
                             'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>',
                             'title' => 'Custom IT Solutions',
                             'description' => 'Tailored enterprise software development for your business needs. We build custom management systems, CRMs, ERPs, inventory software, and workflow automation tools.',
@@ -538,12 +518,9 @@
                             'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80'
                         ]
                     ];
-                    
-                    // Split services into core and additional
-                    $allServices = array_merge($coreServices, $additionalServices);
                 @endphp
 
-                @foreach($coreServices as $index => $service)
+                @foreach($allServices as $index => $service)
                 <article class="service-panel p-6 md:p-8" data-animate="fade-up" data-delay="{{ ($index % 3) * 0.1 }}">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                         @if($index % 2 == 0)
@@ -609,7 +586,7 @@
                 @php
                     $reasons = [
                         ['title' => 'We build with clarity', 'desc' => 'No confusing tech jargon — we explain everything clearly.'],
-                        ['title' => 'We deliver on time, every time', 'desc' => 'Quality + speed = our core value.'],
+                        ['title' => 'We deliver on time, every time', 'desc' => 'Quality + speed = our commitment.'],
                         ['title' => 'We focus on long-term results', 'desc' => 'Not quick fixes. Sustainable growth.'],
                         ['title' => 'We combine design, development & marketing', 'desc' => 'One team. One workflow. One powerful digital ecosystem.'],
                         ['title' => 'We build future-ready systems', 'desc' => 'Scalable, secure, and designed for growth.'],

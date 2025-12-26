@@ -75,7 +75,7 @@ return [
     'brand-experience-content-marketing' => [
         'name' => 'Brand Experience & Content Marketing',
         'serviceType' => 'Brand Experience & Content Marketing',
-        'is_core' => false,
+        'is_core' => true,
         'description' => 'Design-led branding, UI/UX, and content marketing that build trust and drive growth. Brand positioning, visual identity, content strategy, and conversion-focused experiences — no paid ads.',
         'faqs' => [
             [
@@ -125,7 +125,7 @@ return [
     'database-data-warehousing' => [
         'name' => 'Database & Data Warehousing Services',
         'serviceType' => 'Database & Data Warehousing',
-        'is_core' => false,
+        'is_core' => true,
         'description' => 'Database and data warehousing services including database architecture, optimization, data warehousing, ETL automation, and BI dashboards.',
         'faqs' => [
             [
@@ -175,7 +175,7 @@ return [
     'custom-it-solutions' => [
         'name' => 'Custom IT Solutions',
         'serviceType' => 'Custom IT Solutions',
-        'is_core' => false,
+        'is_core' => true,
         'description' => 'Custom IT solutions and software development tailored to your workflows, including CRMs, ERPs, internal management systems, dashboards, and integrations.',
         'faqs' => [
             [
