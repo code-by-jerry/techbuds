@@ -4,6 +4,7 @@ return [
     'web-development' => [
         'name' => 'Web Development Services',
         'serviceType' => 'Web Development',
+        'is_core' => true,
         'description' => 'Professional web development services including custom websites, full-stack applications, Laravel development, and SEO-optimized solutions.',
         'faqs' => [
             [
@@ -28,6 +29,7 @@ return [
     'mobile-app-development' => [
         'name' => 'Mobile App Development Services',
         'serviceType' => 'Mobile App Development',
+        'is_core' => true,
         'description' => 'Professional mobile app development for Android, iOS, and cross-platform apps with native performance, API integration, and app store publishing support.',
         'faqs' => [
             [
@@ -50,9 +52,10 @@ return [
     ],
 
     'seo-digital-marketing' => [
-        'name' => 'SEO & Digital Marketing Services',
-        'serviceType' => 'SEO & Digital Marketing',
-        'description' => 'SEO and digital marketing services to grow traffic, generate leads, and build authority, including technical SEO, content marketing, local SEO, social media, PPC, and conversion rate optimization.',
+        'name' => 'SEO Services',
+        'serviceType' => 'SEO Services',
+        'is_core' => true,
+        'description' => 'Professional SEO services to grow organic traffic, improve rankings, and build authority. Technical SEO, on-page optimization, local SEO, content strategy, and performance tracking.',
         'faqs' => [
             [
                 'q' => 'How long does SEO take to show results?',
@@ -69,26 +72,27 @@ return [
         ],
     ],
 
-    'ui-ux-design' => [
-        'name' => 'UI/UX Design & Branding Services',
-        'serviceType' => 'UI/UX Design & Branding',
-        'description' => 'UI/UX design and branding services for web and mobile products, including product design, UX research, wireframes, prototypes, visual identity, and redesigns.',
+    'brand-experience-content-marketing' => [
+        'name' => 'Brand Experience & Content Marketing',
+        'serviceType' => 'Brand Experience & Content Marketing',
+        'is_core' => false,
+        'description' => 'Design-led branding, UI/UX, and content marketing that build trust and drive growth. Brand positioning, visual identity, content strategy, and conversion-focused experiences — no paid ads.',
         'faqs' => [
             [
-                'q' => 'What is the difference between UI and UX?',
-                'a' => 'UI focuses on visual design — colors, typography, and layout — while UX focuses on user experience and usability. Both work together to create a product users love.',
+                'q' => 'Do you run paid ads?',
+                'a' => 'No. We focus on organic, content-led and experience-driven growth. We do not run paid advertising campaigns.',
             ],
             [
-                'q' => 'Do you redesign existing products?',
-                'a' => 'Yes. We perform UX audits, modernize UI, and improve flows to increase usability, engagement, and conversions.',
+                'q' => 'Is this different from SEO?',
+                'a' => 'Yes. SEO focuses on rankings. This service focuses on brand clarity, UX, and content quality, which supports SEO and conversions.',
             ],
             [
-                'q' => 'Will designs be developer-ready?',
-                'a' => 'Absolutely. We provide clean Figma files, components, specs, and exportable assets so development teams can implement quickly.',
+                'q' => 'Can this work without ads?',
+                'a' => 'Absolutely. Strong brand experience and content improve trust, engagement, and organic growth without paid advertising.',
             ],
             [
-                'q' => 'Is branding included with UI/UX?',
-                'a' => 'Yes. We offer complete branding and visual identity solutions alongside product UI/UX design.',
+                'q' => 'Do you work with existing brands?',
+                'a' => 'Yes. We handle audits, redesigns, and content optimization for existing businesses.',
             ],
         ],
     ],
@@ -96,6 +100,7 @@ return [
     'devops-cloud' => [
         'name' => 'DevOps & Cloud Deployment Services',
         'serviceType' => 'DevOps & Cloud Deployment',
+        'is_core' => true,
         'description' => 'DevOps and cloud deployment services including CI/CD pipelines, cloud infrastructure setup, monitoring, performance optimization, security, and backups.',
         'faqs' => [
             [
@@ -120,6 +125,7 @@ return [
     'database-data-warehousing' => [
         'name' => 'Database & Data Warehousing Services',
         'serviceType' => 'Database & Data Warehousing',
+        'is_core' => false,
         'description' => 'Database and data warehousing services including database architecture, optimization, data warehousing, ETL automation, and BI dashboards.',
         'faqs' => [
             [
@@ -141,26 +147,27 @@ return [
         ],
     ],
 
-    'ai-automation' => [
-        'name' => 'AI & Automation Solutions',
-        'serviceType' => 'AI & Automation Solutions',
-        'description' => 'AI and automation solutions to streamline workflows, reduce costs, and scale efficiency, including chatbots, process automation, lead automation, and intelligent data workflows.',
+    'api-development-system-integration' => [
+        'name' => 'API Development & System Integration',
+        'serviceType' => 'API Development & System Integration',
+        'is_core' => true,
+        'description' => 'API development and system integration services that ensure your systems communicate smoothly, securely, and reliably. REST API development, third-party integrations, system-to-system integration, and API security.',
         'faqs' => [
             [
-                'q' => 'Do I need a large business to use AI?',
-                'a' => 'No. AI automation is highly effective for small and mid-sized businesses as well, especially for repetitive and time-consuming workflows.',
+                'q' => 'Do you build custom APIs?',
+                'a' => 'Yes. All APIs are built to match your business requirements.',
             ],
             [
-                'q' => 'Can AI integrate with my existing systems?',
-                'a' => 'Yes. We design solutions that integrate seamlessly with your existing tools, CRMs, and internal platforms via secure APIs.',
+                'q' => 'Can you integrate existing systems?',
+                'a' => 'Absolutely. We integrate both new and existing platforms.',
             ],
             [
-                'q' => 'Is AI secure?',
-                'a' => 'Security and data privacy are built into every solution, with strict access control and secure data handling practices.',
+                'q' => 'Are your APIs secure?',
+                'a' => 'Yes. Security and validation are core priorities.',
             ],
             [
-                'q' => 'Do you provide ongoing support?',
-                'a' => 'Yes. We offer monitoring, upgrades, and ongoing optimization to keep your AI systems effective over time.',
+                'q' => 'Do you provide long-term API support?',
+                'a' => 'Yes. We offer maintenance, upgrades, and monitoring.',
             ],
         ],
     ],
@@ -168,6 +175,7 @@ return [
     'custom-it-solutions' => [
         'name' => 'Custom IT Solutions',
         'serviceType' => 'Custom IT Solutions',
+        'is_core' => false,
         'description' => 'Custom IT solutions and software development tailored to your workflows, including CRMs, ERPs, internal management systems, dashboards, and integrations.',
         'faqs' => [
             [

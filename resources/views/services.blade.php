@@ -3,8 +3,8 @@
     <head>
         @php
             $metaTitle = 'Our Services - Web Development, Mobile Apps, SEO & More | Techbuds';
-            $metaDescription = 'Comprehensive digital solutions by Techbuds: Web Development, Mobile Apps, UI/UX Design, DevOps, SEO, Database Warehousing, AI Automation, and Custom IT Solutions. Professional services for startups and growing businesses.';
-            $metaKeywords = 'web development services, mobile app development, UI/UX design services, DevOps services, SEO services, digital marketing, database warehousing, AI automation, custom software development, IT solutions, web development company';
+            $metaDescription = 'Professional web development, mobile app development, SEO services, DevOps & cloud deployment, and API integration services. Techbuds delivers scalable, high-performance digital solutions for growing businesses.';
+            $metaKeywords = 'web development services, mobile app development, SEO services, DevOps services, API development, system integration, Laravel development, React development, Flutter apps, cloud deployment, web development company';
         @endphp
         @include('components.meta-tags')
 
@@ -277,19 +277,20 @@
         </div>
     </section>
 
-    <!-- Service Cards Grid -->
+    <!-- Core Services Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    What We <span class="text-clip">Offer</span>
+                <span class="service-pill bg-brand-primary/20 text-brand-primary border-brand-primary/30">Core Services</span>
+                <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
+                    Our Core <span class="text-clip">Services</span>
                 </h2>
                 <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
-                    Comprehensive digital solutions tailored to your business needs
+                    Focused expertise in web development, mobile apps, SEO, DevOps, and API integration
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 <!-- Web Development -->
                 <a href="{{ route('services.show', 'web-development') }}" class="service-card cursor-pointer" data-animate="fade-up">
                     <div class="service-card-icon">
@@ -312,42 +313,69 @@
                     <p class="text-sm text-text-secondary leading-relaxed">Intuitive Android & iOS applications designed to engage users and boost retention.</p>
                 </a>
 
-                <!-- SEO & Digital Marketing -->
+                <!-- SEO Services -->
                 <a href="{{ route('services.show', 'seo-digital-marketing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.2">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-heading">SEO & Digital Marketing</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Rank higher, grow faster, and generate quality leads with advanced SEO & data-driven marketing.</p>
-                </a>
-
-                <!-- UI/UX Design & Branding -->
-                <a href="{{ route('services.show', 'ui-ux-design') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.3">
-                    <div class="service-card-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-heading">UI/UX Design & Branding</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Beautiful, user-centered designs that make your brand unforgettable.</p>
+                    <h3 class="text-xl font-semibold text-heading">SEO Services</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Improve rankings, grow organic traffic, and build authority with technical SEO and optimization.</p>
                 </a>
 
                 <!-- DevOps & Cloud Deployment -->
-                <a href="{{ route('services.show', 'devops-cloud') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.4">
+                <a href="{{ route('services.show', 'devops-cloud') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.3">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-heading">DevOps & Cloud Deployment</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Lightning-fast infrastructure, CI/CD pipelines, monitoring, and high-availability systems.</p>
+                    <h3 class="text-xl font-semibold text-heading">DevOps & Cloud</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">CI/CD pipelines, cloud infrastructure, monitoring, and high-availability systems.</p>
+                </a>
+
+                <!-- API Development & System Integration -->
+                <a href="{{ route('services.show', 'api-development-system-integration') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.4">
+                    <div class="service-card-icon">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-heading">API & Integration</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Secure APIs, seamless integrations, and system-to-system connections.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-animate="fade-up">
+                <h2 class="text-2xl md:text-3xl font-heading font-semibold text-heading leading-tight">
+                    Additional <span class="text-clip">Solutions</span>
+                </h2>
+                <p class="mt-4 text-base text-text-secondary max-w-3xl mx-auto">
+                    We also provide specialized services to support your digital needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Brand Experience & Content Marketing -->
+                <a href="{{ route('services.show', 'brand-experience-content-marketing') }}" class="service-card cursor-pointer" data-animate="fade-up">
+                    <div class="service-card-icon">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-heading">Brand Experience & Content Marketing</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Design-led branding, UI/UX, and content that build trust and drive growth — no paid ads.</p>
                 </a>
 
                 <!-- Database & Data Warehousing -->
-                <a href="{{ route('services.show', 'database-data-warehousing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.5">
+                <a href="{{ route('services.show', 'database-data-warehousing') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.1">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -357,26 +385,15 @@
                     <p class="text-sm text-text-secondary leading-relaxed">Organized, scalable, and secure data architecture for analytics and business intelligence.</p>
                 </a>
 
-                <!-- AI & Automation Solutions -->
-                <a href="{{ route('services.show', 'ai-automation') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.6">
-                    <div class="service-card-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-heading">AI & Automation Solutions</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Smart automation, AI integrations, chatbots, workflows & business efficiency upgrades.</p>
-                </a>
-
                 <!-- Custom IT Solutions -->
-                <a href="{{ route('services.show', 'custom-it-solutions') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.7">
+                <a href="{{ route('services.show', 'custom-it-solutions') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.2">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-heading">Custom IT Solutions</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Tailored software systems designed around your business needs, not the other way around.</p>
+                    <p class="text-sm text-text-secondary leading-relaxed">Tailored software systems designed around your business needs.</p>
                 </a>
             </div>
         </div>
@@ -394,9 +411,11 @@
 
             <div class="space-y-10">
                 @php
-                    $services = [
+                    // Core services - shown first and prominently
+                    $coreServices = [
                         [
                             'slug' => 'web-development',
+                            'is_core' => true,
                             'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>',
                             'title' => 'Web Development',
                             'description' => 'Fast, scalable, and SEO-optimized websites built with modern technologies. We create custom web applications, e-commerce platforms, and business portals designed for performance and growth.',
@@ -411,6 +430,7 @@
                         ],
                         [
                             'slug' => 'mobile-app-development',
+                            'is_core' => true,
                             'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>',
                             'title' => 'Mobile App Development',
                             'description' => 'Native and cross-platform mobile applications for Android and iOS. We build intuitive apps with seamless API integration, real-time features, and App Store Optimization.',
@@ -425,34 +445,22 @@
                         ],
                         [
                             'slug' => 'seo-digital-marketing',
+                            'is_core' => true,
                             'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>',
-                            'title' => 'SEO & Digital Marketing',
-                            'description' => 'Increase online visibility and drive organic traffic with our SEO and digital marketing services. We provide technical SEO, content strategy, local SEO, and performance tracking.',
+                            'title' => 'SEO Services',
+                            'description' => 'Improve search rankings and grow organic traffic with professional SEO services. Technical SEO, on-page optimization, local SEO, content strategy, and performance tracking.',
                             'features' => [
                                 'Complete SEO audit and optimization',
                                 'Keyword research and content strategy',
                                 'On-page and technical SEO',
                                 'Local SEO optimization',
-                                'Google Ads and PPC campaigns'
+                                'Performance tracking and reporting'
                             ],
                             'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80'
                         ],
                         [
-                            'slug' => 'ui-ux-design',
-                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
-                            'title' => 'UI/UX Design & Branding',
-                            'description' => 'User-centered design and branding that creates memorable experiences. We design intuitive interfaces, conduct user research, and develop comprehensive brand guidelines.',
-                            'features' => [
-                                'User research and persona development',
-                                'Wireframing and interactive prototypes',
-                                'Modern UI design for web and mobile',
-                                'Brand identity and logo design',
-                                'Conversion-focused layouts'
-                            ],
-                            'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80'
-                        ],
-                        [
                             'slug' => 'devops-cloud',
+                            'is_core' => true,
                             'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
                             'title' => 'DevOps & Cloud Deployment',
                             'description' => 'Ensure your applications run smoothly with DevOps and cloud deployment. We set up CI/CD pipelines, deploy to AWS/GCP/DigitalOcean, and optimize server performance.',
@@ -464,9 +472,29 @@
                                 'Performance monitoring and alerting'
                             ],
                             'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80'
+                        ]
+                    ];
+                    
+                    // Additional services
+                    $additionalServices = [
+                        [
+                            'slug' => 'brand-experience-content-marketing',
+                            'is_core' => false,
+                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+                            'title' => 'Brand Experience & Content Marketing',
+                            'description' => 'Design-led branding, UI/UX, and content marketing that build trust and drive growth. Brand positioning, visual identity, content strategy, and conversion-focused experiences — no paid ads.',
+                            'features' => [
+                                'UI/UX design & experience optimization',
+                                'Branding & visual identity',
+                                'Content marketing & strategy',
+                                'Conversion-focused content & UX',
+                                'Analytics & experience insights'
+                            ],
+                            'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80'
                         ],
                         [
                             'slug' => 'database-data-warehousing',
+                            'is_core' => false,
                             'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>',
                             'title' => 'Database & Data Warehousing',
                             'description' => 'Scalable database architectures and data warehousing solutions. We design data systems using PostgreSQL, MySQL, MongoDB, and create BI dashboards for data-driven decisions.',
@@ -480,21 +508,23 @@
                             'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80'
                         ],
                         [
-                            'slug' => 'ai-automation',
-                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
-                            'title' => 'AI & Automation Solutions',
-                            'description' => 'Streamline business processes with AI and automation. We develop AI chatbots, automate workflows, integrate machine learning models, and build custom AI pipelines.',
+                            'slug' => 'api-development-system-integration',
+                            'is_core' => true,
+                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>',
+                            'title' => 'API Development & System Integration',
+                            'description' => 'Secure APIs and seamless integrations that connect your systems. We develop REST APIs, integrate third-party services, and build system-to-system connections.',
                             'features' => [
-                                'AI-powered chatbots and virtual assistants',
-                                'Workflow automation and optimization',
-                                'Machine learning integration',
-                                'Natural language processing (NLP)',
-                                'Custom AI pipelines and integrations'
+                                'REST API development and architecture',
+                                'Third-party API integration',
+                                'System-to-system integration',
+                                'API security and performance optimization',
+                                'API maintenance and versioning'
                             ],
-                            'image' => 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80'
+                            'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80'
                         ],
                         [
                             'slug' => 'custom-it-solutions',
+                            'is_core' => false,
                             'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>',
                             'title' => 'Custom IT Solutions',
                             'description' => 'Tailored enterprise software development for your business needs. We build custom management systems, CRMs, ERPs, inventory software, and workflow automation tools.',
@@ -508,9 +538,12 @@
                             'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80'
                         ]
                     ];
+                    
+                    // Split services into core and additional
+                    $allServices = array_merge($coreServices, $additionalServices);
                 @endphp
 
-                @foreach($services as $index => $service)
+                @foreach($coreServices as $index => $service)
                 <article class="service-panel p-6 md:p-8" data-animate="fade-up" data-delay="{{ ($index % 3) * 0.1 }}">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                         @if($index % 2 == 0)
@@ -718,7 +751,7 @@
             '@context' => 'https://schema.org',
             '@type' => 'CollectionPage',
             'name' => 'Techbuds Services',
-            'description' => 'Comprehensive digital solutions by Techbuds: Web Development, Mobile Apps, UI/UX Design, DevOps, SEO, Database Warehousing, AI Automation, and Custom IT Solutions.',
+            'description' => 'Professional web development, mobile app development, SEO services, DevOps & cloud deployment, and API integration services. Techbuds delivers scalable, high-performance digital solutions.',
             'url' => route('services'),
         ];
     @endphp

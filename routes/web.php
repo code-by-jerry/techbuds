@@ -35,15 +35,19 @@ Route::get('/locations', function () {
 
 use App\Http\Controllers\ServiceController;
 
-// Location-based service pages (more specific, must come first)
-Route::get('/services/{service}/{location}', [ServiceController::class, 'location'])
-    ->where(['service' => '[a-z0-9-]+', 'location' => '[a-z0-9-]+'])
-    ->name('services.location');
-
-// Individual service pages
+// Individual service pages - MUST come first to prevent location route from matching
 Route::get('/services/{slug}', [ServiceController::class, 'show'])
     ->where('slug', '[a-z0-9-]+')
     ->name('services.show');
+
+// Location-based service pages - comes after single slug route
+// Only match known location slugs (short names like 'india', 'usa') to prevent conflicts with long service slugs
+Route::get('/services/{service}/{location}', [ServiceController::class, 'location'])
+    ->where([
+        'service' => '[a-z0-9-]+',
+        'location' => 'india|usa|uk|canada|australia|uae|singapore|germany|france|netherlands|spain|italy|japan|south-korea|sweden|norway|switzerland|south-africa|nigeria|brazil|mexico|qatar|saudi-arabia'
+    ])
+    ->name('services.location');
 
 use App\Http\Controllers\BlogController;
 

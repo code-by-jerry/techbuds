@@ -134,9 +134,11 @@ class Blog extends Model
             'data warehouse' => 'database-data-warehousing',
             'data warehousing' => 'database-data-warehousing',
 
-            // AI & automation
-            'ai automation' => 'ai-automation',
-            'ai solutions' => 'ai-automation',
+            // API & System Integration
+            'api development' => 'api-development-system-integration',
+            'api integration' => 'api-development-system-integration',
+            'system integration' => 'api-development-system-integration',
+            'rest api' => 'api-development-system-integration',
 
             // Custom IT / landing pages
             'landing page' => 'custom-it-solutions',

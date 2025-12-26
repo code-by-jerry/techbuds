@@ -10,7 +10,7 @@
         'ui-ux-design' => ['Analytics', 'Content'],
         'devops-cloud' => ['DevOps', 'Performance'],
         'database-data-warehousing' => ['Analytics'],
-        'ai-automation' => ['Content'],
+        'api-development-system-integration' => ['Content'],
         'custom-it-solutions' => ['Content', 'Performance'],
     ];
 

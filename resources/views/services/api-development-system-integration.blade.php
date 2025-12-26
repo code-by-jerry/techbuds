@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @php
-            $metaTitle = 'UI/UX Design & Branding Services | Product Design – Techbuds';
-            $metaDescription = 'UI/UX design and branding services: product design, web & mobile UX, wireframes, prototypes, branding, redesigns. Design experiences that build trust, engagement, and conversions.';
-            $metaKeywords = 'UI/UX design services, user experience design, user interface design, product design, branding services, wireframing, prototyping, Figma design, UX design company, UI design services';
+            $metaTitle = 'API Development & System Integration Services | Secure APIs & Seamless Integrations – Techbuds';
+            $metaDescription = 'API development and system integration services that ensure your systems communicate smoothly, securely, and reliably. REST API development, third-party integrations, system-to-system integration, and API security.';
+            $metaKeywords = 'API development, system integration, REST API development, API integration services, third-party API integration, system integration company, API security, API maintenance, integration services';
         @endphp
         @include('components.meta-tags')
 
@@ -161,8 +161,8 @@
         <!-- Background Image -->
         <div class="absolute inset-0 w-full h-full">
             <img 
-                src="{{ asset('images/banner images/UI UX.jpg') }}" 
-                alt="UI/UX Design & Branding Services - Techbuds" 
+                src="{{ asset('images/banner images/Digital Product.jpg') }}" 
+                alt="API Development & System Integration Services - Techbuds" 
                 class="w-full h-full object-cover"
                 loading="eager"
                 fetchpriority="high">
@@ -173,183 +173,215 @@
         
         <div class="relative max-w-7xl mx-auto w-full z-10">
             <div data-animate="fade-up">
-                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">UI/UX Design & Branding</span>
+                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">API Development & System Integration</span>
             </div>
             <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight drop-shadow-lg" data-animate="fade-up" data-delay="0.1">
-                Design Experiences That <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Build Trust, Engagement & Conversions</span>
+                Secure APIs & Seamless Integrations That <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Connect Your Systems</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed drop-shadow-md" data-animate="fade-up" data-delay="0.2">
-                Design is not just how your product looks — it is how users <strong class="text-white">experience, understand, and trust</strong> your brand. At <strong class="text-white">Techbuds</strong>, we deliver user-centered UI/UX design and strategic branding that helps businesses stand out, connect with users, and convert consistently.
+                Modern businesses rely on multiple platforms, tools, and applications. At <strong class="text-white">Techbuds</strong>, we provide API development and system integration services that ensure your systems communicate smoothly, securely, and reliably.
             </p>
             <p class="mt-4 text-base md:text-lg text-white/85 max-w-3xl leading-relaxed drop-shadow-sm" data-animate="fade-up" data-delay="0.3">
-                We blend research, creativity, and business strategy to design digital experiences that work in the real world.
+                We build integrations that <strong class="text-white">reduce manual work, prevent data silos, and scale with your business</strong>.
             </p>
         </div>
     </section>
 
-    <!-- Why UI/UX & Branding Matter Section -->
+    <!-- Why API & System Integration Matter Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Why <span class="text-clip">UI/UX Design & Branding</span> Matter
+                    Why API & System <span class="text-clip">Integration Matter</span>
                 </h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="service-card" data-animate="fade-up">
-                    <h3 class="text-xl font-semibold text-heading mb-4">Strong design directly impacts:</h3>
+                    <h3 class="text-xl font-semibold text-heading mb-4">Disconnected systems cause:</h3>
                     <div class="space-y-2">
-                        <div class="feature-item">User engagement & retention</div>
-                        <div class="feature-item">Conversion rates</div>
-                        <div class="feature-item">Brand credibility</div>
-                        <div class="feature-item">Product usability</div>
-                        <div class="feature-item">Customer loyalty</div>
+                        <div class="feature-item">Manual data entry</div>
+                        <div class="feature-item">Errors & inconsistencies</div>
+                        <div class="feature-item">Operational delays</div>
+                        <div class="feature-item">Limited scalability</div>
                     </div>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-xl font-semibold text-heading mb-4">Poor design often leads to:</h3>
+                    <h3 class="text-xl font-semibold text-heading mb-4">Well-designed APIs and integrations help you:</h3>
                     <div class="space-y-2">
-                        <div class="feature-item">High bounce rates</div>
-                        <div class="feature-item">Confusing user journeys</div>
-                        <div class="feature-item">Low trust and credibility</div>
-                        <div class="feature-item">Lost leads and revenue</div>
+                        <div class="feature-item">Automate data flow</div>
+                        <div class="feature-item">Improve efficiency</div>
+                        <div class="feature-item">Enable scalability</div>
+                        <div class="feature-item">Connect third-party platforms</div>
                     </div>
                     <p class="mt-4 text-sm text-heading/70 leading-relaxed">
-                        Our design approach ensures <strong>clarity, consistency, and conversion</strong> across every touchpoint.
+                        This is the <strong>backbone of modern digital products</strong>.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our UI/UX & Branding Services Section -->
+    <!-- Our API & System Integration Services Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Our <span class="text-clip">UI/UX Design & Branding</span> Services
+                    Our API & System <span class="text-clip">Integration Services</span>
                 </h2>
                 <p class="mt-4 text-base md:text-lg text-heading/80 max-w-3xl mx-auto">
-                    From product interfaces to full brand systems — we design experiences that users remember and trust.
+                    From REST APIs to third-party integrations — we build secure, scalable integrations that support real business operations.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- UI Design -->
+                <!-- REST API Development -->
                 <div class="service-card" data-animate="fade-up">
-                    <div class="service-icon text-2xl mb-4">🎨</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">UI Design (User Interface)</h3>
-                    <p class="text-sm text-heading/70 mb-3">Visually appealing, modern interfaces that align with your brand.</p>
+                    <div class="service-icon text-2xl mb-4">🔌</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">REST API Development</h3>
+                    <p class="text-sm text-heading/70 mb-3">Custom APIs designed for performance and security.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">Web & mobile UI design</div>
-                        <div class="feature-item">Design systems & style guides</div>
-                        <div class="feature-item">Consistent visual language</div>
-                        <div class="feature-item">Pixel-perfect layouts</div>
+                        <div class="feature-item">RESTful API architecture</div>
+                        <div class="feature-item">Secure authentication & authorization</div>
+                        <div class="feature-item">Role-based access control</div>
+                        <div class="feature-item">Scalable API structure</div>
                     </div>
                 </div>
 
-                <!-- UX Design -->
+                <!-- Third-Party API Integration -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.1">
-                    <div class="service-icon text-2xl mb-4">🧭</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">UX Design (User Experience)</h3>
-                    <p class="text-sm text-heading/70 mb-3">Design that guides users effortlessly through your product.</p>
+                    <div class="service-icon text-2xl mb-4">🔗</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Third-Party API Integration</h3>
+                    <p class="text-sm text-heading/70 mb-3">Connect your application with external services.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">User research & personas</div>
-                        <div class="feature-item">User flows & journey mapping</div>
-                        <div class="feature-item">Wireframes & prototypes</div>
-                        <div class="feature-item">Usability optimization</div>
+                        <div class="feature-item">Payment gateway integration</div>
+                        <div class="feature-item">Email & messaging services</div>
+                        <div class="feature-item">CRM & marketing tools</div>
+                        <div class="feature-item">Analytics & reporting platforms</div>
                     </div>
                 </div>
 
-                <!-- Branding & Visual Identity -->
+                <!-- System-to-System Integration -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.2">
-                    <div class="service-icon text-2xl mb-4">💎</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">Branding & Visual Identity</h3>
-                    <p class="text-sm text-heading/70 mb-3">Build a brand that users recognize, remember, and trust.</p>
+                    <div class="service-icon text-2xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">System-to-System Integration</h3>
+                    <p class="text-sm text-heading/70 mb-3">Make your platforms work together.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">Logo design & refinement</div>
-                        <div class="feature-item">Brand colors, typography & guidelines</div>
-                        <div class="feature-item">Visual identity systems</div>
-                        <div class="feature-item">Brand consistency across platforms</div>
+                        <div class="feature-item">Web & mobile app integration</div>
+                        <div class="feature-item">Backend-to-backend communication</div>
+                        <div class="feature-item">Data synchronization</div>
+                        <div class="feature-item">Real-time & scheduled data transfer</div>
                     </div>
                 </div>
 
-                <!-- Web & Mobile App Design -->
+                <!-- API Security & Performance -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.3">
-                    <div class="service-icon text-2xl mb-4">📱</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">Web & Mobile App Design</h3>
-                    <p class="text-sm text-heading/70 mb-3">Designs optimized for real-world usage and business outcomes.</p>
+                    <div class="service-icon text-2xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">API Security & Performance</h3>
+                    <p class="text-sm text-heading/70 mb-3">Protect and optimize your integrations.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">Website UI/UX design</div>
-                        <div class="feature-item">Mobile app interface design</div>
-                        <div class="feature-item">Responsive & mobile-first layouts</div>
-                        <div class="feature-item">Conversion-focused screens</div>
+                        <div class="feature-item">Token-based authentication</div>
+                        <div class="feature-item">Rate limiting</div>
+                        <div class="feature-item">Data validation</div>
+                        <div class="feature-item">Performance monitoring</div>
                     </div>
                 </div>
 
-                <!-- Design Optimization & Redesign -->
+                <!-- API Maintenance & Versioning -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.4">
-                    <div class="service-icon text-2xl mb-4">♻️</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">Design Optimization & Redesign</h3>
-                    <p class="text-sm text-heading/70 mb-3">Improve existing products for better performance and engagement.</p>
+                    <div class="service-icon text-2xl mb-4">🛠️</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">API Maintenance & Versioning</h3>
+                    <p class="text-sm text-heading/70 mb-3">Long-term stability for your integrations.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">UX audits & usability analysis</div>
-                        <div class="feature-item">UI modernization</div>
-                        <div class="feature-item">Conversion & engagement improvements</div>
-                        <div class="feature-item">Accessibility enhancements</div>
+                        <div class="feature-item">API updates & version control</div>
+                        <div class="feature-item">Backward compatibility</div>
+                        <div class="feature-item">Monitoring & error handling</div>
+                        <div class="feature-item">Documentation support</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Design Process Section -->
+    <!-- Technologies & Tools Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-animate="fade-up">
+                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
+                    Technologies & <span class="text-clip">Tools We Use</span>
+                </h2>
+                <p class="mt-4 text-base md:text-lg text-heading/80 max-w-3xl mx-auto">
+                    We work with proven, scalable technologies.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="service-card text-center" data-animate="fade-up">
+                    <h3 class="text-lg font-semibold text-heading mb-2">Backend</h3>
+                    <p class="text-sm text-heading/70">Laravel, PHP</p>
+                </div>
+                <div class="service-card text-center" data-animate="fade-up" data-delay="0.1">
+                    <h3 class="text-lg font-semibold text-heading mb-2">APIs</h3>
+                    <p class="text-sm text-heading/70">RESTful APIs</p>
+                </div>
+                <div class="service-card text-center" data-animate="fade-up" data-delay="0.2">
+                    <h3 class="text-lg font-semibold text-heading mb-2">Authentication</h3>
+                    <p class="text-sm text-heading/70">Token-based systems</p>
+                </div>
+                <div class="service-card text-center" data-animate="fade-up" data-delay="0.3">
+                    <h3 class="text-lg font-semibold text-heading mb-2">Databases</h3>
+                    <p class="text-sm text-heading/70">MySQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Integration Process Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Our Process</span>
                 <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Our <span class="text-clip">Design Process</span>
+                    Our Integration <span class="text-clip">Process</span>
                 </h2>
             </div>
 
             <div class="space-y-6">
                 <div class="process-step" data-animate="fade-up">
                     <div class="process-number">1</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Research & Discovery</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">Understanding users, business goals, and brand direction.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Requirement Analysis</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Understand systems, data flow, and integration goals.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.1">
                     <div class="process-number">2</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Strategy & Planning</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">User flows, information architecture, and a clear design roadmap.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Architecture & Planning</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Design secure and scalable API architecture.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.2">
                     <div class="process-number">3</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Design & Prototyping</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">Wireframes, high-fidelity designs, and interactive prototypes.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Development & Integration</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Build, test, and integrate APIs.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.3">
                     <div class="process-number">4</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Testing & Delivery</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">Usability testing, feedback loops, and final handoff to development.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Monitoring & Support</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Ensure stability, security, and long-term performance.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Techbuds Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Why Choose Us</span>
                 <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Why Choose <span class="text-clip">Techbuds for UI/UX & Branding</span>?
+                    Why Choose <span class="text-clip">Techbuds for API & Integration</span>?
                 </h2>
             </div>
 
@@ -360,8 +392,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">User-first, business-driven design</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">Every design decision is based on user behavior and business outcomes.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Clean and secure API design</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We focus on clear, maintainable APIs that prioritize security.</p>
                         </div>
                     </div>
                 </div>
@@ -372,8 +404,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Modern, clean, and scalable design systems</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">We build reusable components and design systems that scale with your product.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Scalable architecture</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We design integrations that grow with your business needs.</p>
                         </div>
                     </div>
                 </div>
@@ -384,8 +416,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Strong collaboration with development teams</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">Developer-ready designs, assets, and documentation for smooth handoff.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Strong backend expertise</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We integrate with your current tools, CRMs, and platforms.</p>
                         </div>
                     </div>
                 </div>
@@ -396,8 +428,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Conversion-focused layouts</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">We design flows and screens that guide users toward action.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Clear documentation & communication</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">You'll always know what's being built, why, and how it's performing.</p>
                         </div>
                     </div>
                 </div>
@@ -408,8 +440,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Consistent branding across touchpoints</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">From website to product UI, your brand feels unified everywhere.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Long-term support</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We monitor, refine, and improve your integrations over time.</p>
                         </div>
                     </div>
                 </div>
@@ -420,8 +452,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Experiences that convert</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">We design not just screens — we design experiences that convert.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">We don't just connect systems</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We make them <strong>work together efficiently</strong>.</p>
                         </div>
                     </div>
                 </div>
@@ -429,64 +461,35 @@
         </div>
     </section>
 
-    <!-- Industries We Serve Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12" data-animate="fade-up">
-                <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Industries We <span class="text-clip">Serve</span>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="text-center" data-animate="fade-up">
-                    <div class="service-icon text-2xl mx-auto mb-3">🚀</div>
-                    <h3 class="text-lg font-semibold text-heading">Startups & SaaS products</h3>
-                </div>
-                <div class="text-center" data-animate="fade-up" data-delay="0.1">
-                    <div class="service-icon text-2xl mx-auto mb-3">🛒</div>
-                    <h3 class="text-lg font-semibold text-heading">E-commerce platforms</h3>
-                </div>
-                <div class="text-center" data-animate="fade-up" data-delay="0.2">
-                    <div class="service-icon text-2xl mx-auto mb-3">🔧</div>
-                    <h3 class="text-lg font-semibold text-heading">Service-based businesses</h3>
-                </div>
-                <div class="text-center" data-animate="fade-up" data-delay="0.3">
-                    <div class="service-icon text-2xl mx-auto mb-3">🏢</div>
-                    <h3 class="text-lg font-semibold text-heading">Enterprise applications</h3>
-                </div>
-                <div class="text-center" data-animate="fade-up" data-delay="0.4">
-                    <div class="service-icon text-2xl mx-auto mb-3">📌</div>
-                    <h3 class="text-lg font-semibold text-heading">Digital agencies</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools We Use Section -->
+    <!-- Who This Service Is For Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Tools We <span class="text-clip">Use</span>
+                    Who This <span class="text-clip">Service Is For</span>
                 </h2>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div class="text-center" data-animate="fade-up">
-                    <h3 class="text-base font-semibold text-heading">Figma</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">🧩</div>
+                    <h3 class="text-lg font-semibold text-heading">SaaS platforms</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-base font-semibold text-heading">Adobe XD</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">📱</div>
+                    <h3 class="text-lg font-semibold text-heading">Web & mobile applications</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.2">
-                    <h3 class="text-base font-semibold text-heading">Design systems & libraries</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">🚀</div>
+                    <h3 class="text-lg font-semibold text-heading">Growing businesses</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.3">
-                    <h3 class="text-base font-semibold text-heading">Prototyping tools</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">🏢</div>
+                    <h3 class="text-lg font-semibold text-heading">Agencies & product teams</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.4">
-                    <h3 class="text-base font-semibold text-heading">UX research & testing tools</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">🏭</div>
+                    <h3 class="text-lg font-semibold text-heading">Enterprises with multiple systems</h3>
                 </div>
             </div>
         </div>
@@ -504,23 +507,23 @@
 
             <div class="space-y-4">
                 <div class="faq-item" data-animate="fade-up">
-                    <h3 class="text-lg font-semibold text-heading mb-2">What is the difference between UI and UX?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">UI focuses on <strong>visual design</strong> — colors, typography, and layout — while UX focuses on <strong>user experience and usability</strong>. Both work together to create a product users love.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Do you build custom APIs?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Yes. All APIs are built to match your business requirements.</p>
                 </div>
 
                 <div class="faq-item" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Do you redesign existing products?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">Yes. We perform UX audits, modernize UI, and improve flows to increase usability, engagement, and conversions.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Can you integrate existing systems?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Absolutely. We integrate both new and existing platforms.</p>
                 </div>
 
                 <div class="faq-item" data-animate="fade-up" data-delay="0.2">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Will designs be developer-ready?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">Absolutely. We provide clean Figma files, components, specs, and exportable assets so development teams can implement quickly.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Are your APIs secure?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Yes. Security and validation are core priorities.</p>
                 </div>
 
                 <div class="faq-item" data-animate="fade-up" data-delay="0.3">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Is branding included with UI/UX?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">Yes. We offer complete branding and visual identity solutions alongside product UI/UX design.</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Do you provide long-term API support?</h3>
+                    <p class="text-sm text-heading/70 leading-relaxed">Yes. We offer maintenance, upgrades, and monitoring.</p>
                 </div>
             </div>
         </div>
@@ -530,31 +533,31 @@
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-brand-primary to-brand-hover text-white">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" data-animate="fade-up">
-                Ready to Design a <span class="text-white">Product Users Love</span>?
+                Ready to Connect <span class="text-white">Your Systems</span>?
             </h2>
             <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto" data-animate="fade-up" data-delay="0.1">
-                Let’s build a design and brand that truly represents your business and delights your users.
+                Let's build secure and scalable integrations that support your growth.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up" data-delay="0.2">
                 <a href="{{ route('contact') }}" class="bg-surface-1 text-heading px-8 py-3 rounded-lg font-semibold hover:bg-app-background transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
-                    Get a Free UI/UX Consultation
+                    Get a Free API & Integration Consultation
                 </a>
                 <a href="{{ route('contact') }}" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-surface-1/10 transition-all transform hover:scale-105">
-                    Discuss Your Product
+                    Discuss Your Integration Needs
                 </a>
             </div>
         </div>
     </section>
 
     @include('components.service-blogs', [
-        'serviceKey' => 'ui-ux-design',
-        'service' => config('service_pages.ui-ux-design'),
+        'serviceKey' => 'api-development-system-integration',
+        'service' => config('service_pages.api-development-system-integration'),
     ])
 
     <!-- Footer -->
     @include('components.footer')
 
-    @include('components.service-schema', ['serviceKey' => 'ui-ux-design'])
+    @include('components.service-schema', ['serviceKey' => 'api-development-system-integration'])
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>

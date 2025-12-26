@@ -8,11 +8,11 @@
     $serviceNames = [
         'web-development' => 'Web Development',
         'mobile-app-development' => 'Mobile App Development',
-        'ui-ux-design' => 'UI/UX Design',
+        'brand-experience-content-marketing' => 'Brand Experience & Content Marketing',
         'devops-cloud' => 'DevOps & Cloud',
-        'seo-digital-marketing' => 'SEO & Digital Marketing',
+        'seo-digital-marketing' => 'SEO Services',
         'database-data-warehousing' => 'Database & Data Warehousing',
-        'ai-automation' => 'AI & Automation',
+        'api-development-system-integration' => 'API & System Integration',
         'custom-it-solutions' => 'Custom IT Solutions',
     ];
 @endphp
@@ -78,14 +78,34 @@
             <div>
                 <h4 class="text-heading font-semibold mb-4 text-sm uppercase tracking-wider">Our Services</h4>
                 <ul class="space-y-3">
-                    @foreach($services as $slug => $service)
-                    <li>
-                        <a href="{{ route('services.show', $slug) }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm" title="{{ $service['name'] ?? $serviceNames[$slug] ?? ucfirst(str_replace('-', ' ', $slug)) }}">
-                            {{ $serviceNames[$slug] ?? ucfirst(str_replace('-', ' ', $slug)) }}
-                        </a>
-                    </li>
+                    @php
+                        $coreServiceSlugs = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'devops-cloud', 'api-development-system-integration'];
+                        $additionalServiceSlugs = array_diff(array_keys($services), $coreServiceSlugs);
+                    @endphp
+                    @foreach($coreServiceSlugs as $slug)
+                        @if(isset($services[$slug]))
+                        <li>
+                            <a href="{{ route('services.show', $slug) }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm font-medium" title="{{ $services[$slug]['name'] ?? $serviceNames[$slug] ?? ucfirst(str_replace('-', ' ', $slug)) }}">
+                                {{ $serviceNames[$slug] ?? $services[$slug]['name'] ?? ucfirst(str_replace('-', ' ', $slug)) }}
+                            </a>
+                        </li>
+                        @endif
                     @endforeach
-                    <li class="pt-2">
+                    @if(count($additionalServiceSlugs) > 0)
+                    <li class="pt-2 border-t border-border-default mt-3">
+                        <span class="text-text-disabled text-xs uppercase tracking-wider">Also Available</span>
+                    </li>
+                    @foreach($additionalServiceSlugs as $slug)
+                        @if(isset($services[$slug]))
+                        <li>
+                            <a href="{{ route('services.show', $slug) }}" class="text-text-muted hover:text-brand-primary transition-colors text-sm" title="{{ $services[$slug]['name'] ?? $serviceNames[$slug] ?? ucfirst(str_replace('-', ' ', $slug)) }}">
+                                {{ $serviceNames[$slug] ?? $services[$slug]['name'] ?? ucfirst(str_replace('-', ' ', $slug)) }}
+                            </a>
+                        </li>
+                        @endif
+                    @endforeach
+                    @endif
+                    <li class="pt-2 border-t border-border-default mt-3">
                         <a href="{{ route('services') }}" class="text-brand-primary hover:text-brand-soft font-medium text-sm inline-flex items-center gap-1">
                             View All Services
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @php
-            $metaTitle = 'Techbuds - Design Develop Deliver | Web & Mobile App Development Services in India';
-            $metaDescription = 'Techbuds delivers professional web development, mobile app development, UI/UX design, DevOps, SEO, and digital marketing solutions. Build fast, scalable, SEO-optimized digital products with 4+ years of experience.';
-            $metaKeywords = 'web development, mobile app development, UI/UX design, DevOps, digital marketing, custom software development, Laravel development, React development, Flutter apps, SEO services, web development Bangalore, mobile app development India, freelance web developers';
+            $metaTitle = 'Techbuds - Web Development, Mobile Apps, SEO, DevOps & API Integration Services';
+            $metaDescription = 'Professional web development, mobile app development, SEO services, DevOps & cloud deployment, and API integration. Techbuds delivers scalable, high-performance digital solutions for growing businesses.';
+            $metaKeywords = 'web development, mobile app development, SEO services, DevOps services, API development, system integration, Laravel development, React development, Flutter apps, cloud deployment, web development Bangalore, mobile app development India';
         @endphp
         @include('components.meta-tags')
 
@@ -154,7 +154,7 @@
     <section class="py-12 md:py-20 overflow-hidden bg-gradient-to-b from-surface-1 to-app-background">
         <div class="overflow-hidden">
             @php
-                $stack = ['Web Development','React Apps','Laravel','Ecommerce','Mobile','DevOps','Brand','SEO','Data','AI','Automation','Product Design'];
+                $stack = ['Web Development','React Apps','Laravel','Ecommerce','Mobile','DevOps','Brand','SEO','Data','API','Integration','Product Design'];
                 $lineOne = array_merge($stack, $stack);
                 $offset = (int) ceil(count($stack) / 2);
                 $lineTwoSeed = array_merge(array_slice($stack, $offset), array_slice($stack, 0, $offset));
@@ -285,11 +285,11 @@
                                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
                                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     </div>
-                                <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">SEO & Digital Marketing</span>
+                                <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">SEO Services</span>
                     </div>
-                            <h3 class="font-display text-2xl font-bold text-heading mb-4">Grow traffic and generate quality leads</h3>
+                            <h3 class="font-display text-2xl font-bold text-heading mb-4">Improve rankings and grow organic traffic</h3>
                             <p class="text-text-muted mb-6 leading-relaxed">
-                                We help businesses improve search rankings, build authority, and drive organic traffic through technical SEO, content marketing, and digital marketing strategies. Our approach focuses on sustainable, long-term growth.
+                                We help businesses improve search rankings, build authority, and drive organic traffic through technical SEO, on-page optimization, local SEO, and content strategy. Our approach focuses on sustainable, long-term growth.
                             </p>
                             <ul class="space-y-2 mb-6">
                                 <li class="flex items-center gap-3 text-sm text-text-secondary">
@@ -302,7 +302,7 @@
                                 </li>
                                 <li class="flex items-center gap-3 text-sm text-text-secondary">
                                     <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Local SEO and link building
+                                    Local SEO and performance tracking
                                 </li>
                             </ul>
                             <div class="flex flex-wrap gap-3">
@@ -463,7 +463,7 @@
                     ['quote' => 'SEO results exceeded expectations. Rankings improved within two months.', 'name' => 'Kavita Reddy', 'role' => 'Marketing Head', 'company' => 'Bangalore Digital'],
                     ['quote' => 'UI/UX design transformed our brand. Conversion rate doubled instantly.', 'name' => 'Rohit Kumar', 'role' => 'Product Manager', 'company' => 'Pune Startups'],
                     ['quote' => 'Custom software streamlined operations. Saved 20 hours weekly on tasks.', 'name' => 'Anjali Mehta', 'role' => 'Operations Director', 'company' => 'Chennai Enterprises'],
-                    ['quote' => 'AI automation reduced manual work by 60%. Team productivity increased significantly.', 'name' => 'Vikram Singh', 'role' => 'CTO', 'company' => 'Hyderabad Innovations'],
+                    ['quote' => 'API integration connected all our systems seamlessly. Data flow improved dramatically.', 'name' => 'Vikram Singh', 'role' => 'CTO', 'company' => 'Hyderabad Innovations'],
                     ['quote' => 'Website performance improved dramatically. Page load time reduced to under 2 seconds.', 'name' => 'Sneha Desai', 'role' => 'Founder', 'company' => 'Ahmedabad Commerce'],
                     ['quote' => 'Professional team, clear communication. Delivered exactly what we needed on budget.', 'name' => 'Rajesh Iyer', 'role' => 'Business Owner', 'company' => 'Kolkata Services'],
                 ];
