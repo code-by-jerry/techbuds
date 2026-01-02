@@ -338,6 +338,3 @@ I can:
 2. Add **FAQs under pricing**
 3. Create **bundle offers** (Web + Hosting + SEO)
 4. Adjust pricing for **Chennai / India SEO targeting**
-
-Tell me:
-👉 Do you want **HTML/Tailwind pricing sections** or **content-only pricing blocks** first?

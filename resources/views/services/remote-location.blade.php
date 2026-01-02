@@ -13,6 +13,7 @@
 
         <title>{{ $titleBase }}</title>
         <meta name="description" content="{{ $descriptionBase }}">
+        @include('components.google-analytics')
 
         @if($noindex ?? false)
             <meta name="robots" content="noindex,follow">

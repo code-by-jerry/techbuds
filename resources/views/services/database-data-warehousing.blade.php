@@ -7,6 +7,7 @@
             $metaKeywords = 'database services, data warehousing, database design, ETL services, business intelligence, BI dashboards, data analytics, database optimization, data migration, data architecture services';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

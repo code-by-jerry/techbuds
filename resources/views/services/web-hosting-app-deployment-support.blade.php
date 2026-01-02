@@ -7,6 +7,7 @@
             $metaKeywords = 'web hosting services, app deployment, hosting support, website hosting, application deployment, hosting management, server support, deployment services, hosting migration, technical support services';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

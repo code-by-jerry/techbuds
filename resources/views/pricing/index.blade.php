@@ -7,6 +7,7 @@
             $metaKeywords = 'web development pricing, mobile app pricing, SEO pricing, affordable web development, pricing plans, web development cost, mobile app cost, SEO services cost, web development price in india, mobile app development price';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
@@ -279,8 +280,8 @@
                         ];
                     @endphp
                     @foreach($pricingFaqs as $index => $faq)
-                    <div class="p-6 rounded-xl bg-surface border border-border-default" data-animate="fade-up" data-delay="{{ $index * 0.1 }}">
-                        <h3 class="text-lg font-semibold text-heading mb-2">{{ $faq['q'] }}</h3>
+                    <div class="p-6 rounded-xl bg-surface-1 border-2 border-border-default hover:border-brand-primary/40 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5" data-animate="fade-up" data-delay="{{ $index * 0.1 }}">
+                        <h3 class="text-lg font-semibold text-heading mb-3">{{ $faq['q'] }}</h3>
                         <p class="text-sm text-text-secondary leading-relaxed">{{ $faq['a'] }}</p>
                     </div>
                     @endforeach

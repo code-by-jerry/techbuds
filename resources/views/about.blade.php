@@ -7,6 +7,7 @@
             $metaKeywords = 'complete digital solutions, web development and SEO services, technology consulting for businesses, end-to-end digital services, business-first digital strategy, web development services, SEO-focused platforms, scalable infrastructure, technology partner';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

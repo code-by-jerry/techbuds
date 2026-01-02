@@ -7,6 +7,7 @@
             $metaKeywords = 'custom software development, IT solutions, custom CRM development, ERP development, business software development, custom applications, enterprise software, management systems, custom dashboard development';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

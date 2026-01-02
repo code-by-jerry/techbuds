@@ -7,6 +7,7 @@
             $metaKeywords = 'techbuds portfolio, web development portfolio, mobile app portfolio, case studies, web development projects, mobile app projects, software development portfolio, UI/UX design portfolio';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

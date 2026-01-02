@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        @include('components.google-analytics')
         <title>{{ $title ?? 'Techbuds' }}</title>
         <meta name="description" content="{{ $meta_description ?? 'Techbuds - Design Develop Deliver' }}">
         

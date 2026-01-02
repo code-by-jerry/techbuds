@@ -9,6 +9,7 @@
             $metaKeywords = strtolower($serviceName) . ' pricing, ' . str_replace(' ', ' cost, ', strtolower($serviceName)) . ' rates, ' . strtolower($serviceName) . ' price in india';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

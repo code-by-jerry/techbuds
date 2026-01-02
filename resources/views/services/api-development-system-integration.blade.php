@@ -7,6 +7,7 @@
             $metaKeywords = 'API development, system integration, REST API development, API integration services, third-party API integration, system integration company, API security, API maintenance, integration services';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

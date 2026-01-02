@@ -7,6 +7,7 @@
             $metaKeywords = 'brand experience services, content marketing services, branding services, UI UX design services, brand identity, content strategy, visual identity, brand positioning';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

@@ -7,6 +7,7 @@
             $metaKeywords = 'mobile app development, Android app development, iOS app development, Flutter app development, React Native development, cross-platform apps, mobile application development, app development company, mobile app developers';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

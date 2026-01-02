@@ -7,6 +7,7 @@
             $metaKeywords = 'SEO services, technical SEO services, local SEO services, search engine optimization, on-page SEO, SEO company India, SEO audit, content strategy';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

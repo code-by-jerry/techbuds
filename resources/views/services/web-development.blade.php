@@ -7,6 +7,7 @@
             $metaKeywords = 'web development services, custom website development, Laravel development, React development, full-stack development, responsive web design, SEO-optimized websites, web application development, website development company';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

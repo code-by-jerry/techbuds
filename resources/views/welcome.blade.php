@@ -7,6 +7,7 @@
             $metaKeywords = 'web development, mobile app development, SEO services, web hosting services, API development, system integration, Laravel development, React development, Flutter apps, hosting support, web development Bangalore, mobile app development India';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

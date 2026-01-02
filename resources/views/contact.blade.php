@@ -10,6 +10,7 @@
             $metaKeywords = 'contact techbuds, web development company, mobile app development, UI/UX design, DevOps services, digital marketing, custom software development, Bangalore, India, get quote, consultation';
         @endphp
         @include('components.meta-tags')
+        @include('components.google-analytics')
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

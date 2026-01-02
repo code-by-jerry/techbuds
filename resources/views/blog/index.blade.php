@@ -341,11 +341,15 @@
         right: 1.4rem;
         padding: 0.3rem 0.7rem;
         border-radius: 999px;
-        background: rgba(255,255,255,0.9);
-        color: var(--text-primary);
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        color: rgba(255, 255, 255, 0.95);
         font-size: 0.6rem;
         letter-spacing: 0.24em;
         text-transform: uppercase;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
     /* Custom Pagination Styles */
     .custom-pagination {
