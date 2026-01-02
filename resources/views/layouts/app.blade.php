@@ -8,9 +8,7 @@
         <meta name="description" content="{{ $meta_description ?? 'Techbuds - Design Develop Deliver' }}">
         
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
-        <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
-        <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
+        @include('components.favicon')
         
         <!-- Optimized Font Loading -->
         @include('components.optimized-fonts')

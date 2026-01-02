@@ -9,6 +9,12 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # Explicitly allow favicon files (bypass Laravel routing)
+    RewriteCond %{REQUEST_URI} ^/favicon\.ico$ [OR]
+    RewriteCond %{REQUEST_URI} ^/favicon-.*\.png$ [OR]
+    RewriteCond %{REQUEST_URI} ^/apple-touch-icon.*\.png$
+    RewriteRule . - [L]
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
@@ -18,4 +24,11 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+</IfModule>
+
+# Cache favicon files for better performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
 </IfModule>

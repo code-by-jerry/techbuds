@@ -8,9 +8,7 @@
     <title>@yield('title', 'Dashboard') · Techbuds Admin</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
+    @include('components.favicon')
     
     <!-- Fonts: Inter (Body) + Clash Display (Headings) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
