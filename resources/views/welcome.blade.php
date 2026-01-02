@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @php
-            $metaTitle = 'Techbuds - Web Development, Mobile Apps, SEO, DevOps & API Integration Services';
-            $metaDescription = 'Professional web development, mobile app development, SEO services, DevOps & cloud deployment, and API integration. Techbuds delivers scalable, high-performance digital solutions for growing businesses.';
-            $metaKeywords = 'web development, mobile app development, SEO services, DevOps services, API development, system integration, Laravel development, React development, Flutter apps, cloud deployment, web development Bangalore, mobile app development India';
+            $metaTitle = 'Techbuds - Web Development, Mobile Apps, SEO, Hosting & API Integration Services';
+            $metaDescription = 'Professional web development, mobile app development, SEO services, web hosting & deployment, and API integration. Techbuds delivers scalable, high-performance digital solutions for growing businesses.';
+            $metaKeywords = 'web development, mobile app development, SEO services, web hosting services, API development, system integration, Laravel development, React development, Flutter apps, hosting support, web development Bangalore, mobile app development India';
         @endphp
         @include('components.meta-tags')
 
@@ -105,6 +105,53 @@
                     transition-duration: 0.01ms !important;
                 }
             }
+            
+            /* Flip Card Styles */
+            .flip-card {
+                perspective: 1000px;
+                width: 100%;
+                height: 380px;
+            }
+            
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 380px;
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                transform-style: preserve-3d;
+            }
+            
+            .flip-card.flipped .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+            
+            .flip-card-front,
+            .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 380px;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                border-radius: 1rem;
+                overflow: hidden;
+            }
+            
+            
+            .flip-card-back {
+                transform: rotateY(180deg);
+            }
+            
+            @media (prefers-reduced-motion: reduce) {
+                .flip-card-inner {
+                    transition: none;
+                }
+                .flip-card.flipped .flip-card-inner {
+                    transform: none;
+                }
+                .flip-card-back {
+                    transform: none;
+                }
+            }
         </style>
     </head>
 <body class="bg-app-background text-text-primary antialiased">
@@ -190,131 +237,139 @@
                 </p>
             </div>
 
-            <div class="space-y-8">
-                <!-- Web & Mobile Development -->
-                <article class="bg-surface-1 rounded-2xl border border-border-default overflow-hidden card-hover" data-animate="fade-up">
-                    <div class="grid lg:grid-cols-12 gap-0">
-                        <div class="lg:col-span-5 relative h-64 lg:h-auto">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=60" alt="Web and Mobile App Development Services - Custom Websites and Applications by Techbuds" class="w-full h-full object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-r from-surface-1/80 to-transparent lg:bg-gradient-to-l"></div>
-                        </div>
-                        <div class="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-center">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                    </div>
-                                <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">Web & Mobile Development</span>
-                    </div>
-                            <h3 class="font-display text-2xl font-bold text-heading mb-4">Build modern, scalable applications</h3>
-                            <p class="text-text-muted mb-6 leading-relaxed">
-                                We develop fast, responsive websites and mobile apps using Laravel, React, and Flutter. From custom web applications to cross-platform mobile apps, we focus on clean code, performance, and user experience.
-                            </p>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Custom websites and web applications
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Android and iOS mobile app development
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    SEO-optimized and performance-focused builds
-                                </li>
-                            </ul>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Laravel & React</span>
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Flutter Apps</span>
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Responsive Design</span>
-                    </div>
-                    </div>
-                </div>
-                </article>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-animate="fade-up">
+                @php
+                    $services = [
+                        [
+                            'title' => 'Web Development',
+                            'slug' => 'web-development',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>',
+                            'description' => 'Professional custom web development using Laravel, React, and Next.js. We build scalable, high-performance websites and applications optimized for speed, security, and SEO visibility.',
+                            'features' => ['Laravel & React Development', 'Responsive Design', 'Performance Optimization', 'SEO Ready', 'API Integration'],
+                            'gradient_start' => '#2563EB',
+                            'gradient_end' => '#38BDF8'
+                        ],
+                        [
+                            'title' => 'Mobile Apps',
+                            'slug' => 'mobile-app-development',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>',
+                            'description' => 'Cross-platform mobile app development for Android and iOS using Flutter and React Native. Native-feeling apps with offline support, push notifications, and seamless user experiences.',
+                            'features' => ['Flutter Development', 'Native Performance', 'App Store Ready', 'Push Notifications', 'Offline Support'],
+                            'gradient_start' => '#9333EA',
+                            'gradient_end' => '#EC4899'
+                        ],
+                        [
+                            'title' => 'UI/UX Design',
+                            'slug' => 'brand-experience-content-marketing',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>',
+                            'description' => 'User experience and interface design focused on creating intuitive, accessible, and conversion-optimized digital products. We conduct user research, create wireframes in Figma, and develop comprehensive design systems.',
+                            'features' => ['Wireframes & Prototypes', 'Figma Design', 'User Research', 'Design Systems', 'Usability Testing'],
+                            'gradient_start' => '#4F46E5',
+                            'gradient_end' => '#9333EA'
+                        ],
+                        [
+                            'title' => 'Branding',
+                            'slug' => 'brand-experience-content-marketing',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>',
+                            'description' => 'Complete brand identity design and visual system development. We create memorable logos, comprehensive brand guidelines, visual identity systems, and strategies that communicate your business values effectively.',
+                            'features' => ['Logo Design', 'Brand Guidelines', 'Visual Identity', 'Brand Strategy', 'Style Guides'],
+                            'gradient_start' => '#F97316',
+                            'gradient_end' => '#EF4444'
+                        ],
+                        [
+                            'title' => 'SEO Optimization',
+                            'slug' => 'seo-digital-marketing',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>',
+                            'description' => 'Search engine optimization services that improve organic rankings and drive qualified traffic. We perform keyword research, on-page optimization, link building, and analytics setup for sustainable growth.',
+                            'features' => ['On-Page SEO', 'Keyword Research', 'Link Building', 'Analytics Setup', 'Rank Tracking'],
+                            'gradient_start' => '#22C55E',
+                            'gradient_end' => '#10B981'
+                        ],
+                        [
+                            'title' => 'Technical SEO',
+                            'slug' => 'seo-digital-marketing',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
+                            'description' => 'Technical SEO audits and optimization ensuring your website meets search engine requirements. We analyze Core Web Vitals, implement schema markup, optimize speed, and ensure mobile-first compliance.',
+                            'features' => ['Site Audits', 'Core Web Vitals', 'Schema Markup', 'Site Speed', 'Mobile Optimization'],
+                            'gradient_start' => '#14B8A6',
+                            'gradient_end' => '#06B6D4'
+                        ],
+                        [
+                            'title' => 'Content Strategy',
+                            'slug' => 'brand-experience-content-marketing',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>',
+                            'description' => 'Strategic content creation and marketing that drives engagement and generates leads. We develop content plans, write SEO-optimized blog posts, create campaigns, and manage editorial calendars.',
+                            'features' => ['Content Planning', 'Blog Writing', 'SEO Content', 'Content Marketing', 'Editorial Calendar'],
+                            'gradient_start' => '#EAB308',
+                            'gradient_end' => '#F97316'
+                        ],
+                        [
+                            'title' => 'Local SEO',
+                            'slug' => 'seo-digital-marketing',
+                            'icon' => '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
+                            'description' => 'Local search optimization that boosts visibility in local results and attracts nearby customers. We optimize Google My Business, manage listings, handle reviews, and ensure NAP consistency across directories.',
+                            'features' => ['Google My Business', 'Local Listings', 'Review Management', 'Local Citations', 'NAP Consistency'],
+                            'gradient_start' => '#F43F5E',
+                            'gradient_end' => '#EC4899'
+                        ]
+                    ];
+                @endphp
 
-                <!-- UI/UX Design & Branding -->
-                <article class="bg-surface-1 rounded-2xl border border-border-default overflow-hidden card-hover" data-animate="fade-up" data-delay="0.1">
-                    <div class="grid lg:grid-cols-12 gap-0">
-                        <div class="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-center order-2 lg:order-1">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                @foreach($services as $index => $service)
+                <div class="flip-card" 
+                     x-data="{ flipped: false }" 
+                     @mouseenter="flipped = true"
+                     @mouseleave="flipped = false"
+                     :class="{ 'flipped': flipped }"
+                     data-animate="fade-up" 
+                     data-delay="{{ ($index % 4) * 0.1 }}">
+                    <div class="flip-card-inner">
+                        <!-- Front Side -->
+                        <div class="flip-card-front bg-surface-1 border border-border-default rounded-2xl p-6 flex flex-col justify-between hover:border-brand-primary hover:shadow-lg hover:shadow-brand-primary/10 transition-all duration-300">
+                            <div class="flex-1 flex flex-col">
+                                <div class="w-16 h-16 rounded-xl mb-4 flex items-center justify-center shadow-lg" style="background: linear-gradient(135deg, {{ $service['gradient_start'] }}, {{ $service['gradient_end'] }});">
+                                    {!! $service['icon'] !!}
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-heading mb-3">{{ $service['title'] }}</h3>
+                                <p class="text-sm text-text-muted leading-relaxed flex-1">{{ $service['description'] }}</p>
+                            </div>
+                            <a href="{{ route('services.show', $service['slug']) }}" class="flex items-center gap-2 text-xs text-brand-primary font-medium pt-4 border-t border-border-default hover:text-brand-soft transition-colors mt-4">
+                                <span>View service details</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </a>
                         </div>
-                                <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">UI/UX Design & Branding</span>
-                    </div>
-                            <h3 class="font-display text-2xl font-bold text-heading mb-4">User-centered design that builds trust</h3>
-                            <p class="text-text-muted mb-6 leading-relaxed">
-                                We create intuitive interfaces and cohesive brand identities for web and mobile products. Our design process includes wireframes, prototypes, and developer-ready designs that improve usability and engagement.
-                            </p>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Wireframes, prototypes, and visual design
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Brand identity, logos, and visual systems
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    UX research and conversion optimization
-                                </li>
-                            </ul>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Figma Design</span>
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Brand Identity</span>
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">User Research</span>
+                        
+                        <!-- Back Side -->
+                        <div class="flip-card-back rounded-2xl p-6 flex flex-col justify-between shadow-xl" style="background: linear-gradient(135deg, {{ $service['gradient_start'] }}, {{ $service['gradient_end'] }});">
+                            <div class="flex-1 flex flex-col">
+                                <div class="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
+                                    {!! $service['icon'] !!}
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-white mb-4">{{ $service['title'] }}</h3>
+                                <ul class="space-y-2.5 flex-1">
+                                    @foreach($service['features'] as $feature)
+                                    <li class="flex items-start gap-2.5 text-sm text-white/95">
+                                        <svg class="w-4 h-4 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        <span class="leading-relaxed">{{ $feature }}</span>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <a href="{{ route('services.show', $service['slug']) }}" class="flex items-center gap-2 text-xs text-white/90 font-medium pt-4 border-t border-white/20 mt-4 hover:text-white transition-colors">
+                                <span>Learn more about this service</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                        <div class="lg:col-span-5 relative h-64 lg:h-auto order-1 lg:order-2">
-                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80" alt="UI/UX Design and Branding Services - User-Centered Design Solutions by Techbuds" class="w-full h-full object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-l from-surface-1/80 to-transparent lg:bg-gradient-to-r"></div>
-                    </div>
-                    </div>
-                </article>
-                
-                <!-- SEO & Digital Marketing -->
-                <article class="bg-surface-1 rounded-2xl border border-border-default overflow-hidden card-hover" data-animate="fade-up" data-delay="0.2">
-                    <div class="grid lg:grid-cols-12 gap-0">
-                        <div class="lg:col-span-5 relative h-64 lg:h-auto">
-                            <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1600&q=60" alt="SEO and Digital Marketing Services - Grow Traffic and Generate Leads with Techbuds" class="w-full h-full object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-r from-surface-1/80 to-transparent lg:bg-gradient-to-l"></div>
-                        </div>
-                        <div class="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-center">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-soft flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                    </div>
-                                <span class="text-xs font-medium text-brand-primary uppercase tracking-wider">SEO Services</span>
-                    </div>
-                            <h3 class="font-display text-2xl font-bold text-heading mb-4">Improve rankings and grow organic traffic</h3>
-                            <p class="text-text-muted mb-6 leading-relaxed">
-                                We help businesses improve search rankings, build authority, and drive organic traffic through technical SEO, on-page optimization, local SEO, and content strategy. Our approach focuses on sustainable, long-term growth.
-                            </p>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Technical SEO audits and on-page optimization
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Content strategy and keyword research
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                    Local SEO and performance tracking
-                                </li>
-                            </ul>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">SEO Audits</span>
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Content Marketing</span>
-                                <span class="px-3 py-1 rounded-full bg-surface-2 text-text-disabled text-xs font-medium">Local SEO</span>
-                    </div>
-                    </div>
-                </div>
-                </article>
-                        </div>
-                    </div>
+                @endforeach
+            </div>
     </section>
 
     <!-- Our Story Section -->

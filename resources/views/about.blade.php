@@ -548,15 +548,15 @@
                             </svg>
                         </a>
 
-                        <!-- Service 5: Cloud & DevOps -->
-                        <a href="{{ route('services.show', 'devops-cloud') }}" class="group relative flex items-center gap-3 p-3 md:p-3.5 rounded-lg bg-surface-1/50 border border-border-default/50 hover:border-brand-primary/40 hover:bg-surface-1 transition-all duration-300">
+                        <!-- Service 5: Web Hosting & Deployment -->
+                        <a href="{{ route('services.show', 'web-hosting-app-deployment-support') }}" class="group relative flex items-center gap-3 p-3 md:p-3.5 rounded-lg bg-surface-1/50 border border-border-default/50 hover:border-brand-primary/40 hover:bg-surface-1 transition-all duration-300">
                             <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-brand-primary/20 to-brand-soft/20 flex items-center justify-center border border-brand-primary/20 group-hover:border-brand-primary/40 group-hover:bg-brand-primary/10 transition-all">
                                 <svg class="w-4 h-4 md:w-5 md:h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
                                 </svg>
                             </div>
                             <div class="flex-1 min-w-0">
-                                <h4 class="font-semibold text-heading text-sm md:text-base mb-0.5 group-hover:text-brand-primary transition-colors">Cloud & DevOps</h4>
+                                <h4 class="font-semibold text-heading text-sm md:text-base mb-0.5 group-hover:text-brand-primary transition-colors">Web Hosting & Deployment</h4>
                                 <p class="text-text-muted text-xs md:text-sm line-clamp-1">Scalable infrastructure solutions</p>
                             </div>
                             <svg class="w-4 h-4 text-brand-primary/0 group-hover:text-brand-primary flex-shrink-0 transition-all group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

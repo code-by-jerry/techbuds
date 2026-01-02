@@ -8,7 +8,7 @@
         'web-development' => ['Performance'],
         'mobile-app-development' => ['Mobile'],
         'ui-ux-design' => ['Analytics', 'Content'],
-        'devops-cloud' => ['DevOps', 'Performance'],
+        'web-hosting-app-deployment-support' => ['Performance'],
         'database-data-warehousing' => ['Analytics'],
         'api-development-system-integration' => ['Content'],
         'custom-it-solutions' => ['Content', 'Performance'],

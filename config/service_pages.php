@@ -97,27 +97,27 @@ return [
         ],
     ],
 
-    'devops-cloud' => [
-        'name' => 'DevOps & Cloud Deployment Services',
-        'serviceType' => 'DevOps & Cloud Deployment',
+    'web-hosting-app-deployment-support' => [
+        'name' => 'Web Hosting, App Deployment & Support Services',
+        'serviceType' => 'Web Hosting, App Deployment & Support',
         'is_core' => true,
-        'description' => 'DevOps and cloud deployment services including CI/CD pipelines, cloud infrastructure setup, monitoring, performance optimization, security, and backups.',
+        'description' => 'Reliable web hosting, smooth application deployment, and ongoing technical support services. We manage hosting setup, deployment, monitoring, updates, and long-term maintenance.',
         'faqs' => [
             [
-                'q' => 'Which cloud platforms do you support?',
-                'a' => 'We work with AWS, Google Cloud, and DigitalOcean for most deployments.',
+                'q' => 'Do you provide hosting plans?',
+                'a' => 'We help you set up and manage hosting, and guide you in choosing the right provider for your needs.',
             ],
             [
-                'q' => 'Do you provide ongoing DevOps support?',
-                'a' => 'Yes. We offer monitoring, maintenance, optimization, and support packages.',
+                'q' => 'Can you deploy existing applications?',
+                'a' => 'Yes. We handle new deployments, migrations, and upgrades for both web and mobile backend applications.',
             ],
             [
-                'q' => 'Can you migrate existing systems to the cloud?',
-                'a' => 'Absolutely. We handle secure cloud migrations, platform upgrades, and re-architecture where needed.',
+                'q' => 'Do you provide ongoing support?',
+                'a' => 'Yes. We offer continuous monitoring, updates, bug fixes, and issue resolution for long-term reliability.',
             ],
             [
-                'q' => 'Is DevOps suitable for small teams?',
-                'a' => 'Yes. DevOps reduces manual work, improves reliability, and lowers long-term costs, even for small teams.',
+                'q' => 'Is this suitable for small businesses?',
+                'a' => 'Absolutely. This service is designed for businesses of all sizes who want reliable hosting and deployment without infrastructure headaches.',
             ],
         ],
     ],

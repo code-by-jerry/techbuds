@@ -125,10 +125,12 @@ class Blog extends Model
             'ui/ux design' => 'ui-ux-design',
             'product design' => 'ui-ux-design',
 
-            // DevOps & cloud
-            'devops' => 'devops-cloud',
-            'ci/cd' => 'devops-cloud',
-            'cloud deployment' => 'devops-cloud',
+            // Web Hosting & Deployment
+            'hosting' => 'web-hosting-app-deployment-support',
+            'web hosting' => 'web-hosting-app-deployment-support',
+            'app deployment' => 'web-hosting-app-deployment-support',
+            'deployment' => 'web-hosting-app-deployment-support',
+            'hosting support' => 'web-hosting-app-deployment-support',
 
             // Data & warehousing
             'data warehouse' => 'database-data-warehousing',

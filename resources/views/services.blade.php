@@ -3,8 +3,8 @@
     <head>
         @php
             $metaTitle = 'Our Services - Web Development, Mobile Apps, SEO & More | Techbuds';
-            $metaDescription = 'Professional web development, mobile app development, SEO services, DevOps & cloud deployment, and API integration services. Techbuds delivers scalable, high-performance digital solutions for growing businesses.';
-            $metaKeywords = 'web development services, mobile app development, SEO services, DevOps services, API development, system integration, Laravel development, React development, Flutter apps, cloud deployment, web development company';
+            $metaDescription = 'Professional web development, mobile app development, SEO services, web hosting & deployment, and API integration services. Techbuds delivers scalable, high-performance digital solutions for growing businesses.';
+            $metaKeywords = 'web development services, mobile app development, SEO services, web hosting services, app deployment, API development, system integration, Laravel development, React development, Flutter apps, hosting support, web development company';
         @endphp
         @include('components.meta-tags')
 
@@ -324,16 +324,15 @@
                     <p class="text-sm text-text-secondary leading-relaxed">Improve rankings, grow organic traffic, and build authority with technical SEO and optimization.</p>
                 </a>
 
-                <!-- DevOps & Cloud Deployment -->
-                <a href="{{ route('services.show', 'devops-cloud') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.3">
+                <!-- Web Hosting, App Deployment & Support -->
+                <a href="{{ route('services.show', 'web-hosting-app-deployment-support') }}" class="service-card cursor-pointer" data-animate="fade-up" data-delay="0.3">
                     <div class="service-card-icon">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-heading">DevOps & Cloud</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">CI/CD pipelines, cloud infrastructure, monitoring, and high-availability systems.</p>
+                    <h3 class="text-xl font-semibold text-heading">Web Hosting & Deployment</h3>
+                    <p class="text-sm text-text-secondary leading-relaxed">Reliable hosting, smooth deployments, and ongoing technical support for your applications.</p>
                 </a>
 
                 <!-- API Development & System Integration -->
@@ -443,17 +442,17 @@
                             'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80'
                         ],
                         [
-                            'slug' => 'devops-cloud',
+                            'slug' => 'web-hosting-app-deployment-support',
                             'is_core' => true,
-                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-                            'title' => 'DevOps & Cloud Deployment',
-                            'description' => 'Ensure your applications run smoothly with DevOps and cloud deployment. We set up CI/CD pipelines, deploy to AWS/GCP/DigitalOcean, and optimize server performance.',
+                            'icon_svg' => '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>',
+                            'title' => 'Web Hosting, App Deployment & Support',
+                            'description' => 'Reliable hosting, smooth deployments, and ongoing technical support. We manage hosting setup, application deployment, server monitoring, and long-term maintenance so you can focus on your business.',
                             'features' => [
-                                'CI/CD pipeline setup (GitHub Actions, Jenkins)',
-                                'Cloud deployment (AWS, GCP, DigitalOcean)',
-                                'Docker containerization',
-                                'Auto-scaling and load balancing',
-                                'Performance monitoring and alerting'
+                                'Web hosting setup & management',
+                                'Application deployment (web & mobile backends)',
+                                'Server monitoring & performance optimization',
+                                'Ongoing maintenance & technical support',
+                                'Hosting migration & upgrades'
                             ],
                             'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80'
                         ],
@@ -728,7 +727,7 @@
             '@context' => 'https://schema.org',
             '@type' => 'CollectionPage',
             'name' => 'Techbuds Services',
-            'description' => 'Professional web development, mobile app development, SEO services, DevOps & cloud deployment, and API integration services. Techbuds delivers scalable, high-performance digital solutions.',
+            'description' => 'Professional web development, mobile app development, SEO services, web hosting & deployment, and API integration services. Techbuds delivers scalable, high-performance digital solutions.',
             'url' => route('services'),
         ];
     @endphp

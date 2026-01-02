@@ -9,7 +9,7 @@
         'web-development' => 'Web Development',
         'mobile-app-development' => 'Mobile App Development',
         'brand-experience-content-marketing' => 'Brand Experience & Content Marketing',
-        'devops-cloud' => 'DevOps & Cloud',
+        'web-hosting-app-deployment-support' => 'Web Hosting & Deployment',
         'seo-digital-marketing' => 'SEO Services',
         'database-data-warehousing' => 'Database & Data Warehousing',
         'api-development-system-integration' => 'API & System Integration',
@@ -25,7 +25,7 @@
             <div class="lg:col-span-2">
                 <div class="mb-6">
                     <img src="{{ asset('images/techbuds-light.png') }}" alt="Techbuds - Design Develop Deliver" class="h-10 w-auto mb-4" itemprop="logo">
-                    <p class="text-text-muted text-sm mb-6 max-w-md">Design Develop Deliver - Professional web development, mobile app development, SEO services, API integration, and DevOps cloud solutions. Trusted technology partner for growing businesses.</p>
+                    <p class="text-text-muted text-sm mb-6 max-w-md">Design Develop Deliver - Professional web development, mobile app development, SEO services, API integration, and web hosting & deployment solutions. Trusted technology partner for growing businesses.</p>
                 </div>
                 
                 <!-- Contact Information -->
@@ -84,7 +84,7 @@
                             'mobile-app-development' => 'Mobile App Development',
                             'seo-digital-marketing' => 'SEO Services',
                             'api-development-system-integration' => 'API & System Integration',
-                            'devops-cloud' => 'DevOps & Cloud'
+                            'web-hosting-app-deployment-support' => 'Web Hosting & Deployment'
                         ];
                     @endphp
                     @foreach($focusedServices as $slug => $name)
@@ -154,7 +154,7 @@
         <div class="pt-8 border-t border-surface-2 mb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                 @php
-                    $focusedServicesForSEO = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'api-development-system-integration', 'devops-cloud'];
+                    $focusedServicesForSEO = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'api-development-system-integration', 'web-hosting-app-deployment-support'];
                     $topLocations = ['india', 'usa', 'uk', 'canada', 'australia', 'uae'];
                 @endphp
                 
@@ -213,7 +213,7 @@
     'name' => 'Techbuds',
     'url' => url('/'),
     'logo' => asset('images/techbuds-light.png'),
-    'description' => 'Techbuds - Design Develop Deliver. Professional web development, mobile app development, SEO services, API integration, and DevOps cloud solutions. Trusted technology partner for growing businesses.',
+    'description' => 'Techbuds - Design Develop Deliver. Professional web development, mobile app development, SEO services, API integration, and web hosting & deployment solutions. Trusted technology partner for growing businesses.',
     'foundingDate' => '2025',
     'founders' => [
         [
@@ -246,7 +246,7 @@
         '@type' => 'OfferCatalog',
         'name' => 'Techbuds Professional Services',
         'itemListElement' => array_values(array_filter(array_map(function($slug, $service) use ($serviceNames) {
-            $focusedServices = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'api-development-system-integration', 'devops-cloud'];
+            $focusedServices = ['web-development', 'mobile-app-development', 'seo-digital-marketing', 'api-development-system-integration', 'web-hosting-app-deployment-support'];
             if (!in_array($slug, $focusedServices)) {
                 return null;
             }

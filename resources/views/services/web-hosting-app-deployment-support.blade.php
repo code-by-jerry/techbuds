@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @php
-            $metaTitle = 'DevOps & Cloud Deployment Services | Secure & Scalable – Techbuds';
-            $metaDescription = 'DevOps and cloud deployment services: CI/CD pipelines, AWS/Google Cloud infrastructure, monitoring, security, automated backups. Build secure, scalable, high-performance systems with 24/7 reliability.';
-            $metaKeywords = 'DevOps services, cloud deployment, CI/CD pipelines, AWS deployment, Google Cloud services, infrastructure automation, server monitoring, cloud security, DevOps consulting, cloud migration services';
+            $metaTitle = 'Web Hosting, App Deployment & Support Services | Reliable Hosting – Techbuds';
+            $metaDescription = 'Reliable web hosting, smooth application deployment, and ongoing technical support services. We manage hosting setup, deployment, monitoring, updates, and long-term maintenance for your websites and applications.';
+            $metaKeywords = 'web hosting services, app deployment, hosting support, website hosting, application deployment, hosting management, server support, deployment services, hosting migration, technical support services';
         @endphp
         @include('components.meta-tags')
 
@@ -162,7 +162,7 @@
         <div class="absolute inset-0 w-full h-full">
             <img 
                 src="{{ asset('images/banner images/service-page-banner.jpg') }}" 
-                alt="DevOps & Cloud Deployment Services - Techbuds" 
+                alt="Web Hosting, App Deployment & Support Services - Techbuds" 
                 class="w-full h-full object-cover"
                 loading="eager"
                 fetchpriority="high">
@@ -173,204 +173,185 @@
         
         <div class="relative max-w-7xl mx-auto w-full z-10">
             <div data-animate="fade-up">
-                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">DevOps & Cloud Deployment</span>
+                <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">Web Hosting, App Deployment & Support</span>
             </div>
             <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight drop-shadow-lg" data-animate="fade-up" data-delay="0.1">
-                Secure, Scalable & <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">High-Performance Infrastructure</span> for Modern Applications
+                Reliable Hosting, Smooth Deployments & <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Ongoing Technical Support</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed drop-shadow-md" data-animate="fade-up" data-delay="0.2">
-                A great product fails without reliable infrastructure. At <strong class="text-white">Techbuds</strong>, we provide DevOps and cloud deployment services that ensure your applications run fast, stay secure, and scale seamlessly — without downtime or operational chaos.
+                A website or application is only as good as the infrastructure it runs on. At <strong class="text-white">Techbuds</strong>, we provide web hosting, application deployment, and ongoing support services to ensure your digital products are secure, stable, and always available.
             </p>
             <p class="mt-4 text-base md:text-lg text-white/85 max-w-3xl leading-relaxed drop-shadow-sm" data-animate="fade-up" data-delay="0.3">
-                We help businesses automate, monitor, and optimize their infrastructure for long-term stability and growth.
+                We handle the technical complexity so you can focus on your business.
             </p>
         </div>
     </section>
 
-    <!-- Why DevOps & Cloud Matter Section -->
+    <!-- What This Service Covers Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Why <span class="text-clip">DevOps & Cloud Infrastructure</span> Matter
+                    What This <span class="text-clip">Service Covers</span>
                 </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="service-card" data-animate="fade-up">
-                    <h3 class="text-xl font-semibold text-heading mb-4">Modern applications require:</h3>
-                    <div class="space-y-2">
-                        <div class="feature-item">Fast deployments</div>
-                        <div class="feature-item">Zero-downtime updates</div>
-                        <div class="feature-item">High availability</div>
-                        <div class="feature-item">Scalability under load</div>
-                        <div class="feature-item">Continuous monitoring</div>
-                    </div>
-                </div>
-
-                <div class="service-card" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-xl font-semibold text-heading mb-4">Our DevOps solutions help you:</h3>
-                    <div class="space-y-2">
-                        <div class="feature-item">Eliminate manual deployment errors</div>
-                        <div class="feature-item">Create stable and automated pipelines</div>
-                        <div class="feature-item">Improve uptime and reliability</div>
-                        <div class="feature-item">Scale infrastructure with confidence</div>
-                    </div>
-                    <p class="mt-4 text-sm text-heading/70 leading-relaxed">
-                        We build <strong>stable, automated, and resilient systems</strong> that support your product growth.
-                    </p>
-                </div>
+                <p class="mt-4 text-base md:text-lg text-heading/80 max-w-3xl mx-auto">
+                    This service is ideal for businesses that want <strong>peace of mind</strong>, not infrastructure headaches.
+                </p>
+                <p class="mt-3 text-lg md:text-xl text-heading/90 max-w-3xl mx-auto font-medium">
+                    We manage hosting, deployment, updates, and support — end to end.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Our DevOps & Cloud Services Section -->
+    <!-- Our Hosting, Deployment & Support Services Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Our <span class="text-clip">DevOps & Cloud</span> Services
+                    Our <span class="text-clip">Hosting, Deployment & Support</span> Services
                 </h2>
-                <p class="mt-4 text-base md:text-lg text-heading/80 max-w-3xl mx-auto">
-                    End-to-end DevOps and cloud services — from infrastructure design to monitoring and security.
-                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Cloud Infrastructure Setup -->
+                <!-- Web Hosting Management -->
                 <div class="service-card" data-animate="fade-up">
-                    <div class="service-icon text-2xl mb-4">☁️</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">Cloud Infrastructure Setup</h3>
-                    <p class="text-sm text-heading/70 mb-3">Design and deploy scalable, secure cloud environments.</p>
+                    <div class="service-icon text-2xl mb-4">🌐</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Web Hosting Management</h3>
+                    <p class="text-sm text-heading/70 mb-3">Secure and reliable hosting for websites and web applications.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">AWS, GCP & DigitalOcean deployment</div>
-                        <div class="feature-item">Server provisioning & configuration</div>
-                        <div class="feature-item">Secure network architecture</div>
-                        <div class="feature-item">Cost-optimized cloud setup</div>
+                        <div class="feature-item">Hosting setup & configuration</div>
+                        <div class="feature-item">Shared, VPS, or cloud hosting support</div>
+                        <div class="feature-item">Domain & DNS configuration</div>
+                        <div class="feature-item">SSL certificate setup</div>
+                        <div class="feature-item">Server hardening & security basics</div>
                     </div>
                 </div>
 
-                <!-- CI/CD Pipeline Implementation -->
+                <!-- Application Deployment -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.1">
-                    <div class="service-icon text-2xl mb-4">🔁</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">CI/CD Pipeline Implementation</h3>
-                    <p class="text-sm text-heading/70 mb-3">Automate build, test, and deployment workflows.</p>
+                    <div class="service-icon text-2xl mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Application Deployment</h3>
+                    <p class="text-sm text-heading/70 mb-3">Smooth, error-free deployments for modern applications.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">Continuous integration pipelines</div>
-                        <div class="feature-item">Automated testing & deployments</div>
-                        <div class="feature-item">Version control integration</div>
-                        <div class="feature-item">Zero-downtime releases</div>
+                        <div class="feature-item">Web application deployment</div>
+                        <div class="feature-item">Mobile backend deployment (APIs)</div>
+                        <div class="feature-item">Environment configuration (staging & production)</div>
+                        <div class="feature-item">Zero-downtime deployment practices</div>
+                        <div class="feature-item">Version-controlled releases</div>
                     </div>
                 </div>
 
-                <!-- Server Optimization & Performance -->
+                <!-- Cloud & Server Support -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.2">
                     <div class="service-icon text-2xl mb-4">⚙️</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">Server Optimization & Performance</h3>
-                    <p class="text-sm text-heading/70 mb-3">Ensure your applications stay fast and reliable.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Cloud & Server Support</h3>
+                    <p class="text-sm text-heading/70 mb-3">We ensure your infrastructure runs reliably.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">Load balancing & auto-scaling</div>
-                        <div class="feature-item">Performance tuning</div>
-                        <div class="feature-item">Resource optimization</div>
-                        <div class="feature-item">High availability setup</div>
+                        <div class="feature-item">Server monitoring</div>
+                        <div class="feature-item">Performance optimization</div>
+                        <div class="feature-item">Resource scaling guidance</div>
+                        <div class="feature-item">Error & downtime handling</div>
+                        <div class="feature-item">Backup configuration</div>
                     </div>
                 </div>
 
-                <!-- Monitoring, Logging & Alerts -->
+                <!-- Ongoing Maintenance & Support -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.3">
-                    <div class="service-icon text-2xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">Monitoring, Logging & Alerts</h3>
-                    <p class="text-sm text-heading/70 mb-3">Gain full visibility into your systems and applications.</p>
+                    <div class="service-icon text-2xl mb-4">🔧</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Ongoing Maintenance & Support</h3>
+                    <p class="text-sm text-heading/70 mb-3">Long-term technical assistance you can rely on.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">Real-time performance monitoring</div>
-                        <div class="feature-item">Error tracking & centralized logging</div>
-                        <div class="feature-item">Downtime alerts</div>
-                        <div class="feature-item">Proactive issue resolution</div>
+                        <div class="feature-item">Software updates & patches</div>
+                        <div class="feature-item">Bug fixes & minor improvements</div>
+                        <div class="feature-item">Security updates</div>
+                        <div class="feature-item">Backup monitoring & recovery</div>
+                        <div class="feature-item">Technical support & issue resolution</div>
                     </div>
                 </div>
 
-                <!-- Security & Backup Management -->
+                <!-- Hosting Migration & Upgrades -->
                 <div class="service-card" data-animate="fade-up" data-delay="0.4">
-                    <div class="service-icon text-2xl mb-4">🔐</div>
-                    <h3 class="text-xl font-semibold text-heading mb-3">Security & Backup Management</h3>
-                    <p class="text-sm text-heading/70 mb-3">Protect your infrastructure and data.</p>
+                    <div class="service-icon text-2xl mb-4">📦</div>
+                    <h3 class="text-xl font-semibold text-heading mb-3">Hosting Migration & Upgrades</h3>
+                    <p class="text-sm text-heading/70 mb-3">Move or upgrade without disruption.</p>
                     <div class="space-y-2">
-                        <div class="feature-item">Server hardening & access control</div>
-                        <div class="feature-item">SSL & firewall setup</div>
-                        <div class="feature-item">Automated backups</div>
-                        <div class="feature-item">Disaster recovery planning</div>
+                        <div class="feature-item">Website & app migration</div>
+                        <div class="feature-item">Hosting upgrades</div>
+                        <div class="feature-item">Server optimization during migration</div>
+                        <div class="feature-item">Data integrity checks</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technologies & Platforms Section -->
+    <!-- Platforms & Technologies Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <h2 class="text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Technologies & <span class="text-clip">Platforms We Use</span>
+                    Platforms & <span class="text-clip">Technologies We Support</span>
                 </h2>
                 <p class="mt-4 text-base md:text-lg text-heading/80 max-w-3xl mx-auto">
-                    We use proven tools and cloud platforms to build secure, scalable systems.
+                    Vendor-neutral support — we help you choose what fits your needs.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="service-card text-center" data-animate="fade-up">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Cloud Providers</h3>
-                    <p class="text-sm text-heading/70">AWS, Google Cloud, DigitalOcean</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Web Hosting Platforms</h3>
+                    <p class="text-sm text-heading/70">Shared, VPS, cloud hosting</p>
                 </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-lg font-semibold text-heading mb-2">CI/CD & Version Control</h3>
-                    <p class="text-sm text-heading/70">Git-based pipelines, automated builds & deployments</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">Laravel & PHP</h3>
+                    <p class="text-sm text-heading/70">PHP applications & Laravel frameworks</p>
                 </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.2">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Containers & Orchestration</h3>
-                    <p class="text-sm text-heading/70">Docker (where applicable), containerized services</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">MySQL Databases</h3>
+                    <p class="text-sm text-heading/70">Database hosting & management</p>
                 </div>
                 <div class="service-card text-center" data-animate="fade-up" data-delay="0.3">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Monitoring & Security</h3>
-                    <p class="text-sm text-heading/70">Performance monitoring, logging, SSL, firewalls, access policies</p>
+                    <h3 class="text-lg font-semibold text-heading mb-2">API Backends</h3>
+                    <p class="text-sm text-heading/70">Mobile backend APIs & integrations</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our DevOps Process Section -->
+    <!-- Our Deployment & Support Process Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-app-background">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Our Process</span>
                 <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Our <span class="text-clip">DevOps & Cloud</span> Process
+                    Our <span class="text-clip">Deployment & Support</span> Process
                 </h2>
             </div>
 
             <div class="space-y-6">
                 <div class="process-step" data-animate="fade-up">
                     <div class="process-number">1</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Infrastructure Assessment</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">Review current setup, risks, performance gaps, and opportunities.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Infrastructure Review</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">We review your application and hosting requirements.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.1">
                     <div class="process-number">2</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Architecture & Planning</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">Design secure, scalable, and cost-efficient infrastructure and pipelines.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Setup & Deployment</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Hosting setup, environment configuration, and deployment.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.2">
                     <div class="process-number">3</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Automation & Deployment</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">Implement CI/CD pipelines, infrastructure-as-code, and cloud environments.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Testing & Go-Live</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Final checks, performance validation, and launch.</p>
                 </div>
 
                 <div class="process-step" data-animate="fade-up" data-delay="0.3">
                     <div class="process-number">4</div>
-                    <h3 class="text-xl font-semibold text-heading mb-2">Monitoring & Optimization</h3>
-                    <p class="text-base text-heading/70 leading-relaxed">Continuous monitoring, scaling, and improvements to keep systems healthy.</p>
+                    <h3 class="text-xl font-semibold text-heading mb-2">Monitoring & Support</h3>
+                    <p class="text-base text-heading/70 leading-relaxed">Ongoing monitoring, updates, and technical assistance.</p>
                 </div>
             </div>
         </div>
@@ -382,7 +363,7 @@
             <div class="text-center mb-12" data-animate="fade-up">
                 <span class="service-pill">Why Choose Us</span>
                 <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Why Choose <span class="text-clip">Techbuds for DevOps & Cloud</span>?
+                    Why Choose <span class="text-clip">Techbuds</span>?
                 </h2>
             </div>
 
@@ -393,8 +374,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Reliable and secure infrastructure</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">We design systems that are stable, secure, and production-ready.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Clean, reliable deployments</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We deploy correctly, the first time, every time.</p>
                         </div>
                     </div>
                 </div>
@@ -405,8 +386,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Automated deployment pipelines</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">Ship faster and safer with automated CI/CD workflows.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Secure and stable hosting setups</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">Your applications run on secure, optimized infrastructure.</p>
                         </div>
                     </div>
                 </div>
@@ -417,8 +398,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Reduced downtime & faster releases</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">Zero-downtime deployments and quicker iteration cycles.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Fast issue resolution</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We respond quickly and fix problems before they impact your business.</p>
                         </div>
                     </div>
                 </div>
@@ -429,8 +410,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Cost-efficient cloud setups</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">We optimize resources so you only pay for what you actually need.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Clear communication & documentation</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">You always know what's happening and why.</p>
                         </div>
                     </div>
                 </div>
@@ -441,20 +422,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Long-term operational support</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">We stay with you post-deployment for monitoring and improvements.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-card" data-animate="fade-up" data-delay="0.5">
-                    <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <div>
-                            <h3 class="text-lg font-semibold text-heading mb-2">Infrastructure as a competitive advantage</h3>
-                            <p class="text-sm text-heading/70 leading-relaxed">We turn infrastructure into a growth enabler, not a bottleneck.</p>
+                            <h3 class="text-lg font-semibold text-heading mb-2">Long-term technical support</h3>
+                            <p class="text-sm text-heading/70 leading-relaxed">We don't just deploy — we stay with you after launch.</p>
                         </div>
                     </div>
                 </div>
@@ -473,24 +442,24 @@
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div class="text-center" data-animate="fade-up">
+                    <div class="service-icon text-2xl mx-auto mb-3">🌐</div>
+                    <h3 class="text-lg font-semibold text-heading">Business websites</h3>
+                </div>
+                <div class="text-center" data-animate="fade-up" data-delay="0.1">
                     <div class="service-icon text-2xl mx-auto mb-3">🚀</div>
                     <h3 class="text-lg font-semibold text-heading">Startups & SaaS products</h3>
                 </div>
-                <div class="text-center" data-animate="fade-up" data-delay="0.1">
-                    <div class="service-icon text-2xl mx-auto mb-3">📱</div>
-                    <h3 class="text-lg font-semibold text-heading">Growing web & mobile apps</h3>
-                </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.2">
-                    <div class="service-icon text-2xl mx-auto mb-3">🧩</div>
-                    <h3 class="text-lg font-semibold text-heading">Agencies & dev teams</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">📱</div>
+                    <h3 class="text-lg font-semibold text-heading">Web & mobile applications</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.3">
-                    <div class="service-icon text-2xl mx-auto mb-3">📈</div>
-                    <h3 class="text-lg font-semibold text-heading">Businesses scaling traffic</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">🏢</div>
+                    <h3 class="text-lg font-semibold text-heading">Agencies needing deployment support</h3>
                 </div>
                 <div class="text-center" data-animate="fade-up" data-delay="0.4">
-                    <div class="service-icon text-2xl mx-auto mb-3">🏢</div>
-                    <h3 class="text-lg font-semibold text-heading">Teams needing reliability</h3>
+                    <div class="service-icon text-2xl mx-auto mb-3">💼</div>
+                    <h3 class="text-lg font-semibold text-heading">Businesses without in-house DevOps teams</h3>
                 </div>
             </div>
         </div>
@@ -507,25 +476,17 @@
             </div>
 
             <div class="space-y-4">
-                <div class="faq-item" data-animate="fade-up">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Which cloud platforms do you support?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">We work with <strong>AWS, Google Cloud, and DigitalOcean</strong> for most deployments.</p>
-                </div>
-
-                <div class="faq-item" data-animate="fade-up" data-delay="0.1">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Do you provide ongoing DevOps support?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">Yes. We offer monitoring, maintenance, optimization, and support packages.</p>
-                </div>
-
-                <div class="faq-item" data-animate="fade-up" data-delay="0.2">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Can you migrate existing systems to the cloud?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">Absolutely. We handle secure cloud migrations, platform upgrades, and re-architecture where needed.</p>
-                </div>
-
-                <div class="faq-item" data-animate="fade-up" data-delay="0.3">
-                    <h3 class="text-lg font-semibold text-heading mb-2">Is DevOps suitable for small teams?</h3>
-                    <p class="text-sm text-heading/70 leading-relaxed">Yes. DevOps reduces manual work, improves reliability, and lowers long-term costs — even for small teams.</p>
-                </div>
+                @php
+                    $service = config('service_pages.web-hosting-app-deployment-support');
+                @endphp
+                @if(isset($service['faqs']))
+                    @foreach($service['faqs'] as $index => $faq)
+                    <div class="faq-item" data-animate="fade-up" data-delay="{{ $index * 0.1 }}">
+                        <h3 class="text-lg font-semibold text-heading mb-2">{{ $faq['q'] }}</h3>
+                        <p class="text-sm text-heading/70 leading-relaxed">{{ $faq['a'] }}</p>
+                    </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
@@ -534,31 +495,31 @@
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-brand-primary to-brand-hover text-white">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" data-animate="fade-up">
-                Ready to Build <span class="text-white">Reliable Infrastructure</span>?
+                Ready for <span class="text-white">Reliable Hosting & Support</span>?
             </h2>
             <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto" data-animate="fade-up" data-delay="0.1">
-                Let’s create a secure, scalable, and automated cloud environment for your applications.
+                Let's deploy and maintain your website or application the right way.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up" data-delay="0.2">
                 <a href="{{ route('contact') }}" class="bg-surface-1 text-heading px-8 py-3 rounded-lg font-semibold hover:bg-app-background transition-all transform hover:scale-105 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
-                    Get a Free DevOps Consultation
+                    Get Free Hosting Consultation
                 </a>
                 <a href="{{ route('contact') }}" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-surface-1/10 transition-all transform hover:scale-105">
-                    Discuss Your Infrastructure
+                    Discuss Your Deployment Needs
                 </a>
             </div>
         </div>
     </section>
 
     @include('components.service-blogs', [
-        'serviceKey' => 'devops-cloud',
-        'service' => config('service_pages.devops-cloud'),
+        'serviceKey' => 'web-hosting-app-deployment-support',
+        'service' => config('service_pages.web-hosting-app-deployment-support'),
     ])
 
     <!-- Footer -->
     @include('components.footer')
 
-    @include('components.service-schema', ['serviceKey' => 'devops-cloud'])
+    @include('components.service-schema', ['serviceKey' => 'web-hosting-app-deployment-support'])
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
@@ -615,5 +576,4 @@
     </script>
 </body>
 </html>
-
 

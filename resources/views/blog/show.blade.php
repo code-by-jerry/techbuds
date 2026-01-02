@@ -64,15 +64,11 @@
                 ],
                 'Performance' => [
                     ['slug' => 'web-development', 'label' => 'Web Development Services'],
-                    ['slug' => 'devops-cloud', 'label' => 'DevOps & Cloud Deployment Services'],
+                    ['slug' => 'web-hosting-app-deployment-support', 'label' => 'Web Hosting, App Deployment & Support Services'],
                 ],
                 'Analytics' => [
                     ['slug' => 'database-data-warehousing', 'label' => 'Database & Data Warehousing Services'],
                     ['slug' => 'ui-ux-design', 'label' => 'UI/UX Design & Branding Services'],
-                ],
-                'DevOps' => [
-                    ['slug' => 'devops-cloud', 'label' => 'DevOps & Cloud Deployment Services'],
-                    ['slug' => 'web-development', 'label' => 'Web Development Services'],
                 ],
                 'Content' => [
                     ['slug' => 'seo-digital-marketing', 'label' => 'SEO & Digital Marketing Services'],
