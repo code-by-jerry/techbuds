@@ -72,9 +72,19 @@ Route::get('/contact', function () {
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
+use App\Http\Controllers\PricingController;
+
+Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
+Route::get('/pricing/{slug}', [PricingController::class, 'show'])
+    ->where('slug', '[a-z0-9-]+')
+    ->name('pricing.show');
+
 // Robots.txt (Dynamic - generates with current domain)
 Route::get('/robots.txt', function () {
-    $sitemapUrl = url('/sitemap.xml');
+    // Use production domain for sitemap URL
+    $baseUrl = env('APP_URL', 'https://techbuds.online');
+    $baseUrl = rtrim($baseUrl, '/');
+    $sitemapUrl = $baseUrl . '/sitemap.xml';
     
     $content = "# Robots.txt for Techbuds
 # Updated: 2025
@@ -101,6 +111,8 @@ Allow: /about
 Allow: /contact
 Allow: /services
 Allow: /services/
+Allow: /pricing
+Allow: /pricing/
 Allow: /portfolio
 Allow: /locations
 Allow: /blog
@@ -109,6 +121,9 @@ Allow: /devtools
 
 # Allow service pages (dynamic routes)
 Allow: /services/*
+
+# Allow pricing pages (dynamic routes)
+Allow: /pricing/*
 
 # Allow location-based service pages
 Allow: /services/*/*
@@ -139,14 +154,35 @@ Sitemap: {$sitemapUrl}
         ->header('Content-Type', 'text/plain');
 })->name('robots');
 
-// Sitemap
+// Sitemap - Serve static file if exists, otherwise generate dynamically
 Route::get('/sitemap.xml', function () {
+    $sitemapPath = public_path('sitemap.xml');
+    
+    // If static sitemap exists, serve it
+    if (file_exists($sitemapPath)) {
+        return response()->file($sitemapPath, [
+            'Content-Type' => 'application/xml',
+        ]);
+    }
+    
+    // Otherwise, generate dynamically (fallback)
     $sitemap = \Spatie\Sitemap\Sitemap::create();
     $now = now();
     
+    // Base URL - Use production domain
+    $baseUrl = config('app.url', 'https://techbuds.online');
+    // Ensure base URL doesn't have trailing slash
+    $baseUrl = rtrim($baseUrl, '/');
+    
+    // Helper function to create full URL
+    $fullUrl = function($path) use ($baseUrl) {
+        $path = ltrim($path, '/');
+        return $baseUrl . '/' . $path;
+    };
+    
     // Home page (Highest priority)
     $sitemap->add(
-        \Spatie\Sitemap\Tags\Url::create(url('/'))
+        \Spatie\Sitemap\Tags\Url::create($fullUrl('/'))
             ->setPriority(1.0)
             ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY)
             ->setLastModificationDate($now)
@@ -155,6 +191,7 @@ Route::get('/sitemap.xml', function () {
     // Main pages (High priority)
     $mainPages = [
         ['url' => '/services', 'priority' => 0.9, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY],
+        ['url' => '/pricing', 'priority' => 0.9, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY],
         ['url' => '/about', 'priority' => 0.8, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY],
         ['url' => '/portfolio', 'priority' => 0.8, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY],
         ['url' => '/contact', 'priority' => 0.7, 'freq' => \Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY],
@@ -164,7 +201,7 @@ Route::get('/sitemap.xml', function () {
     
     foreach ($mainPages as $page) {
         $sitemap->add(
-            \Spatie\Sitemap\Tags\Url::create(url($page['url']))
+            \Spatie\Sitemap\Tags\Url::create($fullUrl($page['url']))
                 ->setPriority($page['priority'])
                 ->setChangeFrequency($page['freq'])
                 ->setLastModificationDate($now)
@@ -175,7 +212,18 @@ Route::get('/sitemap.xml', function () {
     $serviceSlugs = array_keys(config('service_pages', []));
     foreach ($serviceSlugs as $slug) {
         $sitemap->add(
-            \Spatie\Sitemap\Tags\Url::create(url('/services/' . $slug))
+            \Spatie\Sitemap\Tags\Url::create($fullUrl('/services/' . $slug))
+                ->setPriority(0.8)
+                ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setLastModificationDate($now)
+        );
+    }
+
+    // Individual pricing pages (High priority)
+    $pricingSlugs = array_keys(config('pricing', []));
+    foreach ($pricingSlugs as $slug) {
+        $sitemap->add(
+            \Spatie\Sitemap\Tags\Url::create($fullUrl('/pricing/' . $slug))
                 ->setPriority(0.8)
                 ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setLastModificationDate($now)
@@ -189,7 +237,7 @@ Route::get('/sitemap.xml', function () {
     foreach ($serviceSlugs as $serviceSlug) {
         foreach ($locations as $locationSlug => $loc) {
             $sitemap->add(
-                \Spatie\Sitemap\Tags\Url::create(url("/services/{$serviceSlug}/{$locationSlug}"))
+                \Spatie\Sitemap\Tags\Url::create($fullUrl("/services/{$serviceSlug}/{$locationSlug}"))
                     ->setPriority(0.6)
                     ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY)
                     ->setLastModificationDate($now)
@@ -209,7 +257,7 @@ Route::get('/sitemap.xml', function () {
         $lastmod = $blog->updated_at ?? $blog->published_date ?? $now;
         
         $sitemap->add(
-            \Spatie\Sitemap\Tags\Url::create(url('/blog/' . $blog->slug))
+            \Spatie\Sitemap\Tags\Url::create($fullUrl('/blog/' . $blog->slug))
                 ->setPriority($priority)
                 ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setLastModificationDate($lastmod)
@@ -218,7 +266,7 @@ Route::get('/sitemap.xml', function () {
     
     // DevTools page (Lower priority)
     $sitemap->add(
-        \Spatie\Sitemap\Tags\Url::create(url('/devtools'))
+        \Spatie\Sitemap\Tags\Url::create($fullUrl('/devtools'))
             ->setPriority(0.5)
             ->setChangeFrequency(\Spatie\Sitemap\Tags\Url::CHANGE_FREQUENCY_MONTHLY)
             ->setLastModificationDate($now)

@@ -15,9 +15,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withSchedule(function (Schedule $schedule): void {
         $schedule->command('automation:run')->dailyAt('01:00');
+        // Regenerate sitemap daily at 2 AM
+        $schedule->command('sitemap:generate')->dailyAt('02:00');
     })
     ->withCommands([
         RunAutomation::class,
+        \App\Console\Commands\GenerateSitemap::class,
     ])
     ->withMiddleware(function (Middleware $middleware): void {
         // Force lowercase URLs for SEO consistency

@@ -14,6 +14,7 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-1">
                 <a href="{{ route('services') }}" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Services</a>
+                <a href="{{ route('pricing.index') }}" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Pricing</a>
                 <a href="{{ route('about') }}" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">About</a>
                 <a href="/portfolio" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Portfolio</a>
                 <a href="{{ route('blog.index') }}" class="px-4 py-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-all duration-200 text-sm font-medium">Blogs</a>
@@ -44,6 +45,7 @@
          class="md:hidden bg-surface-1 border-t border-border-default">
         <div class="px-4 py-4 space-y-1">
             <a href="{{ route('services') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Services</a>
+            <a href="{{ route('pricing.index') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Pricing</a>
             <a href="{{ route('about') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">About</a>
             <a href="/portfolio" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Portfolio</a>
             <a href="{{ route('blog.index') }}" @click="mobileMenuOpen = false" class="block px-4 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-2 transition-colors text-sm font-medium">Blogs</a>

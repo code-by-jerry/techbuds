@@ -1,0 +1,397 @@
+{
+    "meta": {
+      "currency": "INR",
+      "pricing_model": "starter_growth_custom",
+      "updated_at": "2025-01-01"
+    },
+    "services": {
+      "web-development": {
+        "name": "Web Development Pricing",
+        "slug": "web-development",
+        "is_monthly": false,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹7,999",
+            "price_raw": 7999,
+            "is_recommended": false,
+            "description": "Best for simple business websites",
+            "features": [
+              "Up to 5 pages",
+              "Responsive design",
+              "Basic SEO setup",
+              "Contact form",
+              "1 revision",
+              "Delivery: 7–10 days"
+            ],
+            "limitations": [
+              "No custom backend",
+              "No advanced integrations"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹18,999",
+            "price_raw": 18999,
+            "is_recommended": true,
+            "description": "Best value, most conversions",
+            "features": [
+              "Up to 10 pages",
+              "Custom UI",
+              "SEO-ready structure",
+              "Speed optimization",
+              "CMS or admin panel",
+              "3 revisions",
+              "Delivery: 3–4 weeks"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "From ₹29,999",
+            "price_raw": 29999,
+            "is_recommended": false,
+            "description": "For complex & scalable projects",
+            "features": [
+              "Custom web applications",
+              "Dashboards, portals",
+              "Advanced integrations",
+              "Custom features",
+              "Ongoing support"
+            ]
+          }
+        }
+      },
+  
+      "mobile-app-development": {
+        "name": "Mobile App Development Pricing",
+        "slug": "mobile-app-development",
+        "is_monthly": false,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹14,999",
+            "price_raw": 14999,
+            "is_recommended": false,
+            "description": "Single platform solution",
+            "features": [
+              "Single platform (Android OR iOS)",
+              "Basic features",
+              "Simple UI",
+              "API integration",
+              "Limited screens"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹40,000",
+            "price_raw": 40000,
+            "is_recommended": true,
+            "description": "Cross-platform excellence",
+            "features": [
+              "Android + iOS",
+              "Custom UI/UX",
+              "Backend APIs",
+              "Authentication",
+              "Scalable structure"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "From ₹80,000",
+            "price_raw": 80000,
+            "is_recommended": false,
+            "description": "Enterprise-grade apps",
+            "features": [
+              "Advanced features",
+              "Real-time systems",
+              "Admin dashboards",
+              "Performance optimization",
+              "Long-term support"
+            ]
+          }
+        }
+      },
+  
+      "seo-services": {
+        "name": "SEO Services Pricing",
+        "slug": "seo-digital-marketing",
+        "is_monthly": true,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹6,000",
+            "price_raw": 6000,
+            "is_recommended": false,
+            "description": "For small businesses",
+            "features": [
+              "Basic audit",
+              "On-page SEO",
+              "5 keywords",
+              "Monthly report"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹12,000",
+            "price_raw": 12000,
+            "is_recommended": true,
+            "description": "Best SEO value",
+            "features": [
+              "Full technical SEO",
+              "Content optimization",
+              "15 keywords",
+              "Local SEO",
+              "Performance improvements",
+              "Monthly reporting"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "₹25,000+",
+            "price_raw": 25000,
+            "is_recommended": false,
+            "description": "Enterprise SEO",
+            "features": [
+              "High competition niches",
+              "Content strategy",
+              "Authority building",
+              "Scaling & growth SEO"
+            ]
+          }
+        }
+      },
+  
+      "brand-experience-content-marketing": {
+        "name": "Brand Experience & Content Marketing Pricing",
+        "slug": "brand-experience-content-marketing",
+        "is_monthly": false,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹7,999",
+            "price_raw": 7999,
+            "is_recommended": false,
+            "description": "Brand audit & review",
+            "features": [
+              "Brand audit",
+              "UI/UX review",
+              "Content structure suggestions",
+              "Messaging improvement"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹18,999",
+            "price_raw": 18999,
+            "is_recommended": true,
+            "description": "Complete brand transformation",
+            "features": [
+              "UI/UX design",
+              "Branding alignment",
+              "Landing page content",
+              "Conversion optimization",
+              "Analytics setup"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "From ₹29,999",
+            "price_raw": 29999,
+            "is_recommended": false,
+            "description": "Full brand ecosystem",
+            "features": [
+              "Full brand redesign",
+              "Multi-page content system",
+              "Experience optimization",
+              "Long-term strategy"
+            ]
+          }
+        }
+      },
+  
+      "api-development-system-integration": {
+        "name": "API & System Integration Pricing",
+        "slug": "api-development-system-integration",
+        "is_monthly": false,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹8,000",
+            "price_raw": 8000,
+            "is_recommended": false,
+            "description": "Simple integrations",
+            "features": [
+              "Simple API integration",
+              "One system connection",
+              "Basic authentication"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹20,000",
+            "price_raw": 20000,
+            "is_recommended": true,
+            "description": "Comprehensive API solutions",
+            "features": [
+              "Custom REST APIs",
+              "Multiple integrations",
+              "Secure access",
+              "Documentation"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "From ₹40,000",
+            "price_raw": 40000,
+            "is_recommended": false,
+            "description": "Enterprise integrations",
+            "features": [
+              "Complex systems",
+              "High security",
+              "Performance optimization",
+              "Ongoing support"
+            ]
+          }
+        }
+      },
+  
+      "web-hosting-app-deployment-support": {
+        "name": "Web Hosting, Deployment & Support Pricing",
+        "slug": "web-hosting-app-deployment-support",
+        "is_monthly": true,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹2,000",
+            "price_raw": 2000,
+            "is_recommended": false,
+            "description": "Basic hosting support",
+            "features": [
+              "Hosting support",
+              "Updates",
+              "Backup checks",
+              "Basic monitoring"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹5,000",
+            "price_raw": 5000,
+            "is_recommended": true,
+            "description": "Full hosting management",
+            "features": [
+              "Full hosting management",
+              "Performance optimization",
+              "Security updates",
+              "Priority support"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "₹10,000+",
+            "price_raw": 10000,
+            "is_recommended": false,
+            "description": "Enterprise hosting",
+            "features": [
+              "Multiple apps",
+              "High traffic",
+              "SLA-based support",
+              "Dedicated monitoring"
+            ]
+          }
+        }
+      },
+  
+      "custom-it-solutions": {
+        "name": "Custom IT Solutions Pricing",
+        "slug": "custom-it-solutions",
+        "is_monthly": false,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹25,000",
+            "price_raw": 25000,
+            "is_recommended": false,
+            "description": "Simple internal systems",
+            "features": [
+              "Simple internal system",
+              "Limited users",
+              "Core features"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹60,000",
+            "price_raw": 60000,
+            "is_recommended": true,
+            "description": "Full custom systems",
+            "features": [
+              "Full custom system",
+              "Dashboards",
+              "Role-based access",
+              "Secure backend"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "From ₹1,00,000",
+            "price_raw": 100000,
+            "is_recommended": false,
+            "description": "Enterprise-grade systems",
+            "features": [
+              "Enterprise-grade systems",
+              "Integrations",
+              "Long-term roadmap"
+            ]
+          }
+        }
+      },
+  
+      "database-data-warehousing": {
+        "name": "Database & Data Warehousing Pricing",
+        "slug": "database-data-warehousing",
+        "is_monthly": false,
+        "tiers": {
+          "starter": {
+            "name": "Starter",
+            "price": "₹15,000",
+            "price_raw": 15000,
+            "is_recommended": false,
+            "description": "Basic database setup",
+            "features": [
+              "Database design",
+              "Basic optimization",
+              "Backup setup"
+            ]
+          },
+          "growth": {
+            "name": "Growth",
+            "price": "₹35,000",
+            "price_raw": 35000,
+            "is_recommended": true,
+            "description": "Complete data solutions",
+            "features": [
+              "Data warehouse setup",
+              "ETL pipelines",
+              "BI dashboard integration",
+              "Performance optimization"
+            ]
+          },
+          "custom": {
+            "name": "Custom",
+            "price": "From ₹75,000",
+            "price_raw": 75000,
+            "is_recommended": false,
+            "description": "Enterprise data systems",
+            "features": [
+              "Large-scale data warehousing",
+              "Advanced analytics",
+              "Real-time processing",
+              "Long-term support"
+            ]
+          }
+        }
+      }
+    }
+  }
+  

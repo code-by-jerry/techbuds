@@ -95,19 +95,6 @@
                 border-bottom: 1px solid var(--border-default);
             }
 
-            .category-icon {
-                width: 4rem;
-                height: 4rem;
-                border-radius: 1.2rem;
-                background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
-                margin-bottom: 1rem;
-            }
-
             .category-body {
                 padding: 1.5rem 2rem 2rem;
                 flex: 1;
@@ -194,6 +181,82 @@
                 background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-soft) 100%);
                 box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
             }
+
+            .case-study-card {
+                position: relative;
+                border-radius: 1.5rem;
+                overflow: hidden;
+                background: var(--surface);
+                border: 1px solid var(--border-default);
+                box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+                transition: all .45s ease;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+
+            .case-study-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 28px 80px rgba(37, 99, 235, 0.15);
+                border-color: var(--brand-primary);
+            }
+
+            .case-study-image {
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+                background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
+            }
+
+            .case-study-content {
+                padding: 2rem;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .industry-badge {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.4rem 0.9rem;
+                border-radius: 999px;
+                background: rgba(37, 99, 235, 0.1);
+                color: var(--brand-primary);
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                margin-bottom: 1rem;
+            }
+
+            .capability-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .capability-list li {
+                position: relative;
+                padding-left: 1.5rem;
+                margin-bottom: 0.75rem;
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+                line-height: 1.6;
+            }
+
+            .capability-list li::before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                color: var(--brand-primary);
+                font-weight: 600;
+            }
+
+            .capability-list li:last-child {
+                margin-bottom: 0;
+            }
         </style>
     </head>
 <body class="bg-app-background text-text-primary font-sans antialiased">
@@ -220,24 +283,121 @@
                 <span class="service-pill bg-brand-primary/20 border-brand-primary/30 backdrop-blur-sm text-white">Our Portfolio</span>
             </div>
             <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight drop-shadow-lg" data-animate="fade-up" data-delay="0.1">
-                Powerful, Scalable <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Digital Products</span>
+                Enterprise-Grade <span class="text-gradient bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">Software Solutions</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md" data-animate="fade-up" data-delay="0.2">
-                We build powerful, scalable digital products for businesses across multiple industries. From e-commerce to healthcare, SaaS to delivery apps, our work reflects <strong class="text-white">real-world engineering, modern design, and clean execution</strong>.
+                We design, engineer, and scale <strong class="text-white">production-ready digital platforms</strong> for startups, SMEs, and growing enterprises. Our portfolio reflects real business use cases—each solution built for performance, security, scalability, and long-term maintainability.
             </p>
         </div>
     </section>
 
-    <!-- Portfolio by Categories -->
+    <!-- Featured Case Studies -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-app-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-animate="fade-up">
+                <span class="service-pill">Featured Projects</span>
+                <h2 class="mt-5 text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-heading leading-tight">
+                    Real-World <span class="text-clip">Case Studies</span>
+                </h2>
+                <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
+                    Production-ready digital systems aligned with real business goals—performance, scalability, security, and long-term ROI.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @php
+                    $caseStudies = [
+                        [
+                            'title' => 'Destro Solutions',
+                            'subtitle' => 'Software-Defined Vehicles Platform',
+                            'industry' => 'Automotive Technology / Mobility',
+                            'url' => 'https://info.destrosolutions.com/',
+                            'website' => 'info.destrosolutions.com',
+                            'thumbnail' => 'destrosolution.png',
+                            'overview' => 'A high-performance platform focused on software-defined vehicles, showcasing innovative automotive technology and digital mobility solutions.',
+                            'tech' => 'Laravel · Tailwind CSS · SEO Architecture · Performance Optimization'
+                        ],
+                        [
+                            'title' => 'Bhumi Infra',
+                            'subtitle' => 'Construction & Real Estate Platform',
+                            'industry' => 'Construction / Real Estate',
+                            'url' => 'https://bhumi-infra.pages.dev/',
+                            'website' => 'bhumi-infra.pages.dev',
+                            'thumbnail' => 'blueinfra.png',
+                            'overview' => 'A professional construction and real estate website designed to showcase projects, establish trust, and generate leads for large-scale infrastructure developments.',
+                            'tech' => 'Modern Frontend · SEO Strategy · Conversion UX'
+                        ],
+                        [
+                            'title' => 'Kovai Heritage Dairy',
+                            'subtitle' => 'Dairy & FMCG Brand Platform',
+                            'industry' => 'Dairy / FMCG / Food Production',
+                            'url' => 'https://kovaiheritagedairy24.pages.dev/',
+                            'website' => 'kovaiheritagedairy24.pages.dev',
+                            'thumbnail' => 'kovaiheritagedairy.png',
+                            'overview' => 'A brand-focused website for a regional dairy manufacturer emphasizing heritage, purity, and product trust in the milk and dairy industry.',
+                            'tech' => 'Laravel · Tailwind · Content Architecture · SEO'
+                        ],
+                        [
+                            'title' => 'Misty Beans',
+                            'subtitle' => 'Café & Restaurant Digital Presence',
+                            'industry' => 'Food & Beverage / Hospitality',
+                            'url' => 'https://mistybeans.pages.dev/',
+                            'website' => 'mistybeans.pages.dev',
+                            'thumbnail' => 'mistybean.png',
+                            'overview' => 'A modern coffee and restaurant website designed to attract customers, showcase the brand, and provide an engaging digital experience for café enthusiasts.',
+                            'tech' => 'Frontend Optimization · UX Design · SEO'
+                        ],
+                        [
+                            'title' => 'EduKalam',
+                            'subtitle' => 'Online Learning Platform',
+                            'industry' => 'Education / E-Learning',
+                            'url' => 'https://edukalam.pages.dev/',
+                            'website' => 'edukalam.pages.dev',
+                            'thumbnail' => 'edukalam.png',
+                            'overview' => 'An education platform structured for course discovery, learner engagement, and scalable learning experiences for students and educators.',
+                            'tech' => 'Modern Frontend · SEO · Scalable UI Architecture'
+                        ]
+                    ];
+                @endphp
+
+                @foreach($caseStudies as $index => $case)
+                <a href="{{ $case['url'] }}" target="_blank" rel="noopener noreferrer" class="case-study-card group" data-animate="fade-up" data-delay="{{ ($index % 3) * 0.1 }}">
+                    <img 
+                        src="{{ asset('images/portfolio-thumbnails/' . $case['thumbnail']) }}" 
+                        alt="{{ $case['title'] }} - {{ $case['subtitle'] }}"
+                        class="case-study-image"
+                        loading="lazy">
+                    <div class="case-study-content">
+                        <span class="industry-badge">{{ $case['industry'] }}</span>
+                        <h3 class="text-xl font-bold text-heading mb-2 group-hover:text-brand-primary transition-colors">{{ $case['title'] }}</h3>
+                        <p class="text-sm font-semibold text-brand-primary mb-4">{{ $case['subtitle'] }}</p>
+                        <p class="text-sm text-text-secondary mb-4 leading-relaxed flex-grow">{{ $case['overview'] }}</p>
+                        <div class="pt-4 border-t border-border-default">
+                            <p class="text-xs text-text-muted font-medium mb-2">{{ $case['tech'] }}</p>
+                            <p class="text-xs text-brand-primary font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Visit Website
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Experience & Solution Capabilities -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-surface-1">
     <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-animate="fade-up">
-                <span class="service-pill">Portfolio Categories</span>
+                <span class="service-pill">Industry Expertise</span>
                 <h2 class="mt-5 text-3xl md:text-4xl font-heading font-semibold text-heading leading-tight">
-                    Our Versatility Across <span class="text-clip">Industries</span>
+                    Solution Capabilities Across <span class="text-clip">Industries</span>
                 </h2>
                 <p class="mt-4 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
-                    Explore our expertise across different domains and technologies
+                    We build secure, scalable platforms tailored to industry-specific requirements and business objectives.
                 </p>
             </div>
 
@@ -245,55 +405,58 @@
                 @php
                     $categories = [
                         [
-                            'icon' => '🛒',
-                            'title' => 'E-Commerce & Payments',
-                            'projects' => [
-                                ['name' => 'E-Commerce Platform', 'tech' => 'Laravel, React, Stripe'],
-                                ['name' => 'Marketplace Platform', 'tech' => 'Next.js, NestJS, Escrow']
-                            ],
-                            'shows' => 'Payment integration, carts, order flows, inventory, multi-vendor systems.'
+                            'title' => 'E-Commerce & Payment Systems',
+                            'description' => 'We build secure, scalable e-commerce platforms with integrated payment workflows.',
+                            'capabilities' => [
+                                'Payment gateway integrations (Stripe, Razorpay)',
+                                'Cart, checkout, and order lifecycle management',
+                                'Multi-vendor and marketplace systems'
+                            ]
                         ],
                         [
-                            'icon' => '🏥',
-                            'title' => 'Healthcare & Service Industry',
-                            'projects' => [
-                                ['name' => 'Clinic Management System', 'tech' => 'Vue, Node, MongoDB']
-                            ],
-                            'shows' => 'Secure data handling, appointments, patient records, dashboards.'
+                            'title' => 'Healthcare & Service Platforms',
+                            'description' => 'Security-focused systems for healthcare and service-based businesses with HIPAA-aware architecture.',
+                            'capabilities' => [
+                                'Appointment scheduling systems',
+                                'Secure data handling & dashboards',
+                                'Role-based access systems'
+                            ]
                         ],
                         [
-                            'icon' => '🚚',
-                            'title' => 'Food, Grocery & Delivery',
-                            'projects' => [
-                                ['name' => 'Food Delivery App', 'tech' => 'Flutter, Google Maps, Stripe'],
-                                ['name' => 'Food & Grocery Delivery', 'tech' => 'Flutter, Firebase, Razorpay']
-                            ],
-                            'shows' => 'Real-time tracking, GPS zones, delivery flows, driver apps.'
+                            'title' => 'Food, Grocery & Delivery Systems',
+                            'description' => 'End-to-end digital solutions for food, grocery, and logistics businesses.',
+                            'capabilities' => [
+                                'Real-time order tracking',
+                                'Delivery workflows & driver logic',
+                                'Location-based services'
+                            ]
                         ],
                         [
-                            'icon' => '💼',
                             'title' => 'SaaS & B2B Platforms',
-                            'projects' => [
-                                ['name' => 'SaaS Billing System', 'tech' => 'Laravel, React, Stripe'],
-                                ['name' => 'B2B CRM Portal', 'tech' => 'Laravel, Inertia']
-                            ],
-                            'shows' => 'Subscription billing, multi-tenant logic, pipelines, automation.'
+                            'description' => 'Robust platforms built for scale, subscriptions, and enterprise workflows.',
+                            'capabilities' => [
+                                'Multi-tenant SaaS architecture',
+                                'Subscription billing systems',
+                                'Internal dashboards & automation'
+                            ]
                         ],
                         [
-                            'icon' => '📚',
                             'title' => 'Education & E-Learning',
-                            'projects' => [
-                                ['name' => 'E-Learning Platform', 'tech' => 'Next.js, Prisma, AWS S3']
-                            ],
-                            'shows' => 'Video streaming, quizzes, progress tracking, personalized learning.'
+                            'description' => 'Scalable learning platforms designed for growth and engagement.',
+                            'capabilities' => [
+                                'Course platforms & LMS foundations',
+                                'Progress tracking systems',
+                                'Video and content delivery structures'
+                            ]
                         ],
                         [
-                            'icon' => '📊',
-                            'title' => 'Dashboards & Data',
-                            'projects' => [
-                                ['name' => 'Analytics Dashboard', 'tech' => 'React, D3.js, Python, PostgreSQL']
-                            ],
-                            'shows' => 'Data visualization, BI dashboards, interactive charts.'
+                            'title' => 'Analytics & Business Dashboards',
+                            'description' => 'Data-driven dashboards for decision-makers and business intelligence.',
+                            'capabilities' => [
+                                'Interactive data visualization',
+                                'Business intelligence dashboards',
+                                'Performance and reporting systems'
+                            ]
                         ]
                     ];
                 @endphp
@@ -301,26 +464,17 @@
                 @foreach($categories as $index => $category)
                 <div class="category-card" data-animate="fade-up" data-delay="{{ ($index % 3) * 0.1 }}">
                     <div class="category-header">
-                        <div class="category-icon">{{ $category['icon'] }}</div>
                         <h3 class="text-xl font-bold text-heading">{{ $category['title'] }}</h3>
                     </div>
                     <div class="category-body">
-                        <div class="mb-4">
-                            @foreach($category['projects'] as $project)
-                            <div class="project-item">
-                                <svg class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <div class="flex-1">
-                                    <p class="font-semibold text-heading text-sm">{{ $project['name'] }}</p>
-                                    <p class="text-xs text-text-muted mt-0.5">{{ $project['tech'] }}</p>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
+                        <p class="text-sm text-text-secondary mb-4 leading-relaxed">{{ $category['description'] }}</p>
                         <div class="pt-4 border-t border-border-default">
-                            <span class="project-badge">What this shows</span>
-                            <p class="text-sm text-text-secondary mt-3 leading-relaxed">{{ $category['shows'] }}</p>
+                            <span class="project-badge">Capabilities</span>
+                            <ul class="capability-list mt-3">
+                                @foreach($category['capabilities'] as $capability)
+                                <li>{{ $capability }}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -338,7 +492,7 @@
                     What Our Work <span class="text-clip">Says About Us</span>
                 </h2>
                 <p class="mt-3 text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
-                    This section translates your portfolio → capabilities
+                    We do not build experimental projects. We engineer production-ready digital systems aligned with real business goals.
                 </p>
         </div>
 
@@ -367,7 +521,7 @@
                         ],
                         [
                             'title' => 'Proven Delivery Experience',
-                            'desc' => 'From small startups to scalable enterprise systems, we\'ve built products that work.'
+                            'desc' => 'From small startups to scalable enterprise systems, we\'ve built products that work in production environments.'
                         ]
                 ];
             @endphp
@@ -387,9 +541,12 @@
                 @endforeach
             </div>
 
-            <div class="mt-12 p-6 rounded-2xl bg-gradient-to-br from-brand-primary/10 to-brand-soft/5 border border-brand-primary/20" data-animate="fade-up">
-                <h3 class="text-xl font-semibold text-heading mb-4">Real-World Functionality Highlights</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-brand-primary/10 to-brand-soft/5 border border-brand-primary/20" data-animate="fade-up">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-semibold text-heading mb-2">Real-World Functionality Highlights</h3>
+                    <p class="text-sm text-text-secondary">Production-tested features across our portfolio</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                     @php
                         $features = [
                             'Real-time tracking',
@@ -406,7 +563,7 @@
                     <div class="feature-item">{{ $feature }}</div>
                     @endforeach
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
