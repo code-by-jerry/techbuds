@@ -727,6 +727,22 @@
                         </button>
                     </div>
                 </div>
+                <script>
+                    // Track contact form submission as conversion
+                    // Fire event after page load using gtag() only
+                    window.addEventListener('load', function () {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'contact_form_submit', {
+                                event_category: 'lead',
+                                event_label: 'contact_form_homepage',
+                                value: 1
+                            });
+                            console.log('✅ GA4 contact_form_submit fired (homepage)');
+                        } else {
+                            console.warn('⚠️ gtag() not available');
+                        }
+                    });
+                </script>
                 @endif
 
                 @if(session('error'))
