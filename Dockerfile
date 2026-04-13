@@ -13,7 +13,9 @@ RUN apk add --no-cache \
     libxml2-dev \
     zip \
     nginx \
-    supervisor
+    supervisor \
+    nodejs \
+    npm
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
@@ -37,7 +39,10 @@ WORKDIR /var/www
 # Copy project files
 COPY . .
 
-# Install dependencies
+# Install JS dependencies and build assets
+RUN npm install && npm run build
+
+# Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Set permissions
@@ -45,10 +50,8 @@ RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/storage \
     && chmod -R 755 /var/www/bootstrap/cache
 
-# Copy nginx config
+# Copy nginx and supervisor configs
 COPY docker/nginx.conf /etc/nginx/nginx.conf
-
-# Copy supervisor config
 COPY docker/supervisord.conf /etc/supervisord.conf
 
 EXPOSE 10000
