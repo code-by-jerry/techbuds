@@ -40,6 +40,8 @@ WORKDIR /var/www
 COPY . .
 
 # Install JS dependencies and build assets
+ARG VITE_APP_URL
+ENV APP_URL=${VITE_APP_URL}
 RUN npm install && npm run build
 
 # Install PHP dependencies
