@@ -17,20 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->string('company')->nullable();
-            $table->enum('status', [
-                'discovery',
-                'proposal_sent',
-                'proposal_accepted',
-                'onboarding',
-                'project_started',
-                'in_development',
-                'in_testing',
-                'invoice_sent',
-                'paid',
-                'offboarding',
-                'completed',
-                'archived'
-            ])->default('discovery');
+            $table->string('status')->default('discovery');
             $table->text('notes')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();

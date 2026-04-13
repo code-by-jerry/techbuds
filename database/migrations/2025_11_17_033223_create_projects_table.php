@@ -16,22 +16,12 @@ return new class extends Migration
             $table->foreignId('client_id')->constrained('clients')->cascadeOnDelete();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->enum('status', [
-                'planning',
-                'ui_ux',
-                'development',
-                'testing',
-                'deployment',
-                'handover',
-                'maintenance',
-                'completed',
-                'cancelled'
-            ])->default('planning');
+            $table->string('status')->default('planning');
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->date('actual_end_date')->nullable();
             $table->decimal('budget', 15, 2)->nullable();
-            $table->enum('payment_status', ['pending', 'partial', 'paid', 'overdue'])->default('pending');
+            $table->string('payment_status')->default('pending');
             $table->string('payment_structure')->nullable();
             $table->foreignId('assigned_to')->nullable()->constrained('admins')->nullOnDelete();
             $table->integer('progress_percentage')->default(0);

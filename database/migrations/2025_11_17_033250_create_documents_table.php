@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
             $table->string('name');
-            $table->enum('category', ['nda', 'proposal', 'quote', 'invoice', 'contract', 'final_delivery', 'offboarding', 'other'])->default('other');
+            $table->string('category')->default('other');
             $table->string('file_path');
             $table->string('file_name');
             $table->string('file_size')->nullable();

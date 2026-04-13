@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('project_updates', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
-            $table->enum('type', ['client_message', 'internal_note', 'change_request', 'meeting_note', 'decision'])->default('internal_note');
+            $table->string('type')->default('internal_note');
             $table->text('message');
             $table->foreignId('created_by')->constrained('admins');
             $table->boolean('is_important')->default(false);

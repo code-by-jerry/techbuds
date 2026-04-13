@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->enum('status', ['todo', 'in_progress', 'review', 'completed', 'blocked'])->default('todo');
+            $table->string('status')->default('todo');
             $table->foreignId('assigned_to')->nullable()->constrained('admins')->nullOnDelete();
             $table->date('due_date')->nullable();
             $table->integer('priority')->default(0);

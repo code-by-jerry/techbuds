@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->date('due_date')->nullable();
             $table->date('completed_date')->nullable();
-            $table->enum('status', ['pending', 'in_progress', 'completed', 'overdue', 'cancelled'])->default('pending');
+            $table->string('status')->default('pending');
             $table->integer('progress_percentage')->default(0);
             $table->integer('order')->default(0);
             $table->timestamps();

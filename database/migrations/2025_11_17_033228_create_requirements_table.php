@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->enum('priority', ['low', 'medium', 'high', 'critical'])->default('medium');
-            $table->enum('status', ['pending', 'in_progress', 'completed', 'on_hold', 'cancelled'])->default('pending');
+            $table->string('priority')->default('medium');
+            $table->string('status')->default('pending');
             $table->integer('estimated_hours')->nullable();
             $table->integer('actual_hours')->nullable();
             $table->text('notes')->nullable();

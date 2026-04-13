@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tool_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->charset('utf8mb4')->collation('utf8mb4_unicode_ci');
+            $table->string('name');
             $table->string('slug')->unique();
-            $table->text('description')->nullable()->charset('utf8mb4')->collation('utf8mb4_unicode_ci');
+            $table->text('description')->nullable();
             $table->integer('order')->default(0);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
